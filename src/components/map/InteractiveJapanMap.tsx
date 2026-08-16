@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import type { ChikaGroup, RegionId, DistrictId } from '@/lib/schema';
-import { ChikaGroupCard } from '@/components/group/ChikaGroupCard';
+import { GroupCard } from '@/components/group/GroupCard';
 
 interface InteractiveJapanMapProps {
   groups: ChikaGroup[];
@@ -29,8 +29,6 @@ interface DistrictItem {
   emoji: string;
   color: string;
   hotspots: string;
-  posX: number;
-  posY: number;
 }
 
 const REGIONS: RegionItem[] = [
@@ -47,7 +45,7 @@ const REGIONS: RegionItem[] = [
   {
     id: 'tokyo',
     name: { ja: '関東・東京 (23区)', ko: '간토・도쿄 (23구)', en: 'Kanto (Tokyo 23 Wards)' },
-    sub: { ja: '渋谷・原宿・秋葉原・新宿 (クリックで拡大 🔍)', ko: '시부야・하라주쿠・아키바・신주쿠 (클릭 시 23구 확대 🔍)', en: 'Shibuya, Harajuku, Akiba (Click to Zoom 🔍)' },
+    sub: { ja: '渋谷・原宿・秋葉原・新宿 (クリックで23区へ 🔍)', ko: '시부야・하라주쿠・아키바・신주쿠 (클릭 시 23구 진입 🔍)', en: 'Shibuya, Harajuku, Akiba (Click to Enter 🔍)' },
     emoji: '🗼',
     pinX: 68,
     pinY: 62,
@@ -94,9 +92,7 @@ const TOKYO_DISTRICTS: DistrictItem[] = [
     ward: { ja: '渋谷区 (道玄坂・円山町)', ko: '시부야구 (도겐자카・마루야마초)', en: 'Shibuya Ward' },
     emoji: '🛍️',
     color: '#FF2E7E',
-    hotspots: 'WACK / Appare! / Takane no Nadeshiko / Spotify O-EAST / WWW X',
-    posX: 38,
-    posY: 60,
+    hotspots: 'WACK / Appare! / Spotify O-EAST / WWW X',
   },
   {
     id: 'harajuku',
@@ -104,9 +100,7 @@ const TOKYO_DISTRICTS: DistrictItem[] = [
     ward: { ja: '渋谷区 (原宿・神宮前)', ko: '시부야구 (하라주쿠・진구마에)', en: 'Harajuku / Jingumae' },
     emoji: '🎀',
     color: '#FF6EA7',
-    hotspots: 'KAWAII LAB. / FRUITS ZIPPER / CANDY TUNE / SWEET STEADY / CUTIE STREET',
-    posX: 36,
-    posY: 46,
+    hotspots: 'KAWAII LAB. / FRUITS ZIPPER / CANDY TUNE / SWEET STEADY',
   },
   {
     id: 'akihabara',
@@ -114,9 +108,7 @@ const TOKYO_DISTRICTS: DistrictItem[] = [
     ward: { ja: '千代田区・外神田', ko: '지요다구 (소토칸다)', en: 'Chiyoda Ward / Sotokanda' },
     emoji: '⚡',
     color: '#00E5FF',
-    hotspots: 'DEARSTAGE / でんぱ組.inc / 虹のコンキスタドール / TwinBox / P.A.R.M.S',
-    posX: 66,
-    posY: 40,
+    hotspots: 'DEARSTAGE / でんぱ組.inc / 虹のコンキスタドール / TwinBox',
   },
   {
     id: 'shinjuku',
@@ -124,9 +116,7 @@ const TOKYO_DISTRICTS: DistrictItem[] = [
     ward: { ja: '新宿区 (歌舞伎町・西新宿)', ko: '신주쿠구 (가부키초)', en: 'Shinjuku Ward' },
     emoji: '🌃',
     color: '#A855F7',
-    hotspots: 'HEROINES / iLiFE! / 夜光性アミューズ / Shinjuku BLAZE / ReNY',
-    posX: 33,
-    posY: 32,
+    hotspots: 'HEROINES / iLiFE! / 夜光性アミューズ / Shinjuku BLAZE',
   },
   {
     id: 'ikebukuro',
@@ -135,8 +125,6 @@ const TOKYO_DISTRICTS: DistrictItem[] = [
     emoji: '🦉',
     color: '#3B82F6',
     hotspots: 'Harevutai / Club Mixa / サンシャインシティ噴水広場',
-    posX: 36,
-    posY: 18,
   },
   {
     id: 'roppongi',
@@ -144,129 +132,115 @@ const TOKYO_DISTRICTS: DistrictItem[] = [
     ward: { ja: '港区 (六本木・赤坂)', ko: '미나토구 (롯폰기)', en: 'Minato Ward' },
     emoji: '🍸',
     color: '#EAB308',
-    hotspots: 'EX THEATER ROPPONGI / 赤坂BLITZ (역사)',
-    posX: 52,
-    posY: 68,
+    hotspots: 'EX THEATER ROPPONGI / 赤坂BLITZ',
   },
 ];
 
+type FolderLevel = 'national' | 'tokyo-wards' | 'district-groups';
+
 export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps) {
-  // START AT JAPAN MAP (isTokyoDrilldown = false, selectedRegion = 'all')
-  const [isTokyoDrilldown, setIsTokyoDrilldown] = useState<boolean>(false);
-  const [selectedRegion, setSelectedRegion] = useState<RegionId | 'all'>('all');
-  const [selectedDistrict, setSelectedDistrict] = useState<DistrictId | 'all'>('all');
+  // 3-Level Folder State
+  const [level, setLevel] = useState<FolderLevel>('national');
+  const [selectedRegion, setSelectedRegion] = useState<RegionId | null>(null);
+  const [selectedDistrict, setSelectedDistrict] = useState<DistrictId | null>(null);
   const [hoveredRegion, setHoveredRegion] = useState<RegionId | null>(null);
 
-  // Group filtering
-  const filteredGroups = groups.filter((g) => {
-    if (isTokyoDrilldown) {
-      if (selectedDistrict !== 'all') {
+  // 1. Level 1 (National) -> Click Region
+  const handleRegionClick = (regionId: RegionId) => {
+    setSelectedRegion(regionId);
+    if (regionId === 'tokyo') {
+      // Enter Level 2: Tokyo 23 Wards Folder
+      setLevel('tokyo-wards');
+      setSelectedDistrict(null);
+    } else {
+      // Enter Level 3: Regional Groups Folder (Osaka, Sapporo, Nagoya, Fukuoka)
+      setLevel('district-groups');
+      setSelectedDistrict(null);
+    }
+  };
+
+  // 2. Level 2 (Tokyo Wards) -> Click District (e.g. Shibuya)
+  const handleDistrictClick = (districtId: DistrictId) => {
+    setSelectedDistrict(districtId);
+    // Enter Level 3: District Groups Folder
+    setLevel('district-groups');
+  };
+
+  // 3. Folder Navigation Back Buttons
+  const handleBackToNational = () => {
+    setLevel('national');
+    setSelectedRegion(null);
+    setSelectedDistrict(null);
+  };
+
+  const handleBackToTokyoWards = () => {
+    setLevel('tokyo-wards');
+    setSelectedDistrict(null);
+  };
+
+  // Filter groups for Level 3
+  const activeDistrictItem = TOKYO_DISTRICTS.find((d) => d.id === selectedDistrict);
+  const activeRegionItem = REGIONS.find((r) => r.id === selectedRegion);
+
+  const displayedGroups = groups.filter((g) => {
+    if (level === 'district-groups') {
+      if (selectedRegion === 'tokyo' && selectedDistrict) {
         return g.region === 'tokyo' && g.district === selectedDistrict;
       }
-      return g.region === 'tokyo';
-    }
-    if (selectedRegion !== 'all') {
-      return g.region === selectedRegion;
+      if (selectedRegion) {
+        return g.region === selectedRegion;
+      }
     }
     return true;
   });
 
-  const handleRegionSelect = (regionId: RegionId) => {
-    setSelectedRegion(regionId);
-    if (regionId === 'tokyo') {
-      // Smoothly drill down to Tokyo
-      setIsTokyoDrilldown(true);
-      setSelectedDistrict('all');
-    } else {
-      setIsTokyoDrilldown(false);
-      setSelectedDistrict('all');
-    }
-  };
-
-  const handleBackToJapan = () => {
-    setIsTokyoDrilldown(false);
-    setSelectedRegion('all');
-    setSelectedDistrict('all');
-  };
-
   return (
     <div className="w-full">
-      {/* Top Map Navigator Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-6 p-4 rounded-2xl glass-panel border border-white/10 shadow-lg">
-        <div className="flex items-center gap-3">
-          {isTokyoDrilldown ? (
-            <button
-              onClick={handleBackToJapan}
-              className="px-3.5 py-1.5 rounded-xl bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 text-xs font-bold flex items-center gap-2 transition border border-pink-500/40 shadow-sm"
-            >
-              <span>←</span>
-              <span>{locale === 'ko' ? '일본 전국 맵으로 축소' : locale === 'ja' ? '全国マップに戻る' : 'Back to Japan Map'}</span>
-            </button>
-          ) : (
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-wider text-star-white font-mono">
-                {locale === 'ko' ? '일본 전국 라이브 아이돌 거점 맵' : locale === 'ja' ? '日本全国 拠点マップ' : 'Japan National Idol Map'}
-              </span>
-            </div>
-          )}
-        </div>
-
-        {/* Region Selector Pills */}
-        <div className="flex flex-wrap items-center gap-1.5">
-          <button
-            onClick={handleBackToJapan}
-            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition ${
-              !isTokyoDrilldown && selectedRegion === 'all'
-                ? 'bg-white text-space-950 shadow-md font-bold'
-                : 'text-star-dim hover:text-star-white hover:bg-white/5 border border-transparent'
-            }`}
+      <AnimatePresence mode="wait">
+        {/* =========================================================================
+            LEVEL 1: JAPAN NATIONAL MAP VIEW (폴더 1단계: 일본 전국 맵)
+           ========================================================================= */}
+        {level === 'national' && (
+          <motion.div
+            key="folder-level-1-national"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.97 }}
+            transition={{ duration: 0.3 }}
+            className="w-full"
           >
-            {locale === 'ko' ? '전국 전체' : locale === 'ja' ? '全国すべて' : 'All Japan'}
-          </button>
-          {REGIONS.map((r) => {
-            const isSelected = (!isTokyoDrilldown && selectedRegion === r.id) || (isTokyoDrilldown && r.id === 'tokyo');
-            return (
-              <button
-                key={r.id}
-                onClick={() => handleRegionSelect(r.id)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition flex items-center gap-1.5 border ${
-                  isSelected
-                    ? 'bg-gradient-to-r from-pink-500/30 to-purple-500/30 text-pink-200 border-pink-400 shadow-md font-bold'
-                    : 'text-star-dim hover:text-star-white hover:bg-white/5 border-white/5'
-                }`}
-              >
-                <span>{r.emoji}</span>
-                <span>{r.name[locale as 'ja' | 'ko' | 'en'] || r.name.ja}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+            {/* Top Navigation Bar */}
+            <div className="flex items-center justify-between mb-6 p-4 rounded-2xl glass-panel border border-white/10 shadow-lg">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-pink-500 animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-wider text-star-white font-mono">
+                  {locale === 'ko' ? '일본 전국 거점 선택 (도시를 클릭하세요)' : locale === 'ja' ? '日本全国拠点マップ（都市を選択）' : 'Japan National Idol Map (Select a City)'}
+                </span>
+              </div>
 
-      {/* Main Interactive Map Frame */}
-      <div className="relative w-full rounded-3xl overflow-hidden glass-panel p-4 sm:p-8 mb-10 border border-white/15 shadow-2xl bg-gradient-to-b from-space-900/90 to-space-950/95">
-        <AnimatePresence mode="wait">
-          {!isTokyoDrilldown ? (
-            /* ========================================================
-               1. JAPAN NATIONAL MAP VIEW (REALISTIC ACCURATE SVG)
-               ======================================================== */
-            <motion.div
-              key="national-japan-map"
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.04 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-full aspect-[4/3] sm:aspect-[16/10] max-h-[580px] flex items-center justify-center select-none"
-            >
-              {/* Detailed Japan Geographic SVG Canvas */}
+              {/* Quick Region Pills */}
+              <div className="hidden sm:flex items-center gap-1.5">
+                {REGIONS.map((r) => (
+                  <button
+                    key={r.id}
+                    onClick={() => handleRegionClick(r.id)}
+                    className="px-3 py-1.5 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white border border-white/5 transition flex items-center gap-1"
+                  >
+                    <span>{r.emoji}</span>
+                    <span>{r.name[locale as 'ja' | 'ko' | 'en'] || r.name.ja}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Japan SVG & Radar Overlay Frame */}
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] max-h-[560px] rounded-3xl overflow-hidden glass-panel p-4 sm:p-8 mb-12 border border-white/15 shadow-2xl bg-gradient-to-b from-space-900/90 to-space-950/95 flex items-center justify-center select-none">
               <svg
                 viewBox="0 0 1000 700"
-                className="w-full h-full max-h-[550px]"
+                className="w-full h-full max-h-[530px]"
                 style={{ filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))' }}
               >
                 <defs>
-                  {/* Glowing Gradients */}
                   <linearGradient id="hokkaidoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#1E293B" />
                     <stop offset="100%" stopColor="#0F172A" />
@@ -275,16 +249,9 @@ export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps
                     <stop offset="0%" stopColor="#1E293B" />
                     <stop offset="100%" stopColor="#0B1120" />
                   </linearGradient>
-                  <filter id="neonPinGlow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
                 </defs>
 
-                {/* --- Sea Grid Background Lines --- */}
+                {/* Sea Grid Lines */}
                 <g stroke="rgba(255,255,255,0.03)" strokeWidth="1">
                   <line x1="100" y1="0" x2="100" y2="700" />
                   <line x1="300" y1="0" x2="300" y2="700" />
@@ -296,87 +263,60 @@ export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps
                   <line x1="0" y1="550" x2="1000" y2="550" />
                 </g>
 
-                {/* --- 1. Hokkaido Island --- */}
+                {/* Hokkaido */}
                 <path
-                  d="M 720 70 
-                     C 760 50, 830 40, 860 60 
-                     C 890 80, 880 120, 850 140 
-                     C 820 160, 790 190, 740 190 
-                     C 710 190, 690 160, 700 130 
-                     C 680 120, 660 140, 640 130 
-                     C 640 100, 680 80, 720 70 Z"
+                  d="M 720 70 C 760 50, 830 40, 860 60 C 890 80, 880 120, 850 140 C 820 160, 790 190, 740 190 C 710 190, 690 160, 700 130 C 680 120, 660 140, 640 130 C 640 100, 680 80, 720 70 Z"
                   fill={hoveredRegion === 'sapporo' ? '#1E3A8A' : 'url(#hokkaidoGrad)'}
                   stroke={hoveredRegion === 'sapporo' ? '#38BDF8' : '#334155'}
-                  strokeWidth={hoveredRegion === 'sapporo' ? '2.5' : '1.5'}
+                  strokeWidth="1.5"
                   className="transition-all duration-300 cursor-pointer"
-                  onClick={() => handleRegionSelect('sapporo')}
+                  onClick={() => handleRegionClick('sapporo')}
                   onMouseEnter={() => setHoveredRegion('sapporo')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
 
-                {/* --- 2. Honshu Main Island (Tohoku -> Kanto -> Chubu -> Kansai -> Chugoku) --- */}
+                {/* Honshu */}
                 <path
-                  d="M 730 210
-                     C 750 230, 740 280, 720 320
-                     C 710 360, 690 400, 680 430
-                     C 670 450, 690 470, 660 480
-                     C 630 480, 600 460, 560 460
-                     C 520 460, 480 490, 440 480
-                     C 400 470, 360 460, 320 470
-                     C 280 480, 240 500, 220 490
-                     C 210 470, 240 450, 270 440
-                     C 310 430, 350 430, 390 430
-                     C 430 430, 460 410, 500 390
-                     C 540 370, 580 340, 600 310
-                     C 620 280, 650 240, 690 220
-                     C 710 200, 720 200, 730 210 Z"
+                  d="M 730 210 C 750 230, 740 280, 720 320 C 710 360, 690 400, 680 430 C 670 450, 690 470, 660 480 C 630 480, 600 460, 560 460 C 520 460, 480 490, 440 480 C 400 470, 360 460, 320 470 C 280 480, 240 500, 220 490 C 210 470, 240 450, 270 440 C 310 430, 350 430, 390 430 C 430 430, 460 410, 500 390 C 540 370, 580 340, 600 310 C 620 280, 650 240, 690 220 C 710 200, 720 200, 730 210 Z"
                   fill="url(#honshuGrad)"
                   stroke="#334155"
                   strokeWidth="1.5"
                 />
 
-                {/* --- 3. Shikoku Island --- */}
+                {/* Shikoku */}
                 <path
-                  d="M 370 510
-                     C 410 500, 450 510, 440 540
-                     C 420 560, 380 560, 350 540
-                     C 340 520, 360 510, 370 510 Z"
+                  d="M 370 510 C 410 500, 450 510, 440 540 C 420 560, 380 560, 350 540 C 340 520, 360 510, 370 510 Z"
                   fill="url(#honshuGrad)"
                   stroke="#334155"
                   strokeWidth="1.5"
                 />
 
-                {/* --- 4. Kyushu Island --- */}
+                {/* Kyushu */}
                 <path
-                  d="M 210 500
-                     C 240 510, 250 540, 240 570
-                     C 230 610, 210 630, 180 620
-                     C 150 610, 160 560, 170 530
-                     C 180 500, 200 490, 210 500 Z"
+                  d="M 210 500 C 240 510, 250 540, 240 570 C 230 610, 210 630, 180 620 C 150 610, 160 560, 170 530 C 180 500, 200 490, 210 500 Z"
                   fill={hoveredRegion === 'fukuoka' ? '#3B0764' : 'url(#honshuGrad)'}
                   stroke={hoveredRegion === 'fukuoka' ? '#8B5CF6' : '#334155'}
-                  strokeWidth={hoveredRegion === 'fukuoka' ? '2.5' : '1.5'}
+                  strokeWidth="1.5"
                   className="transition-all duration-300 cursor-pointer"
-                  onClick={() => handleRegionSelect('fukuoka')}
+                  onClick={() => handleRegionClick('fukuoka')}
                   onMouseEnter={() => setHoveredRegion('fukuoka')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
 
-                {/* --- Connecting Golden Constellation Routes --- */}
+                {/* Constellation Link Route */}
                 <path
                   d="M 770 126 L 680 434 L 570 462 L 470 490 L 230 532"
                   fill="none"
-                  stroke="rgba(255, 110, 167, 0.4)"
+                  stroke="rgba(255, 110, 167, 0.35)"
                   strokeWidth="2"
                   strokeDasharray="6 6"
                 />
               </svg>
 
-              {/* --- Interactive HTML Overlay Pins (100% Reliable Clicking & Beautiful Hover Cards) --- */}
+              {/* Clickable Radar Pins */}
               <div className="absolute inset-0 pointer-events-none">
                 {REGIONS.map((r) => {
                   const count = groups.filter((g) => g.region === r.id).length;
-                  const isSelected = selectedRegion === r.id;
                   const isHovered = hoveredRegion === r.id;
 
                   return (
@@ -390,14 +330,14 @@ export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps
                       className="absolute pointer-events-auto z-20"
                     >
                       <button
-                        onClick={() => handleRegionSelect(r.id)}
+                        onClick={() => handleRegionClick(r.id)}
                         onMouseEnter={() => setHoveredRegion(r.id)}
                         onMouseLeave={() => setHoveredRegion(null)}
                         className={`group relative flex flex-col items-center focus:outline-none transition-all duration-300 ${
-                          isSelected || isHovered ? 'scale-110 z-30' : 'scale-100'
+                          isHovered ? 'scale-110 z-30' : 'scale-100'
                         }`}
                       >
-                        {/* Glowing Pulsing Ring */}
+                        {/* Glowing Ring */}
                         <span
                           className="absolute w-12 h-12 rounded-full animate-ping opacity-40 pointer-events-none"
                           style={{ backgroundColor: r.color }}
@@ -405,7 +345,7 @@ export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps
 
                         {/* Starlight Pin Center */}
                         <div
-                          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center text-lg sm:text-xl shadow-xl transition-all duration-300 border-2 ${
+                          className={`w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center text-xl shadow-xl transition-all duration-300 border-2 ${
                             r.isTokyo
                               ? 'bg-gradient-to-br from-pink-500 to-rose-600 border-white shadow-pink-500/50'
                               : 'bg-space-850 border-white/30 group-hover:border-white shadow-black/60'
@@ -419,11 +359,9 @@ export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps
 
                         {/* Floating Region Info Badge */}
                         <div
-                          className={`mt-2 px-3 py-1 rounded-xl backdrop-blur-xl border shadow-2xl transition-all duration-300 flex flex-col items-center whitespace-nowrap ${
+                          className={`mt-2 px-3 py-1.5 rounded-xl backdrop-blur-xl border shadow-2xl transition-all duration-300 flex flex-col items-center whitespace-nowrap ${
                             r.isTokyo
                               ? 'bg-pink-950/90 border-pink-400 text-pink-100 shadow-pink-900/50'
-                              : isSelected || isHovered
-                              ? 'bg-space-800/95 border-white text-star-white'
                               : 'bg-space-950/85 border-white/15 text-star-dim group-hover:text-star-white'
                           }`}
                         >
@@ -448,99 +386,91 @@ export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps
                   );
                 })}
               </div>
-            </motion.div>
-          ) : (
-            /* ========================================================
-               2. TOKYO 23 WARDS DRILL-DOWN DETAILED MAP
-               ======================================================== */
-            <motion.div
-              key="tokyo-drilldown-map"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.35 }}
-              className="relative w-full"
-            >
-              {/* Tokyo Banner Header */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-xl shadow-lg shadow-pink-500/30">
-                    🗼
-                  </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-star-white font-[family-name:var(--font-klee-one)]">
-                      {locale === 'ko' ? '도쿄 23구 핵심 지하아이돌 거점 구역' : locale === 'ja' ? '東京23区・主要アイドルエリア詳細' : 'Tokyo 23 Wards Key Idol Districts'}
-                    </h3>
-                    <p className="text-xs text-star-dim">
-                      {locale === 'ko'
-                        ? '시부야・하라주쿠・아키하바라・신주쿠 구역을 클릭하여 해당 거점의 그룹을 확인하세요.'
-                        : 'エリアを選択すると、所属アイドルグループとチケット情報が表示されます。'}
-                    </p>
-                  </div>
-                </div>
+            </div>
+          </motion.div>
+        )}
 
-                <div className="flex items-center gap-2 self-end sm:self-auto">
-                  <button
-                    onClick={() => setSelectedDistrict('all')}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition ${
-                      selectedDistrict === 'all'
-                        ? 'bg-pink-500 text-white shadow-md'
-                        : 'bg-white/10 text-star-dim hover:text-white'
-                    }`}
-                  >
-                    {locale === 'ko' ? '도쿄 전체 보기' : '東京全域'}
-                  </button>
-                  <button
-                    onClick={handleBackToJapan}
-                    className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-star-white text-xs font-medium transition"
-                  >
-                    {locale === 'ko' ? '← 전국 맵' : '← 全国マップ'}
-                  </button>
+        {/* =========================================================================
+            LEVEL 2: TOKYO 23 WARDS VIEW (폴더 2단계: 도쿄 23구 구역 선택)
+           ========================================================================= */}
+        {level === 'tokyo-wards' && (
+          <motion.div
+            key="folder-level-2-tokyo"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.35 }}
+            className="w-full"
+          >
+            {/* Breadcrumb Navigation Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 p-4 rounded-2xl glass-panel border border-white/10 shadow-lg">
+              <button
+                onClick={handleBackToNational}
+                className="px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-star-white text-xs font-bold flex items-center gap-2 transition"
+              >
+                <span>←</span>
+                <span>{locale === 'ko' ? '일본 전국 지도로 돌아가기' : locale === 'ja' ? '全国マップに戻る' : 'Back to Japan Map'}</span>
+              </button>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono text-pink-400 font-bold">
+                  TOKYO 23 WARDS
+                </span>
+              </div>
+            </div>
+
+            {/* Tokyo Wards Header */}
+            <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/15 mb-8 bg-gradient-to-br from-pink-950/40 to-space-950">
+              <div className="flex items-center gap-3.5 mb-2">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-2xl shadow-lg shadow-pink-500/30">
+                  🗼
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-star-white font-[family-name:var(--font-klee-one)]">
+                    {locale === 'ko' ? '도쿄 23구 지하아이돌 거점 구역' : locale === 'ja' ? '東京23区・地下アイドル主要エリア' : 'Tokyo 23 Wards Key Idol Districts'}
+                  </h2>
+                  <p className="text-xs text-star-dim">
+                    {locale === 'ko'
+                      ? '시부야, 하라주쿠, 아키하바라, 신주쿠 등 원하시는 구역을 클릭하여 진입하세요.'
+                      : 'エリアを選択すると、その地域のアイドルグループ一覧へ進みます。'}
+                  </p>
                 </div>
               </div>
+            </div>
 
-              {/* Interactive Tokyo District Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {TOKYO_DISTRICTS.map((d) => {
-                  const isSelected = selectedDistrict === d.id;
-                  const count = groups.filter((g) => g.region === 'tokyo' && g.district === d.id).length;
+            {/* 6 Major District Cards (Clicking transitions to Level 3) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+              {TOKYO_DISTRICTS.map((d) => {
+                const count = groups.filter((g) => g.region === 'tokyo' && g.district === d.id).length;
 
-                  return (
-                    <button
-                      key={d.id}
-                      onClick={() => setSelectedDistrict(d.id)}
-                      className={`p-5 rounded-2xl text-left transition-all duration-300 border relative overflow-hidden group ${
-                        isSelected
-                          ? 'bg-gradient-to-br from-pink-950/70 to-purple-950/70 border-pink-500 shadow-[0_0_30px_rgba(255,110,167,0.35)] scale-[1.02]'
-                          : 'bg-space-850/80 border-white/10 hover:border-pink-500/50 hover:bg-space-800/90'
-                      }`}
-                    >
-                      {/* Ambient corner glow */}
-                      <div
-                        className="absolute -right-8 -top-8 w-20 h-20 rounded-full blur-2xl opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity"
-                        style={{ backgroundColor: d.color }}
-                      />
+                return (
+                  <button
+                    key={d.id}
+                    onClick={() => handleDistrictClick(d.id)}
+                    className="p-6 rounded-3xl text-left transition-all duration-300 border border-white/10 hover:border-pink-500/60 bg-space-850/80 hover:bg-space-800 shadow-xl hover:shadow-2xl hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between min-h-[160px]"
+                  >
+                    <div
+                      className="absolute -right-10 -top-10 w-28 h-28 rounded-full blur-2xl opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity"
+                      style={{ backgroundColor: d.color }}
+                    />
 
-                      <div className="flex items-center justify-between mb-2.5">
-                        <div className="flex items-center gap-2.5">
-                          <span className="text-2xl group-hover:scale-110 transition-transform">
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl group-hover:scale-110 transition-transform">
                             {d.emoji}
                           </span>
                           <div>
-                            <span className={`text-base font-bold block ${isSelected ? 'text-pink-300' : 'text-star-white'}`}>
+                            <h3 className="text-lg font-bold text-star-white group-hover:text-pink-300 transition font-[family-name:var(--font-klee-one)]">
                               {d.name[locale as 'ja' | 'ko' | 'en'] || d.name.ja}
-                            </span>
-                            <span className="text-[10px] text-star-faint">
+                            </h3>
+                            <span className="text-[11px] text-star-faint font-mono">
                               {d.ward[locale as 'ja' | 'ko' | 'en'] || d.ward.ja}
                             </span>
                           </div>
                         </div>
 
-                        <span
-                          className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full ${
-                            isSelected ? 'bg-pink-500 text-white' : 'bg-white/10 text-star-dim'
-                          }`}
-                        >
+                        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-white/10 text-star-white">
                           {count} Groups
                         </span>
                       </div>
@@ -548,53 +478,108 @@ export function InteractiveJapanMap({ groups, locale }: InteractiveJapanMapProps
                       <p className="text-xs text-star-dim line-clamp-2 leading-relaxed">
                         {d.hotspots}
                       </p>
-                    </button>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+                    </div>
 
-      {/* Filtered Group Showcase Section */}
-      <div className="mb-12">
-        <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <span className="text-pink-400 font-bold text-lg">✦</span>
-            <h3 className="text-lg sm:text-xl font-bold text-star-white font-[family-name:var(--font-klee-one)]">
-              {isTokyoDrilldown
-                ? selectedDistrict === 'all'
-                  ? locale === 'ko' ? '도쿄 전체 거점 아이돌' : '東京全域 拠点アイドル'
-                  : `${TOKYO_DISTRICTS.find((d) => d.id === selectedDistrict)?.name[locale as 'ja' | 'ko' | 'en'] || ''} 거점 아이돌`
-                : selectedRegion === 'all'
-                ? locale === 'ko' ? '전국 대표 아이돌 그룹' : '全国代表アイドルグループ'
-                : `${REGIONS.find((r) => r.id === selectedRegion)?.name[locale as 'ja' | 'ko' | 'en'] || ''} 거점 아이돌`}
-            </h3>
-          </div>
-          <span className="text-xs text-star-dim font-mono">
-            {filteredGroups.length} Groups
-          </span>
-        </div>
-
-        {filteredGroups.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredGroups.map((group) => (
-              <ChikaGroupCard
-                key={group.id}
-                group={group}
-                locale={locale}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="p-12 text-center rounded-2xl glass-panel">
-            <p className="text-sm text-star-dim">
-              {locale === 'ko' ? '해당 구역의 등록된 그룹이 없습니다.' : '該当するグループがありません。'}
-            </p>
-          </div>
+                    <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-pink-400 group-hover:translate-x-1 transition-transform">
+                      <span>{locale === 'ko' ? '소속 아이돌 목록 보기' : locale === 'ja' ? '所属アイドルを見る' : 'View Idols'}</span>
+                      <span>→</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </motion.div>
         )}
-      </div>
+
+        {/* =========================================================================
+            LEVEL 3: DISTRICT / CITY GROUPS VIEW (폴더 3단계: 구역 전용 그룹 목록)
+           ========================================================================= */}
+        {level === 'district-groups' && (
+          <motion.div
+            key="folder-level-3-groups"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.35 }}
+            className="w-full"
+          >
+            {/* Breadcrumb Navigation Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 p-4 rounded-2xl glass-panel border border-white/10 shadow-lg">
+              <div className="flex items-center gap-2">
+                {selectedRegion === 'tokyo' ? (
+                  <>
+                    <button
+                      onClick={handleBackToTokyoWards}
+                      className="px-3.5 py-1.5 rounded-xl bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 text-xs font-bold flex items-center gap-1.5 transition border border-pink-500/40"
+                    >
+                      <span>←</span>
+                      <span>{locale === 'ko' ? '도쿄 23구 구역 선택' : locale === 'ja' ? '東京23区選択に戻る' : 'Back to Tokyo Wards'}</span>
+                    </button>
+                    <button
+                      onClick={handleBackToNational}
+                      className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-star-dim hover:text-white text-xs font-medium transition"
+                    >
+                      {locale === 'ko' ? '전국 지도' : '全国マップ'}
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={handleBackToNational}
+                    className="px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-star-white text-xs font-bold flex items-center gap-1.5 transition"
+                  >
+                    <span>←</span>
+                    <span>{locale === 'ko' ? '일본 전국 지도로 돌아가기' : locale === 'ja' ? '全国マップに戻る' : 'Back to Japan Map'}</span>
+                  </button>
+                )}
+              </div>
+
+              <span className="text-xs text-star-dim font-mono">
+                {displayedGroups.length} Groups
+              </span>
+            </div>
+
+            {/* District / City Showcase Banner */}
+            <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/15 mb-8 bg-gradient-to-br from-space-900 to-space-950 shadow-xl">
+              <div className="flex items-center gap-3.5">
+                <span className="text-3xl sm:text-4xl">
+                  {activeDistrictItem?.emoji || activeRegionItem?.emoji || '✦'}
+                </span>
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-star-white font-[family-name:var(--font-klee-one)]">
+                    {activeDistrictItem
+                      ? `${activeDistrictItem.name[locale as 'ja' | 'ko' | 'en'] || activeDistrictItem.name.ja} 거점 아이돌 그룹`
+                      : activeRegionItem
+                      ? `${activeRegionItem.name[locale as 'ja' | 'ko' | 'en'] || activeRegionItem.name.ja} 거점 아이돌 그룹`
+                      : '아이돌 그룹 목록'}
+                  </h2>
+                  <p className="text-xs text-star-dim mt-1">
+                    {activeDistrictItem?.ward[locale as 'ja' | 'ko' | 'en'] || activeRegionItem?.sub[locale as 'ja' | 'ko' | 'en'] || ''}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Large Group Cards Grid (Sakamichi Hub Style) */}
+            {displayedGroups.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch mb-12">
+                {displayedGroups.map((group) => (
+                  <GroupCard
+                    key={group.id}
+                    group={group}
+                    locale={locale}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="p-12 text-center rounded-3xl glass-panel border border-white/10 mb-12">
+                <p className="text-sm text-star-dim">
+                  {locale === 'ko' ? '해당 구역에 등록된 그룹이 없습니다.' : '該当するグループがありません。'}
+                </p>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
