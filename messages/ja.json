@@ -1,0 +1,55 @@
+{
+  "common": {
+    "siteName": "Chika Idol Hub",
+    "siteTagline": "地下アイドル・ライブアイドル リンクハブ",
+    "view": "見る",
+    "all": "すべて",
+    "map": "マップで探す",
+    "list": "リストで探す",
+    "region": "地域",
+    "agency": "所属事務所",
+    "members": "メンバー",
+    "tickets": "ライブチケット",
+    "goods": "チェキ・グッズ"
+  },
+  "nav": {
+    "home": "ホーム",
+    "map": "全国マップ",
+    "groups": "グループ一覧",
+    "search": "検索",
+    "about": "当サイトについて"
+  },
+  "map": {
+    "title": "全国アイドル拠点マップ",
+    "subtitle": "日本全国および東京主要エリア(渋谷・原宿・秋葉原・新宿)のアイドル拠点を探索",
+    "japan": "全国",
+    "tokyo": "東京",
+    "osaka": "大阪",
+    "sapporo": "札幌 (北海道)",
+    "nagoya": "名古屋 (愛知)",
+    "fukuoka": "福岡 (九州)",
+    "tokyoWards": "東京23区・主要エリア",
+    "shibuya": "渋谷",
+    "harajuku": "原宿・表参道",
+    "akihabara": "秋葉原",
+    "shinjuku": "新宿",
+    "ikebukuro": "池袋",
+    "roppongi": "六本木・赤坂",
+    "selectRegion": "地域を選択してください",
+    "groupCount": "{count} グループ"
+  },
+  "group": {
+    "activeCount": "現役 {count}名",
+    "baseArea": "活動拠点: {area}",
+    "agency": "レーベル: {agency}",
+    "officialSite": "公式サイト",
+    "schedule": "ライブ・イベント予定",
+    "ticketLink": "チケット (TIGET/LivePocket)",
+    "chekiLink": "チェキ・公式通販"
+  },
+  "search": {
+    "placeholder": "アイドル名・グループ名・地域・事務所で検索...",
+    "resultCount": "該当結果: {count}件",
+    "noResults": "該当するアイドルは見つかりませんでした。"
+  }
+}

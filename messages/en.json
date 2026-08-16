@@ -1,0 +1,55 @@
+{
+  "common": {
+    "siteName": "Chika Idol Hub",
+    "siteTagline": "Japanese Underground & Live Idol Link Hub",
+    "view": "View",
+    "all": "All",
+    "map": "Explore Map",
+    "list": "Browse List",
+    "region": "Region",
+    "agency": "Agency/Label",
+    "members": "Members",
+    "tickets": "Live Tickets",
+    "goods": "Cheki & Goods"
+  },
+  "nav": {
+    "home": "Home",
+    "map": "Japan Map",
+    "groups": "Groups",
+    "search": "Search",
+    "about": "About"
+  },
+  "map": {
+    "title": "Interactive Live Idol Area Map",
+    "subtitle": "Discover idol scenes across Japan and Tokyo's key districts (Shibuya, Harajuku, Akihabara, Shinjuku)",
+    "japan": "All Japan",
+    "tokyo": "Tokyo",
+    "osaka": "Osaka",
+    "sapporo": "Sapporo (Hokkaido)",
+    "nagoya": "Nagoya (Aichi)",
+    "fukuoka": "Fukuoka (Kyushu)",
+    "tokyoWards": "Tokyo 23 Wards & Key Districts",
+    "shibuya": "Shibuya",
+    "harajuku": "Harajuku / Omotesando",
+    "akihabara": "Akihabara",
+    "shinjuku": "Shinjuku",
+    "ikebukuro": "Ikebukuro",
+    "roppongi": "Roppongi / Akasaka",
+    "selectRegion": "Select a region or district",
+    "groupCount": "{count} Groups"
+  },
+  "group": {
+    "activeCount": "{count} Members",
+    "baseArea": "Base: {area}",
+    "agency": "Agency: {agency}",
+    "officialSite": "Official Website",
+    "schedule": "Live Schedule",
+    "ticketLink": "Tickets (TIGET/LivePocket)",
+    "chekiLink": "Cheki & Store"
+  },
+  "search": {
+    "placeholder": "Search by idol, group, district, agency...",
+    "resultCount": "{count} results found",
+    "noResults": "No idols found matching your query."
+  }
+}

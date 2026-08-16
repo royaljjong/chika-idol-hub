@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-space: #07090F;
+  --bg-surface: #0E121E;
+  --bg-surface-elevated: #161D2E;
+  --star-white: #F4F7FB;
+  --star-dim: #9AA6BC;
+  --star-faint: #4E5970;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(255, 255, 255, 0.18);
+  --neon-glow: 0 0 24px rgba(255, 110, 167, 0.25);
+}
+
+body {
+  background-color: var(--bg-space);
+  color: var(--star-white);
+  min-height: 100vh;
+  letter-spacing: 0.03em;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-space);
+}
+::-webkit-scrollbar-thumb {
+  background: #1C2336;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2D3748;
+}
+
+/* Glassmorphic cards */
+.glass-panel {
+  background: rgba(14, 18, 30, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.05);
+}

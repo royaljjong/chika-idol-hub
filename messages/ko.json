@@ -1,0 +1,55 @@
+{
+  "common": {
+    "siteName": "Chika Idol Hub",
+    "siteTagline": "지하아이돌・라이브 아이돌 공식 링크 허브",
+    "view": "보기",
+    "all": "전체",
+    "map": "지도로 찾기",
+    "list": "목록으로 찾기",
+    "region": "지역",
+    "agency": "기획사/레이블",
+    "members": "멤버",
+    "tickets": "라이브 티켓",
+    "goods": "체키・굿즈"
+  },
+  "nav": {
+    "home": "홈",
+    "map": "전국 맵",
+    "groups": "그룹 목록",
+    "search": "검색",
+    "about": "안내 및 소개"
+  },
+  "map": {
+    "title": "전국 아이돌 거점 인터랙티브 맵",
+    "subtitle": "일본 전국 주요 도시 및 도쿄 핵심 구역(시부야·하라주쿠·아키하바라·신주쿠) 거점 탐색",
+    "japan": "일본 전국",
+    "tokyo": "도쿄",
+    "osaka": "오사카",
+    "sapporo": "삿포로 (홋카이도)",
+    "nagoya": "나고야 (아이치)",
+    "fukuoka": "후쿠오카 (큐슈)",
+    "tokyoWards": "도쿄 23구・핵심 구역",
+    "shibuya": "시부야",
+    "harajuku": "하라주쿠・오모테산도",
+    "akihabara": "아키하바라",
+    "shinjuku": "신주쿠",
+    "ikebukuro": "이케부쿠로",
+    "roppongi": "롯폰기・아카사카",
+    "selectRegion": "지역 또는 구역을 선택하세요",
+    "groupCount": "{count}개 그룹"
+  },
+  "group": {
+    "activeCount": "현역 {count}명",
+    "baseArea": "활동 거점: {area}",
+    "agency": "기획사: {agency}",
+    "officialSite": "공식 사이트",
+    "schedule": "라이브 일정",
+    "ticketLink": "티켓팅 (TIGET/LivePocket)",
+    "chekiLink": "체키・공식 스토어"
+  },
+  "search": {
+    "placeholder": "아이돌명・그룹명・지역・기획사・초성 검색...",
+    "resultCount": "검색 결과: {count}건",
+    "noResults": "검색 결과가 없습니다."
+  }
+}

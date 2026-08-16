@@ -1,0 +1,1090 @@
+[
+  {
+    "id": "fruits-zipper",
+    "name": {
+      "ja": "FRUITS ZIPPER",
+      "ko": "후르츠 지퍼 (FRUITS ZIPPER)",
+      "en": "FRUITS ZIPPER"
+    },
+    "shortName": {
+      "ja": "ふるっぱー",
+      "ko": "후룹파",
+      "en": "FZ"
+    },
+    "agency": "ASOBISYSTEM (KAWAII LAB.)",
+    "region": "tokyo",
+    "district": "harajuku",
+    "color": "#FF6EA7",
+    "accentColor": "#FFE5EC",
+    "debutYear": 2022,
+    "description": {
+      "ja": "「原宿から世界へ」をコンセプトに、多様なカルチャーを発信するKAWAII LAB.の第1弾アイドルグループ。",
+      "ko": "「하라주쿠에서 세계로」를 콘셉트로 다양한 카와이 문화를 발신하는 KAWAII LAB. 제1탄 아이돌 그룹.",
+      "en": "The first idol group from KAWAII LAB. transmitting diverse Harajuku culture under the concept \"From Harajuku to the World\"."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://fruitszipper.asobisystem.com/",
+    "ticketUrl": "https://l-tike.com/fruitszipper/",
+    "chekiUrl": "https://kawaiilab.stores.jp/",
+    "scheduleUrl": "https://fruitszipper.asobisystem.com/schedule/",
+    "x": "https://x.com/fruits_zipper",
+    "instagram": "https://www.instagram.com/fruits_zipper/",
+    "tiktok": "https://www.tiktok.com/@fruits_zipper",
+    "youtube": "https://www.youtube.com/@fruitszipper3799",
+    "members": [
+      {
+        "id": "fz-matsumoto-karen",
+        "groupId": "fruits-zipper",
+        "name": {
+          "ja": {
+            "kanji": "松本かれん",
+            "kana": "まつもと かれん"
+          },
+          "ko": {
+            "hangul": "마츠모토 카렌"
+          },
+          "en": {
+            "romaji": "Karen Matsumoto"
+          }
+        },
+        "memberColor": "#FFA7C4",
+        "memberColorName": {
+          "ja": "ベビーピンク",
+          "ko": "베이비 핑크",
+          "en": "Baby Pink"
+        },
+        "imageUrl": "https://fruitszipper.asobisystem.com/assets/img/member/karen.jpg",
+        "x": "https://x.com/karen_fz0328",
+        "instagram": "https://www.instagram.com/karen_matsumoto_/",
+        "tiktok": "https://www.tiktok.com/@karen_matsumoto_",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "fz-sakurai-yui",
+        "groupId": "fruits-zipper",
+        "name": {
+          "ja": {
+            "kanji": "櫻井優衣",
+            "kana": "さくらい ゆい"
+          },
+          "ko": {
+            "hangul": "사쿠라이 유이"
+          },
+          "en": {
+            "romaji": "Yui Sakurai"
+          }
+        },
+        "memberColor": "#72D792",
+        "memberColorName": {
+          "ja": "ミントグリーン",
+          "ko": "민트 그린",
+          "en": "Mint Green"
+        },
+        "imageUrl": "https://fruitszipper.asobisystem.com/assets/img/member/yui.jpg",
+        "x": "https://x.com/yui_fz0221",
+        "instagram": "https://www.instagram.com/yui.sakurai_7/",
+        "tiktok": "https://www.tiktok.com/@sakuraiyui221",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "fz-chinzei-suzuka",
+        "groupId": "fruits-zipper",
+        "name": {
+          "ja": {
+            "kanji": "鎮西寿々歌",
+            "kana": "ちんぜい すずか"
+          },
+          "ko": {
+            "hangul": "친제이 스즈카"
+          },
+          "en": {
+            "romaji": "Suzuka Chinzei"
+          }
+        },
+        "memberColor": "#FF9E40",
+        "memberColorName": {
+          "ja": "オレンジ",
+          "ko": "오렌지",
+          "en": "Orange"
+        },
+        "imageUrl": "https://fruitszipper.asobisystem.com/assets/img/member/suzuka.jpg",
+        "x": "https://x.com/suzuka_fz1124",
+        "instagram": "https://www.instagram.com/tarasuzuka24/",
+        "tiktok": "https://www.tiktok.com/@tarasuzuka24",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "fz-tsukiashi-amane",
+        "groupId": "fruits-zipper",
+        "name": {
+          "ja": {
+            "kanji": "月足天音",
+            "kana": "つきあし あまね"
+          },
+          "ko": {
+            "hangul": "츠키아시 아마네"
+          },
+          "en": {
+            "romaji": "Amane Tsukiashi"
+          }
+        },
+        "memberColor": "#E63946",
+        "memberColorName": {
+          "ja": "レッド",
+          "ko": "레드",
+          "en": "Red"
+        },
+        "imageUrl": "https://fruitszipper.asobisystem.com/assets/img/member/amane.jpg",
+        "x": "https://x.com/amane_fz1026",
+        "instagram": "https://www.instagram.com/amane_tsukiashi_/",
+        "tiktok": "https://www.tiktok.com/@amane_tsukiashi_",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "fz-manaka-mana",
+        "groupId": "fruits-zipper",
+        "name": {
+          "ja": {
+            "kanji": "真中まな",
+            "kana": "まなか まな"
+          },
+          "ko": {
+            "hangul": "마나카 마나"
+          },
+          "en": {
+            "romaji": "Mana Manaka"
+          }
+        },
+        "memberColor": "#457B9D",
+        "memberColorName": {
+          "ja": "スカイブルー",
+          "ko": "스카이 블루",
+          "en": "Sky Blue"
+        },
+        "imageUrl": "https://fruitszipper.asobisystem.com/assets/img/member/mana.jpg",
+        "x": "https://x.com/mana_fz0422",
+        "instagram": "https://www.instagram.com/manamana_fz0422/",
+        "tiktok": "https://www.tiktok.com/@manamana_fz0422",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "fz-hayase-noel",
+        "groupId": "fruits-zipper",
+        "name": {
+          "ja": {
+            "kanji": "早瀬ノエル",
+            "kana": "はやせ のえる"
+          },
+          "ko": {
+            "hangul": "하야세 노엘"
+          },
+          "en": {
+            "romaji": "Noel Hayase"
+          }
+        },
+        "memberColor": "#F4E409",
+        "memberColorName": {
+          "ja": "イエロー",
+          "ko": "옐로우",
+          "en": "Yellow"
+        },
+        "imageUrl": "https://fruitszipper.asobisystem.com/assets/img/member/noel.jpg",
+        "x": "https://x.com/noel_fz1229",
+        "instagram": "https://www.instagram.com/noel_hayase/",
+        "tiktok": "https://www.tiktok.com/@noel_hayase",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "fz-nakagawa-runa",
+        "groupId": "fruits-zipper",
+        "name": {
+          "ja": {
+            "kanji": "仲川瑠夏",
+            "kana": "なかがわ るな"
+          },
+          "ko": {
+            "hangul": "나카가와 루나"
+          },
+          "en": {
+            "romaji": "Runa Nakagawa"
+          }
+        },
+        "memberColor": "#9D4EDD",
+        "memberColorName": {
+          "ja": "パープル",
+          "ko": "퍼플",
+          "en": "Purple"
+        },
+        "imageUrl": "https://fruitszipper.asobisystem.com/assets/img/member/runa.jpg",
+        "x": "https://x.com/runa_fz0703",
+        "instagram": "https://www.instagram.com/luna_nakagawa/",
+        "tiktok": "https://www.tiktok.com/@luna_nakagawa",
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "ilife",
+    "name": {
+      "ja": "iLiFE!",
+      "ko": "아이라이프 (iLiFE!)",
+      "en": "iLiFE!"
+    },
+    "shortName": {
+      "ja": "アイライフ",
+      "ko": "아이라이프",
+      "en": "iLiFE!"
+    },
+    "agency": "HEROINES (imaginate)",
+    "region": "tokyo",
+    "district": "shinjuku",
+    "color": "#FF2E7E",
+    "accentColor": "#FFD6E5",
+    "debutYear": 2020,
+    "description": {
+      "ja": "「私（i）と貴方（you）で創るアイドル（iLiFE!）」をコンセプトに、爆発的なライブ動員を誇るHEROINESのフラッグシップグループ。",
+      "ko": "「나(i)와 당신(you)이 함께 만드는 아이돌(iLiFE!)」을 콘셉트로 폭발적인 라이브 동원력을 자랑하는 HEROINES의 대표 그룹.",
+      "en": "The flagship group of HEROINES concepted around \"Creating an idol together between me (i) and you (iLiFE!)\"."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://heroines.jp/artist/ilife",
+    "ticketUrl": "https://ticketdive.com/artist/ilife",
+    "chekiUrl": "https://heroines.stores.jp/",
+    "scheduleUrl": "https://timetreeapp.com/public_calendars/ilife_official",
+    "x": "https://x.com/iLiFE_official",
+    "instagram": "https://www.instagram.com/ilife.heroines/",
+    "tiktok": "https://www.tiktok.com/@ilife.heroines",
+    "youtube": "https://www.youtube.com/@iLiFE_official",
+    "members": [
+      {
+        "id": "ilife-shinzome-kokoro",
+        "groupId": "ilife",
+        "name": {
+          "ja": {
+            "kanji": "心花りり",
+            "kana": "しんぞめ りり"
+          },
+          "ko": {
+            "hangul": "신조메 리리"
+          },
+          "en": {
+            "romaji": "Riri Shinzome"
+          }
+        },
+        "memberColor": "#E60033",
+        "memberColorName": {
+          "ja": "赤色",
+          "ko": "레드",
+          "en": "Red"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/iLiFE_riri",
+        "instagram": "https://www.instagram.com/riri_shinzome/",
+        "tiktok": "https://www.tiktok.com/@riri_shinzome",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "ilife-aisu-ririka",
+        "groupId": "ilife",
+        "name": {
+          "ja": {
+            "kanji": "あいす",
+            "kana": "あいす"
+          },
+          "ko": {
+            "hangul": "아이스"
+          },
+          "en": {
+            "romaji": "Aisu"
+          }
+        },
+        "memberColor": "#B0E0E6",
+        "memberColorName": {
+          "ja": "白色・水色",
+          "ko": "화이트/라이트블루",
+          "en": "White Light Blue"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/iLiFE_aisu",
+        "instagram": "https://www.instagram.com/aisu_ilife/",
+        "tiktok": "https://www.tiktok.com/@aisu_ilife",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "ilife-minase-ramu",
+        "groupId": "ilife",
+        "name": {
+          "ja": {
+            "kanji": "水瀬らむ",
+            "kana": "みなせ らむ"
+          },
+          "ko": {
+            "hangul": "미나세 라무"
+          },
+          "en": {
+            "romaji": "Ramu Minase"
+          }
+        },
+        "memberColor": "#4169E1",
+        "memberColorName": {
+          "ja": "青色",
+          "ko": "블루",
+          "en": "Blue"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/iLiFE_ramu",
+        "instagram": "https://www.instagram.com/ramu_minase/",
+        "tiktok": "https://www.tiktok.com/@ramu_minase",
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "ilife-wakaba-ruka",
+        "groupId": "ilife",
+        "name": {
+          "ja": {
+            "kanji": "若葉のあ",
+            "kana": "わかば のあ"
+          },
+          "ko": {
+            "hangul": "와카바 노아"
+          },
+          "en": {
+            "romaji": "Noa Wakaba"
+          }
+        },
+        "memberColor": "#32CD32",
+        "memberColorName": {
+          "ja": "緑色",
+          "ko": "그린",
+          "en": "Green"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/iLiFE_noa",
+        "instagram": "https://www.instagram.com/noa_wakaba/",
+        "tiktok": "https://www.tiktok.com/@noa_wakaba",
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "appare",
+    "name": {
+      "ja": "Appare!",
+      "ko": "앗파레 (Appare!)",
+      "en": "Appare!"
+    },
+    "shortName": {
+      "ja": "あっぱれ",
+      "ko": "앗파레",
+      "en": "Appare!"
+    },
+    "agency": "Appare! Project (HEROINES)",
+    "region": "tokyo",
+    "district": "shibuya",
+    "color": "#FFB800",
+    "accentColor": "#FFF3D6",
+    "debutYear": 2016,
+    "description": {
+      "ja": "「天晴れ！」な熱量と圧倒的なダンス・ライブパフォーマンスで大型フェスを沸かせる最強ライブアイドル。",
+      "ko": "「앗파레(대단해)!」한 열량과 압도적인 댄스 및 라이브 퍼포먼스로 대형 페스티벌을 장악하는 최강 라이브 아이돌.",
+      "en": "A high-energy live idol group dominating festivals with unmatched dance and energetic performances."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://appare-official.jp/",
+    "ticketUrl": "https://ticketdive.com/artist/appare",
+    "chekiUrl": "https://appare1.thebase.in/",
+    "scheduleUrl": "https://appare-official.jp/schedule/",
+    "x": "https://x.com/official_appare",
+    "instagram": "https://www.instagram.com/appare_official/",
+    "tiktok": "https://www.tiktok.com/@official_appare",
+    "youtube": "https://www.youtube.com/@appare_official",
+    "members": [
+      {
+        "id": "appare-asahina-mei",
+        "groupId": "appare",
+        "name": {
+          "ja": {
+            "kanji": "朝比奈れい",
+            "kana": "あさひな れい"
+          },
+          "ko": {
+            "hangul": "아사히나 레이"
+          },
+          "en": {
+            "romaji": "Rei Asahina"
+          }
+        },
+        "memberColor": "#E60012",
+        "memberColorName": {
+          "ja": "赤色",
+          "ko": "레드",
+          "en": "Red"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/appare_rei",
+        "instagram": "https://www.instagram.com/reiasahina/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "appare-fujimiya-reimi",
+        "groupId": "appare",
+        "name": {
+          "ja": {
+            "kanji": "藤宮めい",
+            "kana": "ふじみや めい"
+          },
+          "ko": {
+            "hangul": "후지미야 메이"
+          },
+          "en": {
+            "romaji": "Mei Fujimiya"
+          }
+        },
+        "memberColor": "#FFFFFF",
+        "memberColorName": {
+          "ja": "白色",
+          "ko": "화이트",
+          "en": "White"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/appare_may",
+        "instagram": "https://www.instagram.com/meifujimiya/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "appare-nanase-suzuka",
+        "groupId": "appare",
+        "name": {
+          "ja": {
+            "kanji": "七瀬れあ",
+            "kana": "ななせ れあ"
+          },
+          "ko": {
+            "hangul": "나나세 레아"
+          },
+          "en": {
+            "romaji": "Rea Nanase"
+          }
+        },
+        "memberColor": "#FFD700",
+        "memberColorName": {
+          "ja": "黄色",
+          "ko": "옐로우",
+          "en": "Yellow"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/appare_rea",
+        "instagram": "https://www.instagram.com/rea_nanase/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "gang-parade",
+    "name": {
+      "ja": "GANG PARADE",
+      "ko": "갱 퍼레이드 (GANG PARADE)",
+      "en": "GANG PARADE"
+    },
+    "shortName": {
+      "ja": "ギャンパレ",
+      "ko": "걘파레",
+      "en": "GP"
+    },
+    "agency": "WACK",
+    "region": "tokyo",
+    "district": "shibuya",
+    "color": "#E6FF00",
+    "accentColor": "#1A1A1A",
+    "debutYear": 2014,
+    "description": {
+      "ja": "「みんなの遊び場」をコンセプトに活動するWACK所属の13人組アイドルグループ。",
+      "ko": "「모두의 놀이터」를 콘셉트로 활동하는 WACK 소속 13인조 라이브 아이돌 그룹.",
+      "en": "A 13-member powerhouse idol group from WACK performing under the concept \"Everyone's Playground\"."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://gangparade.jp/",
+    "ticketUrl": "https://w.pia.jp/t/gangparade/",
+    "chekiUrl": "https://gangparade.stores.jp/",
+    "scheduleUrl": "https://gangparade.jp/schedule/",
+    "x": "https://x.com/GANG_PARADE",
+    "instagram": "https://www.instagram.com/gang_parade_official/",
+    "tiktok": "https://www.tiktok.com/@gang_parade",
+    "youtube": "https://www.youtube.com/@GANGPARADE_official",
+    "members": [
+      {
+        "id": "gp-yumeka-nau",
+        "groupId": "gang-parade",
+        "name": {
+          "ja": {
+            "kanji": "ユメノユア",
+            "kana": "ゆめの ゆあ"
+          },
+          "ko": {
+            "hangul": "유메노 유아"
+          },
+          "en": {
+            "romaji": "Yua Yumeno"
+          }
+        },
+        "memberColor": "#E6FF00",
+        "memberColorName": {
+          "ja": "ネオンイエロー",
+          "ko": "네온 옐로우",
+          "en": "Neon Yellow"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/YUA_GANG",
+        "instagram": "https://www.instagram.com/yua_gangparade/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "gp-coco-partin",
+        "groupId": "gang-parade",
+        "name": {
+          "ja": {
+            "kanji": "ココ・パーティン・ココ",
+            "kana": "ここ ぱーてぃん ここ"
+          },
+          "ko": {
+            "hangul": "코코 파틴 코코"
+          },
+          "en": {
+            "romaji": "Coco Partin Coco"
+          }
+        },
+        "memberColor": "#FF4500",
+        "memberColorName": {
+          "ja": "オレンジレッド",
+          "ko": "오렌지 레드",
+          "en": "Orange Red"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/COCO_GANG",
+        "instagram": null,
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "dempagumi",
+    "name": {
+      "ja": "でんぱ組.inc",
+      "ko": "덴파구미.inc (Dempagumi.inc)",
+      "en": "Dempagumi.inc"
+    },
+    "shortName": {
+      "ja": "でんぱ組",
+      "ko": "덴파구미",
+      "en": "Dempa"
+    },
+    "agency": "DEARSTAGE",
+    "region": "tokyo",
+    "district": "akihabara",
+    "color": "#00E5FF",
+    "accentColor": "#E0F7FA",
+    "debutYear": 2008,
+    "description": {
+      "ja": "秋葉原ディアステージ発、アニメ・マンガ・ゲームなどオタクカルチャーを世界へ発信し続けた伝説的カルチャーアイドル。",
+      "ko": "아키하바라 디어스테이지 출신, 애니메이션·게임 등 서브컬처를 전 세계로 전파한 전설적인 아키바계 아이돌.",
+      "en": "Originating from Akihabara DearStage, a legendary pioneer of modern otaku-culture live idols."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://dempagumi.tokyo/",
+    "ticketUrl": "https://t.livepocket.jp/p/dearstage",
+    "chekiUrl": "https://dspmstore.com/shopbrand/dempa/",
+    "scheduleUrl": "https://dempagumi.tokyo/schedule/",
+    "x": "https://x.com/dempagumi",
+    "instagram": "https://www.instagram.com/dempagumi.official/",
+    "tiktok": "https://www.tiktok.com/@dempagumi_official",
+    "youtube": "https://www.youtube.com/@dempagumi",
+    "members": [
+      {
+        "id": "dempa-furukawa-mirin",
+        "groupId": "dempagumi",
+        "name": {
+          "ja": {
+            "kanji": "古川未鈴",
+            "kana": "ふるかわ みりん"
+          },
+          "ko": {
+            "hangul": "후루카와 미린"
+          },
+          "en": {
+            "romaji": "Mirin Furukawa"
+          }
+        },
+        "memberColor": "#E60012",
+        "memberColorName": {
+          "ja": "みりんレッド",
+          "ko": "미린 레드",
+          "en": "Mirin Red"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/FurukawaMirin",
+        "instagram": "https://www.instagram.com/furukawamirin/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "dempa-aizawa-risa",
+        "groupId": "dempagumi",
+        "name": {
+          "ja": {
+            "kanji": "相沢梨紗",
+            "kana": "あいざわ りさ"
+          },
+          "ko": {
+            "hangul": "아이자와 리사"
+          },
+          "en": {
+            "romaji": "Risa Aizawa"
+          }
+        },
+        "memberColor": "#FFFFFF",
+        "memberColorName": {
+          "ja": "りさホワイト",
+          "ko": "리사 화이트",
+          "en": "Risa White"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/RISA_memesama",
+        "instagram": "https://www.instagram.com/risacheeese/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "takane-no-nadeshiko",
+    "name": {
+      "ja": "高嶺のなでしこ",
+      "ko": "타카네노 나데시코 (Takane no Nadeshiko)",
+      "en": "Takane no Nadeshiko"
+    },
+    "shortName": {
+      "ja": "たかねこ",
+      "ko": "타카네코",
+      "en": "Takaneko"
+    },
+    "agency": "TWIN PLANET",
+    "region": "tokyo",
+    "district": "shibuya",
+    "color": "#8A2BE2",
+    "accentColor": "#F3E8FF",
+    "debutYear": 2022,
+    "description": {
+      "ja": "HoneyWorksがサウンドプロデュースを手がける、「美しく咲き誇る大和撫子」をコンセプトにした王道アイドルグループ。",
+      "ko": "HoneyWorks가 사운드 프로듀싱을 맡은, 「아름답게 피어나는 야마토 나데시코」 콘셉트의 청순 정통파 아이돌 그룹.",
+      "en": "Sound-produced by HoneyWorks, a captivating idol group showcasing beauty and talent."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://takanenonadeshiko.jp/",
+    "ticketUrl": "https://eplus.jp/takaneko/",
+    "chekiUrl": "https://takaneko.official.ec/",
+    "scheduleUrl": "https://takanenonadeshiko.jp/schedule/",
+    "x": "https://x.com/takanenofficial",
+    "instagram": "https://www.instagram.com/takanenofficial/",
+    "tiktok": "https://www.tiktok.com/@takanenonadeshiko",
+    "youtube": "https://www.youtube.com/@takanenonadeshiko",
+    "members": [
+      {
+        "id": "takaneko-momiyama-suzu",
+        "groupId": "takane-no-nadeshiko",
+        "name": {
+          "ja": {
+            "kanji": "籾山ひめり",
+            "kana": "もみやま ひめり"
+          },
+          "ko": {
+            "hangul": "모미야마 히메리"
+          },
+          "en": {
+            "romaji": "Himeri Momiyama"
+          }
+        },
+        "memberColor": "#4169E1",
+        "memberColorName": {
+          "ja": "ブルー",
+          "ko": "블루",
+          "en": "Blue"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/himeri_momiyama",
+        "instagram": "https://www.instagram.com/himeri_momiyama/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "takaneko-matsumoto-momoka",
+        "groupId": "takane-no-nadeshiko",
+        "name": {
+          "ja": {
+            "kanji": "松本ももな",
+            "kana": "まつもと ももな"
+          },
+          "ko": {
+            "hangul": "마츠모토 모모나"
+          },
+          "en": {
+            "romaji": "Momona Matsumoto"
+          }
+        },
+        "memberColor": "#FF69B4",
+        "memberColorName": {
+          "ja": "ピンク",
+          "ko": "핑크",
+          "en": "Pink"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/matsumoto_momona",
+        "instagram": "https://www.instagram.com/momona_matsumoto/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "colorful-scream",
+    "name": {
+      "ja": "カラフルスクリーム",
+      "ko": "컬러풀 스크림 (Colorful Scream)",
+      "en": "Colorful Scream"
+    },
+    "shortName": {
+      "ja": "カラスク",
+      "ko": "카라스쿠",
+      "en": "Karasuku"
+    },
+    "agency": "NTK Create (Osaka)",
+    "region": "osaka",
+    "district": "namba",
+    "color": "#00D26A",
+    "accentColor": "#E6F9F0",
+    "debutYear": 2017,
+    "description": {
+      "ja": "関西・大阪を拠点に全国へポジティブな歌声を届ける、関西屈指の王道メロディック・ライブアイドル。",
+      "ko": "간사이・오사카를 거점으로 전국에 긍정적인 에너지를 전하는 오사카 대표 멜로딕 라이브 아이돌.",
+      "en": "A premier melodic live idol group based in Osaka, Kansai bringing uplifting energy nationwide."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://colorfulscream.com/",
+    "ticketUrl": "https://tiget.net/users/77864",
+    "chekiUrl": "https://colorfulscream.stores.jp/",
+    "scheduleUrl": "https://colorfulscream.com/schedule/",
+    "x": "https://x.com/colorful_scream",
+    "instagram": "https://www.instagram.com/colorfulscream_official/",
+    "tiktok": "https://www.tiktok.com/@colorfulscream_official",
+    "youtube": "https://www.youtube.com/@colorfulscream_official",
+    "members": [
+      {
+        "id": "karasuku-nako",
+        "groupId": "colorful-scream",
+        "name": {
+          "ja": {
+            "kanji": "なこ",
+            "kana": "なこ"
+          },
+          "ko": {
+            "hangul": "나코"
+          },
+          "en": {
+            "romaji": "Nako"
+          }
+        },
+        "memberColor": "#FF69B4",
+        "memberColorName": {
+          "ja": "ピンク",
+          "ko": "핑크",
+          "en": "Pink"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/nako_colorful",
+        "instagram": "https://www.instagram.com/nako_colorful/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "karasuku-sara",
+        "groupId": "colorful-scream",
+        "name": {
+          "ja": {
+            "kanji": "さら",
+            "kana": "さら"
+          },
+          "ko": {
+            "hangul": "사라"
+          },
+          "en": {
+            "romaji": "Sara"
+          }
+        },
+        "memberColor": "#4169E1",
+        "memberColorName": {
+          "ja": "ブルー",
+          "ko": "블루",
+          "en": "Blue"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/sara_colorful",
+        "instagram": null,
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "title-mitei",
+    "name": {
+      "ja": "タイトル未定",
+      "ko": "타이틀 미정 (Title Mitei)",
+      "en": "Title Mitei"
+    },
+    "shortName": {
+      "ja": "未定",
+      "ko": "미정",
+      "en": "Mitei"
+    },
+    "agency": "TSUIMA Inc. (Sapporo)",
+    "region": "sapporo",
+    "district": "susukino",
+    "color": "#80BFFF",
+    "accentColor": "#F0F7FF",
+    "debutYear": 2020,
+    "description": {
+      "ja": "「何者かになろうとしなくていい」をテーマに、北海道・札幌から透明感ある叙情的な楽曲を届ける実력파 그룹.",
+      "ko": "「무엇이 되려 하지 않아도 괜찮아」를 테마로 홋카이도 삿포로에서 투명하고 서정적인 음악을 선보이는 감성 실력파 아이돌.",
+      "en": "A critically acclaimed Sapporo-based idol group known for poetic music and emotional live performances."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://miteititle.com/",
+    "ticketUrl": "https://t.livepocket.jp/t/miteititle",
+    "chekiUrl": "https://miteititle.stores.jp/",
+    "scheduleUrl": "https://miteititle.com/schedule/",
+    "x": "https://x.com/MiteiTitle",
+    "instagram": "https://www.instagram.com/miteititle/",
+    "tiktok": "https://www.tiktok.com/@miteititle",
+    "youtube": "https://www.youtube.com/@miteititle",
+    "members": [
+      {
+        "id": "mitei-abe-nanami",
+        "groupId": "title-mitei",
+        "name": {
+          "ja": {
+            "kanji": "阿部葉菜",
+            "kana": "あべ はな"
+          },
+          "ko": {
+            "hangul": "아베 하나"
+          },
+          "en": {
+            "romaji": "Hana Abe"
+          }
+        },
+        "memberColor": "#FFD700",
+        "memberColorName": {
+          "ja": "イエロー",
+          "ko": "옐로우",
+          "en": "Yellow"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/hana_mitei",
+        "instagram": "https://www.instagram.com/hana_abe_/",
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      },
+      {
+        "id": "mitei-tomita-nanami",
+        "groupId": "title-mitei",
+        "name": {
+          "ja": {
+            "kanji": "冨田菜々風",
+            "kana": "とみた ななか"
+          },
+          "ko": {
+            "hangul": "토미타 나나카"
+          },
+          "en": {
+            "romaji": "Nanaka Tomita"
+          }
+        },
+        "memberColor": "#4169E1",
+        "memberColorName": {
+          "ja": "ブルー",
+          "ko": "블루",
+          "en": "Blue"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/nanaka_mitei",
+        "instagram": null,
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "tebasaki-sensation",
+    "name": {
+      "ja": "手羽先センセーション",
+      "ko": "테바사키 센세이션 (Tebasaki Sensation)",
+      "en": "Tebasaki Sensation"
+    },
+    "shortName": {
+      "ja": "手羽セン",
+      "ko": "테바센",
+      "en": "Tebasen"
+    },
+    "agency": "FreeK-Laboratory (Nagoya)",
+    "region": "nagoya",
+    "district": "sakae",
+    "color": "#FF7043",
+    "accentColor": "#FBE9E7",
+    "debutYear": 2017,
+    "description": {
+      "ja": "名古屋・栄を拠点に沸かせる「名古屋発 情熱系王道アイドル」。疾走感あふれるロックナンバーと熱いライブが武器。",
+      "ko": "나고야 사카에를 거점으로 활동하는 나고야 대표 정열계 왕도 아이돌.",
+      "en": "A premier Nagoya-based live idol group known for melodic rock tunes and infectious live energy."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://tebasen.com/",
+    "ticketUrl": "https://t.livepocket.jp/t/tebasen",
+    "chekiUrl": "https://tebasen.stores.jp/",
+    "scheduleUrl": "https://tebasen.com/schedule/",
+    "x": "https://x.com/teba_sen",
+    "instagram": "https://www.instagram.com/tebasaki_sensation/",
+    "tiktok": "https://www.tiktok.com/@teba_sen",
+    "youtube": "https://www.youtube.com/@tebasen_official",
+    "members": [
+      {
+        "id": "tebasen-sakurano-riko",
+        "groupId": "tebasaki-sensation",
+        "name": {
+          "ja": {
+            "kanji": "佐山すずか",
+            "kana": "さやま すずか"
+          },
+          "ko": {
+            "hangul": "사야마 스즈카"
+          },
+          "en": {
+            "romaji": "Suzuka Sayama"
+          }
+        },
+        "memberColor": "#E60012",
+        "memberColorName": {
+          "ja": "赤色",
+          "ko": "레드",
+          "en": "Red"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/tebasen_suzuka",
+        "instagram": null,
+        "tiktok": null,
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  },
+  {
+    "id": "linq",
+    "name": {
+      "ja": "LinQ",
+      "ko": "링크 (LinQ)",
+      "en": "LinQ"
+    },
+    "shortName": {
+      "ja": "リンク",
+      "ko": "링크",
+      "en": "LinQ"
+    },
+    "agency": "IQ Project (Fukuoka)",
+    "region": "fukuoka",
+    "district": "tenjin",
+    "color": "#00B4D8",
+    "accentColor": "#E0F7FA",
+    "debutYear": 2011,
+    "description": {
+      "ja": "「Love in 九州」の頭文字から名付けられた、福岡・天神を拠点に全国・アジアへ笑顔を届ける九州を代表するアイドルグループ。",
+      "ko": "「Love in 큐슈」의 약자로서 후쿠오카 텐진을 거점으로 전국 및 아시아로 에너지를 전하는 큐슈 대표 아이돌 그룹.",
+      "en": "The definitive Fukuoka/Kyushu flagship idol group representing the vibrant Hakata idol scene."
+    },
+    "logoUrl": null,
+    "bannerUrl": null,
+    "officialSite": "https://www.loveinq.com/",
+    "ticketUrl": "https://tiget.net/users/5801",
+    "chekiUrl": "https://linq.official.ec/",
+    "scheduleUrl": "https://www.loveinq.com/schedule/",
+    "x": "https://x.com/LinQ_official",
+    "instagram": "https://www.instagram.com/linq_official/",
+    "tiktok": "https://www.tiktok.com/@linq_official",
+    "youtube": "https://www.youtube.com/@LinQofficial",
+    "members": [
+      {
+        "id": "linq-takaki-risa",
+        "groupId": "linq",
+        "name": {
+          "ja": {
+            "kanji": "高木悠未",
+            "kana": "たかき ゆうみ"
+          },
+          "ko": {
+            "hangul": "타카키 유우미"
+          },
+          "en": {
+            "romaji": "Yuumi Takaki"
+          }
+        },
+        "memberColor": "#E60012",
+        "memberColorName": {
+          "ja": "パッションレッド",
+          "ko": "패션 레드",
+          "en": "Passion Red"
+        },
+        "imageUrl": null,
+        "x": "https://x.com/yuumi_takaki",
+        "instagram": "https://www.instagram.com/yuumi_takaki17/",
+        "tiktok": "https://www.tiktok.com/@yuumi_takaki",
+        "showroom": null,
+        "cheki": null
+      }
+    ]
+  }
+]
