@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
+import { Analytics } from '@vercel/analytics/next';
 import { routing } from '@/i18n/routing';
 import { StarlightCanvas } from '@/components/background/StarlightCanvas';
 
@@ -31,6 +32,7 @@ export default async function LocaleLayout({
       <div className="relative min-h-screen flex flex-col justify-between selection:bg-pink-500/30 selection:text-pink-200">
         <StarlightCanvas />
         {children}
+        <Analytics />
       </div>
     </NextIntlClientProvider>
   );
