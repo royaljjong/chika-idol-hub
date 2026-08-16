@@ -4,7 +4,11 @@ import React from 'react';
 import { Link, usePathname } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 
-export function Navigation() {
+interface NavigationProps {
+  showBrand?: boolean;
+}
+
+export function Navigation({ showBrand = true }: NavigationProps) {
   const locale = useLocale();
   const pathname = usePathname();
 
@@ -15,38 +19,33 @@ export function Navigation() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-space-950/80 border-b border-white/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Brand */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="text-xl group-hover:rotate-12 transition-transform duration-300">
-            ✨
+    <nav className="relative z-20 flex items-center justify-between py-6 max-w-6xl mx-auto px-4 sm:px-6 w-full">
+      {showBrand ? (
+        <Link
+          href="/"
+          className="group flex items-center gap-2 text-lg sm:text-xl font-bold tracking-tight text-star-white font-[family-name:var(--font-klee-one)] focus-visible:outline-2"
+        >
+          <span className="w-2.5 h-2.5 rounded-full bg-pink-500 group-hover:scale-125 transition-transform" />
+          <span>
+            {locale === 'ko' ? '일본 전국 지하아이돌' : locale === 'ja' ? '日本全国 地下アイドル' : 'Japan Underground Idols'}
           </span>
-          <div className="flex flex-col">
-            <span className="text-sm sm:text-base font-bold tracking-tight text-star-white group-hover:text-pink-300 transition">
-              CHIKA IDOL HUB
-            </span>
-            <span className="text-[9px] uppercase tracking-widest text-star-faint font-mono">
-              Live Idol Constellation
-            </span>
-          </div>
+        </Link>
+      ) : (
+        <div aria-hidden="true" />
+      )}
+
+      {/* Top-right Actions: Search & Locales strictly aligned to far right */}
+      <div className="flex items-center gap-2.5 ml-auto">
+        <Link
+          href="/search"
+          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-xs font-medium text-star-white border border-white/10 shadow-sm transition hover:scale-105"
+        >
+          <span className="text-star-dim text-xs">🔍</span>
+          <span>{locale === 'ko' ? '검색' : locale === 'ja' ? '検索' : 'Search'}</span>
         </Link>
 
-        {/* Navigation Links & Search */}
-        <nav className="flex items-center gap-4 sm:gap-6 ml-auto mr-4">
-          <Link
-            href="/search"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/15 text-xs text-star-dim hover:text-star-white border border-white/10 transition"
-          >
-            <span>🔍</span>
-            <span className="hidden sm:inline">
-              {locale === 'ko' ? '검색' : locale === 'ja' ? '検索' : 'Search'}
-            </span>
-          </Link>
-        </nav>
-
         {/* Language Switcher */}
-        <div className="flex items-center gap-1 p-1 rounded-xl bg-white/5 border border-white/10 text-xs">
+        <div className="flex items-center gap-1 p-0.5 rounded-full bg-white/5 border border-white/10 text-xs">
           {locales.map((l) => {
             const isActive = locale === l.code;
             return (
@@ -54,9 +53,9 @@ export function Navigation() {
                 key={l.code}
                 href={pathname}
                 locale={l.code}
-                className={`px-2.5 py-1 rounded-lg font-medium transition ${
+                className={`px-2.5 py-1 rounded-full font-medium transition ${
                   isActive
-                    ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold shadow-sm'
+                    ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold shadow-sm'
                     : 'text-star-dim hover:text-star-white'
                 }`}
               >
@@ -66,6 +65,6 @@ export function Navigation() {
           })}
         </div>
       </div>
-    </header>
+    </nav>
   );
 }

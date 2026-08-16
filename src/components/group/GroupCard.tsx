@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import type { ChikaGroup } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
+import type { ChikaGroup } from '@/lib/schema';
 import { MemberAvatar } from '@/components/member/MemberAvatar';
 
 interface GroupCardProps {
@@ -14,108 +14,79 @@ export function GroupCard({ group, locale }: GroupCardProps) {
   const groupName = group.name[locale as 'ja' | 'ko' | 'en'] || group.name.ja;
   const description = group.description[locale as 'ja' | 'ko' | 'en'] || group.description.ja;
 
+  const previewMembers = group.members.slice(0, 4);
+  const remainingCount = group.members.length - previewMembers.length;
+
   return (
-    <div
-      className="group relative flex flex-col justify-between rounded-[32px] p-6 sm:p-8 bg-space-850/80 border border-white/10 hover:border-pink-500/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+    <Link
+      href={`/g/${group.id}`}
+      className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-[28px] bg-space-850/80 hover:bg-space-800/95 border border-white/10 hover:border-pink-500/50 shadow-lg hover:shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 focus-visible:outline-2 overflow-hidden"
     >
-      {/* Background radial accent glow */}
+      {/* Subtle background glow */}
       <div
-        className="absolute -right-20 -top-20 w-56 h-56 rounded-full blur-3xl opacity-20 group-hover:opacity-35 transition-opacity pointer-events-none"
+        className="absolute -right-16 -top-16 w-48 h-48 rounded-full blur-3xl opacity-20 group-hover:opacity-35 transition-opacity pointer-events-none"
         style={{ backgroundColor: group.color }}
       />
 
       <div>
-        {/* Top Badges */}
-        <div className="flex items-center justify-between gap-2 mb-4">
-          <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-white/10 text-star-white border border-white/15">
-            {group.agency}
-          </span>
-          <span
-            className="text-[11px] font-bold px-2.5 py-0.5 rounded-full"
-            style={{
-              color: group.color,
-              backgroundColor: `${group.color}20`,
-            }}
-          >
-            {group.district.toUpperCase()} ({group.region})
-          </span>
-        </div>
+        {/* Color accent pill indicator (Sakamichi signature) */}
+        <div
+          className="w-8 h-1.5 rounded-full mb-6 transition-all duration-300 group-hover:w-16"
+          style={{ backgroundColor: group.color }}
+        />
 
-        {/* Group Name */}
-        <div className="mb-3">
-          <Link
-            href={`/g/${group.id}`}
-            className="text-2xl sm:text-3xl font-extrabold text-star-white group-hover:text-pink-300 transition block font-[family-name:var(--font-klee-one)]"
-          >
+        {/* Group Name & Subtitles */}
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-star-white mb-1 font-[family-name:var(--font-klee-one)]">
+          {group.name.ja}
+        </h2>
+        {locale !== 'ja' && (
+          <p className="text-sm font-medium text-star-dim mb-2">
             {groupName}
-          </Link>
-          <span className="text-xs text-star-dim mt-1 block font-mono">
-            Debut {group.debutYear} • {group.members.length} Members
-          </span>
+          </p>
+        )}
+
+        {/* Formed Date & Stats */}
+        <div className="mt-4 space-y-1 text-xs text-star-dim font-mono">
+          <p>
+            {group.debutYear}年〜 • {group.agency}
+          </p>
+          <p className="font-medium text-pink-300">
+            {group.district.toUpperCase()} ({group.region}) • {group.members.length} Members
+          </p>
         </div>
 
-        {/* Description */}
-        <p className="text-xs sm:text-sm text-star-dim line-clamp-2 mb-6 leading-relaxed">
+        {/* Short description */}
+        <p className="mt-4 text-xs text-star-dim line-clamp-2 leading-relaxed">
           {description}
         </p>
+      </div>
 
-        {/* Member Avatars Grid (Sakamichi Hub Style) */}
-        {group.members.length > 0 && (
-          <div className="mb-6">
-            <span className="text-[11px] font-semibold text-star-faint mb-3 block uppercase tracking-wider font-mono">
-              Members Roster
-            </span>
-            <div className="grid grid-cols-4 gap-2.5">
-              {group.members.slice(0, 8).map((m) => {
-                const displayName = locale === 'ko' ? m.name.ko.hangul : locale === 'en' ? m.name.en.romaji : m.name.ja.kanji;
-
-                return (
-                  <Link
-                    key={m.id}
-                    href={`/m/${m.id}`}
-                    title={displayName}
-                    className="flex flex-col items-center text-center p-2 rounded-2xl bg-white/5 hover:bg-white/15 border border-white/10 hover:border-pink-500/50 transition-all hover:scale-105 group/m"
-                  >
-                    <MemberAvatar
-                      glyph={m.name.ja.kanji[0] || '★'}
-                      memberColor={m.memberColor}
-                      imageUrl={m.imageUrl}
-                      name={displayName}
-                      size={44}
-                      className="shadow-sm mb-1.5"
-                    />
-                    <span className="text-[11px] font-medium text-star-white truncate w-full group-hover/m:text-pink-300 transition">
-                      {displayName}
-                    </span>
-                  </Link>
-                );
-              })}
+      <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+        {/* Avatars Preview with overlapping rings (Sakamichi style) */}
+        <div className="flex items-center -space-x-2.5">
+          {previewMembers.map((m) => (
+            <MemberAvatar
+              key={m.id}
+              glyph={m.name.ja.kanji[0] || '★'}
+              memberColor={m.memberColor}
+              imageUrl={m.imageUrl}
+              name={m.name.ja.kanji}
+              size={38}
+              className="ring-2 ring-space-900 shadow-sm"
+            />
+          ))}
+          {remainingCount > 0 && (
+            <div className="flex items-center justify-center w-9 h-9 rounded-2xl bg-space-800 text-[11px] font-semibold text-star-dim ring-2 ring-space-900 shadow-sm font-mono">
+              +{remainingCount}
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
 
-      {/* Action Footer */}
-      <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3 mt-auto">
-        <Link
-          href={`/g/${group.id}`}
-          className="flex-1 text-center py-2.5 rounded-xl bg-white/10 hover:bg-pink-500 hover:text-white text-star-white text-xs font-bold transition-all shadow-md"
-        >
-          {locale === 'ko' ? '그룹 & 멤버 전체보기 →' : locale === 'ja' ? 'グループ・メンバー詳細 →' : 'View Group & Members →'}
-        </Link>
-
-        {group.ticketUrl && (
-          <a
-            href={group.ticketUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-3.5 py-2.5 rounded-xl bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 text-xs font-bold transition border border-pink-500/40"
-            title="Live Tickets"
-          >
-            🎟️
-          </a>
-        )}
+        {/* CTA Button */}
+        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-pink-400 group-hover:translate-x-1 transition-transform duration-200">
+          {locale === 'ko' ? '상세보기' : locale === 'ja' ? '詳細を見る' : 'View'} →
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
