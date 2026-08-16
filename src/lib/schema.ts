@@ -105,6 +105,7 @@ export const ChikaGroup = z.object({
   accentColor: z.string(),
   debutYear: z.number(),
   description: LocalizedText,
+  imageUrl: z.string().url().nullable().default(null),
   officialSite: z.string().url().nullable().default(null),
   ticketUrl: z.string().url().nullable().default(null),
   chekiUrl: z.string().url().nullable().default(null),

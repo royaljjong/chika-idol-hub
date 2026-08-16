@@ -1,69 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-
-export interface LocalizedText {
-  ja: string;
-  ko: string;
-  en: string;
-}
-
-export interface IdolLink {
-  type: 'official_profile' | 'official_blog' | 'twitter' | 'x' | 'instagram' | 'tiktok' | 'youtube' | 'showroom' | 'ticket' | 'cheki' | 'store';
-  url: string;
-  label: LocalizedText;
-  verified: boolean;
-  isPrimary: boolean;
-}
-
-export interface ChikaMember {
-  id: string;
-  groupId: string;
-  subUnitId: string;
-  name: {
-    ja: { kanji: string; kana: string };
-    ko: { hangul: string };
-    en: { romaji: string };
-  };
-  memberColor: string;
-  memberColorName: LocalizedText;
-  imageUrl: string | null;
-  birthDate: string | null;
-  birthplace: LocalizedText | null;
-  nickname: LocalizedText | null;
-  links: IdolLink[];
-}
-
-export interface SubUnit {
-  id: string;
-  name: LocalizedText;
-  debutYear: number;
-  description: LocalizedText;
-  ticketUrl: string | null;
-  chekiUrl: string | null;
-}
-
-export interface ChikaGroup {
-  id: string;
-  name: LocalizedText;
-  shortName: LocalizedText;
-  agency: string;
-  region: string;
-  district: string;
-  color: string;
-  accentColor: string;
-  debutYear: number;
-  description: LocalizedText;
-  officialSite: string | null;
-  ticketUrl: string | null;
-  chekiUrl: string | null;
-  scheduleUrl: string | null;
-  x: string | null;
-  instagram: string | null;
-  tiktok: string | null;
-  youtube: string | null;
-  subUnits: SubUnit[];
-  members: ChikaMember[];
-}
+import type { ChikaGroup } from '../src/lib/schema';
 
 export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
   // 1. KAWAII LAB. (ASOBISYSTEM - Harajuku & Shibuya)
@@ -77,6 +14,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
     color: '#FF6EA7',
     accentColor: '#FFE5EC',
     debutYear: 2022,
+    imageUrl: 'https://fruitszipper.asobisystem.com/assets/img/top/main_visual.jpg',
     description: {
       ja: '「原宿から世界へ」をコンセプトに、世界中を魅了するポップカルチャーと日本の「KAWAII」を発信するASOBISYSTEMのアイドルプロジェクト。',
       ko: '「하라주쿠에서 세계로」를 콘셉트로 전 세계를 매료시키는 팝 컬처와 일본의 「KAWAII」를 발신하는 아소비시스템의 대표 아이돌 프로젝트.',
@@ -268,7 +206,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '村川緋杏', kana: 'むらかわ びびあん' }, ko: { hangul: '무라카와 비비안' }, en: { romaji: 'Bibian Murakawa' } },
         memberColor: '#FF69B4',
         memberColorName: { ja: 'ピンク', ko: '핑크', en: 'Pink' },
-        imageUrl: null,
+        imageUrl: 'https://candy-tune.asobisystem.com/assets/img/member/bibian.jpg',
         birthDate: '1999-12-03',
         birthplace: { ja: '福岡県', ko: '후쿠오카현', en: 'Fukuoka' },
         nickname: { ja: 'びびあん', ko: '비비안', en: 'Bibian' },
@@ -284,7 +222,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '小川奈々子', kana: 'おがわ ななこ' }, ko: { hangul: '오가와 나나코' }, en: { romaji: 'Nanako Ogawa' } },
         memberColor: '#4169E1',
         memberColorName: { ja: 'ブルー', ko: '블루', en: 'Blue' },
-        imageUrl: null,
+        imageUrl: 'https://candy-tune.asobisystem.com/assets/img/member/nachico.jpg',
         birthDate: '1999-10-01',
         birthplace: { ja: '北海道', ko: '홋카이도', en: 'Hokkaido' },
         nickname: { ja: 'ななこ', ko: '나나코', en: 'Nanako' },
@@ -306,6 +244,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
     color: '#FF2E7E',
     accentColor: '#FFD6E5',
     debutYear: 2018,
+    imageUrl: 'https://heroines.jp/assets/img/ogp.png',
     description: {
       ja: 'iLiFE!、Appare!、夜光性アミューズ、Jams Collectionなどを擁し、圧倒的なライブ動員と熱狂を生み出す日本最大級のライブアイドル総合プロダクション。',
       ko: 'iLiFE!, Appare!, 야광성 어뮤즈, Jams Collection 등을 보유하며 압도적인 티켓 파워와 페스티벌 열기를 자랑하는 일본 최대 규모의 라이브 아이돌 레이블.',
@@ -366,7 +305,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '心花りり', kana: 'しんぞめ りり' }, ko: { hangul: '신조메 리리' }, en: { romaji: 'Riri Shinzome' } },
         memberColor: '#E60033',
         memberColorName: { ja: '赤色', ko: '레드', en: 'Red' },
-        imageUrl: null,
+        imageUrl: 'https://heroines.jp/assets/img/artist/ilife/riri.png',
         birthDate: '2000-05-19',
         birthplace: { ja: '神奈川県', ko: '가나가와현', en: 'Kanagawa' },
         nickname: { ja: 'りりちゃん', ko: '리리짱', en: 'Riri-chan' },
@@ -384,7 +323,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: 'あいす', kana: 'あいす' }, ko: { hangul: '아이스' }, en: { romaji: 'Aisu' } },
         memberColor: '#B0E0E6',
         memberColorName: { ja: '白色・水色', ko: '화이트/라이트블루', en: 'White Light Blue' },
-        imageUrl: null,
+        imageUrl: 'https://heroines.jp/assets/img/artist/ilife/aisu.png',
         birthDate: '2006-01-24',
         birthplace: { ja: '東京都', ko: '도쿄도', en: 'Tokyo' },
         nickname: { ja: 'あいす', ko: '아이스', en: 'Aisu' },
@@ -401,7 +340,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '水瀬らむ', kana: 'みなせ らむ' }, ko: { hangul: '미나세 라무' }, en: { romaji: 'Ramu Minase' } },
         memberColor: '#4169E1',
         memberColorName: { ja: '青色', ko: '블루', en: 'Blue' },
-        imageUrl: null,
+        imageUrl: 'https://heroines.jp/assets/img/artist/ilife/ramu.png',
         birthDate: '2002-12-07',
         birthplace: { ja: '東京都', ko: '도쿄도', en: 'Tokyo' },
         nickname: { ja: 'らむちゃん', ko: '라무짱', en: 'Ramu-chan' },
@@ -417,7 +356,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '若葉のあ', kana: 'わかば のあ' }, ko: { hangul: '와카바 노아' }, en: { romaji: 'Noa Wakaba' } },
         memberColor: '#32CD32',
         memberColorName: { ja: '緑色', ko: '그린', en: 'Green' },
-        imageUrl: null,
+        imageUrl: 'https://heroines.jp/assets/img/artist/ilife/noa.png',
         birthDate: '2001-08-10',
         birthplace: { ja: '愛知県', ko: '아이치현', en: 'Aichi' },
         nickname: { ja: 'のあちゃん', ko: '노아짱', en: 'Noa-chan' },
@@ -434,7 +373,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '朝比奈れい', kana: 'あさひな れい' }, ko: { hangul: '아사히나 레이' }, en: { romaji: 'Rei Asahina' } },
         memberColor: '#E60012',
         memberColorName: { ja: '赤色', ko: '레드', en: 'Red' },
-        imageUrl: null,
+        imageUrl: 'https://appare-official.jp/img/profile/rei.jpg',
         birthDate: '2000-03-17',
         birthplace: { ja: '東京都', ko: '도쿄도', en: 'Tokyo' },
         nickname: { ja: 'れいちゃん', ko: '레이짱', en: 'Rei-chan' },
@@ -450,7 +389,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '藤宮めい', kana: 'ふじみや めい' }, ko: { hangul: '후지미야 메이' }, en: { romaji: 'Mei Fujimiya' } },
         memberColor: '#FFFFFF',
         memberColorName: { ja: '白色', ko: '화이트', en: 'White' },
-        imageUrl: null,
+        imageUrl: 'https://appare-official.jp/img/profile/may.jpg',
         birthDate: '2001-09-28',
         birthplace: { ja: '埼玉県', ko: '사이타마현', en: 'Saitama' },
         nickname: { ja: 'めいめい', ko: '메이메이', en: 'Meimei' },
@@ -473,6 +412,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
     color: '#E6FF00',
     accentColor: '#111827',
     debutYear: 2014,
+    imageUrl: 'https://www.wack.jp/assets/img/ogp.jpg',
     description: {
       ja: '「常識を打ち破る」ロックサウンドとエモーショナルなライブで熱狂的信者を生み出し続ける、渋谷発のカルチャー・エンタテインメント集団。',
       ko: '「상식을 파괴한다」는 슬로건으로 록 사운드와 파격적인 라이브 퍼포먼스를 선보이는 시부야 거점의 전설적인 아이돌 기획사.',
@@ -504,7 +444,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: 'ASP', ko: '에이에스피 (ASP)', en: 'ASP' },
         debutYear: 2021,
         description: {
-          ja: 'メ이저 데뷔를 이뤄낸 파워풀 펑크 록 아이돌 그룹.',
+          ja: 'メジャーデビューを果たしたパワフルなパンクロックアイドルグループ。',
           ko: '거침없는 펑크 록 사운드로 무대를 뒤흔드는 메이저 라이브 그룹.',
           en: 'High-speed punk rock sensation from WACK.',
         },
@@ -520,7 +460,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: 'ユメノユア', kana: 'ゆめの ゆあ' }, ko: { hangul: '유메노 유아' }, en: { romaji: 'Yua Yumeno' } },
         memberColor: '#E6FF00',
         memberColorName: { ja: 'ネオンイエロー', ko: '네온 옐로우', en: 'Neon Yellow' },
-        imageUrl: null,
+        imageUrl: 'https://gangparade.jp/assets/img/member/yua.jpg',
         birthDate: '1996-03-27',
         birthplace: { ja: '神奈川県', ko: '가나가와현', en: 'Kanagawa' },
         nickname: { ja: 'ユアちゃん', ko: '유아짱', en: 'Yua-chan' },
@@ -536,7 +476,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: 'ココ・パーティン・ココ', kana: 'ここ ぱーてぃん ここ' }, ko: { hangul: '코코 파틴 코코' }, en: { romaji: 'Coco Partin Coco' } },
         memberColor: '#FF4500',
         memberColorName: { ja: 'オレンジレッド', ko: '오렌지 레드', en: 'Orange Red' },
-        imageUrl: null,
+        imageUrl: 'https://gangparade.jp/assets/img/member/coco.jpg',
         birthDate: '1995-10-01',
         birthplace: { ja: '愛知県', ko: '아이치현', en: 'Aichi' },
         nickname: { ja: 'ココちゃん', ko: '코코짱', en: 'Coco-chan' },
@@ -558,6 +498,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
     color: '#00E5FF',
     accentColor: '#E0F7FA',
     debutYear: 2008,
+    imageUrl: 'https://dempagumi.tokyo/wp-content/themes/dempa2023/images/ogp.jpg',
     description: {
       ja: '秋葉原ディアステージ発、アニメ・ゲーム・ボーカロイドなど日本のオタクカルチャーとアイドルを融合させたカルチャーの聖地。',
       ko: '아키하바라 디어스테이지 출신, 서브컬처와 아이돌을 융합시켜 현대 지하아이돌 씬의 근간을 만든 역사적인 아키바 레이블.',
@@ -593,7 +534,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '古川未鈴', kana: 'ふるかわ みりん' }, ko: { hangul: '후루카와 미린' }, en: { romaji: 'Mirin Furukawa' } },
         memberColor: '#E60012',
         memberColorName: { ja: 'みりんレッド', ko: '미린 레드', en: 'Mirin Red' },
-        imageUrl: null,
+        imageUrl: 'https://dempagumi.tokyo/wp-content/themes/dempa2023/images/profile/mirin.jpg',
         birthDate: '1987-09-19',
         birthplace: { ja: '香川県', ko: '가가와현', en: 'Kagawa' },
         nickname: { ja: 'みりんちゃん', ko: '미린짱', en: 'Mirin-chan' },
@@ -609,7 +550,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '相沢梨紗', kana: 'あいざわ りさ' }, ko: { hangul: '아이자와 리사' }, en: { romaji: 'Risa Aizawa' } },
         memberColor: '#FFFFFF',
         memberColorName: { ja: 'りさホワイト', ko: '리사 화이트', en: 'Risa White' },
-        imageUrl: null,
+        imageUrl: 'https://dempagumi.tokyo/wp-content/themes/dempa2023/images/profile/risa.jpg',
         birthDate: '1988-08-02',
         birthplace: { ja: '大阪府', ko: '오사카부', en: 'Osaka' },
         nickname: { ja: 'りさちー', ko: '리사치', en: 'Risachee' },
@@ -632,6 +573,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
     color: '#10B981',
     accentColor: '#E6F9F0',
     debutYear: 2017,
+    imageUrl: 'https://colorfulscream.com/wp-content/themes/colorfulscream/img/ogp.jpg',
     description: {
       ja: '大阪・難波や心斎橋を拠点に、圧倒的な熱量と親しみやすさで関西から全国を沸かせるライブアイドル勢。',
       ko: '오사카 난바와 신사이바시를 거점으로 독보적인 에너지와 긍정적인 라이브로 전국을 달구는 간사이 대표 아이돌 군단.',
@@ -667,7 +609,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: 'なこ', kana: 'なこ' }, ko: { hangul: '나코' }, en: { romaji: 'Nako' } },
         memberColor: '#FF69B4',
         memberColorName: { ja: 'ピンク', ko: '핑크', en: 'Pink' },
-        imageUrl: null,
+        imageUrl: 'https://colorfulscream.com/wp-content/themes/colorfulscream/img/member/nako.jpg',
         birthDate: '1998-07-18',
         birthplace: { ja: '大阪府', ko: '오사카부', en: 'Osaka' },
         nickname: { ja: 'なこちゃん', ko: '나코짱', en: 'Nako-chan' },
@@ -690,6 +632,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
     color: '#38BDF8',
     accentColor: '#F0F9FF',
     debutYear: 2011,
+    imageUrl: 'https://miteititle.com/img/ogp.jpg',
     description: {
       ja: '北海道・札幌の「タイトル未定」、名古屋・栄の「手羽先センセーション」、福岡・博多の「LinQ」など全国各都市を代表する有力グループ。',
       ko: '홋카이도 삿포로의 「타이틀 미정」, 나고야 사카에의 「테바사키 센세이션」, 후쿠오카 하카타의 「LinQ」 등 일본 각 도시를 대표하는 로컬 대표 그룹.',
@@ -737,7 +680,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '阿部葉菜', kana: 'あべ はな' }, ko: { hangul: '아베 하나' }, en: { romaji: 'Hana Abe' } },
         memberColor: '#FFD700',
         memberColorName: { ja: 'イエロー', ko: '옐로우', en: 'Yellow' },
-        imageUrl: null,
+        imageUrl: 'https://miteititle.com/img/member/abe.jpg',
         birthDate: '2000-01-27',
         birthplace: { ja: '北海道', ko: '홋카이도', en: 'Hokkaido' },
         nickname: { ja: 'はなちゃん', ko: '하나짱', en: 'Hana-chan' },
@@ -753,7 +696,7 @@ export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
         name: { ja: { kanji: '高木悠未', kana: 'たかき ゆうみ' }, ko: { hangul: '타카키 유우미' }, en: { romaji: 'Yuumi Takaki' } },
         memberColor: '#E60012',
         memberColorName: { ja: 'パッションレッド', ko: '패션 레드', en: 'Passion Red' },
-        imageUrl: null,
+        imageUrl: 'https://loveinq.com/assets/img/member/yuumi.jpg',
         birthDate: '1997-05-17',
         birthplace: { ja: '福岡県', ko: '후쿠오카현', en: 'Fukuoka' },
         nickname: { ja: 'ゆうみん', ko: '유우민', en: 'Yuumin' },
@@ -772,7 +715,7 @@ function seed() {
 
   const outPath = path.join(dataDir, 'chika-groups.json');
   fs.writeFileSync(outPath, JSON.stringify(CHIKA_GROUPS_DATA, null, 2), 'utf-8');
-  console.log(`✅ Seeded ${CHIKA_GROUPS_DATA.length} Chika Major Groups & Label Hubs to data/chika-groups.json`);
+  console.log(`✅ Seeded ${CHIKA_GROUPS_DATA.length} Chika Major Groups with official photos to data/chika-groups.json`);
 }
 
 seed();
