@@ -3,6 +3,7 @@
 import React from 'react';
 import type { ChikaGroup } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
+import { MemberAvatar } from '@/components/member/MemberAvatar';
 
 interface GroupCardProps {
   group: ChikaGroup;
@@ -19,7 +20,7 @@ export function GroupCard({ group, locale }: GroupCardProps) {
     >
       {/* Background radial accent glow */}
       <div
-        className="absolute -right-16 -top-16 w-44 h-44 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity pointer-events-none"
+        className="absolute -right-20 -top-20 w-56 h-56 rounded-full blur-3xl opacity-20 group-hover:opacity-35 transition-opacity pointer-events-none"
         style={{ backgroundColor: group.color }}
       />
 
@@ -44,7 +45,7 @@ export function GroupCard({ group, locale }: GroupCardProps) {
         <div className="mb-3">
           <Link
             href={`/g/${group.id}`}
-            className="text-2xl sm:text-3xl font-bold text-star-white group-hover:text-pink-300 transition block font-[family-name:var(--font-klee-one)]"
+            className="text-2xl sm:text-3xl font-extrabold text-star-white group-hover:text-pink-300 transition block font-[family-name:var(--font-klee-one)]"
           >
             {groupName}
           </Link>
@@ -54,33 +55,36 @@ export function GroupCard({ group, locale }: GroupCardProps) {
         </div>
 
         {/* Description */}
-        <p className="text-xs sm:text-sm text-star-dim line-clamp-3 mb-6 leading-relaxed">
+        <p className="text-xs sm:text-sm text-star-dim line-clamp-2 mb-6 leading-relaxed">
           {description}
         </p>
 
-        {/* Member Avatars Preview List (Sakamichi style) */}
+        {/* Member Avatars Grid (Sakamichi Hub Style) */}
         {group.members.length > 0 && (
           <div className="mb-6">
-            <span className="text-[11px] font-semibold text-star-faint mb-2 block uppercase tracking-wider font-mono">
-              Members Preview
+            <span className="text-[11px] font-semibold text-star-faint mb-3 block uppercase tracking-wider font-mono">
+              Members Roster
             </span>
-            <div className="flex flex-wrap gap-2 items-center">
-              {group.members.map((m) => {
+            <div className="grid grid-cols-4 gap-2.5">
+              {group.members.slice(0, 8).map((m) => {
                 const displayName = locale === 'ko' ? m.name.ko.hangul : locale === 'en' ? m.name.en.romaji : m.name.ja.kanji;
-                const colorName = m.memberColorName[locale as 'ja' | 'ko' | 'en'] || m.memberColorName.ja;
 
                 return (
                   <Link
                     key={m.id}
                     href={`/m/${m.id}`}
-                    title={`${displayName} (${colorName})`}
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 transition-all hover:scale-105"
+                    title={displayName}
+                    className="flex flex-col items-center text-center p-2 rounded-2xl bg-white/5 hover:bg-white/15 border border-white/10 hover:border-pink-500/50 transition-all hover:scale-105 group/m"
                   >
-                    <span
-                      className="w-2.5 h-2.5 rounded-full shadow-sm"
-                      style={{ backgroundColor: m.memberColor }}
+                    <MemberAvatar
+                      glyph={m.name.ja.kanji[0] || '★'}
+                      memberColor={m.memberColor}
+                      imageUrl={m.imageUrl}
+                      name={displayName}
+                      size={44}
+                      className="shadow-sm mb-1.5"
                     />
-                    <span className="text-xs text-star-white font-medium truncate max-w-[90px]">
+                    <span className="text-[11px] font-medium text-star-white truncate w-full group-hover/m:text-pink-300 transition">
                       {displayName}
                     </span>
                   </Link>
@@ -91,7 +95,7 @@ export function GroupCard({ group, locale }: GroupCardProps) {
         )}
       </div>
 
-      {/* Action Footer Bar */}
+      {/* Action Footer */}
       <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3 mt-auto">
         <Link
           href={`/g/${group.id}`}

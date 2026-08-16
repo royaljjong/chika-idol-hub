@@ -1,36 +1,151 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import type { ChikaGroup } from '../src/lib/schema';
 
-export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
-  // 1. FRUITS ZIPPER
+export interface LocalizedText {
+  ja: string;
+  ko: string;
+  en: string;
+}
+
+export interface IdolLink {
+  type: 'official_profile' | 'official_blog' | 'twitter' | 'x' | 'instagram' | 'tiktok' | 'youtube' | 'showroom' | 'ticket' | 'cheki' | 'store';
+  url: string;
+  label: LocalizedText;
+  verified: boolean;
+  isPrimary: boolean;
+}
+
+export interface ChikaMember {
+  id: string;
+  groupId: string;
+  subUnitId: string;
+  name: {
+    ja: { kanji: string; kana: string };
+    ko: { hangul: string };
+    en: { romaji: string };
+  };
+  memberColor: string;
+  memberColorName: LocalizedText;
+  imageUrl: string | null;
+  birthDate: string | null;
+  birthplace: LocalizedText | null;
+  nickname: LocalizedText | null;
+  links: IdolLink[];
+}
+
+export interface SubUnit {
+  id: string;
+  name: LocalizedText;
+  debutYear: number;
+  description: LocalizedText;
+  ticketUrl: string | null;
+  chekiUrl: string | null;
+}
+
+export interface ChikaGroup {
+  id: string;
+  name: LocalizedText;
+  shortName: LocalizedText;
+  agency: string;
+  region: string;
+  district: string;
+  color: string;
+  accentColor: string;
+  debutYear: number;
+  description: LocalizedText;
+  officialSite: string | null;
+  ticketUrl: string | null;
+  chekiUrl: string | null;
+  scheduleUrl: string | null;
+  x: string | null;
+  instagram: string | null;
+  tiktok: string | null;
+  youtube: string | null;
+  subUnits: SubUnit[];
+  members: ChikaMember[];
+}
+
+export const CHIKA_GROUPS_DATA: ChikaGroup[] = [
+  // 1. KAWAII LAB. (ASOBISYSTEM - Harajuku & Shibuya)
   {
-    id: 'fruits-zipper',
-    name: { ja: 'FRUITS ZIPPER', ko: '후르츠 지퍼 (FRUITS ZIPPER)', en: 'FRUITS ZIPPER' },
-    shortName: { ja: 'ふるっぱー', ko: '후룹파', en: 'FZ' },
-    agency: 'ASOBISYSTEM (KAWAII LAB.)',
+    id: 'kawaii-lab',
+    name: { ja: 'KAWAII LAB.', ko: '카와이 랩 (KAWAII LAB.)', en: 'KAWAII LAB.' },
+    shortName: { ja: 'カワラボ', ko: '카와라보', en: 'KAWAII LAB.' },
+    agency: 'ASOBISYSTEM',
     region: 'tokyo',
     district: 'harajuku',
     color: '#FF6EA7',
     accentColor: '#FFE5EC',
     debutYear: 2022,
     description: {
-      ja: '「原宿から世界へ」をコンセプトに、多様なカルチャーを発信するKAWAII LAB.の第1弾アイドルグループ。',
-      ko: '「하라주쿠에서 세계로」를 콘셉트로 다양한 카와이 문화를 발신하는 KAWAII LAB. 제1탄 아이돌 그룹.',
-      en: 'The first idol group from KAWAII LAB. transmitting diverse Harajuku culture under the concept "From Harajuku to the World".',
+      ja: '「原宿から世界へ」をコンセプトに、世界中を魅了するポップカルチャーと日本の「KAWAII」を発信するASOBISYSTEMのアイドルプロジェクト。',
+      ko: '「하라주쿠에서 세계로」를 콘셉트로 전 세계를 매료시키는 팝 컬처와 일본의 「KAWAII」를 발신하는 아소비시스템의 대표 아이돌 프로젝트.',
+      en: 'ASOBISYSTEM\'s flagship idol project transmitting Japan\'s "KAWAII" culture worldwide under the concept "From Harajuku to the World".',
     },
-    officialSite: 'https://fruitszipper.asobisystem.com/',
+    officialSite: 'https://kawaiilab.asobisystem.com/',
     ticketUrl: 'https://l-tike.com/fruitszipper/',
     chekiUrl: 'https://kawaiilab.stores.jp/',
     scheduleUrl: 'https://fruitszipper.asobisystem.com/schedule/',
-    x: 'https://x.com/fruits_zipper',
-    instagram: 'https://www.instagram.com/fruits_zipper/',
-    tiktok: 'https://www.tiktok.com/@fruits_zipper',
-    youtube: 'https://www.youtube.com/@fruitszipper3799',
+    x: 'https://x.com/KAWAII__LAB',
+    instagram: 'https://www.instagram.com/kawaii__lab/',
+    tiktok: 'https://www.tiktok.com/@kawaii__lab',
+    youtube: 'https://www.youtube.com/@KAWAIILAB',
+    subUnits: [
+      {
+        id: 'fruits-zipper',
+        name: { ja: 'FRUITS ZIPPER', ko: '후르츠 지퍼 (FRUITS ZIPPER)', en: 'FRUITS ZIPPER' },
+        debutYear: 2022,
+        description: {
+          ja: '「わたしの一番かわいいところ」がSNSで爆発的ヒットを記録したKAWAII LAB.の第1弾グループ。',
+          ko: '「내가 가장 귀여운 곳」으로 틱톡 9억 뷰를 돌파하며 일본 대세가 된 카와이랩 제1탄 그룹.',
+          en: 'The breakthrough first group of KAWAII LAB. who dominated viral charts with "Watashi no Ichiban Kawaii Tokoro".',
+        },
+        ticketUrl: 'https://l-tike.com/fruitszipper/',
+        chekiUrl: 'https://kawaiilab.stores.jp/',
+      },
+      {
+        id: 'candy-tune',
+        name: { ja: 'CANDY TUNE', ko: '캔디 튠 (CANDY TUNE)', en: 'CANDY TUNE' },
+        debutYear: 2023,
+        description: {
+          ja: '「フレーフレー私！」など疾走感とキュートさを兼ね備えたKAWAII LAB.第2弾グループ。',
+          ko: '통통 튀는 캔디 같은 멜로디와 상큼한 에너지를 전하는 카와이랩 제2탄 그룹.',
+          en: 'The second group of KAWAII LAB. radiating colorful, energetic pop tunes.',
+        },
+        ticketUrl: 'https://l-tike.com/candytune/',
+        chekiUrl: 'https://kawaiilab.stores.jp/',
+      },
+      {
+        id: 'sweet-steady',
+        name: { ja: 'SWEET STEADY', ko: '스위트 스테디 (SWEET STEADY)', en: 'SWEET STEADY' },
+        debutYear: 2024,
+        description: {
+          ja: '「かわいい」の王道を受け継ぐKAWAII LAB.第3弾グループ。',
+          ko: '청순함과 달콤한 카와이 매력을 선사하는 카와이랩 제3탄 그룹.',
+          en: 'The sweet, pure idol sensation from KAWAII LAB.',
+        },
+        ticketUrl: 'https://l-tike.com/sweetsteady/',
+        chekiUrl: 'https://kawaiilab.stores.jp/',
+      },
+      {
+        id: 'cutie-street',
+        name: { ja: 'CUTIE STREET', ko: '큐티 스트리트 (CUTIE STREET)', en: 'CUTIE STREET' },
+        debutYear: 2024,
+        description: {
+          ja: '「KAWAII MAKER」を掲げ、原宿ストリートから最新トレンドを創り出す第4弾グループ。',
+          ko: '「KAWAII MAKER」를 테마로 하라주쿠 스트리트 감성을 전하는 제4탄 그룹.',
+          en: 'The newest KAWAII LAB. group creating fresh Harajuku street trends.',
+        },
+        ticketUrl: 'https://l-tike.com/cutiestreet/',
+        chekiUrl: 'https://kawaiilab.stores.jp/',
+      },
+    ],
     members: [
+      // FRUITS ZIPPER
       {
         id: 'fz-matsumoto-karen',
-        groupId: 'fruits-zipper',
+        groupId: 'kawaii-lab',
+        subUnitId: 'fruits-zipper',
         name: { ja: { kanji: '松本かれん', kana: 'まつもと かれん' }, ko: { hangul: '마츠모토 카렌' }, en: { romaji: 'Karen Matsumoto' } },
         memberColor: '#FFA7C4',
         memberColorName: { ja: 'ベビーピンク', ko: '베이비 핑크', en: 'Baby Pink' },
@@ -42,13 +157,14 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
           { type: 'x', url: 'https://x.com/karen_fz0328', label: { ja: 'X (Twitter)', ko: '공식 X (트위터)', en: 'Official X' }, verified: true, isPrimary: true },
           { type: 'instagram', url: 'https://www.instagram.com/karen_matsumoto_/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
           { type: 'tiktok', url: 'https://www.tiktok.com/@karen_matsumoto_', label: { ja: 'TikTok', ko: '틱톡', en: 'TikTok' }, verified: true, isPrimary: false },
-          { type: 'cheki', url: 'https://kawaiilab.stores.jp/', label: { ja: '公式チェキ・グッズ', ko: '공식 체키・굿즈 스토어', en: 'Official Goods Store' }, verified: true, isPrimary: false },
+          { type: 'cheki', url: 'https://kawaiilab.stores.jp/', label: { ja: '公式チェキ・グッズ', ko: '공식 체키・스토어', en: 'Cheki Store' }, verified: true, isPrimary: false },
           { type: 'ticket', url: 'https://l-tike.com/fruitszipper/', label: { ja: 'ライブチケット', ko: '라이브 티켓 예매', en: 'Live Tickets' }, verified: true, isPrimary: false },
         ],
       },
       {
         id: 'fz-sakurai-yui',
-        groupId: 'fruits-zipper',
+        groupId: 'kawaii-lab',
+        subUnitId: 'fruits-zipper',
         name: { ja: { kanji: '櫻井優衣', kana: 'さくらい ゆい' }, ko: { hangul: '사쿠라이 유이' }, en: { romaji: 'Yui Sakurai' } },
         memberColor: '#72D792',
         memberColorName: { ja: 'ミントグリーン', ko: '민트 그린', en: 'Mint Green' },
@@ -60,12 +176,13 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
           { type: 'x', url: 'https://x.com/yui_fz0221', label: { ja: 'X (Twitter)', ko: '공식 X (트위터)', en: 'Official X' }, verified: true, isPrimary: true },
           { type: 'instagram', url: 'https://www.instagram.com/yui.sakurai_7/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
           { type: 'tiktok', url: 'https://www.tiktok.com/@sakuraiyui221', label: { ja: 'TikTok', ko: '틱톡', en: 'TikTok' }, verified: true, isPrimary: false },
-          { type: 'cheki', url: 'https://kawaiilab.stores.jp/', label: { ja: '公式チェキ・グッズ', ko: '공식 체키・굿즈 스토어', en: 'Official Goods Store' }, verified: true, isPrimary: false },
+          { type: 'cheki', url: 'https://kawaiilab.stores.jp/', label: { ja: '公式チェキ・グッズ', ko: '공식 체키・스토어', en: 'Cheki Store' }, verified: true, isPrimary: false },
         ],
       },
       {
         id: 'fz-chinzei-suzuka',
-        groupId: 'fruits-zipper',
+        groupId: 'kawaii-lab',
+        subUnitId: 'fruits-zipper',
         name: { ja: { kanji: '鎮西寿々歌', kana: 'ちんぜい すずか' }, ko: { hangul: '친제이 스즈카' }, en: { romaji: 'Suzuka Chinzei' } },
         memberColor: '#FF9E40',
         memberColorName: { ja: 'オレンジ', ko: '오렌지', en: 'Orange' },
@@ -81,7 +198,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'fz-tsukiashi-amane',
-        groupId: 'fruits-zipper',
+        groupId: 'kawaii-lab',
+        subUnitId: 'fruits-zipper',
         name: { ja: { kanji: '月足天音', kana: 'つきあし あまね' }, ko: { hangul: '츠키아시 아마네' }, en: { romaji: 'Amane Tsukiashi' } },
         memberColor: '#E63946',
         memberColorName: { ja: 'レッド', ko: '레드', en: 'Red' },
@@ -96,7 +214,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'fz-manaka-mana',
-        groupId: 'fruits-zipper',
+        groupId: 'kawaii-lab',
+        subUnitId: 'fruits-zipper',
         name: { ja: { kanji: '真中まな', kana: 'まなか まな' }, ko: { hangul: '마나카 마나' }, en: { romaji: 'Mana Manaka' } },
         memberColor: '#457B9D',
         memberColorName: { ja: 'スカイブルー', ko: '스카이 블루', en: 'Sky Blue' },
@@ -111,7 +230,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'fz-hayase-noel',
-        groupId: 'fruits-zipper',
+        groupId: 'kawaii-lab',
+        subUnitId: 'fruits-zipper',
         name: { ja: { kanji: '早瀬ノエル', kana: 'はやせ のえる' }, ko: { hangul: '하야세 노엘' }, en: { romaji: 'Noel Hayase' } },
         memberColor: '#F4E409',
         memberColorName: { ja: 'イエロー', ko: '옐로우', en: 'Yellow' },
@@ -126,7 +246,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'fz-nakagawa-runa',
-        groupId: 'fruits-zipper',
+        groupId: 'kawaii-lab',
+        subUnitId: 'fruits-zipper',
         name: { ja: { kanji: '仲川瑠夏', kana: 'なかがわ るな' }, ko: { hangul: '나카가와 루나' }, en: { romaji: 'Runa Nakagawa' } },
         memberColor: '#9D4EDD',
         memberColorName: { ja: 'パープル', ko: '퍼플', en: 'Purple' },
@@ -139,37 +260,109 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
           { type: 'instagram', url: 'https://www.instagram.com/luna_nakagawa/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
         ],
       },
+      // CANDY TUNE
+      {
+        id: 'ct-murakawa-bibian',
+        groupId: 'kawaii-lab',
+        subUnitId: 'candy-tune',
+        name: { ja: { kanji: '村川緋杏', kana: 'むらかわ びびあん' }, ko: { hangul: '무라카와 비비안' }, en: { romaji: 'Bibian Murakawa' } },
+        memberColor: '#FF69B4',
+        memberColorName: { ja: 'ピンク', ko: '핑크', en: 'Pink' },
+        imageUrl: null,
+        birthDate: '1999-12-03',
+        birthplace: { ja: '福岡県', ko: '후쿠오카현', en: 'Fukuoka' },
+        nickname: { ja: 'びびあん', ko: '비비안', en: 'Bibian' },
+        links: [
+          { type: 'x', url: 'https://x.com/bibian_ct1203', label: { ja: 'X (Twitter)', ko: '공식 X (트위터)', en: 'Official X' }, verified: true, isPrimary: true },
+          { type: 'instagram', url: 'https://www.instagram.com/murakawa_bibian/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
+        ],
+      },
+      {
+        id: 'ct-kano-nanako',
+        groupId: 'kawaii-lab',
+        subUnitId: 'candy-tune',
+        name: { ja: { kanji: '小川奈々子', kana: 'おがわ ななこ' }, ko: { hangul: '오가와 나나코' }, en: { romaji: 'Nanako Ogawa' } },
+        memberColor: '#4169E1',
+        memberColorName: { ja: 'ブルー', ko: '블루', en: 'Blue' },
+        imageUrl: null,
+        birthDate: '1999-10-01',
+        birthplace: { ja: '北海道', ko: '홋카이도', en: 'Hokkaido' },
+        nickname: { ja: 'ななこ', ko: '나나코', en: 'Nanako' },
+        links: [
+          { type: 'x', url: 'https://x.com/nachico_ct1001', label: { ja: 'X (Twitter)', ko: '공식 X (트위터)', en: 'Official X' }, verified: true, isPrimary: true },
+        ],
+      },
     ],
   },
 
-  // 2. iLiFE! (HEROINES)
+  // 2. HEROINES (imaginate - Shinjuku & Shibuya)
   {
-    id: 'ilife',
-    name: { ja: 'iLiFE!', ko: '아이라이프 (iLiFE!)', en: 'iLiFE!' },
-    shortName: { ja: 'アイライフ', ko: '아이라이프', en: 'iLiFE!' },
-    agency: 'HEROINES (imaginate)',
+    id: 'heroines',
+    name: { ja: 'HEROINES', ko: '히로인즈 (HEROINES)', en: 'HEROINES' },
+    shortName: { ja: 'ヒロインズ', ko: '히로인즈', en: 'HEROINES' },
+    agency: 'imaginate',
     region: 'tokyo',
     district: 'shinjuku',
     color: '#FF2E7E',
     accentColor: '#FFD6E5',
-    debutYear: 2020,
+    debutYear: 2018,
     description: {
-      ja: '「私（i）と貴方（you）で創るアイドル（iLiFE!）」をコンセプトに、爆発的なライブ動員を誇るHEROINESのフラッグシップグループ。',
-      ko: '「나(i)와 당신(you)이 함께 만드는 아이돌(iLiFE!)」을 콘셉트로 폭발적인 라이브 동원력을 자랑하는 HEROINES의 대표 그룹.',
-      en: 'The flagship group of HEROINES concepted around "Creating an idol together between me (i) and you (iLiFE!)".',
+      ja: 'iLiFE!、Appare!、夜光性アミューズ、Jams Collectionなどを擁し、圧倒的なライブ動員と熱狂を生み出す日本最大級のライブアイドル総合プロダクション。',
+      ko: 'iLiFE!, Appare!, 야광성 어뮤즈, Jams Collection 등을 보유하며 압도적인 티켓 파워와 페스티벌 열기를 자랑하는 일본 최대 규모의 라이브 아이돌 레이블.',
+      en: 'Japan\'s premier powerhouse live idol production housing sensation groups like iLiFE!, Appare!, and Yakousei Amuse.',
     },
-    officialSite: 'https://heroines.jp/artist/ilife',
-    ticketUrl: 'https://ticketdive.com/artist/ilife',
+    officialSite: 'https://heroines.jp/',
+    ticketUrl: 'https://ticketdive.com/',
     chekiUrl: 'https://heroines.stores.jp/',
-    scheduleUrl: 'https://timetreeapp.com/public_calendars/ilife_official',
-    x: 'https://x.com/iLiFE_official',
-    instagram: 'https://www.instagram.com/ilife.heroines/',
-    tiktok: 'https://www.tiktok.com/@ilife.heroines',
-    youtube: 'https://www.youtube.com/@iLiFE_official',
+    scheduleUrl: 'https://heroines.jp/schedule',
+    x: 'https://x.com/heroines_idol',
+    instagram: 'https://www.instagram.com/heroines_official/',
+    tiktok: 'https://www.tiktok.com/@heroines_official',
+    youtube: 'https://www.youtube.com/@HEROINES_official',
+    subUnits: [
+      {
+        id: 'ilife',
+        name: { ja: 'iLiFE!', ko: '아이라이프 (iLiFE!)', en: 'iLiFE!' },
+        debutYear: 2020,
+        description: {
+          ja: '「私（i）と貴方（you）で創るアイドル」をコンセプトに、爆発的なライブ動員を誇るトップグループ。',
+          ko: '「나와 당신이 만드는 아이돌」 콘셉트로 일본 라이브 씬을 뒤흔든 최강 그룹.',
+          en: 'The top sensation live idol group concepted around creating idols together with fans.',
+        },
+        ticketUrl: 'https://ticketdive.com/artist/ilife',
+        chekiUrl: 'https://heroines.stores.jp/',
+      },
+      {
+        id: 'appare',
+        name: { ja: 'Appare!', ko: '앗파레 (Appare!)', en: 'Appare!' },
+        debutYear: 2016,
+        description: {
+          ja: '圧倒的なダンススキルと熱量で大型フェスを熱狂させる最強パフォーマンスグループ。',
+          ko: '압도적인 댄스 실력과 에너지로 대형 페스티벌을 장악하는 퍼포먼스 최강 그룹.',
+          en: 'The festival dominators known for high-octane dance performances.',
+        },
+        ticketUrl: 'https://ticketdive.com/artist/appare',
+        chekiUrl: 'https://appare1.thebase.in/',
+      },
+      {
+        id: 'yakousei-amuse',
+        name: { ja: '夜光性アミューズ', ko: '야광성 어뮤즈 (Yakousei Amuse)', en: 'Yakousei Amuse' },
+        debutYear: 2021,
+        description: {
+          ja: '「夜に輝くアミューズメントパーク」をテーマにしたエレクト로ニック＆キュートなグループ。',
+          ko: '「밤에 빛나는 놀이공원」을 테마로 한 일렉트로닉 팝 아이돌 그룹.',
+          en: 'The vibrant electronic pop idol group lighting up the night.',
+        },
+        ticketUrl: 'https://ticketdive.com/artist/yoruamu',
+        chekiUrl: 'https://heroines.stores.jp/',
+      },
+    ],
     members: [
+      // iLiFE!
       {
         id: 'ilife-shinzome-riri',
-        groupId: 'ilife',
+        groupId: 'heroines',
+        subUnitId: 'ilife',
         name: { ja: { kanji: '心花りり', kana: 'しんぞめ りり' }, ko: { hangul: '신조메 리리' }, en: { romaji: 'Riri Shinzome' } },
         memberColor: '#E60033',
         memberColorName: { ja: '赤色', ko: '레드', en: 'Red' },
@@ -186,7 +379,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'ilife-aisu',
-        groupId: 'ilife',
+        groupId: 'heroines',
+        subUnitId: 'ilife',
         name: { ja: { kanji: 'あいす', kana: 'あいす' }, ko: { hangul: '아이스' }, en: { romaji: 'Aisu' } },
         memberColor: '#B0E0E6',
         memberColorName: { ja: '白色・水色', ko: '화이트/라이트블루', en: 'White Light Blue' },
@@ -202,7 +396,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'ilife-minase-ramu',
-        groupId: 'ilife',
+        groupId: 'heroines',
+        subUnitId: 'ilife',
         name: { ja: { kanji: '水瀬らむ', kana: 'みなせ らむ' }, ko: { hangul: '미나세 라무' }, en: { romaji: 'Ramu Minase' } },
         memberColor: '#4169E1',
         memberColorName: { ja: '青色', ko: '블루', en: 'Blue' },
@@ -217,7 +412,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'ilife-wakaba-noa',
-        groupId: 'ilife',
+        groupId: 'heroines',
+        subUnitId: 'ilife',
         name: { ja: { kanji: '若葉のあ', kana: 'わかば のあ' }, ko: { hangul: '와카바 노아' }, en: { romaji: 'Noa Wakaba' } },
         memberColor: '#32CD32',
         memberColorName: { ja: '緑色', ko: '그린', en: 'Green' },
@@ -230,37 +426,11 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
           { type: 'instagram', url: 'https://www.instagram.com/noa_wakaba/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
         ],
       },
-    ],
-  },
-
-  // 3. Appare!
-  {
-    id: 'appare',
-    name: { ja: 'Appare!', ko: '앗파레 (Appare!)', en: 'Appare!' },
-    shortName: { ja: 'あっぱれ', ko: '앗파레', en: 'Appare!' },
-    agency: 'Appare! Project (HEROINES)',
-    region: 'tokyo',
-    district: 'shibuya',
-    color: '#FFB800',
-    accentColor: '#FFF3D6',
-    debutYear: 2016,
-    description: {
-      ja: '「天晴れ！」な熱量と圧倒的なダンス・ライブパフォーマンスで大型フェスを沸かせる最強ライブアイドル。',
-      ko: '「앗파레(대단해)!」한 열량과 압도적인 댄스 및 라이브 퍼포먼스로 대형 페스티벌을 장악하는 최강 라이브 아이돌.',
-      en: 'A high-energy live idol group dominating festivals with unmatched dance and energetic performances.',
-    },
-    officialSite: 'https://appare-official.jp/',
-    ticketUrl: 'https://ticketdive.com/artist/appare',
-    chekiUrl: 'https://appare1.thebase.in/',
-    scheduleUrl: 'https://appare-official.jp/schedule/',
-    x: 'https://x.com/official_appare',
-    instagram: 'https://www.instagram.com/appare_official/',
-    tiktok: 'https://www.tiktok.com/@official_appare',
-    youtube: 'https://www.youtube.com/@appare_official',
-    members: [
+      // Appare!
       {
         id: 'appare-asahina-rei',
-        groupId: 'appare',
+        groupId: 'heroines',
+        subUnitId: 'appare',
         name: { ja: { kanji: '朝比奈れい', kana: 'あさひな れい' }, ko: { hangul: '아사히나 레이' }, en: { romaji: 'Rei Asahina' } },
         memberColor: '#E60012',
         memberColorName: { ja: '赤色', ko: '레드', en: 'Red' },
@@ -275,7 +445,8 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
       },
       {
         id: 'appare-fujimiya-may',
-        groupId: 'appare',
+        groupId: 'heroines',
+        subUnitId: 'appare',
         name: { ja: { kanji: '藤宮めい', kana: 'ふじみや めい' }, ko: { hangul: '후지미야 메이' }, en: { romaji: 'Mei Fujimiya' } },
         memberColor: '#FFFFFF',
         memberColorName: { ja: '白色', ko: '화이트', en: 'White' },
@@ -291,34 +462,61 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
     ],
   },
 
-  // 4. GANG PARADE (WACK)
+  // 3. WACK (Shibuya)
   {
-    id: 'gang-parade',
-    name: { ja: 'GANG PARADE', ko: '갱 퍼레이드 (GANG PARADE)', en: 'GANG PARADE' },
-    shortName: { ja: 'ギャンパレ', ko: '걘파레', en: 'GP' },
-    agency: 'WACK',
+    id: 'wack',
+    name: { ja: 'WACK', ko: '왝 (WACK)', en: 'WACK' },
+    shortName: { ja: 'WACK', ko: '왝', en: 'WACK' },
+    agency: 'WACK Co., Ltd.',
     region: 'tokyo',
     district: 'shibuya',
     color: '#E6FF00',
-    accentColor: '#1A1A1A',
+    accentColor: '#111827',
     debutYear: 2014,
     description: {
-      ja: '「みんなの遊び場」をコンセプトに活動するWACK所属の13人組アイドルグループ。',
-      ko: '「모두의 놀이터」를 콘셉트로 활동하는 WACK 소속 13인조 라이브 아이돌 그룹.',
-      en: 'A 13-member powerhouse idol group from WACK performing under the concept "Everyone\'s Playground".',
+      ja: '「常識を打ち破る」ロックサウンドとエモーショナルなライブで熱狂的信者を生み出し続ける、渋谷発のカルチャー・エンタテインメント集団。',
+      ko: '「상식을 파괴한다」는 슬로건으로 록 사운드와 파격적인 라이브 퍼포먼스를 선보이는 시부야 거점의 전설적인 아이돌 기획사.',
+      en: 'The rebellious Shibuya-based music production powerhouse known for electrifying rock performances.',
     },
-    officialSite: 'https://gangparade.jp/',
-    ticketUrl: 'https://w.pia.jp/t/gangparade/',
-    chekiUrl: 'https://gangparade.stores.jp/',
-    scheduleUrl: 'https://gangparade.jp/schedule/',
-    x: 'https://x.com/GANG_PARADE',
-    instagram: 'https://www.instagram.com/gang_parade_official/',
-    tiktok: 'https://www.tiktok.com/@gang_parade',
-    youtube: 'https://www.youtube.com/@GANGPARADE_official',
+    officialSite: 'https://www.wack.jp/',
+    ticketUrl: 'https://w.pia.jp/t/wack/',
+    chekiUrl: 'https://wackfamilyclub.com/',
+    scheduleUrl: 'https://www.wack.jp/schedule',
+    x: 'https://x.com/WACK_IDOL',
+    instagram: 'https://www.instagram.com/wack_idol_official/',
+    tiktok: null,
+    youtube: 'https://www.youtube.com/@WACK_OFFICIAL',
+    subUnits: [
+      {
+        id: 'gang-parade',
+        name: { ja: 'GANG PARADE', ko: '갱 퍼레이드 (GANG PARADE)', en: 'GANG PARADE' },
+        debutYear: 2014,
+        description: {
+          ja: '「みんなの遊び場」をコンセプトに活動するWACK所属の13人組アイドルグループ。',
+          ko: '「모두의 놀이터」 콘셉트로 무대를 뛰어노는 13인조 에너제틱 라이브 그룹.',
+          en: 'A 13-member powerhouse performing under the concept "Everyone\'s Playground".',
+        },
+        ticketUrl: 'https://w.pia.jp/t/gangparade/',
+        chekiUrl: 'https://gangparade.stores.jp/',
+      },
+      {
+        id: 'asp',
+        name: { ja: 'ASP', ko: '에이에스피 (ASP)', en: 'ASP' },
+        debutYear: 2021,
+        description: {
+          ja: 'メ이저 데뷔를 이뤄낸 파워풀 펑크 록 아이돌 그룹.',
+          ko: '거침없는 펑크 록 사운드로 무대를 뒤흔드는 메이저 라이브 그룹.',
+          en: 'High-speed punk rock sensation from WACK.',
+        },
+        ticketUrl: 'https://w.pia.jp/t/asp/',
+        chekiUrl: 'https://asp-japan.tokyo/store/',
+      },
+    ],
     members: [
       {
         id: 'gp-yumeno-yua',
-        groupId: 'gang-parade',
+        groupId: 'wack',
+        subUnitId: 'gang-parade',
         name: { ja: { kanji: 'ユメノユア', kana: 'ゆめの ゆあ' }, ko: { hangul: '유메노 유아' }, en: { romaji: 'Yua Yumeno' } },
         memberColor: '#E6FF00',
         memberColorName: { ja: 'ネオンイエロー', ko: '네온 옐로우', en: 'Neon Yellow' },
@@ -331,37 +529,67 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
           { type: 'instagram', url: 'https://www.instagram.com/yua_gangparade/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
         ],
       },
+      {
+        id: 'gp-coco-partin',
+        groupId: 'wack',
+        subUnitId: 'gang-parade',
+        name: { ja: { kanji: 'ココ・パーティン・ココ', kana: 'ここ ぱーてぃん ここ' }, ko: { hangul: '코코 파틴 코코' }, en: { romaji: 'Coco Partin Coco' } },
+        memberColor: '#FF4500',
+        memberColorName: { ja: 'オレンジレッド', ko: '오렌지 레드', en: 'Orange Red' },
+        imageUrl: null,
+        birthDate: '1995-10-01',
+        birthplace: { ja: '愛知県', ko: '아이치현', en: 'Aichi' },
+        nickname: { ja: 'ココちゃん', ko: '코코짱', en: 'Coco-chan' },
+        links: [
+          { type: 'x', url: 'https://x.com/COCO_GANG', label: { ja: 'X (Twitter)', ko: '공식 X (트위터)', en: 'Official X' }, verified: true, isPrimary: true },
+        ],
+      },
     ],
   },
 
-  // 5. でんぱ組.inc (DearStage)
+  // 4. DEARSTAGE (Akihabara)
   {
-    id: 'dempagumi',
-    name: { ja: 'でんぱ組.inc', ko: '덴파구미.inc (Dempagumi.inc)', en: 'Dempagumi.inc' },
-    shortName: { ja: 'でんぱ組', ko: '덴파구미', en: 'Dempa' },
-    agency: 'DEARSTAGE',
+    id: 'dearstage',
+    name: { ja: 'DEARSTAGE', ko: '디어스테이지 (DEARSTAGE)', en: 'DEARSTAGE' },
+    shortName: { ja: 'DSPM', ko: '디어스테이지', en: 'DEARSTAGE' },
+    agency: 'DEARSTAGE Inc.',
     region: 'tokyo',
     district: 'akihabara',
     color: '#00E5FF',
     accentColor: '#E0F7FA',
     debutYear: 2008,
     description: {
-      ja: '秋葉原ディアステージ発、アニメ・マンガ・ゲームなどオタクカルチャーを世界へ発信し続けた伝説的カルチャーアイドル。',
-      ko: '아키하바라 디어스테이지 출신, 애니메이션·게임 등 서브컬처를 전 세계로 전파한 전설적인 아키바계 아이돌.',
-      en: 'Originating from Akihabara DearStage, a legendary pioneer of modern otaku-culture live idols.',
+      ja: '秋葉原ディアステージ発、アニメ・ゲーム・ボーカロイドなど日本のオタクカルチャーとアイドルを融合させたカルチャーの聖地。',
+      ko: '아키하바라 디어스테이지 출신, 서브컬처와 아이돌을 융합시켜 현대 지하아이돌 씬의 근간을 만든 역사적인 아키바 레이블.',
+      en: 'The legendary Akihabara culture hub fusing anime, games, and subculture with idol entertainment.',
     },
-    officialSite: 'https://dempagumi.tokyo/',
+    officialSite: 'https://dearstage.co.jp/',
     ticketUrl: 'https://t.livepocket.jp/p/dearstage',
-    chekiUrl: 'https://dspmstore.com/shopbrand/dempa/',
+    chekiUrl: 'https://dspmstore.com/',
     scheduleUrl: 'https://dempagumi.tokyo/schedule/',
-    x: 'https://x.com/dempagumi',
-    instagram: 'https://www.instagram.com/dempagumi.official/',
-    tiktok: 'https://www.tiktok.com/@dempagumi_official',
-    youtube: 'https://www.youtube.com/@dempagumi',
+    x: 'https://x.com/DEARSTAGE_inc',
+    instagram: null,
+    tiktok: null,
+    youtube: 'https://www.youtube.com/@dearstage_official',
+    subUnits: [
+      {
+        id: 'dempagumi',
+        name: { ja: 'でんぱ組.inc', ko: '덴파구미.inc (Dempagumi.inc)', en: 'Dempagumi.inc' },
+        debutYear: 2008,
+        description: {
+          ja: 'オタクカルチャーを世界へ発信し続けた伝説的カルチャーアイドル。',
+          ko: '서브컬처 문화를 전 세계로 전파한 아키하바라의 전설적인 아이돌 그룹.',
+          en: 'Pioneering otaku-culture idol sensation.',
+        },
+        ticketUrl: 'https://t.livepocket.jp/p/dearstage',
+        chekiUrl: 'https://dspmstore.com/shopbrand/dempa/',
+      },
+    ],
     members: [
       {
         id: 'dempa-furukawa-mirin',
-        groupId: 'dempagumi',
+        groupId: 'dearstage',
+        subUnitId: 'dempagumi',
         name: { ja: { kanji: '古川未鈴', kana: 'ふるかわ みりん' }, ko: { hangul: '후루카와 미린' }, en: { romaji: 'Mirin Furukawa' } },
         memberColor: '#E60012',
         memberColorName: { ja: 'みりんレッド', ko: '미린 레드', en: 'Mirin Red' },
@@ -374,24 +602,40 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
           { type: 'instagram', url: 'https://www.instagram.com/furukawamirin/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
         ],
       },
+      {
+        id: 'dempa-aizawa-risa',
+        groupId: 'dearstage',
+        subUnitId: 'dempagumi',
+        name: { ja: { kanji: '相沢梨紗', kana: 'あいざわ りさ' }, ko: { hangul: '아이자와 리사' }, en: { romaji: 'Risa Aizawa' } },
+        memberColor: '#FFFFFF',
+        memberColorName: { ja: 'りさホワイト', ko: '리사 화이트', en: 'Risa White' },
+        imageUrl: null,
+        birthDate: '1988-08-02',
+        birthplace: { ja: '大阪府', ko: '오사카부', en: 'Osaka' },
+        nickname: { ja: 'りさちー', ko: '리사치', en: 'Risachee' },
+        links: [
+          { type: 'x', url: 'https://x.com/RISA_memesama', label: { ja: 'X (Twitter)', ko: '공식 X (트위터)', en: 'Official X' }, verified: true, isPrimary: true },
+          { type: 'instagram', url: 'https://www.instagram.com/risacheeese/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
+        ],
+      },
     ],
   },
 
-  // 6. カラフルスクリーム (Osaka)
+  // 5. KANSAI / OSAKA IDOLS (Namba & Shinsaibashi)
   {
-    id: 'colorful-scream',
-    name: { ja: 'カラフルスクリーム', ko: '컬러풀 스크림 (Colorful Scream)', en: 'Colorful Scream' },
-    shortName: { ja: 'カラスク', ko: '카라스쿠', en: 'Karasuku' },
-    agency: 'NTK Create (Osaka)',
+    id: 'kansai-idols',
+    name: { ja: 'KANSAI IDOLS', ko: '간사이 아이돌 (Kansai / Osaka)', en: 'KANSAI IDOLS' },
+    shortName: { ja: '関西選抜', ko: '간사이 선발', en: 'Kansai' },
+    agency: 'Kansai Live Circuit',
     region: 'osaka',
     district: 'namba',
-    color: '#00D26A',
+    color: '#10B981',
     accentColor: '#E6F9F0',
     debutYear: 2017,
     description: {
-      ja: '関西・大阪を拠点に全国へポジティブな歌声を届ける、関西屈指의 王道メロディック・ライブアイドル。',
-      ko: '간사이・오사카를 거점으로 전국에 긍정적인 에너지를 전하는 오사카 대표 멜로딕 라이브 아이돌.',
-      en: 'A premier melodic live idol group based in Osaka, Kansai bringing uplifting energy nationwide.',
+      ja: '大阪・難波や心斎橋を拠点に、圧倒的な熱量と親しみやすさで関西から全国を沸かせるライブアイドル勢。',
+      ko: '오사카 난바와 신사이바시를 거점으로 독보적인 에너지와 긍정적인 라이브로 전국을 달구는 간사이 대표 아이돌 군단.',
+      en: 'The vibrant and passionate live idols representing Osaka and the Kansai music scene.',
     },
     officialSite: 'https://colorfulscream.com/',
     ticketUrl: 'https://tiget.net/users/77864',
@@ -401,10 +645,25 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
     instagram: 'https://www.instagram.com/colorfulscream_official/',
     tiktok: 'https://www.tiktok.com/@colorfulscream_official',
     youtube: 'https://www.youtube.com/@colorfulscream_official',
+    subUnits: [
+      {
+        id: 'colorful-scream',
+        name: { ja: 'カラフルスクリーム', ko: '컬러풀 스크림 (Colorful Scream)', en: 'Colorful Scream' },
+        debutYear: 2017,
+        description: {
+          ja: '関西屈指の王道メロディック・ライブアイドル。',
+          ko: '간사이 굴지의 멜로딕 왕도 라이브 아이돌 그룹.',
+          en: 'Premier melodic idol group from Osaka.',
+        },
+        ticketUrl: 'https://tiget.net/users/77864',
+        chekiUrl: 'https://colorfulscream.stores.jp/',
+      },
+    ],
     members: [
       {
         id: 'karasuku-nako',
-        groupId: 'colorful-scream',
+        groupId: 'kansai-idols',
+        subUnitId: 'colorful-scream',
         name: { ja: { kanji: 'なこ', kana: 'なこ' }, ko: { hangul: '나코' }, en: { romaji: 'Nako' } },
         memberColor: '#FF69B4',
         memberColorName: { ja: 'ピンク', ko: '핑크', en: 'Pink' },
@@ -420,21 +679,21 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
     ],
   },
 
-  // 7. タイトル未定 (Sapporo)
+  // 6. REGIONAL LIVE IDOLS (Sapporo / Nagoya / Fukuoka)
   {
-    id: 'title-mitei',
-    name: { ja: 'タイトル未定', ko: '타이틀 미정 (Title Mitei)', en: 'Title Mitei' },
-    shortName: { ja: '未定', ko: '미정', en: 'Mitei' },
-    agency: 'TSUIMA Inc. (Sapporo)',
+    id: 'regional-idols',
+    name: { ja: 'REGIONAL IDOLS', ko: '전국 로컬 아이돌 (Sapporo / Nagoya / Fukuoka)', en: 'REGIONAL IDOLS' },
+    shortName: { ja: '全国地方選抜', ko: '지방 선발', en: 'Regional' },
+    agency: 'Regional Idol Network',
     region: 'sapporo',
-    district: 'susukino',
-    color: '#80BFFF',
-    accentColor: '#F0F7FF',
-    debutYear: 2020,
+    district: 'general',
+    color: '#38BDF8',
+    accentColor: '#F0F9FF',
+    debutYear: 2011,
     description: {
-      ja: '「何者かになろうとしなくていい」をテーマに、北海道・札幌から透明感ある叙情的な楽曲を届ける実力派グループ。',
-      ko: '「무엇이 되려 하지 않아도 괜찮아」를 테마로 홋카이도 삿포로에서 투명하고 서정적인 음악을 선보이는 감성 실력파 아이돌.',
-      en: 'A critically acclaimed Sapporo-based idol group known for poetic music and emotional live performances.',
+      ja: '北海道・札幌の「タイトル未定」、名古屋・栄の「手羽先センセーション」、福岡・博多の「LinQ」など全国各都市を代表する有力グループ。',
+      ko: '홋카이도 삿포로의 「타이틀 미정」, 나고야 사카에의 「테바사키 센세이션」, 후쿠오카 하카타의 「LinQ」 등 일본 각 도시를 대표하는 로컬 대표 그룹.',
+      en: 'Flagship live idol groups representing Japan\'s iconic regional music scenes across Hokkaido, Nagoya, and Kyushu.',
     },
     officialSite: 'https://miteititle.com/',
     ticketUrl: 'https://t.livepocket.jp/t/miteititle',
@@ -444,10 +703,37 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
     instagram: 'https://www.instagram.com/miteititle/',
     tiktok: 'https://www.tiktok.com/@miteititle',
     youtube: 'https://www.youtube.com/@miteititle',
+    subUnits: [
+      {
+        id: 'title-mitei',
+        name: { ja: 'タイトル未定 (札幌)', ko: '타이틀 미정 (삿포로)', en: 'Title Mitei (Sapporo)' },
+        debutYear: 2020,
+        description: {
+          ja: '北海道・札幌から透明感ある叙情的な楽曲を届ける実力派グループ。',
+          ko: '홋카이도 삿포로의 투명하고 서정적인 감성 실력파 아이돌.',
+          en: 'Sapporo\'s emotional, poetic idol group.',
+        },
+        ticketUrl: 'https://t.livepocket.jp/t/miteititle',
+        chekiUrl: 'https://miteititle.stores.jp/',
+      },
+      {
+        id: 'linq',
+        name: { ja: 'LinQ (福岡・博多)', ko: '링크 (후쿠오카・하카타)', en: 'LinQ (Fukuoka)' },
+        debutYear: 2011,
+        description: {
+          ja: '福岡・天神を拠点に全国・アジアへ笑顔を届ける九州を代表するグループ。',
+          ko: '후쿠오카 텐진을 거점으로 전국과 아시아로 뻗어나가는 큐슈 대표 아이돌.',
+          en: 'Fukuoka\'s premier Kyushu idol group.',
+        },
+        ticketUrl: 'https://tiget.net/users/5801',
+        chekiUrl: 'https://linq.official.ec/',
+      },
+    ],
     members: [
       {
         id: 'mitei-abe-hana',
-        groupId: 'title-mitei',
+        groupId: 'regional-idols',
+        subUnitId: 'title-mitei',
         name: { ja: { kanji: '阿部葉菜', kana: 'あべ はな' }, ko: { hangul: '아베 하나' }, en: { romaji: 'Hana Abe' } },
         memberColor: '#FFD700',
         memberColorName: { ja: 'イエロー', ko: '옐로우', en: 'Yellow' },
@@ -460,6 +746,22 @@ export const CHIKA_GROUPS_SEED: ChikaGroup[] = [
           { type: 'instagram', url: 'https://www.instagram.com/hana_abe_/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
         ],
       },
+      {
+        id: 'linq-takaki-yuumi',
+        groupId: 'regional-idols',
+        subUnitId: 'linq',
+        name: { ja: { kanji: '高木悠未', kana: 'たかき ゆうみ' }, ko: { hangul: '타카키 유우미' }, en: { romaji: 'Yuumi Takaki' } },
+        memberColor: '#E60012',
+        memberColorName: { ja: 'パッションレッド', ko: '패션 레드', en: 'Passion Red' },
+        imageUrl: null,
+        birthDate: '1997-05-17',
+        birthplace: { ja: '福岡県', ko: '후쿠오카현', en: 'Fukuoka' },
+        nickname: { ja: 'ゆうみん', ko: '유우민', en: 'Yuumin' },
+        links: [
+          { type: 'x', url: 'https://x.com/yuumi_takaki', label: { ja: 'X (Twitter)', ko: '공식 X (트위터)', en: 'Official X' }, verified: true, isPrimary: true },
+          { type: 'instagram', url: 'https://www.instagram.com/yuumi_takaki17/', label: { ja: 'Instagram', ko: '인스타그램', en: 'Instagram' }, verified: true, isPrimary: true },
+        ],
+      },
     ],
   },
 ];
@@ -469,8 +771,8 @@ function seed() {
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
   const outPath = path.join(dataDir, 'chika-groups.json');
-  fs.writeFileSync(outPath, JSON.stringify(CHIKA_GROUPS_SEED, null, 2), 'utf-8');
-  console.log(`✅ Seeded ${CHIKA_GROUPS_SEED.length} Chika Groups to data/chika-groups.json`);
+  fs.writeFileSync(outPath, JSON.stringify(CHIKA_GROUPS_DATA, null, 2), 'utf-8');
+  console.log(`✅ Seeded ${CHIKA_GROUPS_DATA.length} Chika Major Groups & Label Hubs to data/chika-groups.json`);
 }
 
 seed();

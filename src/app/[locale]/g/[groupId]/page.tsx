@@ -1,44 +1,20 @@
+'use client';
+
+import React, { useState, use } from 'react';
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
-import { getGroup, getGroups } from '@/lib/data';
-import { routing, Link } from '@/i18n/routing';
+import { getGroup } from '@/lib/data';
+import { Link } from '@/i18n/routing';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
 import { MemberCard } from '@/components/member/MemberCard';
-import type { Metadata } from 'next';
 
 interface GroupPageProps {
   params: Promise<{ locale: string; groupId: string }>;
 }
 
-export function generateStaticParams() {
-  const groups = getGroups();
-  return routing.locales.flatMap((locale) =>
-    groups.map((g) => ({
-      locale,
-      groupId: g.id,
-    })),
-  );
-}
-
-export async function generateMetadata({ params }: GroupPageProps): Promise<Metadata> {
-  const { locale, groupId } = await params;
-  const group = getGroup(groupId);
-  if (!group) return {};
-
-  const name = group.name[locale as 'ja' | 'ko' | 'en'] || group.name.ja;
-  const title = `${name} (${group.agency}) メンバー一覧・公式リンク | CHIKA IDOL HUB`;
-  const description = `${name}의 멤버 목록, 프로필, 라이브 티켓(TIGET/LivePocket), 체키 스토어, SNS 링크 모음.`;
-
-  return {
-    title,
-    description,
-  };
-}
-
-export default async function GroupPage({ params }: GroupPageProps) {
-  const { locale, groupId } = await params;
-  setRequestLocale(locale);
+export default function GroupPage({ params }: GroupPageProps) {
+  const { locale, groupId } = use(params);
+  const [selectedSubUnit, setSelectedSubUnit] = useState<string>('all');
 
   const group = getGroup(groupId);
   if (!group) {
@@ -48,26 +24,14 @@ export default async function GroupPage({ params }: GroupPageProps) {
   const groupName = group.name[locale as 'ja' | 'ko' | 'en'] || group.name.ja;
   const description = group.description[locale as 'ja' | 'ko' | 'en'] || group.description.ja;
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'MusicGroup',
-    name: group.name.ja,
-    alternateName: [group.name.ko, group.name.en],
-    url: group.officialSite || undefined,
-    sameAs: [group.x, group.instagram, group.tiktok, group.youtube].filter(Boolean),
-    member: group.members.map((m) => ({
-      '@type': 'Person',
-      name: m.name.ja.kanji,
-      alternateName: [m.name.ko.hangul, m.name.en.romaji],
-    })),
-  };
+  // Filter members by selected subunit
+  const filteredMembers = group.members.filter((m) => {
+    if (selectedSubUnit === 'all') return true;
+    return m.subUnitId === selectedSubUnit;
+  });
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Navigation />
 
       <main id="main-content" className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full">
@@ -105,7 +69,7 @@ export default async function GroupPage({ params }: GroupPageProps) {
                   {group.district.toUpperCase()} ({group.region})
                 </span>
                 <span className="text-xs text-star-dim font-mono">
-                  Debut {group.debutYear}
+                  Debut {group.debutYear} • {group.members.length} Members
                 </span>
               </div>
 
@@ -216,6 +180,42 @@ export default async function GroupPage({ params }: GroupPageProps) {
           </div>
         </section>
 
+        {/* SubUnit Tabs (Generations Style from Sakamichi) */}
+        {group.subUnits && group.subUnits.length > 1 && (
+          <div className="flex flex-wrap items-center gap-2 mb-8">
+            <button
+              onClick={() => setSelectedSubUnit('all')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition ${
+                selectedSubUnit === 'all'
+                  ? 'bg-white text-space-950 shadow-md'
+                  : 'bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white'
+              }`}
+            >
+              {locale === 'ko' ? '전체 멤버' : locale === 'ja' ? '全メンバー' : 'All Members'} ({group.members.length})
+            </button>
+            {group.subUnits.map((sub) => {
+              const isActive = selectedSubUnit === sub.id;
+              const subName = sub.name[locale as 'ja' | 'ko' | 'en'] || sub.name.ja;
+              const subCount = group.members.filter((m) => m.subUnitId === sub.id).length;
+
+              return (
+                <button
+                  key={sub.id}
+                  onClick={() => setSelectedSubUnit(sub.id)}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border ${
+                    isActive
+                      ? 'bg-pink-500/20 text-pink-300 border-pink-400 shadow-md'
+                      : 'bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white border-white/5'
+                  }`}
+                >
+                  <span>{subName}</span>
+                  <span className="text-[10px] opacity-75 font-mono">({subCount})</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         {/* Member Cards Grid (Click goes directly to /m/[memberId]) */}
         <section className="mb-14">
           <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
@@ -228,12 +228,12 @@ export default async function GroupPage({ params }: GroupPageProps) {
               </p>
             </div>
             <span className="text-xs text-star-dim font-mono">
-              {group.members.length} Members
+              {filteredMembers.length} Members
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {group.members.map((member) => (
+            {filteredMembers.map((member) => (
               <MemberCard
                 key={member.id}
                 member={member}

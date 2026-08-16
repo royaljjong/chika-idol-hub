@@ -58,9 +58,20 @@ export const IdolLink = z.object({
 });
 export type IdolLink = z.infer<typeof IdolLink>;
 
+export const SubUnit = z.object({
+  id: z.string(),
+  name: LocalizedText,
+  debutYear: z.number(),
+  description: LocalizedText,
+  ticketUrl: z.string().url().nullable().default(null),
+  chekiUrl: z.string().url().nullable().default(null),
+});
+export type SubUnit = z.infer<typeof SubUnit>;
+
 export const ChikaMember = z.object({
   id: z.string(),
   groupId: z.string(),
+  subUnitId: z.string().default(''),
   name: z.object({
     ja: z.object({
       kanji: z.string(),
@@ -102,6 +113,7 @@ export const ChikaGroup = z.object({
   instagram: z.string().url().nullable().default(null),
   tiktok: z.string().url().nullable().default(null),
   youtube: z.string().url().nullable().default(null),
+  subUnits: z.array(SubUnit).default([]),
   members: z.array(ChikaMember).default([]),
 });
 export type ChikaGroup = z.infer<typeof ChikaGroup>;
