@@ -20,58 +20,94 @@ interface GroupAssetDef {
 
 const GROUPS: GroupAssetDef[] = [
   {
-    id: 'kawaii-lab',
-    name: 'KAWAII LAB.',
-    sub: 'FRUITS ZIPPER • CANDY TUNE • SWEET STEADY • CUTIE STREET',
+    id: 'fruits-zipper',
+    name: 'FRUITS ZIPPER',
+    sub: 'KAWAII LAB. • 原宿 • わたしの一番かわいいところ',
     bg1: '#FF2E7E',
-    bg2: '#7928CA',
-    accent: '#FFD6E5',
+    bg2: '#FF6EA7',
+    accent: '#FFE5EC',
     symbol: '🎀',
   },
   {
-    id: 'heroines',
-    name: 'HEROINES',
-    sub: 'iLiFE! • Appare! • 夜光性アミューズ • Jams Collection',
-    bg1: '#FF007A',
-    bg2: '#4A00E0',
-    accent: '#FFE5F1',
+    id: 'candy-tune',
+    name: 'CANDY TUNE',
+    sub: 'KAWAII LAB. • 原宿 • フレーフレー私！',
+    bg1: '#FF69B4',
+    bg2: '#FF1493',
+    accent: '#FFE4E6',
+    symbol: '🍭',
+  },
+  {
+    id: 'ilife',
+    name: 'iLiFE!',
+    sub: 'HEROINES • 新宿 • 私と貴方で創るアイドル',
+    bg1: '#FF0055',
+    bg2: '#7928CA',
+    accent: '#FFD6E5',
     symbol: '💖',
   },
   {
-    id: 'wack',
-    name: 'WACK',
-    sub: 'GANG PARADE • ASP • ExWHYZ • BiS',
+    id: 'appare',
+    name: 'Appare!',
+    sub: 'HEROINES • 渋谷 • 天晴れ！最強パフォーマンス',
+    bg1: '#F59E0B',
+    bg2: '#D97706',
+    accent: '#FEF3C7',
+    symbol: '☀️',
+  },
+  {
+    id: 'gang-parade',
+    name: 'GANG PARADE',
+    sub: 'WACK • 渋谷 • みんなの遊び場 13人組',
     bg1: '#111827',
     bg2: '#E6FF00',
     accent: '#FACC15',
     symbol: '⚡',
   },
   {
-    id: 'dearstage',
-    name: 'DEARSTAGE',
-    sub: 'でんぱ組.inc • 虹のコンキスタドール • ディアステージ',
+    id: 'dempagumi',
+    name: 'でんぱ組.inc',
+    sub: 'DEARSTAGE • 秋葉原 • 伝説的カルチャーアイドル',
     bg1: '#00C6FF',
     bg2: '#0072FF',
     accent: '#E0F7FA',
     symbol: '⚡',
   },
   {
-    id: 'kansai-idols',
-    name: 'KANSAI IDOLS',
-    sub: 'カラフルスクリーム • KRD8 • 大阪・難波・心斎橋',
+    id: 'colorful-scream',
+    name: 'カラフルスクリーム',
+    sub: '関西・大阪 • 難波 • 王道メロディックライブ',
     bg1: '#10B981',
     bg2: '#047857',
     accent: '#D1FAE5',
     symbol: '🐙',
   },
   {
-    id: 'regional-idols',
-    name: 'REGIONAL IDOLS',
-    sub: 'タイトル未定(札幌) • 手羽先(名古屋) • LinQ(福岡)',
+    id: 'title-mitei',
+    name: 'タイトル未定',
+    sub: '北海道・札幌 • すすきの • 透明感ある叙情派',
     bg1: '#0EA5E9',
-    bg2: '#6366F1',
+    bg2: '#38BDF8',
     accent: '#E0F2FE',
     symbol: '❄️',
+  },
+  {
+    id: 'linq',
+    name: 'LinQ',
+    sub: '九州・福岡 • 天神 • Love in 九州',
+    bg1: '#E60012',
+    bg2: '#991B1B',
+    accent: '#FEE2E2',
+    symbol: '🍜',
+  },
+  {
+    id: 'tebasen',
+    name: '手羽先センセーション',
+    sub: '東海・名古屋 • 栄 • 王道エネルギッシュポップ',
+    bg1: '#FF8C00',
+    bg2: '#EA580C',
+    accent: '#FFEDD5',
+    symbol: '🍗',
   },
 ];
 
@@ -103,38 +139,39 @@ const MEMBERS: MemberAssetDef[] = [
   // Appare!
   { id: 'appare-asahina-rei', nameJa: '朝比奈れい', nameKo: '아사히나 레이', color: '#E60012', groupName: 'Appare!' },
   { id: 'appare-fujimiya-may', nameJa: '藤宮めい', nameKo: '후지미야 메이', color: '#FFFFFF', groupName: 'Appare!' },
-  // WACK
+  // WACK: GANG PARADE
   { id: 'gp-yumeno-yua', nameJa: 'ユメノユア', nameKo: '유메노 유아', color: '#E6FF00', groupName: 'GANG PARADE' },
   { id: 'gp-coco-partin', nameJa: 'ココ・パーティン', nameKo: '코코 파틴', color: '#FF4500', groupName: 'GANG PARADE' },
-  // DEARSTAGE
+  // DEARSTAGE: でんぱ組.inc
   { id: 'dempa-furukawa-mirin', nameJa: '古川未鈴', nameKo: '후루카와 미린', color: '#E60012', groupName: 'でんぱ組.inc' },
   { id: 'dempa-aizawa-risa', nameJa: '相沢梨紗', nameKo: '아이자와 리사', color: '#FFFFFF', groupName: 'でんぱ組.inc' },
-  // KANSAI
+  // KANSAI: カラフルスクリーム
   { id: 'karasuku-nako', nameJa: 'なこ', nameKo: '나코', color: '#FF69B4', groupName: 'カラフルスクリーム' },
-  // REGIONAL
+  // REGIONAL: タイトル未定 / LinQ / 手羽先センセーション
   { id: 'mitei-abe-hana', nameJa: '阿部葉菜', nameKo: '아베 하나', color: '#FFD700', groupName: 'タイトル未定' },
   { id: 'linq-takaki-yuumi', nameJa: '高木悠未', nameKo: '타카키 유우미', color: '#E60012', groupName: 'LinQ' },
+  { id: 'tebasen-hinami-haruka', nameJa: '日南遥', nameKo: '히나미 하루카', color: '#FF8C00', groupName: '手羽先センセーション' },
 ];
 
 function generateGroupSvg(g: GroupAssetDef): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bg-${g.id}" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="${g.bg1}" />
       <stop offset="100%" stop-color="${g.bg2}" />
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <radialGradient id="glow-${g.id}" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="${g.accent}" stop-opacity="0.35" />
       <stop offset="100%" stop-color="${g.accent}" stop-opacity="0" />
     </radialGradient>
-    <filter id="shadow">
+    <filter id="shadow-${g.id}">
       <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.5" />
     </filter>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <circle cx="950" cy="200" r="400" fill="url(#glow)" />
-  <circle cx="250" cy="500" r="350" fill="url(#glow)" />
+  <rect width="1200" height="630" fill="url(#bg-${g.id})" />
+  <circle cx="950" cy="200" r="400" fill="url(#glow-${g.id})" />
+  <circle cx="250" cy="500" r="350" fill="url(#glow-${g.id})" />
 
   <!-- Stars Particles -->
   <g fill="#FFF" opacity="0.6">
@@ -151,11 +188,11 @@ function generateGroupSvg(g: GroupAssetDef): string {
   </g>
 
   <!-- Central Emblem Card -->
-  <rect x="80" y="80" width="1040" height="470" rx="36" fill="rgba(7, 9, 15, 0.45)" stroke="rgba(255,255,255,0.2)" stroke-width="2" filter="url(#shadow)" backdrop-filter="blur(20px)" />
+  <rect x="80" y="80" width="1040" height="470" rx="36" fill="rgba(7, 9, 15, 0.45)" stroke="rgba(255,255,255,0.2)" stroke-width="2" filter="url(#shadow-${g.id})" backdrop-filter="blur(20px)" />
 
   <text x="600" y="240" font-size="100" text-anchor="middle">${g.symbol}</text>
 
-  <text x="600" y="340" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF" text-anchor="middle" letter-spacing="4" filter="url(#shadow)">
+  <text x="600" y="340" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF" text-anchor="middle" letter-spacing="4" filter="url(#shadow-${g.id})">
     ${g.name}
   </text>
 
@@ -164,7 +201,7 @@ function generateGroupSvg(g: GroupAssetDef): string {
   </text>
   
   <text x="600" y="460" font-family="monospace" font-weight="bold" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle" letter-spacing="4">
-    OFFICIAL ARTIST HUB • CHIKA IDOL DIRECTORY
+    OFFICIAL IDOL GROUP • CHIKA IDOL DIRECTORY
   </text>
 </svg>`;
 }
@@ -176,11 +213,11 @@ function generateMemberSvg(m: MemberAssetDef): string {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
   <defs>
-    <radialGradient id="grad" cx="40%" cy="40%" r="60%">
+    <radialGradient id="grad-${m.id}" cx="40%" cy="40%" r="60%">
       <stop offset="0%" stop-color="${m.color}" />
       <stop offset="100%" stop-color="#0B0F19" />
     </radialGradient>
-    <filter id="shadow">
+    <filter id="shadow-${m.id}">
       <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.6" />
     </filter>
   </defs>
@@ -188,15 +225,15 @@ function generateMemberSvg(m: MemberAssetDef): string {
   <!-- Background Canvas -->
   <rect width="500" height="500" fill="#07090F" />
   <circle cx="250" cy="220" r="170" fill="${m.color}" opacity="0.3" filter="blur(30px)" />
-  <circle cx="250" cy="220" r="140" fill="url(#grad)" stroke="${m.color}" stroke-width="4" filter="url(#shadow)" />
+  <circle cx="250" cy="220" r="140" fill="url(#grad-${m.id})" stroke="${m.color}" stroke-width="4" filter="url(#shadow-${m.id})" />
 
   <!-- Center Initial Kanji -->
-  <text x="250" y="270" font-family="'Klee One', 'Yu Mincho', serif" font-weight="900" font-size="130" fill="${textColor}" text-anchor="middle" filter="url(#shadow)">
+  <text x="250" y="270" font-family="'Klee One', 'Yu Mincho', serif" font-weight="900" font-size="130" fill="${textColor}" text-anchor="middle" filter="url(#shadow-${m.id})">
     ${initial}
   </text>
 
   <!-- Member Label Pill -->
-  <rect x="80" y="380" width="340" height="74" rx="24" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="url(#shadow)" />
+  <rect x="80" y="380" width="340" height="74" rx="24" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="url(#shadow-${m.id})" />
 
   <text x="250" y="415" font-family="'Klee One', 'Gowun Batang', sans-serif" font-weight="bold" font-size="22" fill="#FFFFFF" text-anchor="middle">
     ${m.nameJa} (${m.nameKo})
@@ -209,7 +246,7 @@ function generateMemberSvg(m: MemberAssetDef): string {
 }
 
 function run() {
-  console.log('🖼️ Generating Group Visual Banners...');
+  console.log('🖼️ Generating 10 Verified Girl Group Visual Banners...');
   for (const g of GROUPS) {
     const filePath = path.join(GROUPS_DIR, `${g.id}.svg`);
     fs.writeFileSync(filePath, generateGroupSvg(g), 'utf-8');
@@ -223,7 +260,7 @@ function run() {
     console.log(`  ✓ Created ${m.id}.svg`);
   }
 
-  console.log('✨ All 100% Reliable Local Image Assets Created!');
+  console.log('✨ All 10 Verified Group & Member Image Assets Created!');
 }
 
 run();

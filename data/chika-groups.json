@@ -1,107 +1,42 @@
 [
   {
-    "id": "kawaii-lab",
+    "id": "fruits-zipper",
     "name": {
-      "ja": "KAWAII LAB.",
-      "ko": "카와이 랩 (KAWAII LAB.)",
-      "en": "KAWAII LAB."
+      "ja": "FRUITS ZIPPER",
+      "ko": "후르츠 지퍼 (FRUITS ZIPPER)",
+      "en": "FRUITS ZIPPER"
     },
     "shortName": {
-      "ja": "カワラボ",
-      "ko": "카와라보",
-      "en": "KAWAII LAB."
+      "ja": "ふるっぱー",
+      "ko": "후룹파",
+      "en": "FZ"
     },
-    "agency": "ASOBISYSTEM",
+    "agency": "ASOBISYSTEM (KAWAII LAB.)",
     "region": "tokyo",
     "district": "harajuku",
     "color": "#FF6EA7",
     "accentColor": "#FFE5EC",
     "debutYear": 2022,
-    "imageUrl": "/images/groups/kawaii-lab.svg",
+    "imageUrl": "/images/groups/fruits-zipper.svg",
     "description": {
-      "ja": "「原宿から世界へ」をコンセプトに、世界中を魅了するポップカルチャーと日本の「KAWAII」を発信するASOBISYSTEMのアイドルプロジェクト。",
-      "ko": "「하라주쿠에서 세계로」를 콘셉트로 전 세계를 매료시키는 팝 컬처와 일본의 「KAWAII」를 발신하는 아소비시스템의 대표 아이돌 프로젝트.",
-      "en": "ASOBISYSTEM's flagship idol project transmitting Japan's \"KAWAII\" culture worldwide under the concept \"From Harajuku to the World\"."
+      "ja": "「原宿から世界へ」をコンセプトに、「わたしの一番かわいいところ」がTikTok 9億再生を突破したKAWAII LAB.の第1弾フラッグシップグループ。",
+      "ko": "「하라주쿠에서 세계로」를 콘셉트로 「내가 가장 귀여운 곳」이 틱톡 9억 뷰를 돌파한 카와이 랩의 제1탄 대표 걸그룹.",
+      "en": "The flagship breakthrough idol group of KAWAII LAB. transmitting Harajuku kawaii culture worldwide."
     },
-    "officialSite": "https://kawaiilab.asobisystem.com/",
+    "officialSite": "https://fruitszipper.asobisystem.com/",
     "ticketUrl": "https://l-tike.com/fruitszipper/",
     "chekiUrl": "https://kawaiilab.stores.jp/",
     "scheduleUrl": "https://fruitszipper.asobisystem.com/schedule/",
-    "x": "https://x.com/KAWAII__LAB",
-    "instagram": "https://www.instagram.com/kawaii__lab/",
-    "tiktok": "https://www.tiktok.com/@kawaii__lab",
-    "youtube": "https://www.youtube.com/@KAWAIILAB",
-    "subUnits": [
-      {
-        "id": "fruits-zipper",
-        "name": {
-          "ja": "FRUITS ZIPPER",
-          "ko": "후르츠 지퍼 (FRUITS ZIPPER)",
-          "en": "FRUITS ZIPPER"
-        },
-        "debutYear": 2022,
-        "description": {
-          "ja": "「わたしの一番かわいいところ」がSNSで爆発的ヒットを記録したKAWAII LAB.の第1弾グループ。",
-          "ko": "「내가 가장 귀여운 곳」으로 틱톡 9억 뷰를 돌파하며 일본 대세가 된 카와이랩 제1탄 그룹.",
-          "en": "The breakthrough first group of KAWAII LAB. who dominated viral charts with \"Watashi no Ichiban Kawaii Tokoro\"."
-        },
-        "ticketUrl": "https://l-tike.com/fruitszipper/",
-        "chekiUrl": "https://kawaiilab.stores.jp/"
-      },
-      {
-        "id": "candy-tune",
-        "name": {
-          "ja": "CANDY TUNE",
-          "ko": "캔디 튠 (CANDY TUNE)",
-          "en": "CANDY TUNE"
-        },
-        "debutYear": 2023,
-        "description": {
-          "ja": "「フレーフレー私！」など疾走感とキュートさを兼ね備えたKAWAII LAB.第2弾グループ。",
-          "ko": "통통 튀는 캔디 같은 멜로디와 상큼한 에너지를 전하는 카와이랩 제2탄 그룹.",
-          "en": "The second group of KAWAII LAB. radiating colorful, energetic pop tunes."
-        },
-        "ticketUrl": "https://l-tike.com/candytune/",
-        "chekiUrl": "https://kawaiilab.stores.jp/"
-      },
-      {
-        "id": "sweet-steady",
-        "name": {
-          "ja": "SWEET STEADY",
-          "ko": "스위트 스테디 (SWEET STEADY)",
-          "en": "SWEET STEADY"
-        },
-        "debutYear": 2024,
-        "description": {
-          "ja": "「かわいい」の王道を受け継ぐKAWAII LAB.第3弾グループ。",
-          "ko": "청순함과 달콤한 카와이 매력을 선사하는 카와이랩 제3탄 그룹.",
-          "en": "The sweet, pure idol sensation from KAWAII LAB."
-        },
-        "ticketUrl": "https://l-tike.com/sweetsteady/",
-        "chekiUrl": "https://kawaiilab.stores.jp/"
-      },
-      {
-        "id": "cutie-street",
-        "name": {
-          "ja": "CUTIE STREET",
-          "ko": "큐티 스트리트 (CUTIE STREET)",
-          "en": "CUTIE STREET"
-        },
-        "debutYear": 2024,
-        "description": {
-          "ja": "「KAWAII MAKER」を掲げ、原宿ストリートから最新トレンドを創り出す第4弾グループ。",
-          "ko": "「KAWAII MAKER」를 테마로 하라주쿠 스트리트 감성을 전하는 제4탄 그룹.",
-          "en": "The newest KAWAII LAB. group creating fresh Harajuku street trends."
-        },
-        "ticketUrl": "https://l-tike.com/cutiestreet/",
-        "chekiUrl": "https://kawaiilab.stores.jp/"
-      }
-    ],
+    "x": "https://x.com/fruits_zipper",
+    "instagram": "https://www.instagram.com/fruits_zipper/",
+    "tiktok": "https://www.tiktok.com/@fruits_zipper",
+    "youtube": "https://www.youtube.com/@fruitszipper3799",
+    "subUnits": [],
     "members": [
       {
         "id": "fz-matsumoto-karen",
-        "groupId": "kawaii-lab",
-        "subUnitId": "fruits-zipper",
+        "groupId": "fruits-zipper",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "松本かれん",
@@ -192,8 +127,8 @@
       },
       {
         "id": "fz-sakurai-yui",
-        "groupId": "kawaii-lab",
-        "subUnitId": "fruits-zipper",
+        "groupId": "fruits-zipper",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "櫻井優衣",
@@ -273,8 +208,8 @@
       },
       {
         "id": "fz-chinzei-suzuka",
-        "groupId": "kawaii-lab",
-        "subUnitId": "fruits-zipper",
+        "groupId": "fruits-zipper",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "鎮西寿々歌",
@@ -327,24 +262,13 @@
             },
             "verified": true,
             "isPrimary": true
-          },
-          {
-            "type": "tiktok",
-            "url": "https://www.tiktok.com/@tarasuzuka24",
-            "label": {
-              "ja": "TikTok",
-              "ko": "틱톡",
-              "en": "TikTok"
-            },
-            "verified": true,
-            "isPrimary": false
           }
         ]
       },
       {
         "id": "fz-tsukiashi-amane",
-        "groupId": "kawaii-lab",
-        "subUnitId": "fruits-zipper",
+        "groupId": "fruits-zipper",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "月足天音",
@@ -402,8 +326,8 @@
       },
       {
         "id": "fz-manaka-mana",
-        "groupId": "kawaii-lab",
-        "subUnitId": "fruits-zipper",
+        "groupId": "fruits-zipper",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "真中まな",
@@ -461,8 +385,8 @@
       },
       {
         "id": "fz-hayase-noel",
-        "groupId": "kawaii-lab",
-        "subUnitId": "fruits-zipper",
+        "groupId": "fruits-zipper",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "早瀬ノエル",
@@ -520,8 +444,8 @@
       },
       {
         "id": "fz-nakagawa-runa",
-        "groupId": "kawaii-lab",
-        "subUnitId": "fruits-zipper",
+        "groupId": "fruits-zipper",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "仲川瑠夏",
@@ -576,11 +500,47 @@
             "isPrimary": true
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "candy-tune",
+    "name": {
+      "ja": "CANDY TUNE",
+      "ko": "캔디 튠 (CANDY TUNE)",
+      "en": "CANDY TUNE"
+    },
+    "shortName": {
+      "ja": "きゃんちゅー",
+      "ko": "캔츄",
+      "en": "CT"
+    },
+    "agency": "ASOBISYSTEM (KAWAII LAB.)",
+    "region": "tokyo",
+    "district": "harajuku",
+    "color": "#FF69B4",
+    "accentColor": "#FFE4E6",
+    "debutYear": 2023,
+    "imageUrl": "/images/groups/candy-tune.svg",
+    "description": {
+      "ja": "「フレーフレー私！」などポップでキュートな王道アイドルソングを届けるKAWAII LAB.第2弾アイドルグループ。",
+      "ko": "「힘내라 나!」 등 톡톡 튀는 캔디 같은 사운드와 카와이 매력으로 주목받는 카와이 랩 제2탄 걸그룹.",
+      "en": "The second idol group from KAWAII LAB. radiating colorful and energetic pop tunes."
+    },
+    "officialSite": "https://candy-tune.asobisystem.com/",
+    "ticketUrl": "https://l-tike.com/candytune/",
+    "chekiUrl": "https://kawaiilab.stores.jp/",
+    "scheduleUrl": "https://candy-tune.asobisystem.com/schedule/",
+    "x": "https://x.com/CANDY_TUNE_",
+    "instagram": "https://www.instagram.com/candy__tune/",
+    "tiktok": "https://www.tiktok.com/@candy_tune",
+    "youtube": "https://www.youtube.com/@CANDYTUNE",
+    "subUnits": [],
+    "members": [
       {
         "id": "ct-murakawa-bibian",
-        "groupId": "kawaii-lab",
-        "subUnitId": "candy-tune",
+        "groupId": "candy-tune",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "村川緋杏",
@@ -638,8 +598,8 @@
       },
       {
         "id": "ct-kano-nanako",
-        "groupId": "kawaii-lab",
-        "subUnitId": "candy-tune",
+        "groupId": "candy-tune",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "小川奈々子",
@@ -687,92 +647,43 @@
     ]
   },
   {
-    "id": "heroines",
+    "id": "ilife",
     "name": {
-      "ja": "HEROINES",
-      "ko": "히로인즈 (HEROINES)",
-      "en": "HEROINES"
+      "ja": "iLiFE!",
+      "ko": "아이라이프 (iLiFE!)",
+      "en": "iLiFE!"
     },
     "shortName": {
-      "ja": "ヒロインズ",
-      "ko": "히로인즈",
-      "en": "HEROINES"
+      "ja": "アイライフ",
+      "ko": "아이라이프",
+      "en": "iLiFE!"
     },
-    "agency": "imaginate",
+    "agency": "HEROINES (imaginate)",
     "region": "tokyo",
     "district": "shinjuku",
     "color": "#FF2E7E",
     "accentColor": "#FFD6E5",
-    "debutYear": 2018,
-    "imageUrl": "/images/groups/heroines.svg",
+    "debutYear": 2020,
+    "imageUrl": "/images/groups/ilife.svg",
     "description": {
-      "ja": "iLiFE!、Appare!、夜光性アミューズ、Jams Collectionなどを擁し、圧倒的なライブ動員と熱狂を生み出す日本最大級のライブアイドル総合プロダクション。",
-      "ko": "iLiFE!, Appare!, 야광성 어뮤즈, Jams Collection 등을 보유하며 압도적인 티켓 파워와 페스티벌 열기를 자랑하는 일본 최대 규모의 라이브 아이돌 레이블.",
-      "en": "Japan's premier powerhouse live idol production housing sensation groups like iLiFE!, Appare!, and Yakousei Amuse."
+      "ja": "「私（i）と貴方（you）で創るアイドル（iLiFE!）」をコンセプトに、爆発的なライブ動員を誇るHEROINESのフラッグシップグループ。",
+      "ko": "「나(i)와 당신(you)이 함께 만드는 아이돌」을 콘셉트로 폭발적인 라이브 동원력을 자랑하는 HEROINES 대표 걸그룹.",
+      "en": "The top flagship group of HEROINES creating explosive festival energy together with fans."
     },
-    "officialSite": "https://heroines.jp/",
-    "ticketUrl": "https://ticketdive.com/",
+    "officialSite": "https://heroines.jp/artist/ilife",
+    "ticketUrl": "https://ticketdive.com/artist/ilife",
     "chekiUrl": "https://heroines.stores.jp/",
-    "scheduleUrl": "https://heroines.jp/schedule",
-    "x": "https://x.com/heroines_idol",
-    "instagram": "https://www.instagram.com/heroines_official/",
-    "tiktok": "https://www.tiktok.com/@heroines_official",
-    "youtube": "https://www.youtube.com/@HEROINES_official",
-    "subUnits": [
-      {
-        "id": "ilife",
-        "name": {
-          "ja": "iLiFE!",
-          "ko": "아이라이프 (iLiFE!)",
-          "en": "iLiFE!"
-        },
-        "debutYear": 2020,
-        "description": {
-          "ja": "「私（i）と貴方（you）で創るアイドル」をコンセプトに、爆発的なライブ動員を誇るトップグループ。",
-          "ko": "「나와 당신이 만드는 아이돌」 콘셉트로 일본 라이브 씬을 뒤흔든 최강 그룹.",
-          "en": "The top sensation live idol group concepted around creating idols together with fans."
-        },
-        "ticketUrl": "https://ticketdive.com/artist/ilife",
-        "chekiUrl": "https://heroines.stores.jp/"
-      },
-      {
-        "id": "appare",
-        "name": {
-          "ja": "Appare!",
-          "ko": "앗파레 (Appare!)",
-          "en": "Appare!"
-        },
-        "debutYear": 2016,
-        "description": {
-          "ja": "圧倒的なダンススキルと熱量で大型フェスを熱狂させる最強パフォーマンスグループ。",
-          "ko": "압도적인 댄스 실력과 에너지로 대형 페스티벌을 장악하는 퍼포먼스 최강 그룹.",
-          "en": "The festival dominators known for high-octane dance performances."
-        },
-        "ticketUrl": "https://ticketdive.com/artist/appare",
-        "chekiUrl": "https://appare1.thebase.in/"
-      },
-      {
-        "id": "yakousei-amuse",
-        "name": {
-          "ja": "夜光性アミューズ",
-          "ko": "야광성 어뮤즈 (Yakousei Amuse)",
-          "en": "Yakousei Amuse"
-        },
-        "debutYear": 2021,
-        "description": {
-          "ja": "「夜に輝くアミューズメントパーク」をテーマにしたエレクト로ニック＆キュートなグループ。",
-          "ko": "「밤에 빛나는 놀이공원」을 테마로 한 일렉트로닉 팝 아이돌 그룹.",
-          "en": "The vibrant electronic pop idol group lighting up the night."
-        },
-        "ticketUrl": "https://ticketdive.com/artist/yoruamu",
-        "chekiUrl": "https://heroines.stores.jp/"
-      }
-    ],
+    "scheduleUrl": "https://timetreeapp.com/public_calendars/ilife_official",
+    "x": "https://x.com/iLiFE_official",
+    "instagram": "https://www.instagram.com/ilife.heroines/",
+    "tiktok": "https://www.tiktok.com/@ilife.heroines",
+    "youtube": "https://www.youtube.com/@iLiFE_official",
+    "subUnits": [],
     "members": [
       {
         "id": "ilife-shinzome-riri",
-        "groupId": "heroines",
-        "subUnitId": "ilife",
+        "groupId": "ilife",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "心花りり",
@@ -852,8 +763,8 @@
       },
       {
         "id": "ilife-aisu",
-        "groupId": "heroines",
-        "subUnitId": "ilife",
+        "groupId": "ilife",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "あいす",
@@ -922,8 +833,8 @@
       },
       {
         "id": "ilife-minase-ramu",
-        "groupId": "heroines",
-        "subUnitId": "ilife",
+        "groupId": "ilife",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "水瀬らむ",
@@ -981,8 +892,8 @@
       },
       {
         "id": "ilife-wakaba-noa",
-        "groupId": "heroines",
-        "subUnitId": "ilife",
+        "groupId": "ilife",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "若葉のあ",
@@ -1009,7 +920,7 @@
           "en": "Aichi"
         },
         "nickname": {
-          "ja": "의아ちゃん",
+          "ja": "のあちゃん",
           "ko": "노아짱",
           "en": "Noa-chan"
         },
@@ -1037,11 +948,47 @@
             "isPrimary": true
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "appare",
+    "name": {
+      "ja": "Appare!",
+      "ko": "앗파레 (Appare!)",
+      "en": "Appare!"
+    },
+    "shortName": {
+      "ja": "あっぱれ",
+      "ko": "앗파레",
+      "en": "Appare!"
+    },
+    "agency": "Appare! Project (HEROINES)",
+    "region": "tokyo",
+    "district": "shibuya",
+    "color": "#FFB800",
+    "accentColor": "#FFF3D6",
+    "debutYear": 2016,
+    "imageUrl": "/images/groups/appare.svg",
+    "description": {
+      "ja": "「天晴れ！」な熱量と圧倒的なダンス・ライブパフォーマンスで大型フェスを沸かせる最強ライブアイドル。",
+      "ko": "「앗파레(대단해)!」한 열량과 압도적인 댄스 및 라이브 퍼포먼스로 대형 페스티벌을 장악하는 최강 라이브 아이돌.",
+      "en": "A high-energy live idol group dominating festivals with unmatched dance and energetic performances."
+    },
+    "officialSite": "https://appare-official.jp/",
+    "ticketUrl": "https://ticketdive.com/artist/appare",
+    "chekiUrl": "https://appare1.thebase.in/",
+    "scheduleUrl": "https://appare-official.jp/schedule/",
+    "x": "https://x.com/official_appare",
+    "instagram": "https://www.instagram.com/appare_official/",
+    "tiktok": "https://www.tiktok.com/@official_appare",
+    "youtube": "https://www.youtube.com/@appare_official",
+    "subUnits": [],
+    "members": [
       {
         "id": "appare-asahina-rei",
-        "groupId": "heroines",
-        "subUnitId": "appare",
+        "groupId": "appare",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "朝比奈れい",
@@ -1099,8 +1046,8 @@
       },
       {
         "id": "appare-fujimiya-may",
-        "groupId": "heroines",
-        "subUnitId": "appare",
+        "groupId": "appare",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "藤宮めい",
@@ -1159,76 +1106,43 @@
     ]
   },
   {
-    "id": "wack",
+    "id": "gang-parade",
     "name": {
-      "ja": "WACK",
-      "ko": "왝 (WACK)",
-      "en": "WACK"
+      "ja": "GANG PARADE",
+      "ko": "갱 퍼레이드 (GANG PARADE)",
+      "en": "GANG PARADE"
     },
     "shortName": {
-      "ja": "WACK",
-      "ko": "왝",
-      "en": "WACK"
+      "ja": "ギャンパレ",
+      "ko": "걘파레",
+      "en": "GP"
     },
-    "agency": "WACK Co., Ltd.",
+    "agency": "WACK",
     "region": "tokyo",
     "district": "shibuya",
     "color": "#E6FF00",
-    "accentColor": "#111827",
+    "accentColor": "#1A1A1A",
     "debutYear": 2014,
-    "imageUrl": "/images/groups/wack.svg",
+    "imageUrl": "/images/groups/gang-parade.svg",
     "description": {
-      "ja": "「常識を打ち破る」ロックサウンドとエモーショナルなライブで熱狂的信者を生み出し続ける、渋谷発のカルチャー・エンタテインメント集団。",
-      "ko": "「상식을 파괴한다」는 슬로건으로 록 사운드와 파격적인 라이브 퍼포먼스를 선보이는 시부야 거점의 전설적인 아이돌 기획사.",
-      "en": "The rebellious Shibuya-based music production powerhouse known for electrifying rock performances."
+      "ja": "「みんなの遊び場」をコンセプトに活動するWACK所属の13人組アイドルグループ。",
+      "ko": "「모두의 놀이터」를 콘셉트로 활동하는 WACK 소속 13인조 라이브 아이돌 그룹.",
+      "en": "A 13-member powerhouse idol group from WACK performing under the concept \"Everyone's Playground\"."
     },
-    "officialSite": "https://www.wack.jp/",
-    "ticketUrl": "https://w.pia.jp/t/wack/",
-    "chekiUrl": "https://wackfamilyclub.com/",
-    "scheduleUrl": "https://www.wack.jp/schedule",
-    "x": "https://x.com/WACK_IDOL",
-    "instagram": "https://www.instagram.com/wack_idol_official/",
-    "tiktok": null,
-    "youtube": "https://www.youtube.com/@WACK_OFFICIAL",
-    "subUnits": [
-      {
-        "id": "gang-parade",
-        "name": {
-          "ja": "GANG PARADE",
-          "ko": "갱 퍼레이드 (GANG PARADE)",
-          "en": "GANG PARADE"
-        },
-        "debutYear": 2014,
-        "description": {
-          "ja": "「みんなの遊び場」をコンセプトに活動するWACK所属の13人組アイドルグループ。",
-          "ko": "「모두의 놀이터」 콘셉트로 무대를 뛰어노는 13인조 에너제틱 라이브 그룹.",
-          "en": "A 13-member powerhouse performing under the concept \"Everyone's Playground\"."
-        },
-        "ticketUrl": "https://w.pia.jp/t/gangparade/",
-        "chekiUrl": "https://gangparade.stores.jp/"
-      },
-      {
-        "id": "asp",
-        "name": {
-          "ja": "ASP",
-          "ko": "에이에스피 (ASP)",
-          "en": "ASP"
-        },
-        "debutYear": 2021,
-        "description": {
-          "ja": "メジャーデビューを果たしたパワフルなパンクロックアイドルグループ。",
-          "ko": "거침없는 펑크 록 사운드로 무대를 뒤흔드는 메이저 라이브 그룹.",
-          "en": "High-speed punk rock sensation from WACK."
-        },
-        "ticketUrl": "https://w.pia.jp/t/asp/",
-        "chekiUrl": "https://asp-japan.tokyo/store/"
-      }
-    ],
+    "officialSite": "https://gangparade.jp/",
+    "ticketUrl": "https://w.pia.jp/t/gangparade/",
+    "chekiUrl": "https://gangparade.stores.jp/",
+    "scheduleUrl": "https://gangparade.jp/schedule/",
+    "x": "https://x.com/GANG_PARADE",
+    "instagram": "https://www.instagram.com/gang_parade_official/",
+    "tiktok": "https://www.tiktok.com/@gang_parade",
+    "youtube": "https://www.youtube.com/@GANGPARADE_official",
+    "subUnits": [],
     "members": [
       {
         "id": "gp-yumeno-yua",
-        "groupId": "wack",
-        "subUnitId": "gang-parade",
+        "groupId": "gang-parade",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "ユメノユア",
@@ -1286,8 +1200,8 @@
       },
       {
         "id": "gp-coco-partin",
-        "groupId": "wack",
-        "subUnitId": "gang-parade",
+        "groupId": "gang-parade",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "ココ・パーティン・ココ",
@@ -1335,60 +1249,43 @@
     ]
   },
   {
-    "id": "dearstage",
+    "id": "dempagumi",
     "name": {
-      "ja": "DEARSTAGE",
-      "ko": "디어스테이지 (DEARSTAGE)",
-      "en": "DEARSTAGE"
+      "ja": "でんぱ組.inc",
+      "ko": "덴파구미.inc (Dempagumi.inc)",
+      "en": "Dempagumi.inc"
     },
     "shortName": {
-      "ja": "DSPM",
-      "ko": "디어스테이지",
-      "en": "DEARSTAGE"
+      "ja": "でんぱ組",
+      "ko": "덴파구미",
+      "en": "Dempa"
     },
-    "agency": "DEARSTAGE Inc.",
+    "agency": "DEARSTAGE",
     "region": "tokyo",
     "district": "akihabara",
     "color": "#00E5FF",
     "accentColor": "#E0F7FA",
     "debutYear": 2008,
-    "imageUrl": "/images/groups/dearstage.svg",
+    "imageUrl": "/images/groups/dempagumi.svg",
     "description": {
-      "ja": "秋葉原ディアステージ発、アニメ・ゲーム・ボーカロイドなど日本のオタクカルチャーとアイドルを融合させたカルチャーの聖地。",
-      "ko": "아키하바라 디어스테이지 출신, 서브컬처와 아이돌을 융합시켜 현대 지하아이돌 씬의 근간을 만든 역사적인 아키바 레이블.",
-      "en": "The legendary Akihabara culture hub fusing anime, games, and subculture with idol entertainment."
+      "ja": "秋葉原ディアステージ発、アニメ・マンガ・ゲームなどオタクカルチャーを世界へ発信し続けた伝説的カルチャーアイドル。",
+      "ko": "아키하바라 디어스테이지 출신, 서브컬처 문화를 전 세계로 전파한 전설적인 아키바계 아이돌 걸그룹.",
+      "en": "Originating from Akihabara DearStage, a legendary pioneer of modern otaku-culture live idols."
     },
-    "officialSite": "https://dearstage.co.jp/",
+    "officialSite": "https://dempagumi.tokyo/",
     "ticketUrl": "https://t.livepocket.jp/p/dearstage",
-    "chekiUrl": "https://dspmstore.com/",
+    "chekiUrl": "https://dspmstore.com/shopbrand/dempa/",
     "scheduleUrl": "https://dempagumi.tokyo/schedule/",
-    "x": "https://x.com/DEARSTAGE_inc",
-    "instagram": null,
-    "tiktok": null,
-    "youtube": "https://www.youtube.com/@dearstage_official",
-    "subUnits": [
-      {
-        "id": "dempagumi",
-        "name": {
-          "ja": "でんぱ組.inc",
-          "ko": "덴파구미.inc (Dempagumi.inc)",
-          "en": "Dempagumi.inc"
-        },
-        "debutYear": 2008,
-        "description": {
-          "ja": "オタクカルチャーを世界へ発信し続けた伝説的カルチャーアイドル。",
-          "ko": "서브컬처 문화를 전 세계로 전파한 아키하바라의 전설적인 아이돌 그룹.",
-          "en": "Pioneering otaku-culture idol sensation."
-        },
-        "ticketUrl": "https://t.livepocket.jp/p/dearstage",
-        "chekiUrl": "https://dspmstore.com/shopbrand/dempa/"
-      }
-    ],
+    "x": "https://x.com/dempagumi",
+    "instagram": "https://www.instagram.com/dempagumi.official/",
+    "tiktok": "https://www.tiktok.com/@dempagumi_official",
+    "youtube": "https://www.youtube.com/@dempagumi",
+    "subUnits": [],
     "members": [
       {
         "id": "dempa-furukawa-mirin",
-        "groupId": "dearstage",
-        "subUnitId": "dempagumi",
+        "groupId": "dempagumi",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "古川未鈴",
@@ -1446,8 +1343,8 @@
       },
       {
         "id": "dempa-aizawa-risa",
-        "groupId": "dearstage",
-        "subUnitId": "dempagumi",
+        "groupId": "dempagumi",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "相沢梨紗",
@@ -1506,28 +1403,28 @@
     ]
   },
   {
-    "id": "kansai-idols",
+    "id": "colorful-scream",
     "name": {
-      "ja": "KANSAI IDOLS",
-      "ko": "간사이 아이돌 (Kansai / Osaka)",
-      "en": "KANSAI IDOLS"
+      "ja": "カラフルスクリーム",
+      "ko": "컬러풀 스크림 (Colorful Scream)",
+      "en": "Colorful Scream"
     },
     "shortName": {
-      "ja": "関西選抜",
-      "ko": "간사이 선발",
-      "en": "Kansai"
+      "ja": "カラスク",
+      "ko": "카라스쿠",
+      "en": "Karasuku"
     },
-    "agency": "Kansai Live Circuit",
+    "agency": "NTK Create",
     "region": "osaka",
     "district": "namba",
-    "color": "#10B981",
+    "color": "#00D26A",
     "accentColor": "#E6F9F0",
     "debutYear": 2017,
-    "imageUrl": "/images/groups/kansai-idols.svg",
+    "imageUrl": "/images/groups/colorful-scream.svg",
     "description": {
-      "ja": "大阪・難波や心斎橋を拠点に、圧倒的な熱量と親しみやすさで関西から全国を沸かせるライブアイドル勢。",
-      "ko": "오사카 난바와 신사이바시를 거점으로 독보적인 에너지와 긍정적인 라이브로 전국을 달구는 간사이 대표 아이돌 군단.",
-      "en": "The vibrant and passionate live idols representing Osaka and the Kansai music scene."
+      "ja": "関西・大阪を拠点に全国へポジティブな歌声を届ける、関西屈指の王道メロディック・ライブアイドル。",
+      "ko": "간사이・오사카를 거점으로 전국에 긍정적인 에너지를 전하는 오사카 대표 멜로딕 라이브 아이돌 걸그룹.",
+      "en": "A premier melodic live idol group based in Osaka, Kansai bringing uplifting energy nationwide."
     },
     "officialSite": "https://colorfulscream.com/",
     "ticketUrl": "https://tiget.net/users/77864",
@@ -1537,29 +1434,12 @@
     "instagram": "https://www.instagram.com/colorfulscream_official/",
     "tiktok": "https://www.tiktok.com/@colorfulscream_official",
     "youtube": "https://www.youtube.com/@colorfulscream_official",
-    "subUnits": [
-      {
-        "id": "colorful-scream",
-        "name": {
-          "ja": "カラフルスクリーム",
-          "ko": "컬러풀 스크림 (Colorful Scream)",
-          "en": "Colorful Scream"
-        },
-        "debutYear": 2017,
-        "description": {
-          "ja": "関西屈指の王道メロディック・ライブアイドル。",
-          "ko": "간사이 굴지의 멜로딕 왕도 라이브 아이돌 그룹.",
-          "en": "Premier melodic idol group from Osaka."
-        },
-        "ticketUrl": "https://tiget.net/users/77864",
-        "chekiUrl": "https://colorfulscream.stores.jp/"
-      }
-    ],
+    "subUnits": [],
     "members": [
       {
         "id": "karasuku-nako",
-        "groupId": "kansai-idols",
-        "subUnitId": "colorful-scream",
+        "groupId": "colorful-scream",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "なこ",
@@ -1618,28 +1498,28 @@
     ]
   },
   {
-    "id": "regional-idols",
+    "id": "title-mitei",
     "name": {
-      "ja": "REGIONAL IDOLS",
-      "ko": "전국 로컬 아이돌 (Sapporo / Nagoya / Fukuoka)",
-      "en": "REGIONAL IDOLS"
+      "ja": "タイトル未定",
+      "ko": "타이틀 미정 (Title Mitei)",
+      "en": "Title Mitei"
     },
     "shortName": {
-      "ja": "全国地方選抜",
-      "ko": "지방 선발",
-      "en": "Regional"
+      "ja": "未定",
+      "ko": "미정",
+      "en": "Mitei"
     },
-    "agency": "Regional Idol Network",
+    "agency": "TSUIMA Inc.",
     "region": "sapporo",
-    "district": "general",
-    "color": "#38BDF8",
-    "accentColor": "#F0F9FF",
-    "debutYear": 2011,
-    "imageUrl": "/images/groups/regional-idols.svg",
+    "district": "susukino",
+    "color": "#80BFFF",
+    "accentColor": "#F0F7FF",
+    "debutYear": 2020,
+    "imageUrl": "/images/groups/title-mitei.svg",
     "description": {
-      "ja": "北海道・札幌の「タイトル未定」、名古屋・栄の「手羽先センセーション」、福岡・博多の「LinQ」など全国各都市を代表する有力グループ。",
-      "ko": "홋카이도 삿포로의 「타이틀 미정」, 나고야 사카에의 「테바사키 센세이션」, 후쿠오카 하카타의 「LinQ」 등 일본 각 도시를 대표하는 로컬 대표 그룹.",
-      "en": "Flagship live idol groups representing Japan's iconic regional music scenes across Hokkaido, Nagoya, and Kyushu."
+      "ja": "「何者かになろうとしなくていい」をテーマに、北海道・札幌から透明感ある叙情的な楽曲を届ける実力派グループ。",
+      "ko": "「무엇이 되려 하지 않아도 괜찮아」를 테마로 홋카이도 삿포로에서 투명하고 서정적인 음악을 선보이는 감성 실력파 걸그룹.",
+      "en": "A critically acclaimed Sapporo-based idol group known for poetic music and emotional live performances."
     },
     "officialSite": "https://miteititle.com/",
     "ticketUrl": "https://t.livepocket.jp/t/miteititle",
@@ -1649,45 +1529,12 @@
     "instagram": "https://www.instagram.com/miteititle/",
     "tiktok": "https://www.tiktok.com/@miteititle",
     "youtube": "https://www.youtube.com/@miteititle",
-    "subUnits": [
-      {
-        "id": "title-mitei",
-        "name": {
-          "ja": "タイトル未定 (札幌)",
-          "ko": "타이틀 미정 (삿포로)",
-          "en": "Title Mitei (Sapporo)"
-        },
-        "debutYear": 2020,
-        "description": {
-          "ja": "北海道・札幌から透明感ある叙情的な楽曲を届ける実力派グループ。",
-          "ko": "홋카이도 삿포로의 투명하고 서정적인 감성 실력파 아이돌.",
-          "en": "Sapporo's emotional, poetic idol group."
-        },
-        "ticketUrl": "https://t.livepocket.jp/t/miteititle",
-        "chekiUrl": "https://miteititle.stores.jp/"
-      },
-      {
-        "id": "linq",
-        "name": {
-          "ja": "LinQ (福岡・博多)",
-          "ko": "링크 (후쿠오카・하카타)",
-          "en": "LinQ (Fukuoka)"
-        },
-        "debutYear": 2011,
-        "description": {
-          "ja": "福岡・天神を拠点に全国・アジアへ笑顔を届ける九州を代表するグループ。",
-          "ko": "후쿠오카 텐진을 거점으로 전국과 아시아로 뻗어나가는 큐슈 대표 아이돌.",
-          "en": "Fukuoka's premier Kyushu idol group."
-        },
-        "ticketUrl": "https://tiget.net/users/5801",
-        "chekiUrl": "https://linq.official.ec/"
-      }
-    ],
+    "subUnits": [],
     "members": [
       {
         "id": "mitei-abe-hana",
-        "groupId": "regional-idols",
-        "subUnitId": "title-mitei",
+        "groupId": "title-mitei",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "阿部葉菜",
@@ -1742,11 +1589,47 @@
             "isPrimary": true
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "linq",
+    "name": {
+      "ja": "LinQ",
+      "ko": "링크 (LinQ)",
+      "en": "LinQ"
+    },
+    "shortName": {
+      "ja": "リンク",
+      "ko": "링크",
+      "en": "LinQ"
+    },
+    "agency": "IQ Project",
+    "region": "fukuoka",
+    "district": "tenjin",
+    "color": "#E60012",
+    "accentColor": "#FEE2E2",
+    "debutYear": 2011,
+    "imageUrl": "/images/groups/linq.svg",
+    "description": {
+      "ja": "「Love in 九州」を掲げ、福岡・天神を拠点に全国・アジアへ笑顔を届ける九州を代表する長寿アイドルグループ。",
+      "ko": "「Love in 큐슈」를 모토로 후쿠오카 텐진을 거점으로 전국과 아시아로 뻗어나가는 큐슈 대표 아이돌 걸그룹.",
+      "en": "Fukuoka's premier Kyushu idol group representing Asian regional idol culture."
+    },
+    "officialSite": "https://loveinq.com/",
+    "ticketUrl": "https://tiget.net/users/5801",
+    "chekiUrl": "https://linq.official.ec/",
+    "scheduleUrl": "https://loveinq.com/schedule/",
+    "x": "https://x.com/LinQ_official",
+    "instagram": "https://www.instagram.com/linq_official/",
+    "tiktok": "https://www.tiktok.com/@linq_official",
+    "youtube": "https://www.youtube.com/@LinQ_official",
+    "subUnits": [],
+    "members": [
       {
         "id": "linq-takaki-yuumi",
-        "groupId": "regional-idols",
-        "subUnitId": "linq",
+        "groupId": "linq",
+        "subUnitId": "",
         "name": {
           "ja": {
             "kanji": "高木悠未",
@@ -1792,6 +1675,101 @@
           {
             "type": "instagram",
             "url": "https://www.instagram.com/yuumi_takaki17/",
+            "label": {
+              "ja": "Instagram",
+              "ko": "인스타그램",
+              "en": "Instagram"
+            },
+            "verified": true,
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tebasen",
+    "name": {
+      "ja": "手羽先センセーション",
+      "ko": "테바사키 센세이션 (Tebasaki Sensation)",
+      "en": "Tebasaki Sensation"
+    },
+    "shortName": {
+      "ja": "手羽セン",
+      "ko": "테바센",
+      "en": "TebaSen"
+    },
+    "agency": "FreeK-Laboratory",
+    "region": "nagoya",
+    "district": "sakae",
+    "color": "#FF8C00",
+    "accentColor": "#FFF7ED",
+    "debutYear": 2017,
+    "imageUrl": "/images/groups/tebasen.svg",
+    "description": {
+      "ja": "「手羽先のように愛されるグループ」を目指し、名古屋・栄を拠点に圧倒的なライブの熱気と王道ポップを届ける名古屋の代表格。",
+      "ko": "「나고야 명물 테바사키처럼 모두에게 사랑받는 아이돌」을 목표로 나고야 사카에를 거점으로 왕도 팝을 선보이는 나고야 대표 걸그룹.",
+      "en": "Nagoya's iconic energetic idol sensation bringing melodic pop songs from Sakae, Nagoya."
+    },
+    "officialSite": "https://www.tebasen.com/",
+    "ticketUrl": "https://t.livepocket.jp/t/tebasen",
+    "chekiUrl": "https://tebasen.stores.jp/",
+    "scheduleUrl": "https://www.tebasen.com/schedule/",
+    "x": "https://x.com/teba_sen",
+    "instagram": "https://www.instagram.com/teba_sen/",
+    "tiktok": "https://www.tiktok.com/@teba_sen",
+    "youtube": "https://www.youtube.com/@tebasen",
+    "subUnits": [],
+    "members": [
+      {
+        "id": "tebasen-hinami-haruka",
+        "groupId": "tebasen",
+        "subUnitId": "",
+        "name": {
+          "ja": {
+            "kanji": "日南遥",
+            "kana": "ひなみ はるか"
+          },
+          "ko": {
+            "hangul": "히나미 하루카"
+          },
+          "en": {
+            "romaji": "Haruka Hinami"
+          }
+        },
+        "memberColor": "#FF8C00",
+        "memberColorName": {
+          "ja": "オレンジ",
+          "ko": "오렌지",
+          "en": "Orange"
+        },
+        "imageUrl": "/images/members/tebasen-hinami-haruka.svg",
+        "birthDate": "1999-01-24",
+        "birthplace": {
+          "ja": "愛知県",
+          "ko": "아이치현",
+          "en": "Aichi"
+        },
+        "nickname": {
+          "ja": "はるちゃん",
+          "ko": "하루짱",
+          "en": "Haru-chan"
+        },
+        "links": [
+          {
+            "type": "x",
+            "url": "https://x.com/haruka_tebasen",
+            "label": {
+              "ja": "X (Twitter)",
+              "ko": "공식 X (트위터)",
+              "en": "Official X"
+            },
+            "verified": true,
+            "isPrimary": true
+          },
+          {
+            "type": "instagram",
+            "url": "https://www.instagram.com/hinami_haruka/",
             "label": {
               "ja": "Instagram",
               "ko": "인스타그램",
