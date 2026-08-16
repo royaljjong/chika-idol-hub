@@ -18,10 +18,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
       <main id="main-content" className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 py-12 flex-1 w-full">
         <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-white/10">
           <span className="text-xs uppercase tracking-widest text-pink-400 font-bold mb-2 block font-mono">
-            Concept & Mission
+            Concept & Directory
           </span>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-star-white mb-6 font-[family-name:var(--font-klee-one)]">
-            {locale === 'ko' ? '지하지만 가장 밝게 빛나는 별들' : '地下で最も輝く星たち'}
+            {locale === 'ko' ? '일본 전국 지하아이돌' : '日本全国 地下アイドル'}
           </h1>
 
           <div className="space-y-4 text-sm text-star-dim leading-relaxed">
