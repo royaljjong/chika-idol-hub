@@ -33,6 +33,31 @@ export const DistrictId = z.enum([
 ]);
 export type DistrictId = z.infer<typeof DistrictId>;
 
+export const LinkType = z.enum([
+  'official_profile',
+  'official_blog',
+  'twitter',
+  'x',
+  'instagram',
+  'tiktok',
+  'youtube',
+  'showroom',
+  'ticket',
+  'cheki',
+  'store',
+  'other',
+]);
+export type LinkType = z.infer<typeof LinkType>;
+
+export const IdolLink = z.object({
+  type: LinkType,
+  url: z.string().url(),
+  label: LocalizedText,
+  verified: z.boolean().default(true),
+  isPrimary: z.boolean().default(false),
+});
+export type IdolLink = z.infer<typeof IdolLink>;
+
 export const ChikaMember = z.object({
   id: z.string(),
   groupId: z.string(),
@@ -48,14 +73,13 @@ export const ChikaMember = z.object({
       romaji: z.string(),
     }),
   }),
-  memberColor: z.string().default('#FFFFFF'),
+  memberColor: z.string().default('#FF2E7E'),
   memberColorName: LocalizedText,
   imageUrl: z.string().url().nullable().default(null),
-  x: z.string().url().nullable().default(null),
-  instagram: z.string().url().nullable().default(null),
-  tiktok: z.string().url().nullable().default(null),
-  showroom: z.string().url().nullable().default(null),
-  cheki: z.string().url().nullable().default(null),
+  birthDate: z.string().nullable().default(null),
+  birthplace: LocalizedText.nullable().default(null),
+  nickname: LocalizedText.nullable().default(null),
+  links: z.array(IdolLink).default([]),
 });
 export type ChikaMember = z.infer<typeof ChikaMember>;
 
@@ -64,14 +88,12 @@ export const ChikaGroup = z.object({
   name: LocalizedText,
   shortName: LocalizedText,
   agency: z.string(),
-  region: RegionId,
-  district: DistrictId,
+  region: z.string(),
+  district: z.string(),
   color: z.string(),
   accentColor: z.string(),
   debutYear: z.number(),
   description: LocalizedText,
-  logoUrl: z.string().url().nullable().default(null),
-  bannerUrl: z.string().url().nullable().default(null),
   officialSite: z.string().url().nullable().default(null),
   ticketUrl: z.string().url().nullable().default(null),
   chekiUrl: z.string().url().nullable().default(null),

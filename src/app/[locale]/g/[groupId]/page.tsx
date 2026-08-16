@@ -4,6 +4,7 @@ import { getGroup, getGroups } from '@/lib/data';
 import { routing, Link } from '@/i18n/routing';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { MemberCard } from '@/components/member/MemberCard';
 import type { Metadata } from 'next';
 
 interface GroupPageProps {
@@ -26,8 +27,8 @@ export async function generateMetadata({ params }: GroupPageProps): Promise<Meta
   if (!group) return {};
 
   const name = group.name[locale as 'ja' | 'ko' | 'en'] || group.name.ja;
-  const title = `${name} (${group.agency}) 公式リンク・チケット・チェキ | CHIKA IDOL HUB`;
-  const description = `${name}의 공식 사이트, 라이브 티켓(TIGET/LivePocket), 체키/굿즈 스토어, 멤버 목록 및 SNS 링크 모음.`;
+  const title = `${name} (${group.agency}) メンバー一覧・公式リンク | CHIKA IDOL HUB`;
+  const description = `${name}의 멤버 목록, 프로필, 라이브 티켓(TIGET/LivePocket), 체키 스토어, SNS 링크 모음.`;
 
   return {
     title,
@@ -54,6 +55,11 @@ export default async function GroupPage({ params }: GroupPageProps) {
     alternateName: [group.name.ko, group.name.en],
     url: group.officialSite || undefined,
     sameAs: [group.x, group.instagram, group.tiktok, group.youtube].filter(Boolean),
+    member: group.members.map((m) => ({
+      '@type': 'Person',
+      name: m.name.ja.kanji,
+      alternateName: [m.name.ko.hangul, m.name.en.romaji],
+    })),
   };
 
   return (
@@ -71,13 +77,13 @@ export default async function GroupPage({ params }: GroupPageProps) {
             Home
           </Link>
           <span>/</span>
-          <span>{group.region.toUpperCase()}</span>
+          <span>{group.region.toUpperCase()} ({group.district.toUpperCase()})</span>
           <span>/</span>
           <span className="text-star-white font-semibold">{groupName}</span>
         </div>
 
         {/* Group Profile Header */}
-        <section className="relative p-6 sm:p-10 rounded-3xl glass-panel border border-white/10 overflow-hidden mb-10">
+        <section className="relative p-6 sm:p-10 rounded-3xl glass-panel border border-white/10 overflow-hidden mb-10 shadow-2xl">
           <div
             className="absolute -right-20 -top-20 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none"
             style={{ backgroundColor: group.color }}
@@ -135,7 +141,7 @@ export default async function GroupPage({ params }: GroupPageProps) {
                 className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-lg shadow-pink-500/20"
               >
                 <span>🎟️</span>
-                <span>{locale === 'ko' ? '라이브 티켓팅' : 'ライブチケット (TIGET/LivePocket)'}</span>
+                <span>{locale === 'ko' ? '라이브 티켓 예매' : 'ライブチケット (TIGET/LivePocket)'}</span>
               </a>
             )}
 
@@ -210,102 +216,31 @@ export default async function GroupPage({ params }: GroupPageProps) {
           </div>
         </section>
 
-        {/* Member Roster Grid */}
+        {/* Member Cards Grid (Click goes directly to /m/[memberId]) */}
         <section className="mb-14">
           <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
-            <h2 className="text-xl sm:text-2xl font-bold text-star-white font-[family-name:var(--font-klee-one)]">
-              {locale === 'ko' ? '소속 멤버' : locale === 'ja' ? '所属メンバー' : 'Members'}
-            </h2>
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-star-white font-[family-name:var(--font-klee-one)]">
+                {locale === 'ko' ? '소속 멤버 목록' : locale === 'ja' ? '所属メンバー一覧' : 'Members'}
+              </h2>
+              <p className="text-xs text-star-dim mt-0.5">
+                {locale === 'ko' ? '멤버 카드를 클릭하면 상세 SNS 및 공식 링크를 확인할 수 있습니다.' : 'メンバーを選択して詳細SNSリンクを確認'}
+              </p>
+            </div>
             <span className="text-xs text-star-dim font-mono">
               {group.members.length} Members
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {group.members.map((member) => {
-              const nameJa = member.name.ja.kanji;
-              const nameKana = member.name.ja.kana;
-              const nameKo = member.name.ko.hangul;
-              const colorName = member.memberColorName[locale as 'ja' | 'ko' | 'en'] || member.memberColorName.ja;
-
-              return (
-                <div
-                  key={member.id}
-                  className="p-5 rounded-2xl glass-panel border border-white/10 hover:border-white/20 transition flex flex-col justify-between"
-                >
-                  <div className="flex items-start gap-3.5 mb-4">
-                    {/* Member Color Circle */}
-                    <div
-                      className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center text-sm font-bold shadow-md border border-white/20"
-                      style={{
-                        backgroundColor: member.memberColor,
-                        color: member.memberColor === '#FFFFFF' || member.memberColor === '#F4E409' || member.memberColor === '#FFD700' ? '#111' : '#FFF',
-                      }}
-                    >
-                      {nameJa[0]}
-                    </div>
-
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <h3 className="text-base font-bold text-star-white truncate">
-                          {locale === 'ko' ? nameKo : nameJa}
-                        </h3>
-                        <span
-                          className="text-[10px] px-2 py-0.5 rounded-full font-bold truncate"
-                          style={{
-                            backgroundColor: `${member.memberColor}25`,
-                            color: member.memberColor,
-                            border: `1px solid ${member.memberColor}50`,
-                          }}
-                        >
-                          {colorName}
-                        </span>
-                      </div>
-                      <p className="text-xs text-star-dim">
-                        {nameKana} • {member.name.en.romaji}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Individual SNS Links */}
-                  <div className="pt-3 border-t border-white/10 flex items-center gap-2 text-xs">
-                    {member.x && (
-                      <a
-                        href={member.x}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white font-bold transition"
-                        title="X (Twitter)"
-                      >
-                        𝕏
-                      </a>
-                    )}
-                    {member.instagram && (
-                      <a
-                        href={member.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white transition"
-                        title="Instagram"
-                      >
-                        📷
-                      </a>
-                    )}
-                    {member.tiktok && (
-                      <a
-                        href={member.tiktok}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white transition"
-                        title="TikTok"
-                      >
-                        🎵
-                      </a>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {group.members.map((member) => (
+              <MemberCard
+                key={member.id}
+                member={member}
+                group={group}
+                locale={locale}
+              />
+            ))}
           </div>
         </section>
       </main>

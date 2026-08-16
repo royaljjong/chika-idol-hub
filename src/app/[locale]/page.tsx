@@ -3,6 +3,7 @@ import { getGroups } from '@/lib/data';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
 import { InteractiveJapanMap } from '@/components/map/InteractiveJapanMap';
+import { GroupCard } from '@/components/group/GroupCard';
 import type { Metadata } from 'next';
 
 interface HomePageProps {
@@ -40,7 +41,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <Navigation />
 
       <main id="main-content" className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 w-full">
-        {/* Centered Clean Title */}
+        {/* Centered Clean Title (Sakamichi style) */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-star-white font-[family-name:var(--font-klee-one)] mb-3">
             {locale === 'ko' ? '일본 전국 지하아이돌' : locale === 'ja' ? '日本全国 地下アイドル' : 'Japan Underground Idols'}
@@ -54,8 +55,32 @@ export default async function HomePage({ params }: HomePageProps) {
           </p>
         </div>
 
-        {/* Interactive Japan & Tokyo Map Component */}
-        <InteractiveJapanMap groups={groups} locale={locale} />
+        {/* 1. Interactive Japan & Tokyo Map */}
+        <div className="mb-14">
+          <InteractiveJapanMap groups={groups} locale={locale} />
+        </div>
+
+        {/* 2. Large Group Cards Grid (Sakamichi Hub 3-tier style) */}
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-8 pb-3 border-b border-white/10">
+            <h2 className="text-xl sm:text-2xl font-bold text-star-white font-[family-name:var(--font-klee-one)]">
+              {locale === 'ko' ? '주요 거점 아이돌 그룹' : locale === 'ja' ? '主要拠点グループ一覧' : 'Key Live Idol Groups'}
+            </h2>
+            <span className="text-xs text-star-dim font-mono">
+              {groups.length} Groups
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+            {groups.map((group) => (
+              <GroupCard
+                key={group.id}
+                group={group}
+                locale={locale}
+              />
+            ))}
+          </div>
+        </div>
       </main>
 
       <Footer />
