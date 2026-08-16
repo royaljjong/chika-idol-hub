@@ -19,96 +19,32 @@ interface GroupAssetDef {
 }
 
 const GROUPS: GroupAssetDef[] = [
-  {
-    id: 'fruits-zipper',
-    name: 'FRUITS ZIPPER',
-    sub: 'KAWAII LAB. • 原宿 • わたしの一番かわいいところ',
-    bg1: '#FF2E7E',
-    bg2: '#FF6EA7',
-    accent: '#FFE5EC',
-    symbol: '🎀',
-  },
-  {
-    id: 'candy-tune',
-    name: 'CANDY TUNE',
-    sub: 'KAWAII LAB. • 原宿 • フレーフレー私！',
-    bg1: '#FF69B4',
-    bg2: '#FF1493',
-    accent: '#FFE4E6',
-    symbol: '🍭',
-  },
-  {
-    id: 'ilife',
-    name: 'iLiFE!',
-    sub: 'HEROINES • 新宿 • 私と貴方で創るアイドル',
-    bg1: '#FF0055',
-    bg2: '#7928CA',
-    accent: '#FFD6E5',
-    symbol: '💖',
-  },
-  {
-    id: 'appare',
-    name: 'Appare!',
-    sub: 'HEROINES • 渋谷 • 天晴れ！最強パフォーマンス',
-    bg1: '#F59E0B',
-    bg2: '#D97706',
-    accent: '#FEF3C7',
-    symbol: '☀️',
-  },
-  {
-    id: 'gang-parade',
-    name: 'GANG PARADE',
-    sub: 'WACK • 渋谷 • みんなの遊び場 13人組',
-    bg1: '#111827',
-    bg2: '#E6FF00',
-    accent: '#FACC15',
-    symbol: '⚡',
-  },
-  {
-    id: 'dempagumi',
-    name: 'でんぱ組.inc',
-    sub: 'DEARSTAGE • 秋葉原 • 伝説的カルチャーアイドル',
-    bg1: '#00C6FF',
-    bg2: '#0072FF',
-    accent: '#E0F7FA',
-    symbol: '⚡',
-  },
-  {
-    id: 'colorful-scream',
-    name: 'カラフルスクリーム',
-    sub: '関西・大阪 • 難波 • 王道メロディックライブ',
-    bg1: '#10B981',
-    bg2: '#047857',
-    accent: '#D1FAE5',
-    symbol: '🐙',
-  },
-  {
-    id: 'title-mitei',
-    name: 'タイトル未定',
-    sub: '北海道・札幌 • すすきの • 透明感ある叙情派',
-    bg1: '#0EA5E9',
-    bg2: '#38BDF8',
-    accent: '#E0F2FE',
-    symbol: '❄️',
-  },
-  {
-    id: 'linq',
-    name: 'LinQ',
-    sub: '九州・福岡 • 天神 • Love in 九州',
-    bg1: '#E60012',
-    bg2: '#991B1B',
-    accent: '#FEE2E2',
-    symbol: '🍜',
-  },
-  {
-    id: 'tebasen',
-    name: '手羽先センセーション',
-    sub: '東海・名古屋 • 栄 • 王道エネルギッシュポップ',
-    bg1: '#FF8C00',
-    bg2: '#EA580C',
-    accent: '#FFEDD5',
-    symbol: '🍗',
-  },
+  // Harajuku
+  { id: 'fruits-zipper', name: 'FRUITS ZIPPER', sub: 'KAWAII LAB. • 原宿 • わたしの一番かわいいところ', bg1: '#FF2E7E', bg2: '#FF6EA7', accent: '#FFE5EC', symbol: '🎀' },
+  { id: 'candy-tune', name: 'CANDY TUNE', sub: 'KAWAII LAB. • 原宿 • フレーフレー私！', bg1: '#FF69B4', bg2: '#FF1493', accent: '#FFE4E6', symbol: '🍭' },
+  { id: 'cutie-street', name: 'CUTIE STREET', sub: 'KAWAII LAB. • 原宿 • KAWAII MAKER', bg1: '#FF0080', bg2: '#7928CA', accent: '#FFE5F1', symbol: '💖' },
+  { id: 'sweet-steady', name: 'SWEET STEADY', sub: 'KAWAII LAB. • 原宿 • 清純派アイドル', bg1: '#8B5CF6', bg2: '#6366F1', accent: '#F5F3FF', symbol: '🌸' },
+  // Shinjuku
+  { id: 'ilife', name: 'iLiFE!', sub: 'HEROINES • 新宿 • 私と貴方で創るアイドル', bg1: '#FF0055', bg2: '#7928CA', accent: '#FFD6E5', symbol: '💖' },
+  { id: 'yoruamu', name: '夜光性アミューズ', sub: 'HEROINES • 新宿 • エレクトロニックポップ', bg1: '#8B5CF6', bg2: '#4C1D95', accent: '#EDE9FE', symbol: '🌙' },
+  { id: 'nonfic', name: 'のんふぃく！', sub: 'HEROINES • 新宿 • ノンフィクション', bg1: '#EC4899', bg2: '#BE185D', accent: '#FDF2F8', symbol: '✨' },
+  // Shibuya
+  { id: 'appare', name: 'Appare!', sub: 'HEROINES • 渋谷 • 天晴れ！最強パフォーマンス', bg1: '#F59E0B', bg2: '#D97706', accent: '#FEF3C7', symbol: '☀️' },
+  { id: 'gang-parade', name: 'GANG PARADE', sub: 'WACK • 渋谷 • みんなの遊び場 13人組', bg1: '#111827', bg2: '#E6FF00', accent: '#FACC15', symbol: '⚡' },
+  { id: 'jams-collection', name: 'Jams Collection', sub: 'RIZE • 渋谷 • 日本武道館 単独公演', bg1: '#06B6D4', bg2: '#0891B2', accent: '#ECFEFF', symbol: '💎' },
+  // Akihabara
+  { id: 'dempagumi', name: 'でんぱ組.inc', sub: 'DEARSTAGE • 秋葉原 • 伝説的カルチャーアイドル', bg1: '#00C6FF', bg2: '#0072FF', accent: '#E0F7FA', symbol: '⚡' },
+  { id: '2zicon', name: '虹のコンキスタドール', sub: 'DEARSTAGE • 秋葉原 • 毎日が夏休み！', bg1: '#F59E0B', bg2: '#EA580C', accent: '#FEF3C7', symbol: '🌈' },
+  { id: 'festive', name: 'FES☆TIVE', sub: 'RIZE • 秋葉原 • お祭り系アイドル', bg1: '#EF4444', bg2: '#B91C1C', accent: '#FEE2E2', symbol: '🏮' },
+  // Osaka
+  { id: 'colorful-scream', name: 'カラフルスクリーム', sub: '関西・大阪 • 難波 • 王道メロディックライブ', bg1: '#10B981', bg2: '#047857', accent: '#D1FAE5', symbol: '🐙' },
+  { id: 'kolokol', name: 'Kolokol', sub: 'we-B studios • 大阪 • 囚われない音楽', bg1: '#6366F1', bg2: '#4338CA', accent: '#EEF2FF', symbol: '🔔' },
+  // Sapporo
+  { id: 'title-mitei', name: 'タイトル未定', sub: '北海道・札幌 • すすきの • 透明感ある叙情派', bg1: '#0EA5E9', bg2: '#38BDF8', accent: '#E0F2FE', symbol: '❄️' },
+  // Fukuoka
+  { id: 'linq', name: 'LinQ', sub: '九州・福岡 • 天神 • Love in 九州', bg1: '#E60012', bg2: '#991B1B', accent: '#FEE2E2', symbol: '🍜' },
+  // Nagoya
+  { id: 'tebasen', name: '手羽先センセーション', sub: '東海・名古屋 • 栄 • 王道エネルギッシュポップ', bg1: '#FF8C00', bg2: '#EA580C', accent: '#FFEDD5', symbol: '🍗' },
 ];
 
 interface MemberAssetDef {
@@ -124,32 +60,44 @@ const MEMBERS: MemberAssetDef[] = [
   { id: 'fz-matsumoto-karen', nameJa: '松本かれん', nameKo: '마츠모토 카렌', color: '#FFA7C4', groupName: 'FRUITS ZIPPER' },
   { id: 'fz-sakurai-yui', nameJa: '櫻井優衣', nameKo: '사쿠라이 유이', color: '#72D792', groupName: 'FRUITS ZIPPER' },
   { id: 'fz-chinzei-suzuka', nameJa: '鎮西寿々歌', nameKo: '친제이 스즈카', color: '#FF9E40', groupName: 'FRUITS ZIPPER' },
-  { id: 'fz-tsukiashi-amane', nameJa: '月足天音', nameKo: '츠키아시 아마네', color: '#E63946', groupName: 'FRUITS ZIPPER' },
-  { id: 'fz-manaka-mana', nameJa: '真中まな', nameKo: '마나카 마나', color: '#457B9D', groupName: 'FRUITS ZIPPER' },
-  { id: 'fz-hayase-noel', nameJa: '早瀬ノエル', nameKo: '하야세 노엘', color: '#F4E409', groupName: 'FRUITS ZIPPER' },
-  { id: 'fz-nakagawa-runa', nameJa: '仲川瑠夏', nameKo: '나카가와 루나', color: '#9D4EDD', groupName: 'FRUITS ZIPPER' },
   // CANDY TUNE
   { id: 'ct-murakawa-bibian', nameJa: '村川緋杏', nameKo: '무라카와 비비안', color: '#FF69B4', groupName: 'CANDY TUNE' },
   { id: 'ct-kano-nanako', nameJa: '小川奈々子', nameKo: '오가와 나나코', color: '#4169E1', groupName: 'CANDY TUNE' },
+  // CUTIE STREET
+  { id: 'cs-sakuraba-haruka', nameJa: '桜庭遥花', nameKo: '사쿠라바 하루카', color: '#FF69B4', groupName: 'CUTIE STREET' },
+  // SWEET STEADY
+  { id: 'ss-okuda-ayuka', nameJa: '奥田彩友', nameKo: '오쿠다 아유카', color: '#4169E1', groupName: 'SWEET STEADY' },
   // iLiFE!
   { id: 'ilife-shinzome-riri', nameJa: '心花りり', nameKo: '신조메 리리', color: '#E60033', groupName: 'iLiFE!' },
   { id: 'ilife-aisu', nameJa: 'あいす', nameKo: '아이스', color: '#B0E0E6', groupName: 'iLiFE!' },
-  { id: 'ilife-minase-ramu', nameJa: '水瀬らむ', nameKo: '미나세 라무', color: '#4169E1', groupName: 'iLiFE!' },
-  { id: 'ilife-wakaba-noa', nameJa: '若葉のあ', nameKo: '와카바 노아', color: '#32CD32', groupName: 'iLiFE!' },
+  // 夜光性アミューズ
+  { id: 'ya-mitsuki-hina', nameJa: 'みつきひな', nameKo: '미츠키 히나', color: '#38BDF8', groupName: '夜光性アミューズ' },
+  // のんふぃく！
+  { id: 'nf-koi-mizuki', nameJa: '恋星はるか', nameKo: '코노호시 하루카', color: '#EC4899', groupName: 'のんふぃく！' },
   // Appare!
   { id: 'appare-asahina-rei', nameJa: '朝比奈れい', nameKo: '아사히나 레이', color: '#E60012', groupName: 'Appare!' },
   { id: 'appare-fujimiya-may', nameJa: '藤宮めい', nameKo: '후지미야 메이', color: '#FFFFFF', groupName: 'Appare!' },
-  // WACK: GANG PARADE
+  // GANG PARADE
   { id: 'gp-yumeno-yua', nameJa: 'ユメノユア', nameKo: '유메노 유아', color: '#E6FF00', groupName: 'GANG PARADE' },
   { id: 'gp-coco-partin', nameJa: 'ココ・パーティン', nameKo: '코코 파틴', color: '#FF4500', groupName: 'GANG PARADE' },
-  // DEARSTAGE: でんぱ組.inc
+  // Jams Collection
+  { id: 'jc-tsuda-nanami', nameJa: '津代美月', nameKo: '츠시로 미즈키', color: '#800080', groupName: 'Jams Collection' },
+  // でんぱ組.inc
   { id: 'dempa-furukawa-mirin', nameJa: '古川未鈴', nameKo: '후루카와 미린', color: '#E60012', groupName: 'でんぱ組.inc' },
   { id: 'dempa-aizawa-risa', nameJa: '相沢梨紗', nameKo: '아이자와 리사', color: '#FFFFFF', groupName: 'でんぱ組.inc' },
-  // KANSAI: カラフルスクリーム
+  // 虹のコンキスタドール
+  { id: '2z-tsurumi-moe', nameJa: '鶴見萌', nameKo: '츠루미 모에', color: '#9333EA', groupName: '虹コン' },
+  // FES☆TIVE
+  { id: 'ft-aoba-hinata', nameJa: '青葉ひなり', nameKo: '아오바 히나리', color: '#EF4444', groupName: 'FES☆TIVE' },
+  // カラフルスクリーム
   { id: 'karasuku-nako', nameJa: 'なこ', nameKo: '나코', color: '#FF69B4', groupName: 'カラフルスクリーム' },
-  // REGIONAL: タイトル未定 / LinQ / 手羽先センセーション
+  // Kolokol
+  { id: 'kl-takahashi-saki', nameJa: '高橋あきほ', nameKo: '타카하시 아키호', color: '#6366F1', groupName: 'Kolokol' },
+  // タイトル未定
   { id: 'mitei-abe-hana', nameJa: '阿部葉菜', nameKo: '아베 하나', color: '#FFD700', groupName: 'タイトル未定' },
+  // LinQ
   { id: 'linq-takaki-yuumi', nameJa: '高木悠未', nameKo: '타카키 유우미', color: '#E60012', groupName: 'LinQ' },
+  // 手羽先センセーション
   { id: 'tebasen-hinami-haruka', nameJa: '日南遥', nameKo: '히나미 하루카', color: '#FF8C00', groupName: '手羽先センセーション' },
 ];
 
@@ -173,7 +121,6 @@ function generateGroupSvg(g: GroupAssetDef): string {
   <circle cx="950" cy="200" r="400" fill="url(#glow-${g.id})" />
   <circle cx="250" cy="500" r="350" fill="url(#glow-${g.id})" />
 
-  <!-- Stars Particles -->
   <g fill="#FFF" opacity="0.6">
     <circle cx="120" cy="80" r="2" />
     <circle cx="280" cy="140" r="3" />
@@ -187,7 +134,6 @@ function generateGroupSvg(g: GroupAssetDef): string {
     <circle cx="1050" cy="530" r="2" />
   </g>
 
-  <!-- Central Emblem Card -->
   <rect x="80" y="80" width="1040" height="470" rx="36" fill="rgba(7, 9, 15, 0.45)" stroke="rgba(255,255,255,0.2)" stroke-width="2" filter="url(#shadow-${g.id})" backdrop-filter="blur(20px)" />
 
   <text x="600" y="240" font-size="100" text-anchor="middle">${g.symbol}</text>
@@ -222,17 +168,14 @@ function generateMemberSvg(m: MemberAssetDef): string {
     </filter>
   </defs>
 
-  <!-- Background Canvas -->
   <rect width="500" height="500" fill="#07090F" />
   <circle cx="250" cy="220" r="170" fill="${m.color}" opacity="0.3" filter="blur(30px)" />
   <circle cx="250" cy="220" r="140" fill="url(#grad-${m.id})" stroke="${m.color}" stroke-width="4" filter="url(#shadow-${m.id})" />
 
-  <!-- Center Initial Kanji -->
   <text x="250" y="270" font-family="'Klee One', 'Yu Mincho', serif" font-weight="900" font-size="130" fill="${textColor}" text-anchor="middle" filter="url(#shadow-${m.id})">
     ${initial}
   </text>
 
-  <!-- Member Label Pill -->
   <rect x="80" y="380" width="340" height="74" rx="24" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="url(#shadow-${m.id})" />
 
   <text x="250" y="415" font-family="'Klee One', 'Gowun Batang', sans-serif" font-weight="bold" font-size="22" fill="#FFFFFF" text-anchor="middle">
@@ -246,21 +189,21 @@ function generateMemberSvg(m: MemberAssetDef): string {
 }
 
 function run() {
-  console.log('🖼️ Generating 10 Verified Girl Group Visual Banners...');
+  console.log(`🖼️ Generating ${GROUPS.length} Verified Girl Group Visual Banners...`);
   for (const g of GROUPS) {
     const filePath = path.join(GROUPS_DIR, `${g.id}.svg`);
     fs.writeFileSync(filePath, generateGroupSvg(g), 'utf-8');
     console.log(`  ✓ Created ${g.id}.svg`);
   }
 
-  console.log('👤 Generating Member Portrait Visuals...');
+  console.log(`👤 Generating ${MEMBERS.length} Member Portrait Visuals...`);
   for (const m of MEMBERS) {
     const filePath = path.join(MEMBERS_DIR, `${m.id}.svg`);
     fs.writeFileSync(filePath, generateMemberSvg(m), 'utf-8');
     console.log(`  ✓ Created ${m.id}.svg`);
   }
 
-  console.log('✨ All 10 Verified Group & Member Image Assets Created!');
+  console.log('✨ All 18 Verified Group & Member Image Assets Created!');
 }
 
 run();

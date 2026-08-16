@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
   <defs>
-    <radialGradient id="grad-karasuku-nako" cx="40%" cy="40%" r="60%">
+    <radialGradient id="grad-cs-sakuraba-haruka" cx="40%" cy="40%" r="60%">
       <stop offset="0%" stop-color="#FF69B4" />
       <stop offset="100%" stop-color="#0B0F19" />
     </radialGradient>
-    <filter id="shadow-karasuku-nako">
+    <filter id="shadow-cs-sakuraba-haruka">
       <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.6" />
     </filter>
   </defs>
 
   <rect width="500" height="500" fill="#07090F" />
   <circle cx="250" cy="220" r="170" fill="#FF69B4" opacity="0.3" filter="blur(30px)" />
-  <circle cx="250" cy="220" r="140" fill="url(#grad-karasuku-nako)" stroke="#FF69B4" stroke-width="4" filter="url(#shadow-karasuku-nako)" />
+  <circle cx="250" cy="220" r="140" fill="url(#grad-cs-sakuraba-haruka)" stroke="#FF69B4" stroke-width="4" filter="url(#shadow-cs-sakuraba-haruka)" />
 
-  <text x="250" y="270" font-family="'Klee One', 'Yu Mincho', serif" font-weight="900" font-size="130" fill="#FFFFFF" text-anchor="middle" filter="url(#shadow-karasuku-nako)">
-    な
+  <text x="250" y="270" font-family="'Klee One', 'Yu Mincho', serif" font-weight="900" font-size="130" fill="#FFFFFF" text-anchor="middle" filter="url(#shadow-cs-sakuraba-haruka)">
+    桜
   </text>
 
-  <rect x="80" y="380" width="340" height="74" rx="24" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="url(#shadow-karasuku-nako)" />
+  <rect x="80" y="380" width="340" height="74" rx="24" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="url(#shadow-cs-sakuraba-haruka)" />
 
   <text x="250" y="415" font-family="'Klee One', 'Gowun Batang', sans-serif" font-weight="bold" font-size="22" fill="#FFFFFF" text-anchor="middle">
-    なこ (나코)
+    桜庭遥花 (사쿠라바 하루카)
   </text>
 
   <text x="250" y="440" font-family="monospace" font-weight="600" font-size="13" fill="#FF69B4" text-anchor="middle">
-    カラフルスクリーム
+    CUTIE STREET
   </text>
 </svg>

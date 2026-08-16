@@ -9,17 +9,14 @@
     </filter>
   </defs>
 
-  <!-- Background Canvas -->
   <rect width="500" height="500" fill="#07090F" />
   <circle cx="250" cy="220" r="170" fill="#FFA7C4" opacity="0.3" filter="blur(30px)" />
   <circle cx="250" cy="220" r="140" fill="url(#grad-fz-matsumoto-karen)" stroke="#FFA7C4" stroke-width="4" filter="url(#shadow-fz-matsumoto-karen)" />
 
-  <!-- Center Initial Kanji -->
   <text x="250" y="270" font-family="'Klee One', 'Yu Mincho', serif" font-weight="900" font-size="130" fill="#FFFFFF" text-anchor="middle" filter="url(#shadow-fz-matsumoto-karen)">
     松
   </text>
 
-  <!-- Member Label Pill -->
   <rect x="80" y="380" width="340" height="74" rx="24" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="url(#shadow-fz-matsumoto-karen)" />
 
   <text x="250" y="415" font-family="'Klee One', 'Gowun Batang', sans-serif" font-weight="bold" font-size="22" fill="#FFFFFF" text-anchor="middle">
