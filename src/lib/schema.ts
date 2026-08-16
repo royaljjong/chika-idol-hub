@@ -93,6 +93,8 @@ export const ChikaMember = z.object({
   nickname: LocalizedText.nullable().default(null),
   xFollowers: z.number().optional().default(0),
   igFollowers: z.number().optional().default(0),
+  popularityScore: z.number().optional().default(85), // 인기 지수 (0-100)
+  searchVolumeScore: z.number().optional().default(80), // 검색량/트렌드 지수 (0-100)
   isGravureActive: z.boolean().optional().default(false),
   gravureHighlights: z.array(z.string()).optional().default([]),
   links: z.array(IdolLink).default([]),
@@ -112,6 +114,8 @@ export const ChikaGroup = z.object({
   description: LocalizedText,
   imageUrl: z.string().nullable().default(null),
   xFollowers: z.number().optional().default(0),
+  popularityScore: z.number().optional().default(90),
+  searchVolumeScore: z.number().optional().default(85),
   officialSite: z.string().url().nullable().default(null),
   ticketUrl: z.string().url().nullable().default(null),
   chekiUrl: z.string().url().nullable().default(null),

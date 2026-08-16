@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
-import { getGroups, getNotices, getGravureFeatures, getUpcomingBirthdays, getTopFollowerRanking } from '@/lib/data';
+import { getGroups, getNotices, getGravureFeatures, getUpcomingBirthdays, getAllRankedMembers } from '@/lib/data';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
 import { InteractiveJapanMap } from '@/components/map/InteractiveJapanMap';
@@ -7,7 +7,7 @@ import { GroupCard } from '@/components/group/GroupCard';
 import { NoticeFeed } from '@/components/home/NoticeFeed';
 import { GravureSection } from '@/components/home/GravureSection';
 import { BirthdayTracker } from '@/components/home/BirthdayTracker';
-import { FollowerRanking } from '@/components/home/FollowerRanking';
+import { IdolLeaderboard } from '@/components/home/IdolLeaderboard';
 import type { Metadata } from 'next';
 
 interface HomePageProps {
@@ -42,7 +42,7 @@ export default async function HomePage({ params }: HomePageProps) {
   const notices = getNotices();
   const gravures = getGravureFeatures();
   const birthdays = getUpcomingBirthdays();
-  const ranking = getTopFollowerRanking();
+  const rankedMembers = getAllRankedMembers();
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between">
@@ -56,17 +56,17 @@ export default async function HomePage({ params }: HomePageProps) {
           </h1>
           <p className="text-xs sm:text-sm text-star-dim mt-3">
             {locale === 'ko'
-              ? '전국 거점 맵・공식 티켓팅・체키 스토어・그라비아 화보・생일 캘린더'
+              ? '전국 거점 맵・공식 티켓팅・체키 스토어・그라비아 화보・생일 캘린더・종합 랭킹'
               : locale === 'ja'
-              ? '全国拠点マップ・公式チケット・通販チェキ・グラビア写真集・誕生日'
-              : 'Interactive Map, Live Tickets, Official Links, Gravure & Birthday Tracker'}
+              ? '全国拠点マップ・公式チケット・通販チェキ・グラビア写真集・誕生日・総合ランキング'
+              : 'Interactive Map, Live Tickets, Official Links, Gravure & Comprehensive Rankings'}
           </p>
         </div>
 
         {/* 1. Official Notices & Live Breaking News (오시라세) */}
         <NoticeFeed notices={notices} locale={locale} />
 
-        {/* 2. Interactive Map (Folder-in-Folder Navigation) */}
+        {/* 2. Interactive Map (Folder-in-Folder Navigation: Map -> Zoom City -> District -> Idols -> Members -> SNS) */}
         <div className="mb-14">
           <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
             <div className="flex items-center gap-2.5">
@@ -76,20 +76,22 @@ export default async function HomePage({ params }: HomePageProps) {
                   {locale === 'ko' ? '일본 전국 거점 맵 탐색' : locale === 'ja' ? '日本全国 拠点マップ探索' : 'Interactive Map Navigation'}
                 </h2>
                 <p className="text-xs text-star-dim mt-0.5">
-                  {locale === 'ko' ? '도시 및 구역을 클릭하여 소속 걸그룹을 단계별로 탐색하세요' : '都市や区を選択して所属アイドルグループをフォルダ階層で探索'}
+                  {locale === 'ko'
+                    ? '도시 클릭 ➔ 구역 선택 ➔ 활동 지하아이돌 공식 로고/단체 사진 ➔ 멤버 사진/이름 ➔ 개인 SNS로 연결됩니다'
+                    : '都市クリック ➔ エリア選択 ➔ 地下アイドル写真 ➔ メンバー写真・名前 ➔ 個別SNSへ直結'}
                 </p>
               </div>
             </div>
             <span className="text-xs text-star-dim font-mono">
-              3-Level Folder View
+              3-Level Drilldown
             </span>
           </div>
 
           <InteractiveJapanMap groups={groups} locale={locale} />
         </div>
 
-        {/* 3. SNS Follower Leaderboard (SNS 팔로워 랭킹) */}
-        <FollowerRanking ranking={ranking} locale={locale} />
+        {/* 3. National 3-Category Leaderboard: Popularity / Followers / Search Buzz */}
+        <IdolLeaderboard initialMembers={rankedMembers} locale={locale} />
 
         {/* 4. Birthday Calendar Spotlight (아이돌 생일 캘린더) */}
         <BirthdayTracker birthdays={birthdays} locale={locale} />

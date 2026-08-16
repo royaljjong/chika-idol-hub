@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import type { ChikaGroup, ChikaNotice, GravureFeature } from '../src/lib/schema';
 
-// 1. 18 Verified Groups with Followers & Gravure Info
 export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
   // ==========================================
   // [1] FRUITS ZIPPER (하라주쿠)
@@ -19,6 +18,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2022,
     imageUrl: '/images/groups/fruits-zipper.svg',
     xFollowers: 285000,
+    popularityScore: 99,
+    searchVolumeScore: 98,
     description: {
       ja: '「原宿から世界へ」をコンセプトに、「わたしの一番かわいいところ」がTikTok 9億再生を突破したKAWAII LAB.の第1弾フラッグシップグループ。',
       ko: '「하라주쿠에서 세계로」를 콘셉트로 「내가 가장 귀여운 곳」이 틱톡 9억 뷰를 돌파한 카와이 랩의 제1탄 대표 걸그룹.',
@@ -47,6 +48,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'かれんたん', ko: '카렌탄', en: 'Karentan' },
         xFollowers: 195000,
         igFollowers: 320000,
+        popularityScore: 99,
+        searchVolumeScore: 98,
         isGravureActive: true,
         gravureHighlights: ['週刊ヤングジャンプ 表紙', 'LARME レギュラーモデル'],
         links: [
@@ -67,6 +70,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'ゆいちゃん', ko: '유이짱', en: 'Yui-chan' },
         xFollowers: 188000,
         igFollowers: 290000,
+        popularityScore: 98,
+        searchVolumeScore: 96,
         isGravureActive: true,
         gravureHighlights: ['1st写真集「YUi」大ヒット', '週刊プレイボーイ 表紙巻頭グラビア'],
         links: [
@@ -87,6 +92,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'おすず', ko: '오스즈', en: 'Osuzu' },
         xFollowers: 145000,
         igFollowers: 240000,
+        popularityScore: 95,
+        searchVolumeScore: 93,
         isGravureActive: false,
         gravureHighlights: [],
         links: [
@@ -112,6 +119,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2023,
     imageUrl: '/images/groups/candy-tune.svg',
     xFollowers: 130000,
+    popularityScore: 92,
+    searchVolumeScore: 91,
     description: {
       ja: '「フレーフレー私！」などポップでキュートな王道アイドルソングを届けるKAWAII LAB.第2弾アイドルグループ。',
       ko: '「힘내라 나!」 등 톡톡 튀는 캔디 같은 사운드와 카와이 매력으로 주목받는 카와이 랩 제2탄 걸그룹.',
@@ -140,6 +149,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'びびあん', ko: '비비안', en: 'Bibian' },
         xFollowers: 98000,
         igFollowers: 150000,
+        popularityScore: 92,
+        searchVolumeScore: 90,
         isGravureActive: false,
         gravureHighlights: [],
         links: [
@@ -159,6 +170,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'ななこ', ko: '나나코', en: 'Nanako' },
         xFollowers: 72000,
         igFollowers: 110000,
+        popularityScore: 89,
+        searchVolumeScore: 88,
         isGravureActive: true,
         gravureHighlights: ['ヤングガンガン 巻末グラビア'],
         links: [
@@ -183,6 +196,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2020,
     imageUrl: '/images/groups/ilife.svg',
     xFollowers: 220000,
+    popularityScore: 98,
+    searchVolumeScore: 99,
     description: {
       ja: '「私（i）と貴方（you）で創るアイドル（iLiFE!）」をコンセプトに、爆発的なライブ動員を誇るHEROINESのフラッグシップグループ。',
       ko: '「나(i)와 당신(you)이 함께 만드는 아이돌」을 콘셉트로 폭발적인 라이브 동원력을 자랑하는 HEROINES 대표 걸그룹.',
@@ -211,6 +226,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'りりちゃん', ko: '리리짱', en: 'Riri-chan' },
         xFollowers: 240000,
         igFollowers: 310000,
+        popularityScore: 99,
+        searchVolumeScore: 99,
         isGravureActive: true,
         gravureHighlights: ['ヤングジャンプ 表紙', 'ヤングアニマル 表紙巻頭'],
         links: [
@@ -231,6 +248,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'あいす', ko: '아이스', en: 'Aisu' },
         xFollowers: 210000,
         igFollowers: 280000,
+        popularityScore: 97,
+        searchVolumeScore: 97,
         isGravureActive: false,
         gravureHighlights: [],
         links: [
@@ -256,6 +275,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2016,
     imageUrl: '/images/groups/appare.svg',
     xFollowers: 140000,
+    popularityScore: 93,
+    searchVolumeScore: 92,
     description: {
       ja: '「天晴れ！」な熱量と圧倒的なダンス・ライブパフォーマンスで大型フェスを沸かせる最強ライブアイドル。',
       ko: '「앗파레(대단해)!」한 열량과 압도적인 댄스 및 라이브 퍼포먼스로 대형 페스티벌을 장악하는 최강 라이브 아이돌.',
@@ -284,6 +305,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'れいちゃん', ko: '레이짱', en: 'Rei-chan' },
         xFollowers: 86000,
         igFollowers: 120000,
+        popularityScore: 92,
+        searchVolumeScore: 91,
         isGravureActive: true,
         gravureHighlights: ['週刊SPA! グラビア掲載'],
         links: [
@@ -308,6 +331,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2008,
     imageUrl: '/images/groups/dempagumi.svg',
     xFollowers: 320000,
+    popularityScore: 96,
+    searchVolumeScore: 94,
     description: {
       ja: '秋葉原ディアステージ発、アニメ・マンガ・ゲームなどオタクカルチャーを世界へ発信し続けた伝説的カルチャーアイドル。',
       ko: '아키하바라 디어스테이지 출신, 서브컬처 문화를 전 세계로 전파한 전설적인 아키바계 아이돌 걸그룹.',
@@ -336,6 +361,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'みりんちゃん', ko: '미린짱', en: 'Mirin-chan' },
         xFollowers: 280000,
         igFollowers: 190000,
+        popularityScore: 96,
+        searchVolumeScore: 94,
         isGravureActive: false,
         gravureHighlights: [],
         links: [
@@ -360,6 +387,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2014,
     imageUrl: '/images/groups/2zicon.svg',
     xFollowers: 175000,
+    popularityScore: 93,
+    searchVolumeScore: 92,
     description: {
       ja: '「毎日が夏休み！」をテーマに爽快なサマーソングとオタクカルチャーを発信するDEARSTAGEの看板グループ。',
       ko: '「매일이 여름방학!」을 테마로 상쾌한 서머 송과 다채로운 매력을 선보이는 DEARSTAGE 간판 걸그룹.',
@@ -388,6 +417,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'もえ先輩', ko: '모에선배', en: 'Moe-senpai' },
         xFollowers: 85000,
         igFollowers: 130000,
+        popularityScore: 93,
+        searchVolumeScore: 92,
         isGravureActive: true,
         gravureHighlights: ['ヤングアニマル 表紙巻頭グラビア', '写真集「つるみん」'],
         links: [
@@ -412,6 +443,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2013,
     imageUrl: '/images/groups/festive.svg',
     xFollowers: 110000,
+    popularityScore: 91,
+    searchVolumeScore: 90,
     description: {
       ja: '「お祭り系アイドル」として「OIDEMASE!!〜極楽〜」など日本全国・世界各地のフェスで熱狂の渦を巻き起こす最強ライブグループ。',
       ko: '「축제계 아이돌」로서 「오이데마세! 극락」 등 전 세계 페스티벌을 열광의 도가니로 만드는 페스티벌 최강자.',
@@ -440,6 +473,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'ひなりん', ko: '히나린', en: 'Hinarin' },
         xFollowers: 95000,
         igFollowers: 140000,
+        popularityScore: 91,
+        searchVolumeScore: 90,
         isGravureActive: true,
         gravureHighlights: ['ヤングチャンピオン 表紙', '1st写真集「ひなりん」'],
         links: [
@@ -464,6 +499,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2017,
     imageUrl: '/images/groups/colorful-scream.svg',
     xFollowers: 55000,
+    popularityScore: 89,
+    searchVolumeScore: 88,
     description: {
       ja: '関西・大阪を拠点に全国へポジティブな歌声を届ける、関西屈指の王道メロディック・ライブアイドル。',
       ko: '간사이・오사카를 거점으로 전국에 긍정적인 에너지를 전하는 오사카 대표 멜로딕 라이브 아이돌 걸그룹.',
@@ -492,6 +529,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'なこちゃん', ko: '나코짱', en: 'Nako-chan' },
         xFollowers: 32000,
         igFollowers: 45000,
+        popularityScore: 89,
+        searchVolumeScore: 88,
         isGravureActive: false,
         gravureHighlights: [],
         links: [
@@ -516,6 +555,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2020,
     imageUrl: '/images/groups/title-mitei.svg',
     xFollowers: 68000,
+    popularityScore: 90,
+    searchVolumeScore: 89,
     description: {
       ja: '「何者かになろうとしなくていい」をテーマに、北海道・札幌から透明感ある叙情的な楽曲を届ける実力派グループ。',
       ko: '「무엇이 되려 하지 않아도 괜찮아」를 테마로 홋카이도 삿포로에서 투명하고 서정적인 음악을 선보이는 감성 실력파 걸그룹.',
@@ -544,6 +585,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'はなちゃん', ko: '하나짱', en: 'Hana-chan' },
         xFollowers: 42000,
         igFollowers: 58000,
+        popularityScore: 90,
+        searchVolumeScore: 89,
         isGravureActive: false,
         gravureHighlights: [],
         links: [
@@ -568,6 +611,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2011,
     imageUrl: '/images/groups/linq.svg',
     xFollowers: 95000,
+    popularityScore: 88,
+    searchVolumeScore: 87,
     description: {
       ja: '「Love in 九州」を掲げ、福岡・天神を拠点に全国・アジアへ笑顔を届ける九州を代表する長寿アイドルグループ。',
       ko: '「Love in 큐슈」를 모토로 후쿠오카 텐진을 거점으로 전국과 아시아로 뻗어나가는 큐슈 대표 아이돌 걸그룹.',
@@ -596,6 +641,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'ゆうみん', ko: '유우민', en: 'Yuumin' },
         xFollowers: 76000,
         igFollowers: 160000,
+        popularityScore: 88,
+        searchVolumeScore: 87,
         isGravureActive: true,
         gravureHighlights: ['ヤングアニマル グラビア', '福岡TVレギュラー多数'],
         links: [
@@ -620,6 +667,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
     debutYear: 2017,
     imageUrl: '/images/groups/tebasen.svg',
     xFollowers: 52000,
+    popularityScore: 87,
+    searchVolumeScore: 86,
     description: {
       ja: '「手羽先のように愛されるグループ」を目指し、名古屋・栄を拠点に圧倒的なライブの熱気と王道ポップを届ける名古屋の代表格。',
       ko: '「나고야 명물 테바사키처럼 모두에게 사랑받는 아이돌」을 목표로 나고야 사카에를 거점으로 왕도 팝을 선보이는 나고야 대표 걸그룹.',
@@ -648,6 +697,8 @@ export const CHIKA_GROUPS_COMPLETE: ChikaGroup[] = [
         nickname: { ja: 'はるちゃん', ko: '하루짱', en: 'Haru-chan' },
         xFollowers: 38000,
         igFollowers: 52000,
+        popularityScore: 87,
+        searchVolumeScore: 86,
         isGravureActive: true,
         gravureHighlights: ['ヤングガンガン グラビア'],
         links: [

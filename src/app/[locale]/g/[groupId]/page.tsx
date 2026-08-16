@@ -4,6 +4,7 @@ import React, { useState, use } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getGroup } from '@/lib/data';
+import type { ChikaMember } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
@@ -13,9 +14,12 @@ interface GroupPageProps {
   params: Promise<{ locale: string; groupId: string }>;
 }
 
+type MemberSortMode = 'default' | 'popularity' | 'followers' | 'search';
+
 export default function GroupPage({ params }: GroupPageProps) {
   const { locale, groupId } = use(params);
   const [selectedSubUnit, setSelectedSubUnit] = useState<string>('all');
+  const [sortMode, setSortMode] = useState<MemberSortMode>('popularity');
   const [bannerError, setBannerError] = useState<boolean>(false);
 
   const group = getGroup(groupId);
@@ -27,10 +31,45 @@ export default function GroupPage({ params }: GroupPageProps) {
   const description = group.description[locale as 'ja' | 'ko' | 'en'] || group.description.ja;
 
   // Filter members by selected subunit
-  const filteredMembers = group.members.filter((m) => {
+  const filtered = group.members.filter((m) => {
     if (selectedSubUnit === 'all') return true;
     return m.subUnitId === selectedSubUnit;
   });
+
+  // Sort members according to selected mode
+  const sortedMembers = [...filtered].sort((a, b) => {
+    if (sortMode === 'followers') {
+      const totalA = (a.xFollowers || 0) + (a.igFollowers || 0);
+      const totalB = (b.xFollowers || 0) + (b.igFollowers || 0);
+      return totalB - totalA;
+    }
+    if (sortMode === 'search') {
+      return (b.searchVolumeScore || 80) - (a.searchVolumeScore || 80);
+    }
+    if (sortMode === 'popularity') {
+      return (b.popularityScore || 85) - (a.popularityScore || 85);
+    }
+    return 0;
+  });
+
+  const getMemberRank = (member: ChikaMember) => {
+    const idx = sortedMembers.findIndex((m) => m.id === member.id);
+    return idx >= 0 ? idx + 1 : 1;
+  };
+
+  const getMemberMetricText = (member: ChikaMember) => {
+    if (sortMode === 'followers') {
+      const total = (member.xFollowers || 0) + (member.igFollowers || 0);
+      return total >= 10000 ? `${(total / 10000).toFixed(1)}만` : `${total.toLocaleString()}명`;
+    }
+    if (sortMode === 'search') {
+      return `${member.searchVolumeScore || 80}pt`;
+    }
+    if (sortMode === 'popularity') {
+      return `${member.popularityScore || 85}점`;
+    }
+    return '';
+  };
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between">
@@ -193,67 +232,84 @@ export default function GroupPage({ params }: GroupPageProps) {
           </div>
         </section>
 
-        {/* SubUnit Tabs (Generations Style from Sakamichi) */}
-        {group.subUnits && group.subUnits.length > 1 && (
-          <div className="flex flex-wrap items-center gap-2 mb-8">
-            <button
-              onClick={() => setSelectedSubUnit('all')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition ${
-                selectedSubUnit === 'all'
-                  ? 'bg-white text-space-950 shadow-md'
-                  : 'bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white'
-              }`}
-            >
-              {locale === 'ko' ? '전체 멤버' : locale === 'ja' ? '全メンバー' : 'All Members'} ({group.members.length})
-            </button>
-            {group.subUnits.map((sub) => {
-              const isActive = selectedSubUnit === sub.id;
-              const subName = sub.name[locale as 'ja' | 'ko' | 'en'] || sub.name.ja;
-              const subCount = group.members.filter((m) => m.subUnitId === sub.id).length;
-
-              return (
-                <button
-                  key={sub.id}
-                  onClick={() => setSelectedSubUnit(sub.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border ${
-                    isActive
-                      ? 'bg-pink-500/20 text-pink-300 border-pink-400 shadow-md'
-                      : 'bg-white/5 hover:bg-white/15 text-star-dim hover:text-star-white border-white/5'
-                  }`}
-                >
-                  <span>{subName}</span>
-                  <span className="text-[10px] opacity-75 font-mono">({subCount})</span>
-                </button>
-              );
-            })}
-          </div>
-        )}
-
-        {/* Member Cards Grid (Click goes directly to /m/[memberId]) */}
+        {/* Member Section Header & Sorting Rank Tabs */}
         <section className="mb-14">
-          <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-6 border-b border-white/10 gap-4">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-star-white font-[family-name:var(--font-klee-one)]">
-                {locale === 'ko' ? '소속 멤버 목록' : locale === 'ja' ? '所属メンバー一覧' : 'Members'}
+                {locale === 'ko' ? '소속 멤버 목록 및 랭킹' : locale === 'ja' ? 'メンバー一覧・順位' : 'Members & Ranking'}
               </h2>
               <p className="text-xs text-star-dim mt-0.5">
-                {locale === 'ko' ? '멤버 카드를 클릭하면 상세 SNS 및 공식 링크를 확인할 수 있습니다.' : 'メンバーを選択して詳細SNSリンクを確認'}
+                {locale === 'ko' ? '멤버 카드를 클릭하면 각 멤버의 개인 SNS 및 블로그로 이동합니다.' : 'メンバーを選択して個人SNS・プロフィールへ移動'}
               </p>
             </div>
-            <span className="text-xs text-star-dim font-mono">
-              {filteredMembers.length} Members
-            </span>
+
+            {/* 3 Member Ranking Tabs */}
+            <div className="flex items-center bg-space-900/90 p-1 rounded-xl border border-white/10 shrink-0">
+              <button
+                onClick={() => setSortMode('popularity')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1 ${
+                  sortMode === 'popularity'
+                    ? 'bg-pink-600 text-white shadow'
+                    : 'text-star-dim hover:text-white'
+                }`}
+              >
+                <span>👑</span>
+                <span>{locale === 'ko' ? '인기순' : '人気順'}</span>
+              </button>
+
+              <button
+                onClick={() => setSortMode('followers')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1 ${
+                  sortMode === 'followers'
+                    ? 'bg-purple-600 text-white shadow'
+                    : 'text-star-dim hover:text-white'
+                }`}
+              >
+                <span>📈</span>
+                <span>{locale === 'ko' ? '팔로우순' : 'フォロワー順'}</span>
+              </button>
+
+              <button
+                onClick={() => setSortMode('search')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1 ${
+                  sortMode === 'search'
+                    ? 'bg-amber-600 text-white shadow'
+                    : 'text-star-dim hover:text-white'
+                }`}
+              >
+                <span>🔥</span>
+                <span>{locale === 'ko' ? '검색량순' : '検索量順'}</span>
+              </button>
+            </div>
           </div>
 
+          {/* Members Grid with Rank & Metric Display */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredMembers.map((member) => (
-              <MemberCard
-                key={member.id}
-                member={member}
-                group={group}
-                locale={locale}
-              />
-            ))}
+            {sortedMembers.map((member) => {
+              const rank = getMemberRank(member);
+              const metricText = getMemberMetricText(member);
+
+              return (
+                <div key={member.id} className="relative">
+                  {sortMode !== 'default' && (
+                    <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-space-900/90 border border-white/15 text-[11px] font-extrabold shadow pointer-events-none">
+                      <span className={rank === 1 ? 'text-amber-400' : rank === 2 ? 'text-slate-300' : rank === 3 ? 'text-amber-600' : 'text-star-dim'}>
+                        {rank === 1 ? '🥇 1위' : rank === 2 ? '🥈 2위' : rank === 3 ? '🥉 3위' : `${rank}위`}
+                      </span>
+                      <span className="text-pink-400 font-mono text-[10px]">
+                        ({metricText})
+                      </span>
+                    </div>
+                  )}
+                  <MemberCard
+                    member={member}
+                    group={group}
+                    locale={locale}
+                  />
+                </div>
+              );
+            })}
           </div>
         </section>
       </main>

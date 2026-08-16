@@ -76,16 +76,56 @@ export function getUpcomingBirthdays(): Array<{ member: ChikaMember; group: Chik
   });
 }
 
-// SNS 팔로워 순위 랭킹
-export function getTopFollowerRanking(): Array<{ member: ChikaMember; group: ChikaGroup; totalFollowers: number }> {
-  const list: Array<{ member: ChikaMember; group: ChikaGroup; totalFollowers: number }> = [];
+export type RankCategory = 'popularity' | 'followers' | 'search';
+
+// 전체 아이돌 랭킹 (인기 순위 / 팔로우 순위 / 검색량(이슈) 순위)
+export function getAllRankedMembers(sortType: RankCategory = 'popularity'): Array<{ member: ChikaMember; group: ChikaGroup; scoreValue: number; formattedScore: string }> {
+  const list: Array<{ member: ChikaMember; group: ChikaGroup; scoreValue: number; formattedScore: string }> = [];
 
   for (const group of groups) {
     for (const member of group.members) {
-      const total = (member.xFollowers || 0) + (member.igFollowers || 0);
-      list.push({ member, group, totalFollowers: total });
+      let score = 0;
+      let formatted = '';
+
+      if (sortType === 'followers') {
+        score = (member.xFollowers || 0) + (member.igFollowers || 0);
+        formatted = score >= 10000 ? `${(score / 10000).toFixed(1)}만` : score.toLocaleString();
+      } else if (sortType === 'search') {
+        // 검색량 / 트렌드 지수
+        score = member.searchVolumeScore || 80;
+        formatted = `${score}pt`;
+      } else {
+        // 인기 순위 (종합 인기 지수)
+        score = member.popularityScore || 85;
+        formatted = `${score}점`;
+      }
+
+      list.push({ member, group, scoreValue: score, formattedScore: formatted });
     }
   }
 
-  return list.sort((a, b) => b.totalFollowers - a.totalFollowers);
+  return list.sort((a, b) => b.scoreValue - a.scoreValue);
+}
+
+// 특정 그룹 내의 멤버 랭킹 (그룹 내 인기 / 팔로우 / 검색량 순위)
+export function getGroupRankedMembers(group: ChikaGroup, sortType: RankCategory = 'popularity'): Array<{ member: ChikaMember; scoreValue: number; formattedScore: string }> {
+  const list = group.members.map((member) => {
+    let score = 0;
+    let formatted = '';
+
+    if (sortType === 'followers') {
+      score = (member.xFollowers || 0) + (member.igFollowers || 0);
+      formatted = score >= 10000 ? `${(score / 10000).toFixed(1)}만` : score.toLocaleString();
+    } else if (sortType === 'search') {
+      score = member.searchVolumeScore || 80;
+      formatted = `${score}pt`;
+    } else {
+      score = member.popularityScore || 85;
+      formatted = `${score}점`;
+    }
+
+    return { member, scoreValue: score, formattedScore: formatted };
+  });
+
+  return list.sort((a, b) => b.scoreValue - a.scoreValue);
 }
