@@ -18,6 +18,7 @@
     "accentColor": "#FFE5EC",
     "debutYear": 2022,
     "imageUrl": "/images/groups/fruits-zipper.svg",
+    "xFollowers": 285000,
     "description": {
       "ja": "「原宿から世界へ」をコンセプトに、「わたしの一番かわいいところ」がTikTok 9億再生を突破したKAWAII LAB.の第1弾フラッグシップグループ。",
       "ko": "「하라주쿠에서 세계로」를 콘셉트로 「내가 가장 귀여운 곳」이 틱톡 9억 뷰를 돌파한 카와이 랩의 제1탄 대표 걸그룹.",
@@ -67,13 +68,20 @@
           "ko": "카렌탄",
           "en": "Karentan"
         },
+        "xFollowers": 195000,
+        "igFollowers": 320000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "週刊ヤングジャンプ 表紙",
+          "LARME レギュラーモデル"
+        ],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/karen_fz0328",
             "label": {
               "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
+              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -126,13 +134,20 @@
           "ko": "유이짱",
           "en": "Yui-chan"
         },
+        "xFollowers": 188000,
+        "igFollowers": 290000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "1st写真集「YUi」大ヒット",
+          "週刊プレイボーイ 表紙巻頭グラビア"
+        ],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/yui_fz0221",
             "label": {
               "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
+              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -185,13 +200,17 @@
           "ko": "오스즈",
           "en": "Osuzu"
         },
+        "xFollowers": 145000,
+        "igFollowers": 240000,
+        "isGravureActive": false,
+        "gravureHighlights": [],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/suzuka_fz1124",
             "label": {
               "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
+              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -231,6 +250,7 @@
     "accentColor": "#FFE4E6",
     "debutYear": 2023,
     "imageUrl": "/images/groups/candy-tune.svg",
+    "xFollowers": 130000,
     "description": {
       "ja": "「フレーフレー私！」などポップでキュートな王道アイドルソングを届けるKAWAII LAB.第2弾アイドルグループ。",
       "ko": "「힘내라 나!」 등 톡톡 튀는 캔디 같은 사운드와 카와이 매력으로 주목받는 카와이 랩 제2탄 걸그룹.",
@@ -280,13 +300,17 @@
           "ko": "비비안",
           "en": "Bibian"
         },
+        "xFollowers": 98000,
+        "igFollowers": 150000,
+        "isGravureActive": false,
+        "gravureHighlights": [],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/bibian_ct1203",
             "label": {
               "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
+              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -328,178 +352,16 @@
           "ko": "나나코",
           "en": "Nanako"
         },
+        "xFollowers": 72000,
+        "igFollowers": 110000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "ヤングガンガン 巻末グラビア"
+        ],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/nachico_ct1001",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cutie-street",
-    "name": {
-      "ja": "CUTIE STREET",
-      "ko": "큐티 스트리트 (CUTIE STREET)",
-      "en": "CUTIE STREET"
-    },
-    "shortName": {
-      "ja": "きゅーすと",
-      "ko": "큐스토",
-      "en": "CS"
-    },
-    "agency": "ASOBISYSTEM (KAWAII LAB.)",
-    "region": "tokyo",
-    "district": "harajuku",
-    "color": "#FF0080",
-    "accentColor": "#FFE5F1",
-    "debutYear": 2024,
-    "imageUrl": "/images/groups/cutie-street.svg",
-    "description": {
-      "ja": "「KAWAII MAKER」をコンセプトに原宿ストリートから最新トレンドを発信するKAWAII LAB.の第4弾グループ。",
-      "ko": "「KAWAII MAKER」를 테마로 하라주쿠 스트리트 감성과 최신 트렌드를 전파하는 카와이 랩 제4탄 걸그룹.",
-      "en": "The 4th sensation group of KAWAII LAB. setting fresh Harajuku street trends."
-    },
-    "officialSite": "https://cutiestreet.asobisystem.com/",
-    "ticketUrl": "https://l-tike.com/cutiestreet/",
-    "chekiUrl": "https://kawaiilab.stores.jp/",
-    "scheduleUrl": "https://cutiestreet.asobisystem.com/schedule/",
-    "x": "https://x.com/CUTIE_STREET_",
-    "instagram": "https://www.instagram.com/cutie_street_/",
-    "tiktok": "https://www.tiktok.com/@cutie_street",
-    "youtube": "https://www.youtube.com/@CUTIESTREET",
-    "subUnits": [],
-    "members": [
-      {
-        "id": "cs-sakuraba-haruka",
-        "groupId": "cutie-street",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "桜庭遥花",
-            "kana": "さくらば はるか"
-          },
-          "ko": {
-            "hangul": "사쿠라바 하루카"
-          },
-          "en": {
-            "romaji": "Haruka Sakuraba"
-          }
-        },
-        "memberColor": "#FF69B4",
-        "memberColorName": {
-          "ja": "ぴんく",
-          "ko": "핑크",
-          "en": "Pink"
-        },
-        "imageUrl": "/images/members/cs-sakuraba-haruka.svg",
-        "birthDate": "2006-01-29",
-        "birthplace": {
-          "ja": "北海道",
-          "ko": "홋카이도",
-          "en": "Hokkaido"
-        },
-        "nickname": {
-          "ja": "ぱるたん",
-          "ko": "파루탄",
-          "en": "Parutan"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/haruka_cs0129",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "sweet-steady",
-    "name": {
-      "ja": "SWEET STEADY",
-      "ko": "스위트 스테디 (SWEET STEADY)",
-      "en": "SWEET STEADY"
-    },
-    "shortName": {
-      "ja": "すいすて",
-      "ko": "스이스테",
-      "en": "Suisute"
-    },
-    "agency": "ASOBISYSTEM (KAWAII LAB.)",
-    "region": "tokyo",
-    "district": "harajuku",
-    "color": "#A78BFA",
-    "accentColor": "#F5F3FF",
-    "debutYear": 2024,
-    "imageUrl": "/images/groups/sweet-steady.svg",
-    "description": {
-      "ja": "「かわいい」の王道を受け継ぐKAWAII LAB.の第3弾清純派アイドルグループ。",
-      "ko": "청순함과 달콤한 카와이 매력을 선사하는 카와이 랩 제3탄 청순파 걸그룹.",
-      "en": "The 3rd group of KAWAII LAB. delivering pure, sweet idol aesthetics."
-    },
-    "officialSite": "https://sweetsteady.asobisystem.com/",
-    "ticketUrl": "https://l-tike.com/sweetsteady/",
-    "chekiUrl": "https://kawaiilab.stores.jp/",
-    "scheduleUrl": "https://sweetsteady.asobisystem.com/schedule/",
-    "x": "https://x.com/SWEET_STEADY_",
-    "instagram": "https://www.instagram.com/sweet_steady_/",
-    "tiktok": "https://www.tiktok.com/@sweet_steady",
-    "youtube": "https://www.youtube.com/@SWEETSTEADY",
-    "subUnits": [],
-    "members": [
-      {
-        "id": "ss-okuda-ayuka",
-        "groupId": "sweet-steady",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "奥田彩友",
-            "kana": "おくだ あゆか"
-          },
-          "ko": {
-            "hangul": "오쿠다 아유카"
-          },
-          "en": {
-            "romaji": "Ayuka Okuda"
-          }
-        },
-        "memberColor": "#4169E1",
-        "memberColorName": {
-          "ja": "ブルー",
-          "ko": "블루",
-          "en": "Blue"
-        },
-        "imageUrl": "/images/members/ss-okuda-ayuka.svg",
-        "birthDate": "2001-01-07",
-        "birthplace": {
-          "ja": "福井県",
-          "ko": "후쿠이현",
-          "en": "Fukui"
-        },
-        "nickname": {
-          "ja": "あゆか",
-          "ko": "아유카",
-          "en": "Ayuka"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/ayuka_ss0107",
             "label": {
               "ja": "X (Twitter)",
               "ko": "공식 X",
@@ -531,6 +393,7 @@
     "accentColor": "#FFD6E5",
     "debutYear": 2020,
     "imageUrl": "/images/groups/ilife.svg",
+    "xFollowers": 220000,
     "description": {
       "ja": "「私（i）と貴方（you）で創るアイドル（iLiFE!）」をコンセプトに、爆発的なライブ動員を誇るHEROINESのフラッグシップグループ。",
       "ko": "「나(i)와 당신(you)이 함께 만드는 아이돌」을 콘셉트로 폭발적인 라이브 동원력을 자랑하는 HEROINES 대표 걸그룹.",
@@ -580,13 +443,20 @@
           "ko": "리리짱",
           "en": "Riri-chan"
         },
+        "xFollowers": 240000,
+        "igFollowers": 310000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "ヤングジャンプ 表紙",
+          "ヤングアニマル 表紙巻頭"
+        ],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/iLiFE_riri",
             "label": {
               "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
+              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -639,13 +509,17 @@
           "ko": "아이스",
           "en": "Aisu"
         },
+        "xFollowers": 210000,
+        "igFollowers": 280000,
+        "isGravureActive": false,
+        "gravureHighlights": [],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/iLiFE_aisu",
             "label": {
               "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
+              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -658,174 +532,6 @@
               "ja": "Instagram",
               "ko": "인스타그램",
               "en": "Instagram"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "yoruamu",
-    "name": {
-      "ja": "夜光性アミューズ",
-      "ko": "야광성 어뮤즈 (Yakousei Amuse)",
-      "en": "Yakousei Amuse"
-    },
-    "shortName": {
-      "ja": "よるあみ",
-      "ko": "요루아미",
-      "en": "YoruAmu"
-    },
-    "agency": "HEROINES (imaginate)",
-    "region": "tokyo",
-    "district": "shinjuku",
-    "color": "#8B5CF6",
-    "accentColor": "#EDE9FE",
-    "debutYear": 2021,
-    "imageUrl": "/images/groups/yoruamu.svg",
-    "description": {
-      "ja": "「夜に輝くアミューズメントパーク」をテーマにしたHEROINES所属のエレクトロニック・ポップアイドル。",
-      "ko": "「밤에 빛나는 놀이공원」을 테마로 감각적인 일렉트로닉 팝을 선보이는 HEROINES 대표 걸그룹.",
-      "en": "The vibrant electronic pop idol sensation lighting up Shinjuku and Tokyo nights."
-    },
-    "officialSite": "https://heroines.jp/artist/yoruamu",
-    "ticketUrl": "https://ticketdive.com/artist/yoruamu",
-    "chekiUrl": "https://heroines.stores.jp/",
-    "scheduleUrl": "https://timetreeapp.com/public_calendars/yoruamu_official",
-    "x": "https://x.com/Yorusei_Amuse",
-    "instagram": "https://www.instagram.com/yoruami_official/",
-    "tiktok": "https://www.tiktok.com/@yorusei_amuse",
-    "youtube": "https://www.youtube.com/@Yorusei_Amuse",
-    "subUnits": [],
-    "members": [
-      {
-        "id": "ya-mitsuki-hina",
-        "groupId": "yoruamu",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "みつきひな",
-            "kana": "みつき ひな"
-          },
-          "ko": {
-            "hangul": "미츠키 히나"
-          },
-          "en": {
-            "romaji": "Hina Mitsuki"
-          }
-        },
-        "memberColor": "#38BDF8",
-        "memberColorName": {
-          "ja": "水色",
-          "ko": "라이트블루",
-          "en": "Light Blue"
-        },
-        "imageUrl": "/images/members/ya-mitsuki-hina.svg",
-        "birthDate": "2000-08-08",
-        "birthplace": {
-          "ja": "東京都",
-          "ko": "도쿄도",
-          "en": "Tokyo"
-        },
-        "nickname": {
-          "ja": "ひなちゃん",
-          "ko": "히나짱",
-          "en": "Hina-chan"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/hina_yoruamu",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "nonfic",
-    "name": {
-      "ja": "のんふぃく！",
-      "ko": "논픽션 (NonFiction)",
-      "en": "NonFiction"
-    },
-    "shortName": {
-      "ja": "のんふぃく",
-      "ko": "논픽",
-      "en": "NonFic"
-    },
-    "agency": "HEROINES (imaginate)",
-    "region": "tokyo",
-    "district": "shinjuku",
-    "color": "#EC4899",
-    "accentColor": "#FDF2F8",
-    "debutYear": 2021,
-    "imageUrl": "/images/groups/nonfic.svg",
-    "description": {
-      "ja": "「ノンフィクションな現実を可愛く生きる」を掲げ、疾走感あるサウンドで人気を集めるHEROINESグループ。",
-      "ko": "「논픽션 같은 현실을 귀엽고 당당하게 살아간다」를 모토로 질주감 넘치는 사운드를 선사하는 걸그룹.",
-      "en": "A high-energy HEROINES group powering through reality with sweet, confident tunes."
-    },
-    "officialSite": "https://heroines.jp/artist/nonfic",
-    "ticketUrl": "https://ticketdive.com/artist/nonfic",
-    "chekiUrl": "https://heroines.stores.jp/",
-    "scheduleUrl": "https://heroines.jp/schedule",
-    "x": "https://x.com/Nonfic_official",
-    "instagram": "https://www.instagram.com/nonfic_official/",
-    "tiktok": "https://www.tiktok.com/@nonfic_official",
-    "youtube": "https://www.youtube.com/@Nonfic_official",
-    "subUnits": [],
-    "members": [
-      {
-        "id": "nf-koi-mizuki",
-        "groupId": "nonfic",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "恋星はるか",
-            "kana": "このほし はるか"
-          },
-          "ko": {
-            "hangul": "코노호시 하루카"
-          },
-          "en": {
-            "romaji": "Haruka Konohoshi"
-          }
-        },
-        "memberColor": "#EC4899",
-        "memberColorName": {
-          "ja": "ピンク",
-          "ko": "핑크",
-          "en": "Pink"
-        },
-        "imageUrl": "/images/members/nf-koi-mizuki.svg",
-        "birthDate": "2001-05-18",
-        "birthplace": {
-          "ja": "東京都",
-          "ko": "도쿄도",
-          "en": "Tokyo"
-        },
-        "nickname": {
-          "ja": "はるちゃん",
-          "ko": "하루짱",
-          "en": "Haru-chan"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/haruka_nonfic",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X",
-              "en": "Official X"
             },
             "verified": true,
             "isPrimary": true
@@ -853,6 +559,7 @@
     "accentColor": "#FFF3D6",
     "debutYear": 2016,
     "imageUrl": "/images/groups/appare.svg",
+    "xFollowers": 140000,
     "description": {
       "ja": "「天晴れ！」な熱量と圧倒的なダンス・ライブパフォーマンスで大型フェスを沸かせる最強ライブアイドル。",
       "ko": "「앗파레(대단해)!」한 열량과 압도적인 댄스 및 라이브 퍼포먼스로 대형 페스티벌을 장악하는 최강 라이브 아이돌.",
@@ -902,285 +609,16 @@
           "ko": "레이짱",
           "en": "Rei-chan"
         },
+        "xFollowers": 86000,
+        "igFollowers": 120000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "週刊SPA! グラビア掲載"
+        ],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/appare_rei",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          },
-          {
-            "type": "instagram",
-            "url": "https://www.instagram.com/reiasahina/",
-            "label": {
-              "ja": "Instagram",
-              "ko": "인스타그램",
-              "en": "Instagram"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      },
-      {
-        "id": "appare-fujimiya-may",
-        "groupId": "appare",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "藤宮めい",
-            "kana": "ふじみや めい"
-          },
-          "ko": {
-            "hangul": "후지미야 메이"
-          },
-          "en": {
-            "romaji": "Mei Fujimiya"
-          }
-        },
-        "memberColor": "#FFFFFF",
-        "memberColorName": {
-          "ja": "白色",
-          "ko": "화이트",
-          "en": "White"
-        },
-        "imageUrl": "/images/members/appare-fujimiya-may.svg",
-        "birthDate": "2001-09-28",
-        "birthplace": {
-          "ja": "埼玉県",
-          "ko": "사이타마현",
-          "en": "Saitama"
-        },
-        "nickname": {
-          "ja": "めいめい",
-          "ko": "메이메이",
-          "en": "Meimei"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/appare_may",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "gang-parade",
-    "name": {
-      "ja": "GANG PARADE",
-      "ko": "갱 퍼레이드 (GANG PARADE)",
-      "en": "GANG PARADE"
-    },
-    "shortName": {
-      "ja": "ギャンパレ",
-      "ko": "걘파레",
-      "en": "GP"
-    },
-    "agency": "WACK",
-    "region": "tokyo",
-    "district": "shibuya",
-    "color": "#E6FF00",
-    "accentColor": "#1A1A1A",
-    "debutYear": 2014,
-    "imageUrl": "/images/groups/gang-parade.svg",
-    "description": {
-      "ja": "「みんなの遊び場」をコンセプトに活動するWACK所属の13人組アイドルグループ。",
-      "ko": "「모두의 놀이터」를 콘셉트로 활동하는 WACK 소속 13인조 라이브 아이돌 그룹.",
-      "en": "A 13-member powerhouse idol group from WACK performing under the concept \"Everyone's Playground\"."
-    },
-    "officialSite": "https://gangparade.jp/",
-    "ticketUrl": "https://w.pia.jp/t/gangparade/",
-    "chekiUrl": "https://gangparade.stores.jp/",
-    "scheduleUrl": "https://gangparade.jp/schedule/",
-    "x": "https://x.com/GANG_PARADE",
-    "instagram": "https://www.instagram.com/gang_parade_official/",
-    "tiktok": "https://www.tiktok.com/@gang_parade",
-    "youtube": "https://www.youtube.com/@GANGPARADE_official",
-    "subUnits": [],
-    "members": [
-      {
-        "id": "gp-yumeno-yua",
-        "groupId": "gang-parade",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "ユメノユア",
-            "kana": "ゆめの ゆあ"
-          },
-          "ko": {
-            "hangul": "유메노 유아"
-          },
-          "en": {
-            "romaji": "Yua Yumeno"
-          }
-        },
-        "memberColor": "#E6FF00",
-        "memberColorName": {
-          "ja": "ネオンイエロー",
-          "ko": "네온 옐로우",
-          "en": "Neon Yellow"
-        },
-        "imageUrl": "/images/members/gp-yumeno-yua.svg",
-        "birthDate": "1996-03-27",
-        "birthplace": {
-          "ja": "神奈川県",
-          "ko": "가나가와현",
-          "en": "Kanagawa"
-        },
-        "nickname": {
-          "ja": "ユアちゃん",
-          "ko": "유아짱",
-          "en": "Yua-chan"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/YUA_GANG",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      },
-      {
-        "id": "gp-coco-partin",
-        "groupId": "gang-parade",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "ココ・パーティン・ココ",
-            "kana": "ここ ぱーてぃん ここ"
-          },
-          "ko": {
-            "hangul": "코코 파틴 코코"
-          },
-          "en": {
-            "romaji": "Coco Partin Coco"
-          }
-        },
-        "memberColor": "#FF4500",
-        "memberColorName": {
-          "ja": "オレンジレッド",
-          "ko": "오렌지 레드",
-          "en": "Orange Red"
-        },
-        "imageUrl": "/images/members/gp-coco-partin.svg",
-        "birthDate": "1995-10-01",
-        "birthplace": {
-          "ja": "愛知県",
-          "ko": "아이치현",
-          "en": "Aichi"
-        },
-        "nickname": {
-          "ja": "ココちゃん",
-          "ko": "코코짱",
-          "en": "Coco-chan"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/COCO_GANG",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "jams-collection",
-    "name": {
-      "ja": "Jams Collection",
-      "ko": "잼스 컬렉션 (Jams Collection)",
-      "en": "Jams Collection"
-    },
-    "shortName": {
-      "ja": "ジャムズ",
-      "ko": "잼스",
-      "en": "Jams"
-    },
-    "agency": "RIZE PRODUCTION",
-    "region": "tokyo",
-    "district": "shibuya",
-    "color": "#06B6D4",
-    "accentColor": "#ECFEFF",
-    "debutYear": 2021,
-    "imageUrl": "/images/groups/jams-collection.svg",
-    "description": {
-      "ja": "「大好きな曲を詰め込んだコレクション」をテーマに、圧倒的なビジュアルとライブパフォーマンスで武道館単独公演も成功させた大人気グループ。",
-      "ko": "「가장 좋아하는 음악을 가득 담은 보물상자」를 테마로 부도칸 단독 공연까지 성공시킨 대인기 라이브 아이돌 걸그룹.",
-      "en": "A powerhouse idol group with stellar visuals and festival presence that headlined Nippon Budokan."
-    },
-    "officialSite": "https://jamscollection.jp/",
-    "ticketUrl": "https://ticketdive.com/artist/jamscollection",
-    "chekiUrl": "https://jamscollection.stores.jp/",
-    "scheduleUrl": "https://jamscollection.jp/schedule/",
-    "x": "https://x.com/JamsCollection",
-    "instagram": "https://www.instagram.com/jamscollection.official/",
-    "tiktok": "https://www.tiktok.com/@jamscollection_official",
-    "youtube": "https://www.youtube.com/@jamscollection",
-    "subUnits": [],
-    "members": [
-      {
-        "id": "jc-tsuda-nanami",
-        "groupId": "jams-collection",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "津代美月",
-            "kana": "つしろ みづき"
-          },
-          "ko": {
-            "hangul": "츠시로 미즈키"
-          },
-          "en": {
-            "romaji": "Mizuki Tsushiro"
-          }
-        },
-        "memberColor": "#800080",
-        "memberColorName": {
-          "ja": "紫",
-          "ko": "퍼플",
-          "en": "Purple"
-        },
-        "imageUrl": "/images/members/jc-tsuda-nanami.svg",
-        "birthDate": "2000-10-16",
-        "birthplace": {
-          "ja": "大阪府",
-          "ko": "오사카부",
-          "en": "Osaka"
-        },
-        "nickname": {
-          "ja": "ツシロ",
-          "ko": "츠시로",
-          "en": "Tsushiro"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/mizuki_jams",
             "label": {
               "ja": "X (Twitter)",
               "ko": "공식 X",
@@ -1212,6 +650,7 @@
     "accentColor": "#E0F7FA",
     "debutYear": 2008,
     "imageUrl": "/images/groups/dempagumi.svg",
+    "xFollowers": 320000,
     "description": {
       "ja": "秋葉原ディアステージ発、アニメ・マンガ・ゲームなどオタクカルチャーを世界へ発信し続けた伝説的カルチャーアイドル。",
       "ko": "아키하바라 디어스테이지 출신, 서브컬처 문화를 전 세계로 전파한 전설적인 아키바계 아이돌 걸그룹.",
@@ -1261,61 +700,17 @@
           "ko": "미린짱",
           "en": "Mirin-chan"
         },
+        "xFollowers": 280000,
+        "igFollowers": 190000,
+        "isGravureActive": false,
+        "gravureHighlights": [],
         "links": [
           {
             "type": "x",
             "url": "https://x.com/FurukawaMirin",
             "label": {
               "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      },
-      {
-        "id": "dempa-aizawa-risa",
-        "groupId": "dempagumi",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "相沢梨紗",
-            "kana": "あいざわ りさ"
-          },
-          "ko": {
-            "hangul": "아이자와 리사"
-          },
-          "en": {
-            "romaji": "Risa Aizawa"
-          }
-        },
-        "memberColor": "#FFFFFF",
-        "memberColorName": {
-          "ja": "りさホワイト",
-          "ko": "리사 화이트",
-          "en": "Risa White"
-        },
-        "imageUrl": "/images/members/dempa-aizawa-risa.svg",
-        "birthDate": "1988-08-02",
-        "birthplace": {
-          "ja": "大阪府",
-          "ko": "오사카부",
-          "en": "Osaka"
-        },
-        "nickname": {
-          "ja": "りさちー",
-          "ko": "리사치",
-          "en": "Risachee"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/RISA_memesama",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X (트위터)",
+              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -1344,6 +739,7 @@
     "accentColor": "#FEF3C7",
     "debutYear": 2014,
     "imageUrl": "/images/groups/2zicon.svg",
+    "xFollowers": 175000,
     "description": {
       "ja": "「毎日が夏休み！」をテーマに爽快なサマーソングとオタクカルチャーを発信するDEARSTAGEの看板グループ。",
       "ko": "「매일이 여름방학!」을 테마로 상쾌한 서머 송과 다채로운 매력을 선보이는 DEARSTAGE 간판 걸그룹.",
@@ -1393,6 +789,13 @@
           "ko": "모에선배",
           "en": "Moe-senpai"
         },
+        "xFollowers": 85000,
+        "igFollowers": 130000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "ヤングアニマル 表紙巻頭グラビア",
+          "写真集「つるみん」"
+        ],
         "links": [
           {
             "type": "x",
@@ -1428,6 +831,7 @@
     "accentColor": "#FEE2E2",
     "debutYear": 2013,
     "imageUrl": "/images/groups/festive.svg",
+    "xFollowers": 110000,
     "description": {
       "ja": "「お祭り系アイドル」として「OIDEMASE!!〜極楽〜」など日本全国・世界各地のフェスで熱狂の渦を巻き起こす最強ライブグループ。",
       "ko": "「축제계 아이돌」로서 「오이데마세! 극락」 등 전 세계 페스티벌을 열광의 도가니로 만드는 페스티벌 최강자.",
@@ -1477,6 +881,13 @@
           "ko": "히나린",
           "en": "Hinarin"
         },
+        "xFollowers": 95000,
+        "igFollowers": 140000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "ヤングチャンピオン 表紙",
+          "1st写真集「ひなりん」"
+        ],
         "links": [
           {
             "type": "x",
@@ -1512,6 +923,7 @@
     "accentColor": "#E6F9F0",
     "debutYear": 2017,
     "imageUrl": "/images/groups/colorful-scream.svg",
+    "xFollowers": 55000,
     "description": {
       "ja": "関西・大阪を拠点に全国へポジティブな歌声を届ける、関西屈指の王道メロディック・ライブアイドル。",
       "ko": "간사이・오사카를 거점으로 전국에 긍정적인 에너지를 전하는 오사카 대표 멜로딕 라이브 아이돌 걸그룹.",
@@ -1561,6 +973,10 @@
           "ko": "나코짱",
           "en": "Nako-chan"
         },
+        "xFollowers": 32000,
+        "igFollowers": 45000,
+        "isGravureActive": false,
+        "gravureHighlights": [],
         "links": [
           {
             "type": "x",
@@ -1568,90 +984,6 @@
             "label": {
               "ja": "X (Twitter)",
               "ko": "공식 X (트위터)",
-              "en": "Official X"
-            },
-            "verified": true,
-            "isPrimary": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "kolokol",
-    "name": {
-      "ja": "Kolokol",
-      "ko": "콜로콜 (Kolokol)",
-      "en": "Kolokol"
-    },
-    "shortName": {
-      "ja": "コロコル",
-      "ko": "콜로콜",
-      "en": "Kolokol"
-    },
-    "agency": "we-B studios (Osaka)",
-    "region": "osaka",
-    "district": "namba",
-    "color": "#6366F1",
-    "accentColor": "#EEF2FF",
-    "debutYear": 2018,
-    "imageUrl": "/images/groups/kolokol.svg",
-    "description": {
-      "ja": "「囚われない音楽」をコンセプトに、美しいメロディと世界観で関西から全国のロックファンを魅了する実力派グループ。",
-      "ko": "「얽매이지 않는 음악」을 콘셉트로 서정적인 멜로디와 독보적인 라이브 실력을 자랑하는 간사이의 명품 걸그룹.",
-      "en": "An acclaimed Osaka-based live idol group crafting intricate and beautiful indie-rock melodies."
-    },
-    "officialSite": "https://kolokol-official.com/",
-    "ticketUrl": "https://t.livepocket.jp/t/kolokol",
-    "chekiUrl": "https://kolokol.stores.jp/",
-    "scheduleUrl": "https://kolokol-official.com/schedule/",
-    "x": "https://x.com/klkl_official",
-    "instagram": "https://www.instagram.com/kolokol_official/",
-    "tiktok": null,
-    "youtube": "https://www.youtube.com/@Kolokol_official",
-    "subUnits": [],
-    "members": [
-      {
-        "id": "kl-takahashi-saki",
-        "groupId": "kolokol",
-        "subUnitId": "",
-        "name": {
-          "ja": {
-            "kanji": "高橋あきほ",
-            "kana": "たかはし あきほ"
-          },
-          "ko": {
-            "hangul": "타카하시 아키호"
-          },
-          "en": {
-            "romaji": "Akiho Takahashi"
-          }
-        },
-        "memberColor": "#6366F1",
-        "memberColorName": {
-          "ja": "青",
-          "ko": "블루",
-          "en": "Blue"
-        },
-        "imageUrl": "/images/members/kl-takahashi-saki.svg",
-        "birthDate": "1999-03-02",
-        "birthplace": {
-          "ja": "大阪府",
-          "ko": "오사카부",
-          "en": "Osaka"
-        },
-        "nickname": {
-          "ja": "あきほ",
-          "ko": "아키호",
-          "en": "Akiho"
-        },
-        "links": [
-          {
-            "type": "x",
-            "url": "https://x.com/akiho_klkl",
-            "label": {
-              "ja": "X (Twitter)",
-              "ko": "공식 X",
               "en": "Official X"
             },
             "verified": true,
@@ -1680,6 +1012,7 @@
     "accentColor": "#F0F7FF",
     "debutYear": 2020,
     "imageUrl": "/images/groups/title-mitei.svg",
+    "xFollowers": 68000,
     "description": {
       "ja": "「何者かになろうとしなくていい」をテーマに、北海道・札幌から透明感ある叙情的な楽曲を届ける実力派グループ。",
       "ko": "「무엇이 되려 하지 않아도 괜찮아」를 테마로 홋카이도 삿포로에서 투명하고 서정적인 음악을 선보이는 감성 실력파 걸그룹.",
@@ -1729,6 +1062,10 @@
           "ko": "하나짱",
           "en": "Hana-chan"
         },
+        "xFollowers": 42000,
+        "igFollowers": 58000,
+        "isGravureActive": false,
+        "gravureHighlights": [],
         "links": [
           {
             "type": "x",
@@ -1764,6 +1101,7 @@
     "accentColor": "#FEE2E2",
     "debutYear": 2011,
     "imageUrl": "/images/groups/linq.svg",
+    "xFollowers": 95000,
     "description": {
       "ja": "「Love in 九州」を掲げ、福岡・天神を拠点に全国・アジアへ笑顔を届ける九州を代表する長寿アイドルグループ。",
       "ko": "「Love in 큐슈」를 모토로 후쿠오카 텐진을 거점으로 전국과 아시아로 뻗어나가는 큐슈 대표 아이돌 걸그룹.",
@@ -1813,6 +1151,13 @@
           "ko": "유우민",
           "en": "Yuumin"
         },
+        "xFollowers": 76000,
+        "igFollowers": 160000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "ヤングアニマル グラビア",
+          "福岡TVレギュラー多数"
+        ],
         "links": [
           {
             "type": "x",
@@ -1848,6 +1193,7 @@
     "accentColor": "#FFF7ED",
     "debutYear": 2017,
     "imageUrl": "/images/groups/tebasen.svg",
+    "xFollowers": 52000,
     "description": {
       "ja": "「手羽先のように愛されるグループ」を目指し、名古屋・栄を拠点に圧倒的なライブの熱気と王道ポップを届ける名古屋の代表格。",
       "ko": "「나고야 명물 테바사키처럼 모두에게 사랑받는 아이돌」을 목표로 나고야 사카에를 거점으로 왕도 팝을 선보이는 나고야 대표 걸그룹.",
@@ -1897,6 +1243,12 @@
           "ko": "하루짱",
           "en": "Haru-chan"
         },
+        "xFollowers": 38000,
+        "igFollowers": 52000,
+        "isGravureActive": true,
+        "gravureHighlights": [
+          "ヤングガンガン グラビア"
+        ],
         "links": [
           {
             "type": "x",

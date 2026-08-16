@@ -1,0 +1,122 @@
+[
+  {
+    "id": "g-sakurai-yui-playboy",
+    "memberId": "fz-sakurai-yui",
+    "memberName": {
+      "ja": "櫻井優衣",
+      "ko": "사쿠라이 유이",
+      "en": "Yui Sakurai"
+    },
+    "groupId": "fruits-zipper",
+    "groupName": {
+      "ja": "FRUITS ZIPPER",
+      "ko": "후르츠 지퍼",
+      "en": "FRUITS ZIPPER"
+    },
+    "title": {
+      "ja": "週刊プレイボーイ 表紙巻頭グラビア",
+      "ko": "주간 플레이보이 표지 & 권두 그라비아",
+      "en": "Weekly Playboy Cover Feature"
+    },
+    "magazine": "週刊プレイボーイ (Weekly Playboy)",
+    "releaseDate": "2026-08",
+    "imageUrl": "/images/members/fz-sakurai-yui.svg",
+    "url": "https://www.grajapa.shueisha.co.jp/"
+  },
+  {
+    "id": "g-shinzome-riri-youngjump",
+    "memberId": "ilife-shinzome-riri",
+    "memberName": {
+      "ja": "心花りり",
+      "ko": "신조메 리리",
+      "en": "Riri Shinzome"
+    },
+    "groupId": "ilife",
+    "groupName": {
+      "ja": "iLiFE!",
+      "ko": "아이라이프",
+      "en": "iLiFE!"
+    },
+    "title": {
+      "ja": "週刊ヤングジャンプ 表紙＆巻頭グラビア",
+      "ko": "주간 영점프 표지 & 권두 화보",
+      "en": "Weekly Young Jump Cover Gravure"
+    },
+    "magazine": "週刊ヤングジャンプ (Young Jump)",
+    "releaseDate": "2026-07",
+    "imageUrl": "/images/members/ilife-shinzome-riri.svg",
+    "url": "https://youngjump.jp/"
+  },
+  {
+    "id": "g-matsumoto-karen-larme",
+    "memberId": "fz-matsumoto-karen",
+    "memberName": {
+      "ja": "松本かれん",
+      "ko": "마츠모토 카렌",
+      "en": "Karen Matsumoto"
+    },
+    "groupId": "fruits-zipper",
+    "groupName": {
+      "ja": "FRUITS ZIPPER",
+      "ko": "후르츠 지퍼",
+      "en": "FRUITS ZIPPER"
+    },
+    "title": {
+      "ja": "LARME 特集ビジュアルグラビア",
+      "ko": "LARME 패션 & 뷰티 비주얼 화보",
+      "en": "LARME Visual & Fashion Feature"
+    },
+    "magazine": "LARME",
+    "releaseDate": "2026-06",
+    "imageUrl": "/images/members/fz-matsumoto-karen.svg",
+    "url": "https://larme.co/"
+  },
+  {
+    "id": "g-tsurumi-moe-animal",
+    "memberId": "2z-tsurumi-moe",
+    "memberName": {
+      "ja": "鶴見萌",
+      "ko": "츠루미 모에",
+      "en": "Moe Tsurumi"
+    },
+    "groupId": "2zicon",
+    "groupName": {
+      "ja": "虹のコンキスタドール",
+      "ko": "니지의 콘키스타도르",
+      "en": "2zicon"
+    },
+    "title": {
+      "ja": "ヤングアニマル 表紙巻頭サマーグラビア",
+      "ko": "영 애니멀 표지 & 서머 비키니 화보",
+      "en": "Young Animal Summer Cover"
+    },
+    "magazine": "ヤングアニマル (Young Animal)",
+    "releaseDate": "2026-07",
+    "imageUrl": "/images/members/2z-tsurumi-moe.svg",
+    "url": "https://www.younganimal.com/"
+  },
+  {
+    "id": "g-aoba-hinata-champ",
+    "memberId": "ft-aoba-hinata",
+    "memberName": {
+      "ja": "青葉ひなり",
+      "ko": "아오바 히나리",
+      "en": "Hinari Aoba"
+    },
+    "groupId": "festive",
+    "groupName": {
+      "ja": "FES☆TIVE",
+      "ko": "페스티브",
+      "en": "FES☆TIVE"
+    },
+    "title": {
+      "ja": "ヤングチャンピオン 表紙巻頭グラビア",
+      "ko": "영 챔피언 표지 & 권두 화보",
+      "en": "Young Champion Cover Gravure"
+    },
+    "magazine": "ヤングチャンピオン (Young Champion)",
+    "releaseDate": "2026-05",
+    "imageUrl": "/images/members/ft-aoba-hinata.svg",
+    "url": "https://www.akitashoten.co.jp/"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "n-fz-tour-2026",
+    "groupId": "fruits-zipper",
+    "groupName": {
+      "ja": "FRUITS ZIPPER",
+      "ko": "후르츠 지퍼",
+      "en": "FRUITS ZIPPER"
+    },
+    "category": "live",
+    "date": "2026-08-18",
+    "badge": {
+      "ja": "ライブ速報",
+      "ko": "라이브 속보",
+      "en": "Live News"
+    },
+    "title": {
+      "ja": "【全国ツアー2026】さいたまスーパーアリーナ単独2DAYS公演開催決定！チケット一般発売開始",
+      "ko": "【전국 투어 2026】사이타마 슈퍼 아레나 단독 2DAYS 공연 개최 결정! 일반 예매 오픈",
+      "en": "[National Tour 2026] Saitama Super Arena 2-Day Solo Live Confirmed! Tickets On Sale"
+    },
+    "summary": {
+      "ja": "結成4周年を迎えるFRUITS ZIPPER史上最大規模の単独アリーナ公演が決定。チケットはローチケにて受付中。",
+      "ko": "결성 4주년을 맞이하는 FRUITS ZIPPER 사상 최대 규모의 단독 아레나 공연 개최. 로치케에서 예매 접수 중.",
+      "en": "FRUITS ZIPPER announces their largest arena solo live at Saitama Super Arena for their 4th anniversary."
+    },
+    "url": "https://fruitszipper.asobisystem.com/news/detail/3394"
+  },
+  {
+    "id": "n-ilife-budokan",
+    "groupId": "ilife",
+    "groupName": {
+      "ja": "iLiFE!",
+      "ko": "아이라이프",
+      "en": "iLiFE!"
+    },
+    "category": "live",
+    "date": "2026-08-16",
+    "badge": {
+      "ja": "日本武道館",
+      "ko": "일본 무도관",
+      "en": "Budokan"
+    },
+    "title": {
+      "ja": "iLiFE! 日本武道館 単独公演「iLiFE! 5th Anniversary Live」チケット先行受付スタート！",
+      "ko": "iLiFE! 일본 무도관 단독 공연 「iLiFE! 5주년 기념 라이브」 티켓 선행 예매 스타트!",
+      "en": "iLiFE! Nippon Budokan Solo Live \"iLiFE! 5th Anniversary Live\" Presale Tickets Open!"
+    },
+    "summary": {
+      "ja": "HEROINESのエースグループiLiFE!が悲願の日本武道館ワンマンを達成！TicketDiveにて最速抽選受付中。",
+      "ko": "HEROINES의 에이스 iLiFE!의 염원하던 무도관 원맨 라이브 달성! TicketDive에서 최속 추첨 접수 중.",
+      "en": "HEROINES flagship group iLiFE! headlines their dream Nippon Budokan solo concert."
+    },
+    "url": "https://ticketdive.com/artist/ilife"
+  },
+  {
+    "id": "n-yui-gravure-book",
+    "groupId": "fruits-zipper",
+    "groupName": {
+      "ja": "FRUITS ZIPPER",
+      "ko": "후르츠 지퍼",
+      "en": "FRUITS ZIPPER"
+    },
+    "category": "gravure",
+    "date": "2026-08-12",
+    "badge": {
+      "ja": "グラビア・写真集",
+      "ko": "화보・사진집",
+      "en": "Photobook"
+    },
+    "title": {
+      "ja": "櫻井優衣（FRUITS ZIPPER）2nd写真集発売決定！週刊プレイボーイにて特別アザーカット公開中",
+      "ko": "사쿠라이 유이(FRUITS ZIPPER) 2nd 사진집 발매 결정! 주간 플레이보이 특별 아더컷 공개",
+      "en": "Yui Sakurai (FRUITS ZIPPER) 2nd Photobook Confirmed with Weekly Playboy Exclusive Cover Cut"
+    },
+    "summary": {
+      "ja": "1st写真集の大重版に続き、待望の第2弾写真集が決定。各書店・ECにて予約受付開始。",
+      "ko": "1st 사진집의 대히트에 이어 많은 기대를 모은 2번째 사진집 출간 결정. 각 서점 예약 접수 시작.",
+      "en": "Following her bestselling 1st photobook, Yui Sakurai announces her anticipated 2nd volume."
+    },
+    "url": "https://fruitszipper.asobisystem.com/"
+  },
+  {
+    "id": "n-appare-single",
+    "groupId": "appare",
+    "groupName": {
+      "ja": "Appare!",
+      "ko": "앗파레",
+      "en": "Appare!"
+    },
+    "category": "release",
+    "date": "2026-08-10",
+    "badge": {
+      "ja": "新曲リリース",
+      "ko": "신곡 발매",
+      "en": "New Single"
+    },
+    "title": {
+      "ja": "Appare! ニューシングル「サマー・アッパレ・カーニバル」MV解禁＆ストリーミング配信開始！",
+      "ko": "Appare! 뉴 싱글 「서머 앗파레 카니발」 MV 공개 및 전 음원 사이트 스트리밍 개시!",
+      "en": "Appare! Drops New Summer Anthem \"Summer Appare Carnival\" Music Video & Global Streaming!"
+    },
+    "summary": {
+      "ja": "夏フェスを最高潮に盛り上げるAppare!流サマーチューン。YouTubeにてフル尺MV公開中。",
+      "ko": "여름 페스티벌을 열광의 도가니로 만들 Appare!의 서머 튠. 공식 유튜브 채널에서 MV 감상 가능.",
+      "en": "The ultimate festival energy booster is now available across Spotify, Apple Music, and YouTube."
+    },
+    "url": "https://appare-official.jp/"
+  }
+]

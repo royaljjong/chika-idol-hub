@@ -45,6 +45,7 @@ export const LinkType = z.enum([
   'ticket',
   'cheki',
   'store',
+  'gravure',
   'other',
 ]);
 export type LinkType = z.infer<typeof LinkType>;
@@ -86,10 +87,14 @@ export const ChikaMember = z.object({
   }),
   memberColor: z.string().default('#FF2E7E'),
   memberColorName: LocalizedText,
-  imageUrl: z.string().url().nullable().default(null),
-  birthDate: z.string().nullable().default(null),
+  imageUrl: z.string().nullable().default(null),
+  birthDate: z.string().nullable().default(null), // YYYY-MM-DD
   birthplace: LocalizedText.nullable().default(null),
   nickname: LocalizedText.nullable().default(null),
+  xFollowers: z.number().optional().default(0),
+  igFollowers: z.number().optional().default(0),
+  isGravureActive: z.boolean().optional().default(false),
+  gravureHighlights: z.array(z.string()).optional().default([]),
   links: z.array(IdolLink).default([]),
 });
 export type ChikaMember = z.infer<typeof ChikaMember>;
@@ -105,7 +110,8 @@ export const ChikaGroup = z.object({
   accentColor: z.string(),
   debutYear: z.number(),
   description: LocalizedText,
-  imageUrl: z.string().url().nullable().default(null),
+  imageUrl: z.string().nullable().default(null),
+  xFollowers: z.number().optional().default(0),
   officialSite: z.string().url().nullable().default(null),
   ticketUrl: z.string().url().nullable().default(null),
   chekiUrl: z.string().url().nullable().default(null),
@@ -118,3 +124,38 @@ export const ChikaGroup = z.object({
   members: z.array(ChikaMember).default([]),
 });
 export type ChikaGroup = z.infer<typeof ChikaGroup>;
+
+// 오시라세 (공지사항 / 뉴스 / 라이브 속보)
+export const ChikaNotice = z.object({
+  id: z.string(),
+  groupId: z.string(),
+  groupName: LocalizedText,
+  title: LocalizedText,
+  category: z.enum(['live', 'release', 'media', 'gravure', 'announcement']),
+  date: z.string(), // YYYY-MM-DD
+  badge: LocalizedText,
+  summary: LocalizedText,
+  url: z.string().url().nullable().default(null),
+});
+export type ChikaNotice = z.infer<typeof ChikaNotice>;
+
+const stringOrLocalized = z.union([z.string(), LocalizedText]);
+
+// 그라비아 & 비주얼 화보 피처
+export const GravureFeature = z.object({
+  id: z.string(),
+  memberId: z.string(),
+  memberName: z.object({
+    ja: z.string(),
+    ko: z.string(),
+    en: z.string(),
+  }),
+  groupId: z.string(),
+  groupName: LocalizedText,
+  title: LocalizedText,
+  magazine: stringOrLocalized,
+  releaseDate: z.string(), // YYYY-MM-DD
+  imageUrl: z.string().nullable().default(null),
+  url: z.string().url().nullable().default(null),
+});
+export type GravureFeature = z.infer<typeof GravureFeature>;
