@@ -46,6 +46,11 @@ export function MemberCard({
           size={size === 'sm' ? 46 : 54}
           className="group-hover:scale-105 transition-transform duration-300 ring-2 ring-space-900 shadow-sm"
         />
+        {(member.imageKind ?? 'placeholder') === 'placeholder' && (
+          <span className="absolute left-4 top-16 z-10 bg-black/70 px-1.5 py-0.5 text-[9px] text-star-dim">
+            {locale === 'ko' ? '사진 준비 중' : locale === 'ja' ? '画像準備中' : 'Placeholder'}
+          </span>
+        )}
 
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5 flex-wrap">

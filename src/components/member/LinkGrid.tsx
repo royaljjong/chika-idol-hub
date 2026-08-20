@@ -80,7 +80,7 @@ export function LinkGrid({ links, locale }: LinkGridProps) {
                   <span className="text-sm sm:text-base font-bold text-star-white group-hover:text-pink-300 transition truncate font-[family-name:var(--font-klee-one)]">
                     {label}
                   </span>
-                  {link.verified && (
+                  {link.verified && link.checkedAt && link.sourceUrl && (
                     <span className="text-[11px] text-emerald-400 font-bold" title="Verified Official Link">
                       ✓
                     </span>

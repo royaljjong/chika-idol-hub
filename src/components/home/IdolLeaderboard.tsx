@@ -58,6 +58,20 @@ export function IdolLeaderboard({ initialMembers, locale }: IdolLeaderboardProps
 
   const top8 = sorted.slice(0, 8);
 
+  if (initialMembers.length === 0) {
+    return (
+      <section className="mb-14 border-y border-white/10 py-8">
+        <p className="text-[10px] font-bold tracking-[.18em] text-pink-400">RANKING · DATA POLICY</p>
+        <h2 className="mt-2 text-xl font-bold text-star-white">
+          {locale === 'ko' ? '랭킹 데이터 검증 중' : locale === 'ja' ? 'ランキングデータ検証中' : 'Ranking data under verification'}
+        </h2>
+        <p className="mt-3 max-w-2xl text-xs leading-6 text-star-dim">
+          {locale === 'ko' ? '출처·수집일·플랫폼이 확인되지 않은 기존 점수는 공개하지 않습니다. 검증된 팔로워 스냅숏과 검색 지수만 순위에 반영합니다.' : locale === 'ja' ? '出典・収集日・プラットフォームを確認できない既存スコアは公開しません。検証済みデータのみ掲載します。' : 'Unsourced legacy scores are hidden. Rankings will return with platform, source and collection date.'}
+        </p>
+      </section>
+    );
+  }
+
   const getRankBadge = (idx: number) => {
     if (idx === 0) return '🥇 1';
     if (idx === 1) return '🥈 2';

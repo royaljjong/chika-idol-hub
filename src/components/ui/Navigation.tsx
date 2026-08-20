@@ -36,6 +36,7 @@ export function Navigation({ showBrand = true }: NavigationProps) {
 
       {/* Top-right Actions: Search & Locales strictly aligned to far right */}
       <div className="flex items-center gap-2.5 ml-auto">
+        <Link href="/gravure" className="hidden px-3 py-1.5 text-xs font-medium text-star-dim hover:text-star-white sm:block">{locale === 'ko' ? '그라비아' : locale === 'ja' ? 'グラビア' : 'Gravure'}</Link>
         <Link
           href="/search"
           className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-xs font-medium text-star-white border border-white/10 shadow-sm transition hover:scale-105"

@@ -63,10 +63,7 @@ export default async function HomePage({ params }: HomePageProps) {
           </p>
         </div>
 
-        {/* 1. Official Notices & Live Breaking News (오시라세) */}
-        <NoticeFeed notices={notices} locale={locale} />
-
-        {/* 2. Interactive Map (Folder-in-Folder Navigation: Map -> Zoom City -> District -> Idols -> Members -> SNS) */}
+        {/* 1. Region-first discovery */}
         <div className="mb-14">
           <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
             <div className="flex items-center gap-2.5">
@@ -90,14 +87,22 @@ export default async function HomePage({ params }: HomePageProps) {
           <InteractiveJapanMap groups={groups} locale={locale} />
         </div>
 
-        {/* 3. National 3-Category Leaderboard: Popularity / Followers / Search Buzz */}
-        <IdolLeaderboard initialMembers={rankedMembers} locale={locale} />
+        {/* 2. Verified official notices */}
+        {notices.length > 0 ? <NoticeFeed notices={notices} locale={locale} /> : (
+          <section className="mb-14 border-y border-white/10 py-8">
+            <p className="text-[10px] font-bold tracking-[.18em] text-pink-400">OFFICIAL NOTICE</p>
+            <h2 className="mt-2 text-xl font-bold text-star-white">{locale === 'ko' ? '공식 공지 검증 중' : locale === 'ja' ? '公式お知らせ検証中' : 'Official notices under verification'}</h2>
+          </section>
+        )}
 
-        {/* 4. Birthday Calendar Spotlight (아이돌 생일 캘린더) */}
+        {/* 3. Birthday Calendar Spotlight */}
         <BirthdayTracker birthdays={birthdays} locale={locale} />
 
-        {/* 5. Gravure & Visual Photobooks (그라비아 & 비주얼 화보) */}
-        <GravureSection gravures={gravures} locale={locale} />
+        {/* 4. Rankings appear only after source verification */}
+        <IdolLeaderboard initialMembers={rankedMembers} locale={locale} />
+
+        {/* 5. Gravure & Visual Photobooks */}
+        {gravures.length > 0 && <GravureSection gravures={gravures} locale={locale} />}
 
         {/* 6. All Groups Directory (전체 걸그룹 디렉터리) */}
         <div className="mb-12">

@@ -19,7 +19,7 @@ type MemberSortMode = 'default' | 'popularity' | 'followers' | 'search';
 export default function GroupPage({ params }: GroupPageProps) {
   const { locale, groupId } = use(params);
   const [selectedSubUnit, setSelectedSubUnit] = useState<string>('all');
-  const [sortMode, setSortMode] = useState<MemberSortMode>('popularity');
+  const [sortMode, setSortMode] = useState<MemberSortMode>('default');
   const [bannerError, setBannerError] = useState<boolean>(false);
 
   const group = getGroup(groupId);
@@ -29,6 +29,7 @@ export default function GroupPage({ params }: GroupPageProps) {
 
   const groupName = group.name[locale as 'ja' | 'ko' | 'en'] || group.name.ja;
   const description = group.description[locale as 'ja' | 'ko' | 'en'] || group.description.ja;
+  const hasVerifiedMetrics = group.members.some((member) => member.metricsVerifiedAt && member.metricsSourceUrl);
 
   // Filter members by selected subunit
   const filtered = group.members.filter((m) => {
@@ -244,8 +245,7 @@ export default function GroupPage({ params }: GroupPageProps) {
               </p>
             </div>
 
-            {/* 3 Member Ranking Tabs */}
-            <div className="flex items-center bg-space-900/90 p-1 rounded-xl border border-white/10 shrink-0">
+            {hasVerifiedMetrics ? <div className="flex items-center bg-space-900/90 p-1 rounded-xl border border-white/10 shrink-0">
               <button
                 onClick={() => setSortMode('popularity')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1 ${
@@ -281,7 +281,7 @@ export default function GroupPage({ params }: GroupPageProps) {
                 <span>🔥</span>
                 <span>{locale === 'ko' ? '검색량순' : '検索量順'}</span>
               </button>
-            </div>
+            </div> : <span className="text-xs text-star-dim">{locale === 'ko' ? '검증된 랭킹 데이터 준비 중' : locale === 'ja' ? '検証済みランキング準備中' : 'Verified rankings coming soon'}</span>}
           </div>
 
           {/* Members Grid with Rank & Metric Display */}
