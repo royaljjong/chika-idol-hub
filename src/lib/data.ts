@@ -48,7 +48,10 @@ export function getNotices(): ChikaNotice[] {
 }
 
 export function getGravureFeatures(): GravureFeature[] {
-  return gravures.filter((feature) => feature.checkedAt && feature.sourceUrl && feature.rightsStatus);
+  return gravures.filter((feature) => feature.checkedAt && feature.sourceUrl && feature.rightsStatus).map((feature) => ({
+    ...feature,
+    agency: feature.agency ?? groups.find((group) => group.id === feature.groupId)?.agency,
+  }));
 }
 
 export function getLiveData() {

@@ -9,6 +9,7 @@ import { GravureSection } from '@/components/home/GravureSection';
 import { BirthdayTracker } from '@/components/home/BirthdayTracker';
 import { IdolLeaderboard } from '@/components/home/IdolLeaderboard';
 import type { Metadata } from 'next';
+import { Link } from '@/i18n/routing';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -101,10 +102,7 @@ export default async function HomePage({ params }: HomePageProps) {
         {/* 4. Rankings appear only after source verification */}
         <IdolLeaderboard initialMembers={rankedMembers} locale={locale} />
 
-        {/* 5. Gravure & Visual Photobooks */}
-        {gravures.length > 0 && <GravureSection gravures={gravures} locale={locale} />}
-
-        {/* 6. All Groups Directory (전체 걸그룹 디렉터리) */}
+        {/* 5. All Groups Directory (전체 걸그룹 디렉터리) */}
         <div className="mb-12">
           <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/10">
             <div>
@@ -130,6 +128,12 @@ export default async function HomePage({ params }: HomePageProps) {
             ))}
           </div>
         </div>
+
+        {/* 6. Separate lower gravure directory */}
+        <section className="mt-20 border-t border-white/15 pt-10">
+          <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-[10px] font-bold tracking-[.18em] text-purple-300">GRAVURE DIRECTORY</p><h2 className="mt-2 text-2xl font-bold text-white">{locale === 'ko' ? '그라비아 아이돌·사진집' : locale === 'ja' ? 'グラビアアイドル・写真集' : 'Gravure idols & photobooks'}</h2><p className="mt-2 max-w-2xl text-xs leading-6 text-star-dim">{locale === 'ko' ? '지하아이돌 지도와 분리하여 소속사·레이블 단위로 정리합니다.' : locale === 'ja' ? 'ライブアイドル地図とは分け、所属事務所・レーベル単位で整理します。' : 'Organized separately from the live-idol map by agency and label.'}</p></div><Link href="/gravure" className="text-xs font-bold text-purple-300">{locale === 'ko' ? '전체 보기' : locale === 'ja' ? '一覧を見る' : 'Open directory'} →</Link></div>
+          {gravures.length > 0 ? <GravureSection gravures={gravures} locale={locale} /> : <div className="border-y border-white/10 py-9 text-sm text-star-dim">{locale === 'ko' ? '공식 출처와 이미지 권리를 확인한 항목을 수집 중입니다.' : locale === 'ja' ? '公式出典と画像権利を確認できた項目を収集中です。' : 'Collecting entries with verified official sources and image rights.'}</div>}
+        </section>
       </main>
 
       <Footer />

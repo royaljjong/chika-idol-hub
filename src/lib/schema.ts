@@ -196,6 +196,13 @@ export const GravureFeature = z.object({
   sourceUrl: z.string().url().nullable().optional(),
   contentType: z.enum(['magazine', 'photobook', 'digital', 'video']).optional(),
   rightsStatus: z.enum(['official_embed', 'permission_confirmed', 'link_only']).optional(),
+  agency: z.string().optional(),
+  gallery: z.array(z.object({
+    imageUrl: z.string().url(),
+    postUrl: z.string().url(),
+    checkedAt: z.string(),
+    rightsStatus: z.enum(['official_embed', 'permission_confirmed', 'link_only']),
+  })).max(10).optional(),
 });
 export type GravureFeature = z.infer<typeof GravureFeature>;
 
