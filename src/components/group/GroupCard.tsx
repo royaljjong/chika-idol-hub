@@ -18,6 +18,7 @@ export function GroupCard({ group, locale }: GroupCardProps) {
 
   const previewMembers = group.members.slice(0, 4);
   const remainingCount = group.members.length - previewMembers.length;
+  const coverageLabel = locale === 'ko' ? '검증 수록' : locale === 'ja' ? '検証収録' : 'verified entries';
 
   return (
     <Link
@@ -63,8 +64,9 @@ export function GroupCard({ group, locale }: GroupCardProps) {
               {group.debutYear}年〜 • {group.agency}
             </p>
             <p className="font-medium text-pink-300">
-              {group.district.toUpperCase()} ({group.region}) • {group.members.length} Members
+              {group.district.toUpperCase()} ({group.region}) • {group.members.length} {coverageLabel}
             </p>
+            {group.coverageStatus !== 'complete' ? <p className="text-amber-300/90">{locale === 'ko' ? `전체 명단 검증 중${group.officialMemberCount ? ` · 공식 ${group.officialMemberCount}명` : ''}` : locale === 'ja' ? `全名簿を検証中${group.officialMemberCount ? ` · 公式${group.officialMemberCount}名` : ''}` : `Roster verification in progress${group.officialMemberCount ? ` · ${group.officialMemberCount} official` : ''}`}</p> : null}
           </div>
 
           {/* Short description */}

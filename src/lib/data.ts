@@ -12,29 +12,32 @@ const notices: ChikaNotice[] = z.array(ChikaNoticeSchema).parse(noticesData);
 const gravures: GravureFeature[] = z.array(GravureFeatureSchema).parse(gravureData);
 const live = ChikaLiveDataset.parse(liveData);
 const metrics = MetricDataset.parse(metricsData);
+const activeGroups = groups
+  .filter((group) => (group.activityStatus ?? 'active') === 'active')
+  .map((group) => ({ ...group, members: group.members.filter((member) => (member.activityStatus ?? 'active') === 'active') }));
 
 export function getGroups(): ChikaGroup[] {
-  return [...groups];
+  return [...activeGroups];
 }
 
 export function getGroup(id: string): ChikaGroup | undefined {
-  return groups.find((g) => g.id === id);
+  return activeGroups.find((g) => g.id === id);
 }
 
 export function getGroupsByRegion(region: RegionId): ChikaGroup[] {
-  return groups.filter((g) => g.region === region);
+  return activeGroups.filter((g) => g.region === region);
 }
 
 export function getGroupsByDistrict(district: DistrictId): ChikaGroup[] {
-  return groups.filter((g) => g.district === district);
+  return activeGroups.filter((g) => g.district === district);
 }
 
 export function getAllMembers(): ChikaMember[] {
-  return groups.flatMap((g) => g.members);
+  return activeGroups.flatMap((g) => g.members);
 }
 
 export function getMember(id: string): { member: ChikaMember; group: ChikaGroup } | undefined {
-  for (const group of groups) {
+  for (const group of activeGroups) {
     const member = group.members.find((m) => m.id === id);
     if (member) {
       return { member, group };
@@ -66,7 +69,7 @@ export function getMetricSnapshots() {
 export function getUpcomingBirthdays(): Array<{ member: ChikaMember; group: ChikaGroup; birthDate: string; month: number; day: number }> {
   const membersWithBirthday: Array<{ member: ChikaMember; group: ChikaGroup; birthDate: string; month: number; day: number }> = [];
 
-  for (const group of groups) {
+  for (const group of activeGroups) {
     for (const member of group.members) {
       if (member.birthDate) {
         const parts = member.birthDate.split('-');
@@ -99,7 +102,7 @@ export type RankCategory = 'popularity' | 'followers' | 'search';
 export function getAllRankedMembers(sortType: RankCategory = 'popularity'): Array<{ member: ChikaMember; group: ChikaGroup; scoreValue: number; formattedScore: string }> {
   const list: Array<{ member: ChikaMember; group: ChikaGroup; scoreValue: number; formattedScore: string }> = [];
 
-  for (const group of groups) {
+  for (const group of activeGroups) {
     for (const member of group.members) {
       if (!member.metricsVerifiedAt || !member.metricsSourceUrl) continue;
       let score = 0;

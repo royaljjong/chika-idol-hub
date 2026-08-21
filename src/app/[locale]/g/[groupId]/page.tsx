@@ -121,7 +121,7 @@ export default function GroupPage({ params }: GroupPageProps) {
                     {group.district.toUpperCase()} ({group.region})
                   </span>
                   <span className="text-xs text-star-dim font-mono">
-                    Debut {group.debutYear} • {group.members.length} Members
+                    Debut {group.debutYear} • {group.members.length} {locale === 'ko' ? '검증 수록' : locale === 'ja' ? '検証収録' : 'verified entries'}
                   </span>
                 </div>
 
@@ -241,7 +241,9 @@ export default function GroupPage({ params }: GroupPageProps) {
                 {locale === 'ko' ? '소속 멤버 목록 및 랭킹' : locale === 'ja' ? 'メンバー一覧・順位' : 'Members & Ranking'}
               </h2>
               <p className="text-xs text-star-dim mt-0.5">
-                {locale === 'ko' ? '멤버 카드를 클릭하면 각 멤버의 개인 SNS 및 블로그로 이동합니다.' : 'メンバーを選択して個人SNS・プロフィールへ移動'}
+                {group.coverageStatus !== 'complete'
+                  ? (locale === 'ko' ? `전체 현역 명단 검증 중${group.officialMemberCount ? ` · 공식 명단 ${group.officialMemberCount}명` : ''}` : locale === 'ja' ? `現役メンバー全名簿を検証中${group.officialMemberCount ? ` · 公式${group.officialMemberCount}名` : ''}` : `Full active roster under verification${group.officialMemberCount ? ` · ${group.officialMemberCount} official` : ''}`)
+                  : (locale === 'ko' ? '멤버 카드를 클릭하면 개인 공식 링크로 이동합니다.' : locale === 'ja' ? 'メンバーカードから公式リンクへ移動' : 'Open a member card for official links.')}
               </p>
             </div>
 
@@ -311,6 +313,7 @@ export default function GroupPage({ params }: GroupPageProps) {
               );
             })}
           </div>
+          {sortedMembers.length === 0 ? <div className="border border-dashed border-amber-300/25 bg-amber-300/[.03] px-5 py-10 text-center text-sm text-star-dim">{locale === 'ko' ? '현재 공식 멤버 명단을 검증하고 있습니다. 확인되지 않은 과거 멤버는 표시하지 않습니다.' : locale === 'ja' ? '現役公式メンバーを検証中です。未確認の旧メンバーは表示しません。' : 'The current official roster is being verified. Unconfirmed former members are hidden.'}</div> : null}
         </section>
       </main>
 

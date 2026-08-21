@@ -80,6 +80,7 @@ export type SubUnit = z.infer<typeof SubUnit>;
 export const ChikaMember = z.object({
   id: z.string(),
   groupId: z.string(),
+  activityStatus: z.enum(['active', 'former', 'unknown']).optional(),
   subUnitId: z.string().default(''),
   name: z.object({
     ja: z.object({
@@ -123,6 +124,8 @@ export const ChikaGroup = z.object({
   color: z.string(),
   accentColor: z.string(),
   debutYear: z.number(),
+  activityStatus: z.enum(['active', 'hiatus', 'ended']).optional(),
+  endedAt: z.string().nullable().optional(),
   description: LocalizedText,
   imageUrl: z.string().nullable().default(null),
   xFollowers: z.number().optional().default(0),
@@ -139,6 +142,9 @@ export const ChikaGroup = z.object({
   subUnits: z.array(SubUnit).default([]),
   members: z.array(ChikaMember).default([]),
   coverageStatus: z.enum(['complete', 'partial', 'collecting']).optional(),
+  rosterCheckedAt: z.string().nullable().optional(),
+  officialMemberCount: z.number().int().nonnegative().nullable().optional(),
+  locationBasis: z.enum(['official_concept', 'official_home_base', 'regional_identity', 'unverified']).optional(),
   provenance: SourceRecord.optional(),
 });
 export type ChikaGroup = z.infer<typeof ChikaGroup>;

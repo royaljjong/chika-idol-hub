@@ -1,6 +1,11 @@
 [
   {
     "id": "fruits-zipper",
+    "coverageStatus": "partial",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 7,
+    "locationBasis": "official_concept",
+    "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/news/2/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "FRUITS ZIPPER",
       "ko": "후르츠 지퍼 (FRUITS ZIPPER)",
@@ -241,6 +246,9 @@
   },
   {
     "id": "candy-tune",
+    "coverageStatus": "partial",
+    "locationBasis": "official_concept",
+    "provenance": { "sourceUrl": "https://candy-tune.asobisystem.com/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "CANDY TUNE",
       "ko": "캔디 튠 (CANDY TUNE)",
@@ -390,6 +398,11 @@
   },
   {
     "id": "ilife",
+    "coverageStatus": "partial",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 9,
+    "locationBasis": "unverified",
+    "provenance": { "sourceUrl": "https://ilife-heroines.com/profile/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "iLiFE!",
       "ko": "아이라이프 (iLiFE!)",
@@ -402,7 +415,7 @@
     },
     "agency": "HEROINES (imaginate)",
     "region": "tokyo",
-    "district": "shinjuku",
+    "district": "general",
     "color": "#FF2E7E",
     "accentColor": "#FFD6E5",
     "debutYear": 2020,
@@ -415,7 +428,7 @@
       "ko": "「나(i)와 당신(you)이 함께 만드는 아이돌」을 콘셉트로 폭발적인 라이브 동원력을 자랑하는 HEROINES 대표 걸그룹.",
       "en": "The top flagship group of HEROINES creating explosive festival energy together with fans."
     },
-    "officialSite": "https://heroines.jp/artist/ilife",
+    "officialSite": "https://ilife-heroines.com/",
     "ticketUrl": "https://ticketdive.com/artist/ilife",
     "chekiUrl": "https://heroines.stores.jp/",
     "scheduleUrl": "https://timetreeapp.com/public_calendars/ilife_official",
@@ -562,6 +575,11 @@
   },
   {
     "id": "appare",
+    "coverageStatus": "partial",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 9,
+    "locationBasis": "unverified",
+    "provenance": { "sourceUrl": "https://appare-official.jp/profiles", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "Appare!",
       "ko": "앗파레 (Appare!)",
@@ -574,7 +592,7 @@
     },
     "agency": "Appare! Project (HEROINES)",
     "region": "tokyo",
-    "district": "shibuya",
+    "district": "general",
     "color": "#FFB800",
     "accentColor": "#FFF3D6",
     "debutYear": 2016,
@@ -673,6 +691,14 @@
     "color": "#00E5FF",
     "accentColor": "#E0F7FA",
     "debutYear": 2008,
+    "activityStatus": "ended",
+    "endedAt": "2025-01-05",
+    "coverageStatus": "partial",
+    "provenance": {
+      "sourceUrl": "https://dempagumi.tokyo/2025/12/23/260106_dempa/",
+      "checkedAt": "2026-08-21",
+      "sourceKind": "official_site"
+    },
     "imageUrl": "/images/groups/dempagumi.svg",
     "xFollowers": 320000,
     "popularityScore": 96,
@@ -750,6 +776,11 @@
   },
   {
     "id": "2zicon",
+    "coverageStatus": "collecting",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 10,
+    "locationBasis": "unverified",
+    "provenance": { "sourceUrl": "https://2zicon.tokyo/profile/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "虹のコンキスタドール",
       "ko": "니지의 콘키스타도르 (2zicon)",
@@ -762,7 +793,7 @@
     },
     "agency": "DEARSTAGE",
     "region": "tokyo",
-    "district": "akihabara",
+    "district": "general",
     "color": "#F59E0B",
     "accentColor": "#FEF3C7",
     "debutYear": 2014,
@@ -787,6 +818,7 @@
     "members": [
       {
         "id": "2z-tsurumi-moe",
+        "activityStatus": "former",
         "groupId": "2zicon",
         "subUnitId": "",
         "name": {
@@ -846,6 +878,11 @@
   },
   {
     "id": "festive",
+    "coverageStatus": "collecting",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 9,
+    "locationBasis": "unverified",
+    "provenance": { "sourceUrl": "https://fstv.rizepro.net/static/service/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "FES☆TIVE",
       "ko": "페스티브 (FES☆TIVE)",
@@ -858,7 +895,7 @@
     },
     "agency": "RIZE PRODUCTION",
     "region": "tokyo",
-    "district": "akihabara",
+    "district": "general",
     "color": "#EF4444",
     "accentColor": "#FEE2E2",
     "debutYear": 2013,
@@ -871,7 +908,7 @@
       "ko": "「축제계 아이돌」로서 「오이데마세! 극락」 등 전 세계 페스티벌을 열광의 도가니로 만드는 페스티벌 최강자.",
       "en": "The festival specialist idol group driving crowds wild with high-energy traditional Japanese dance fusion beats."
     },
-    "officialSite": "https://festive.rizep.net/",
+    "officialSite": "https://fstv.rizepro.net/",
     "ticketUrl": "https://ticketdive.com/artist/festive",
     "chekiUrl": "https://festive.stores.jp/",
     "scheduleUrl": "https://festive.rizep.net/schedule",
@@ -883,6 +920,7 @@
     "members": [
       {
         "id": "ft-aoba-hinata",
+        "activityStatus": "former",
         "groupId": "festive",
         "subUnitId": "",
         "name": {
@@ -942,6 +980,9 @@
   },
   {
     "id": "colorful-scream",
+    "coverageStatus": "partial",
+    "locationBasis": "regional_identity",
+    "provenance": { "sourceUrl": "https://colorfulscream.com/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "カラフルスクリーム",
       "ko": "컬러풀 스크림 (Colorful Scream)",
@@ -1035,6 +1076,11 @@
   },
   {
     "id": "title-mitei",
+    "coverageStatus": "partial",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 5,
+    "locationBasis": "official_home_base",
+    "provenance": { "sourceUrl": "https://miteititle.com/member/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "タイトル未定",
       "ko": "타이틀 미정 (Title Mitei)",
@@ -1047,7 +1093,7 @@
     },
     "agency": "TSUIMA Inc. (Sapporo)",
     "region": "sapporo",
-    "district": "susukino",
+    "district": "general",
     "color": "#80BFFF",
     "accentColor": "#F0F7FF",
     "debutYear": 2020,
@@ -1128,6 +1174,11 @@
   },
   {
     "id": "linq",
+    "coverageStatus": "collecting",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 7,
+    "locationBasis": "official_home_base",
+    "provenance": { "sourceUrl": "https://www.loveinq.com/100247.html", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "LinQ",
       "ko": "링크 (LinQ)",
@@ -1165,6 +1216,7 @@
     "members": [
       {
         "id": "linq-takaki-yuumi",
+        "activityStatus": "former",
         "groupId": "linq",
         "subUnitId": "",
         "name": {
@@ -1224,6 +1276,11 @@
   },
   {
     "id": "tebasen",
+    "coverageStatus": "collecting",
+    "rosterCheckedAt": "2026-08-21",
+    "officialMemberCount": 6,
+    "locationBasis": "regional_identity",
+    "provenance": { "sourceUrl": "https://tebasen.com/biography/", "checkedAt": "2026-08-21", "sourceKind": "official_site" },
     "name": {
       "ja": "手羽先センセーション",
       "ko": "테바사키 센세이션 (Tebasaki Sensation)",
@@ -1236,7 +1293,7 @@
     },
     "agency": "FreeK-Laboratory (Nagoya)",
     "region": "nagoya",
-    "district": "sakae",
+    "district": "general",
     "color": "#FF8C00",
     "accentColor": "#FFF7ED",
     "debutYear": 2017,
@@ -1261,6 +1318,7 @@
     "members": [
       {
         "id": "tebasen-hinami-haruka",
+        "activityStatus": "former",
         "groupId": "tebasen",
         "subUnitId": "",
         "name": {

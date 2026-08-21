@@ -16,6 +16,11 @@ const groupIds = new Set(groups.map((group) => group.id));
 const memberIds = new Set<string>();
 
 for (const group of groups) {
+  if (group.activityStatus === 'ended' && !group.endedAt) errors.push(`${group.id}: ended group missing endedAt`);
+  if (group.activityStatus !== 'ended' && group.endedAt) errors.push(`${group.id}: non-ended group has endedAt`);
+  if (group.coverageStatus === 'complete' && !group.provenance) errors.push(`${group.id}: complete coverage missing provenance`);
+  if (group.coverageStatus === 'complete' && group.officialMemberCount !== group.members.filter((member) => (member.activityStatus ?? 'active') === 'active').length) errors.push(`${group.id}: complete coverage member count mismatch`);
+  if (group.officialMemberCount != null && !group.rosterCheckedAt) errors.push(`${group.id}: official member count missing rosterCheckedAt`);
   if (!group.provenance) warnings.push(`${group.id}: group provenance missing`);
   for (const member of group.members) {
     if (memberIds.has(member.id)) errors.push(`duplicate member id: ${member.id}`);
