@@ -23,6 +23,7 @@ export function MemberCard({
   const nameKo = member.name.ko.hangul;
   const nameEn = member.name.en.romaji;
   const colorName = member.memberColorName[locale as 'ja' | 'ko' | 'en'] || member.memberColorName.ja;
+  const motif = member.memberMotif?.[locale as 'ja' | 'ko' | 'en'] || member.memberMotif?.ja;
 
   const primaryName =
     locale === 'ko' ? nameKo : locale === 'en' ? nameEn : nameJa;
@@ -72,6 +73,8 @@ export function MemberCard({
           <p className="text-xs text-star-dim truncate mt-0.5">
             {subName}
           </p>
+
+          {motif && <p className="text-[11px] text-amber-200/90 truncate mt-1">{locale === 'ko' ? '담당' : locale === 'en' ? 'Motif' : '担当'}: {motif}</p>}
 
           {subUnitName && (
             <p className="text-xs text-pink-300/80 mt-1 font-mono">

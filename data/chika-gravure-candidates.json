@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-08-27T00:00:00+09:00",
+  "candidates": [
+    {
+      "id": "super-pouvoir-kinma-2026-hinano-airi",
+      "sourceKey": "official-group-sites",
+      "sourceUrl": "https://super-pouvoir.ntrecords.com/events/%E8%BF%91%E4%BB%A3%E9%BA%BB%E9%9B%80%E6%B0%B4%E7%9D%80%E7%A5%AD2026/",
+      "checkedAt": "2026-08-27",
+      "personNameJa": "妃奈乃愛莉",
+      "memberId": "spv-hinano-airi",
+      "groupNameJa": "すーぱーぷーばぁー!!",
+      "titleJa": "近代麻雀水着祭2026",
+      "publication": null,
+      "releaseDate": "2026-07-01",
+      "contentType": "event",
+      "officialProductUrl": null,
+      "rightsStatus": "link_only",
+      "reviewStatus": "review_pending",
+      "publishedFeatureId": null,
+      "blocker": "주최 측 공식 상세·판매 원문과 공개 카드 문구를 대조하기 전 후보로 유지"
+    },
+    {
+      "id": "super-pouvoir-kinma-2026-hoshimiya-yurika",
+      "sourceKey": "official-group-sites",
+      "sourceUrl": "https://super-pouvoir.ntrecords.com/events/%E8%BF%91%E4%BB%A3%E9%BA%BB%E9%9B%80%E6%B0%B4%E7%9D%80%E7%A5%AD2026/",
+      "checkedAt": "2026-08-27",
+      "personNameJa": "星宮ゆりか",
+      "memberId": "spv-hoshimiya-yurika",
+      "groupNameJa": "すーぱーぷーばぁー!!",
+      "titleJa": "近代麻雀水着祭2026",
+      "publication": null,
+      "releaseDate": "2026-07-01",
+      "contentType": "event",
+      "officialProductUrl": null,
+      "rightsStatus": "link_only",
+      "reviewStatus": "review_pending",
+      "publishedFeatureId": null,
+      "blocker": "미성년자 안전 문구와 주최 측 공식 상세·판매 원문을 대조하기 전 후보로 유지"
+    }
+  ]
+}

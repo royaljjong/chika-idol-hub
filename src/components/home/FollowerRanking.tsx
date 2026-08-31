@@ -26,13 +26,6 @@ export function FollowerRanking({ ranking, locale }: FollowerRankingProps) {
     return num.toLocaleString();
   };
 
-  const getRankBadge = (idx: number) => {
-    if (idx === 0) return '🥇 1위';
-    if (idx === 1) return '🥈 2위';
-    if (idx === 2) return '🥉 3위';
-    return `${idx + 1}위`;
-  };
-
   const getRankStyle = (idx: number) => {
     if (idx === 0) return 'border-amber-400/50 bg-gradient-to-br from-amber-500/10 to-transparent';
     if (idx === 1) return 'border-slate-300/50 bg-gradient-to-br from-slate-400/10 to-transparent';

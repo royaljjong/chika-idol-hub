@@ -16,12 +16,15 @@ interface BirthdayItem {
 interface BirthdayTrackerProps {
   birthdays: BirthdayItem[];
   locale: string;
+  currentMonth: number;
 }
 
-export function BirthdayTracker({ birthdays, locale }: BirthdayTrackerProps) {
-  // Current month (e.g. August = 8)
-  const currentMonth = new Date().getMonth() + 1;
-  const currentMonthBirthdays = birthdays.filter((b) => b.month === currentMonth || b.month === ((currentMonth % 12) + 1));
+export function BirthdayTracker({ birthdays, locale, currentMonth }: BirthdayTrackerProps) {
+  const language = locale === 'ko' || locale === 'en' ? locale : 'ja';
+  const nextMonth = (currentMonth % 12) + 1;
+  const currentMonthBirthdays = birthdays.filter((b) => b.month === currentMonth || b.month === nextMonth);
+  const monthLabel = (month: number) => language === 'ko' ? `${month}월` : language === 'ja' ? `${month}月` : new Intl.DateTimeFormat('en-US', { month: 'short', timeZone: 'UTC' }).format(new Date(Date.UTC(2026, month - 1, 1)));
+  const dateLabel = (month: number, day: number) => language === 'ko' ? `${month}월 ${day}일` : language === 'ja' ? `${month}月${day}日` : new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(2026, month - 1, day)));
 
   return (
     <section className="mb-14">
@@ -33,12 +36,12 @@ export function BirthdayTracker({ birthdays, locale }: BirthdayTrackerProps) {
               {locale === 'ko' ? '아이돌 생일 캘린더' : locale === 'ja' ? '誕生日カレンダー' : 'Birthday Tracker'}
             </h2>
             <p className="text-xs text-star-dim mt-0.5">
-              {locale === 'ko' ? '이번 달 & 다가오는 생일 축하 아이돌' : '今月・近日誕生日のアイドル一覧'}
+              {language === 'ko' ? '이번 달 & 다가오는 생일 축하 아이돌' : language === 'ja' ? '今月・近日誕生日のアイドル一覧' : 'Idols celebrating birthdays this month and next'}
             </p>
           </div>
         </div>
         <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30">
-          🎉 {currentMonth}월 & {currentMonth + 1}월
+          🎉 {monthLabel(currentMonth)} & {monthLabel(nextMonth)}
         </span>
       </div>
 
@@ -67,7 +70,7 @@ export function BirthdayTracker({ birthdays, locale }: BirthdayTrackerProps) {
               </div>
 
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-pink-300 mb-1.5 font-mono">
-                {item.month}월 {item.day}일
+                {dateLabel(item.month, item.day)}
               </span>
 
               <h4 className="text-xs sm:text-sm font-bold text-star-white group-hover:text-pink-300 transition truncate w-full">

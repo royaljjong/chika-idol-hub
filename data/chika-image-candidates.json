@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-08-30T00:00:00+09:00",
+  "candidates": [
+    {
+      "id": "group-fruits-zipper-official-profile-20260830",
+      "subjectType": "group",
+      "subjectId": "fruits-zipper",
+      "assetKind": "group_photo",
+      "officialPageUrl": "https://asobisystem.com/en/talent/fruitszipper/",
+      "rightsPolicyUrl": "https://asobisystem.com/news/54328/",
+      "permissionContactUrl": "https://asobisystem.com/contact/",
+      "assetUrl": null,
+      "rightsStatus": "link_only",
+      "reviewStatus": "rights_review",
+      "checkedAt": "2026-08-30",
+      "blocker": "Official profile image confirmed; no explicit third-party embed or reuse permission found."
+    },
+    {
+      "id": "group-candy-tune-official-profile-20260830",
+      "subjectType": "group",
+      "subjectId": "candy-tune",
+      "assetKind": "group_photo",
+      "officialPageUrl": "https://asobisystem.com/talent/CANDYTUNE/",
+      "rightsPolicyUrl": "https://asobisystem.com/news/54328/",
+      "permissionContactUrl": "https://asobisystem.com/contact/",
+      "assetUrl": null,
+      "rightsStatus": "link_only",
+      "reviewStatus": "rights_review",
+      "checkedAt": "2026-08-30",
+      "blocker": "Official profile image confirmed; no explicit third-party embed or reuse permission found."
+    },
+    {
+      "id": "group-ilife-official-profile-20260830",
+      "subjectType": "group",
+      "subjectId": "ilife",
+      "assetKind": "group_photo",
+      "officialPageUrl": "https://columbia.jp/artist-info/ilife/prof.html",
+      "rightsPolicyUrl": "https://columbia.jp/form/company/corporate/",
+      "permissionContactUrl": null,
+      "assetUrl": null,
+      "rightsStatus": "link_only",
+      "reviewStatus": "rejected",
+      "checkedAt": "2026-08-30",
+      "blocker": "Nippon Columbia states that artist images from its website may not be used without permission; this profile asset is not eligible for embedding."
+    }
+  ]
+}

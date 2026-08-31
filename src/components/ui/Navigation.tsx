@@ -17,9 +17,14 @@ export function Navigation({ showBrand = true }: NavigationProps) {
     { code: 'ko', label: '한국어' },
     { code: 'en', label: 'EN' },
   ];
+  const branches = [
+    { href: '/', label: locale === 'ko' ? '지도·그룹' : locale === 'ja' ? '地図・グループ' : 'Map & groups' },
+    { href: '/live', label: locale === 'ko' ? '라이브' : locale === 'ja' ? 'ライブ' : 'Live' },
+    { href: '/gravure', label: locale === 'ko' ? '그라비아' : locale === 'ja' ? 'グラビア' : 'Gravure' },
+  ] as const;
 
   return (
-    <nav className="relative z-20 flex items-center justify-between py-6 max-w-6xl mx-auto px-4 sm:px-6 w-full">
+    <nav className="relative z-20 mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-5 sm:flex-nowrap sm:px-6 sm:py-6">
       {showBrand ? (
         <Link
           href="/"
@@ -34,9 +39,15 @@ export function Navigation({ showBrand = true }: NavigationProps) {
         <div aria-hidden="true" />
       )}
 
+      <div className="order-3 flex w-full items-center gap-1 rounded-xl border border-white/10 bg-white/[.03] p-1 sm:order-none sm:w-auto sm:border-0 sm:bg-transparent sm:p-0" aria-label={locale === 'ko' ? '제품 탐색' : locale === 'ja' ? 'プロダクトナビゲーション' : 'Product navigation'}>
+        {branches.map((branch) => {
+          const active = branch.href === '/' ? pathname === '/' : pathname.startsWith(branch.href);
+          return <Link key={branch.href} href={branch.href} aria-current={active ? 'page' : undefined} className={`flex-1 rounded-lg px-3 py-2 text-center text-xs font-bold transition sm:flex-none sm:py-1.5 ${active ? 'bg-white text-space-950 shadow-sm' : 'text-star-dim hover:bg-white/10 hover:text-white'}`}>{branch.label}</Link>;
+        })}
+      </div>
+
       {/* Top-right Actions: Search & Locales strictly aligned to far right */}
       <div className="flex items-center gap-2.5 ml-auto">
-        <Link href="/gravure" className="hidden px-3 py-1.5 text-xs font-medium text-star-dim hover:text-star-white sm:block">{locale === 'ko' ? '그라비아' : locale === 'ja' ? 'グラビア' : 'Gravure'}</Link>
         <Link
           href="/search"
           className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-xs font-medium text-star-white border border-white/10 shadow-sm transition hover:scale-105"
@@ -60,7 +71,7 @@ export function Navigation({ showBrand = true }: NavigationProps) {
                     : 'text-star-dim hover:text-star-white'
                 }`}
               >
-                {l.label}
+                <span className="sm:hidden">{l.code.toUpperCase()}</span><span className="hidden sm:inline">{l.label}</span>
               </Link>
             );
           })}

@@ -1,5 +1,817 @@
 {
-  "generatedAt": "2026-08-20",
-  "venues": [],
-  "events": []
+  "generatedAt": "2026-08-25",
+  "venues": [
+    {
+      "id": "kanamoto-hall",
+      "name": { "ja": "カナモトホール（札幌市民ホール）", "ko": "카나모토 홀(삿포로 시민홀)", "en": "Kanamoto Hall (Sapporo Citizens Hall)" },
+      "region": "sapporo",
+      "district": "general",
+      "address": { "ja": "北海道札幌市中央区北1条西1丁目", "ko": "홋카이도 삿포로시 주오구 기타1조 니시1초메", "en": "Kita 1-jo Nishi 1-chome, Chuo-ku, Sapporo, Hokkaido" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Kanamoto%20Hall%20Sapporo",
+      "provenance": { "sourceUrl": "https://miteititle.com/schedule/", "checkedAt": "2026-08-25", "sourceKind": "official_site" }
+    },
+    {
+      "id": "bellesalle-shiodome",
+      "name": { "ja": "ベルサール汐留", "ko": "벨사르 시오도메", "en": "Bellesalle Shiodome" },
+      "region": "tokyo",
+      "district": "general",
+      "address": { "ja": "東京都中央区銀座8-21-1 住友不動産汐留浜離宮ビルB1・1F・2F", "ko": "도쿄도 주오구 긴자 8-21-1 스미토모부동산 시오도메 하마리큐 빌딩 B1·1F·2F", "en": "B1, 1F and 2F, Sumitomo Fudosan Shiodome Hamarikyu Building, 8-21-1 Ginza, Chuo-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=35.664274%2C139.763994",
+      "geoAreaId": "tokyo-chuo-ku",
+      "latitude": 35.664274,
+      "longitude": 139.763994,
+      "coordinateProvenance": { "sourceUrl": "https://www.bellesalle.co.jp/shisetsu/higashiginza/bs_shiodome/?sc_cid=701f20000012s3TAAQ", "checkedAt": "2026-08-27", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www.bellesalle.co.jp/shisetsu/higashiginza/bs_shiodome/?sc_cid=701f20000012s3TAAQ", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "tokyo-garden-theater",
+      "name": { "ja": "東京ガーデンシアター", "ko": "도쿄 가든 시어터", "en": "Tokyo Garden Theater" },
+      "region": "tokyo",
+      "district": "general",
+      "address": { "ja": "東京都江東区有明2-1-6", "ko": "도쿄도 고토구 아리아케 2-1-6", "en": "2-1-6 Ariake, Koto-ku, Tokyo" },
+      "googleMapsUrl": "https://goo.gl/maps/p7xXrGjQwk84budZ9",
+      "geoAreaId": "tokyo-koto-ku",
+      "latitude": 35.6377592,
+      "longitude": 139.7920197,
+      "coordinateProvenance": { "sourceUrl": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/access/", "checkedAt": "2026-08-27", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/access/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "sgc-hall-ariake",
+      "name": { "ja": "SGC HALL ARIAKE", "ko": "SGC HALL ARIAKE", "en": "SGC HALL ARIAKE" },
+      "region": "tokyo",
+      "district": "general",
+      "address": { "ja": "東京都江東区有明3-3-8 東京ドリームパーク1階", "ko": "도쿄도 고토구 아리아케 3-3-8 도쿄 드림 파크 1층", "en": "1F Tokyo Dream Park, 3-3-8 Ariake, Koto-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=35.629088%2C139.78797",
+      "geoAreaId": "tokyo-koto-ku",
+      "latitude": 35.629088,
+      "longitude": 139.78797,
+      "coordinateProvenance": { "sourceUrl": "https://tdp.tv-asahi.co.jp/access/", "checkedAt": "2026-08-27", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://tdp.tv-asahi.co.jp/hall/about/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "toyota-arena-tokyo",
+      "name": { "ja": "TOYOTA ARENA TOKYO", "ko": "TOYOTA ARENA TOKYO", "en": "TOYOTA ARENA TOKYO" },
+      "region": "tokyo",
+      "district": "general",
+      "address": { "ja": "東京都江東区青海1-3-1", "ko": "도쿄도 고토구 아오미 1-3-1", "en": "1-3-1 Aomi, Koto-ku, Tokyo" },
+      "googleMapsUrl": "https://maps.app.goo.gl/h9yXaqSsypRy9LZa7",
+      "geoAreaId": "tokyo-koto-ku",
+      "latitude": 35.6262965,
+      "longitude": 139.7830948,
+      "coordinateProvenance": { "sourceUrl": "https://www.toyota-arena-tokyo.jp/access/", "checkedAt": "2026-08-27", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www.toyota-arena-tokyo.jp/access/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "ariake-arena",
+      "name": { "ja": "有明アリーナ", "ko": "아리아케 아레나", "en": "Ariake Arena" },
+      "region": "tokyo",
+      "district": "general",
+      "address": { "ja": "東京都江東区有明1-11-1", "ko": "도쿄도 고토구 아리아케 1-11-1", "en": "1-11-1 Ariake, Koto-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9C%89%E6%98%8E%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+      "geoAreaId": "tokyo-koto-ku",
+      "latitude": null,
+      "longitude": null,
+      "coordinateProvenance": null,
+      "provenance": { "sourceUrl": "https://ariake-arena.tokyo/access/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "zepp-divercity-tokyo",
+      "name": { "ja": "Zepp DiverCity(TOKYO)", "ko": "Zepp DiverCity(TOKYO)", "en": "Zepp DiverCity (Tokyo)" },
+      "region": "tokyo", "district": "general",
+      "address": { "ja": "東京都江東区青海1-1-10 ダイバーシティ東京プラザ", "ko": "도쿄도 고토구 아오미 1-1-10 다이버시티 도쿄 플라자", "en": "DiverCity Tokyo Plaza, 1-1-10 Aomi, Koto-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=35.62504618%2C139.77326462",
+      "geoAreaId": "tokyo-koto-ku", "latitude": 35.62504618, "longitude": 139.77326462,
+      "coordinateProvenance": { "sourceUrl": "https://www.zepp.co.jp/hall/divercity/", "checkedAt": "2026-08-27", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www.zepp.co.jp/hall/divercity/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "line-cube-shibuya",
+      "name": { "ja": "LINE CUBE SHIBUYA（渋谷公会堂）", "ko": "LINE CUBE SHIBUYA(시부야 공회당)", "en": "LINE CUBE SHIBUYA (Shibuya Public Hall)" },
+      "region": "tokyo", "district": "shibuya",
+      "address": { "ja": "東京都渋谷区宇田川町1-1", "ko": "도쿄도 시부야구 우다가와초 1-1", "en": "1-1 Udagawacho, Shibuya-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.co.jp/maps/place/LINE+CUBE+SHIBUYA/@35.6642039,139.6963666,17z/",
+      "geoAreaId": "tokyo-shibuya-ku", "latitude": 35.6642039, "longitude": 139.6985553,
+      "coordinateProvenance": { "sourceUrl": "https://www.city.shibuya.tokyo.jp/shisetsu/bunka-shisetsu/hall/kokaido.html", "checkedAt": "2026-08-27", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www.city.shibuya.tokyo.jp/shisetsu/bunka-shisetsu/hall/kokaido.html", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "kanda-square-hall",
+      "name": { "ja": "KANDA SQUARE HALL", "ko": "KANDA SQUARE HALL", "en": "KANDA SQUARE HALL" },
+      "region": "tokyo", "district": "akihabara",
+      "address": { "ja": "東京都千代田区神田錦町2-2-1 KANDA SQUARE 2階", "ko": "도쿄도 지요다구 간다니시키초 2-2-1 KANDA SQUARE 2층", "en": "2F KANDA SQUARE, 2-2-1 Kanda Nishikicho, Chiyoda-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.co.jp/maps/?q=35.6932143%2C139.7632165",
+      "geoAreaId": "tokyo-chiyoda-ku", "latitude": 35.6932143, "longitude": 139.7632165,
+      "coordinateProvenance": { "sourceUrl": "https://visit-chiyoda.tokyo/app/spot/detail/694", "checkedAt": "2026-08-27", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://kanda-square.com/hall/layout.html", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "selene-b2",
+      "name": { "ja": "白金高輪SELENE b2", "ko": "시로카네타카나와 SELENE b2", "en": "Shirokane-Takanawa SELENE b2" },
+      "region": "tokyo", "district": "general",
+      "address": { "ja": "東京都港区三田5-2-30 SELENE STUDIO", "ko": "도쿄도 미나토구 미타 5-2-30 SELENE STUDIO", "en": "SELENE STUDIO, 5-2-30 Mita, Minato-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E9%87%91%E9%AB%98%E8%BC%AASELENE+b2",
+      "geoAreaId": "tokyo-minato-ku", "latitude": 35.6479518, "longitude": 139.7381953,
+      "coordinateProvenance": { "sourceUrl": "https://www.selene.studio/hall/access.html", "checkedAt": "2026-08-29", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www.selene.studio/hall/access.html", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "spotify-o-east",
+      "name": { "ja": "Spotify O-EAST", "ko": "Spotify O-EAST", "en": "Spotify O-EAST" },
+      "region": "tokyo", "district": "shibuya",
+      "address": { "ja": "東京都渋谷区道玄坂2-14-8 2F", "ko": "도쿄도 시부야구 도겐자카 2-14-8 2층", "en": "2F, 2-14-8 Dogenzaka, Shibuya-ku, Tokyo" },
+      "googleMapsUrl": "https://goo.gl/maps/JPGQ4MCvhGVp8wPr8",
+      "geoAreaId": "tokyo-shibuya-ku", "latitude": 35.6587215, "longitude": 139.6956111,
+      "coordinateProvenance": { "sourceUrl": "https://shibuya-o.com/east/access/", "checkedAt": "2026-08-28", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://shibuya-o.com/east/access/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "spotify-o-west",
+      "name": { "ja": "Spotify O-WEST", "ko": "Spotify O-WEST", "en": "Spotify O-WEST" },
+      "region": "tokyo", "district": "shibuya",
+      "address": { "ja": "東京都渋谷区円山町2-3 2F", "ko": "도쿄도 시부야구 마루야마초 2-3 2층", "en": "2F, 2-3 Maruyamacho, Shibuya-ku, Tokyo" },
+      "googleMapsUrl": "https://goo.gl/maps/7H2EoyrqnT8cqZAu9",
+      "geoAreaId": "tokyo-shibuya-ku", "latitude": 35.6584971, "longitude": 139.6952949,
+      "coordinateProvenance": { "sourceUrl": "https://shibuya-o.com/east/access/", "checkedAt": "2026-08-28", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://shibuya-o.com/east/access/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "veats-shibuya",
+      "name": { "ja": "Veats Shibuya", "ko": "Veats Shibuya", "en": "Veats Shibuya" },
+      "region": "tokyo", "district": "shibuya",
+      "address": { "ja": "東京都渋谷区宇田川町33-1 グランド東京渋谷ビルB1・B2", "ko": "도쿄도 시부야구 우다가와초 33-1 그랜드 도쿄 시부야 빌딩 B1·B2", "en": "B1-B2 Grand Tokyo Shibuya Building, 33-1 Udagawacho, Shibuya-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=35.66075604%2C139.69521082",
+      "geoAreaId": "tokyo-shibuya-ku", "latitude": 35.66075604, "longitude": 139.69521082,
+      "coordinateProvenance": { "sourceUrl": "https://veats.jp/", "checkedAt": "2026-08-28", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://veats.jp/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "shibuya-www",
+      "name": { "ja": "渋谷WWW", "ko": "시부야 WWW", "en": "Shibuya WWW" },
+      "region": "tokyo", "district": "shibuya",
+      "address": { "ja": "東京都渋谷区宇田川町13-17 ライズビル地下", "ko": "도쿄도 시부야구 우다가와초 13-17 라이즈 빌딩 지하", "en": "B1 Rise Building, 13-17 Udagawacho, Shibuya-ku, Tokyo" },
+      "googleMapsUrl": "https://goo.gl/maps/cb2NmUDrv6N2",
+      "geoAreaId": "tokyo-shibuya-ku", "latitude": 35.6615208, "longitude": 139.6987354,
+      "coordinateProvenance": { "sourceUrl": "https://www-shibuya.jp/about/", "checkedAt": "2026-08-28", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www-shibuya.jp/about/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "spotify-o-crest",
+      "name": { "ja": "Spotify O-Crest", "ko": "Spotify O-Crest", "en": "Spotify O-Crest" },
+      "region": "tokyo", "district": "shibuya",
+      "address": { "ja": "東京都渋谷区道玄坂2-14-8 5F", "ko": "도쿄도 시부야구 도겐자카 2-14-8 5층", "en": "5F, 2-14-8 Dogenzaka, Shibuya-ku, Tokyo" },
+      "googleMapsUrl": "https://goo.gl/maps/AtcQGmJgzorNHmZu6",
+      "geoAreaId": "tokyo-shibuya-ku", "latitude": 35.658733, "longitude": 139.6955876,
+      "coordinateProvenance": { "sourceUrl": "https://shibuya-o.com/access/", "checkedAt": "2026-08-29", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://shibuya-o.com/access/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "shibuya-pleasure-pleasure",
+      "name": { "ja": "SHIBUYA PLEASURE PLEASURE", "ko": "SHIBUYA PLEASURE PLEASURE", "en": "SHIBUYA PLEASURE PLEASURE" },
+      "region": "tokyo", "district": "shibuya",
+      "address": { "ja": "東京都渋谷区道玄坂2-29-5 渋谷プライム6F", "ko": "도쿄도 시부야구 도겐자카 2-29-5 시부야 프라임 6층", "en": "6F Shibuya Prime, 2-29-5 Dogenzaka, Shibuya-ku, Tokyo" },
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=35.65949583116671%2C139.69581267636735",
+      "geoAreaId": "tokyo-shibuya-ku", "latitude": 35.65949583116671, "longitude": 139.69581267636735,
+      "coordinateProvenance": { "sourceUrl": "https://pleasure-pleasure.jp/access/", "checkedAt": "2026-08-29", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://pleasure-pleasure.jp/access/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "shinagawa-stellar-ball",
+      "name": { "ja": "ステラボール", "ko": "스텔라볼", "en": "Stellar Ball" },
+      "region": "tokyo", "district": "general",
+      "address": { "ja": "東京都港区高輪4-10-30 品川プリンスホテル", "ko": "도쿄도 미나토구 다카나와 4-10-30 시나가와 프린스 호텔", "en": "Shinagawa Prince Hotel, 4-10-30 Takanawa, Minato-ku, Tokyo" },
+      "googleMapsUrl": "http://maps.apple.com/?q=35.6276392,139.73652",
+      "geoAreaId": "tokyo-minato-ku", "latitude": 35.6276392, "longitude": 139.73652,
+      "coordinateProvenance": { "sourceUrl": "https://www.princehotels.co.jp/shinagawa/access/", "checkedAt": "2026-08-29", "sourceKind": "official_site" },
+      "provenance": { "sourceUrl": "https://www.princehotels.co.jp/shinagawa/facility/stellarball/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    }
+  ],
+  "events": [
+    {
+      "id": "miteititle-a-villa-eve-2026",
+      "groupIds": ["title-mitei"],
+      "title": { "ja": "A Villa 2026 前夜祭", "ko": "A Villa 2026 전야제", "en": "A Villa 2026 Eve Festival" },
+      "startsOn": "2026-08-28",
+      "endsOn": null,
+      "startsAt": "2026-08-28T16:00:00+09:00",
+      "opensAt": "2026-08-28T15:00:00+09:00",
+      "timeStatus": "confirmed",
+      "venueId": null,
+      "region": "other",
+      "areaLabel": { "ja": "会場未確認", "ko": "공연장 미확인", "en": "Venue unverified" },
+      "posterUrl": null,
+      "price": null,
+      "ticketUrl": "https://t-dv.com/a_villa_zenya",
+      "officialUrl": "https://miteititle.com/schedule/",
+      "status": "scheduled",
+      "provenance": { "sourceUrl": "https://miteititle.com/schedule/", "checkedAt": "2026-08-25", "sourceKind": "official_site" }
+    },
+    {
+      "id": "miteititle-kakar-hokkaido-2026",
+      "groupIds": ["title-mitei"],
+      "title": { "ja": "タイトル未定 Hall Tour 2026 「KAKAR」北海道公演", "ko": "타이틀 미정 Hall Tour 2026 ‘KAKAR’ 홋카이도 공연", "en": "Title Mitei Hall Tour 2026 KAKAR — Hokkaido" },
+      "startsOn": "2026-08-31",
+      "endsOn": null,
+      "startsAt": null,
+      "opensAt": null,
+      "timeStatus": "tba",
+      "venueId": "kanamoto-hall",
+      "region": "sapporo",
+      "areaLabel": { "ja": "札幌", "ko": "삿포로", "en": "Sapporo" },
+      "posterUrl": null,
+      "price": null,
+      "ticketUrl": null,
+      "officialUrl": "https://miteititle.com/schedule/",
+      "status": "scheduled",
+      "provenance": { "sourceUrl": "https://miteititle.com/schedule/", "checkedAt": "2026-08-25", "sourceKind": "official_site" }
+    },
+    {
+      "id": "miteititle-a-villa-hokkaido-2026",
+      "groupIds": ["title-mitei"],
+      "title": {
+        "ja": "A Villa idol festival HOKKAIDO 2026",
+        "ko": "A Villa idol festival HOKKAIDO 2026",
+        "en": "A Villa idol festival HOKKAIDO 2026"
+      },
+      "startsOn": "2026-08-29",
+      "endsOn": "2026-08-30",
+      "startsAt": null,
+      "opensAt": null,
+      "timeStatus": "tba",
+      "venueId": null,
+      "region": "other",
+      "areaLabel": { "ja": "北海道・会場未定", "ko": "홋카이도·공연장 미정", "en": "Hokkaido · venue TBA" },
+      "posterUrl": null,
+      "price": null,
+      "ticketUrl": null,
+      "officialUrl": "https://miteititle.com/schedule/",
+      "status": "scheduled",
+      "provenance": {
+        "sourceUrl": "https://miteititle.com/schedule/",
+        "checkedAt": "2026-08-25",
+        "sourceKind": "official_site"
+      }
+    },
+    {
+      "id": "miteititle-rusutsu-umaimon-2026",
+      "groupIds": ["title-mitei"],
+      "title": { "ja": "ルスツうまいもんまつり", "ko": "루스츠 우마이몬 마츠리", "en": "Rusutsu Umaimon Festival" },
+      "startsOn": "2026-09-22",
+      "endsOn": null,
+      "startsAt": null,
+      "opensAt": null,
+      "timeStatus": "tba",
+      "venueId": null,
+      "region": "other",
+      "areaLabel": { "ja": "北海道・会場未定", "ko": "홋카이도·공연장 미정", "en": "Hokkaido · venue TBA" },
+      "posterUrl": null,
+      "price": null,
+      "ticketUrl": null,
+      "officialUrl": "https://miteititle.com/schedule/",
+      "status": "scheduled",
+      "provenance": {
+        "sourceUrl": "https://miteititle.com/schedule/",
+        "checkedAt": "2026-08-25",
+        "sourceKind": "official_site"
+      }
+    },
+    {
+      "id": "miteititle-sapporo-live-2026-10-25",
+      "groupIds": ["title-mitei"],
+      "title": { "ja": "ライブ（札幌）", "ko": "라이브(삿포로)", "en": "Live in Sapporo" },
+      "startsOn": "2026-10-25",
+      "endsOn": null,
+      "startsAt": null,
+      "opensAt": null,
+      "timeStatus": "tba",
+      "venueId": null,
+      "region": "sapporo",
+      "areaLabel": { "ja": "札幌・会場未定", "ko": "삿포로·공연장 미정", "en": "Sapporo · venue TBA" },
+      "posterUrl": null,
+      "price": null,
+      "ticketUrl": null,
+      "officialUrl": "https://miteititle.com/schedule/",
+      "status": "scheduled",
+      "provenance": {
+        "sourceUrl": "https://miteititle.com/schedule/",
+        "checkedAt": "2026-08-25",
+        "sourceKind": "official_site"
+      }
+    },
+    {
+      "id": "fruits-zipper-bellesalle-shiodome-2026-09-06",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER 5thシングルCD発売記念イベント 大特典会", "ko": "FRUITS ZIPPER 5th 싱글 CD 발매 기념 이벤트 대특전회", "en": "FRUITS ZIPPER 5th Single CD Release Commemorative Special Event" },
+      "startsOn": "2026-09-06", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "bellesalle-shiodome", "region": "tokyo",
+      "areaLabel": { "ja": "中央区・ベルサール汐留", "ko": "주오구·벨사르 시오도메", "en": "Chuo · Bellesalle Shiodome" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-cdtv-garden-theater-2026-09-11",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "CDTV ライブ！ライブ！秋の大感謝祭2026", "ko": "CDTV 라이브! 라이브! 가을 대감사제 2026", "en": "CDTV Live! Live! Autumn Thanksgiving Festival 2026" },
+      "startsOn": "2026-09-11", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "tokyo-garden-theater", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・東京ガーデンシアター", "ko": "고토구·도쿄 가든 시어터", "en": "Koto · Tokyo Garden Theater" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-garden-theater-2026-11-14",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-11-14", "endsOn": null, "startsAt": "2026-11-14T18:30:00+09:00", "opensAt": "2026-11-14T17:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": "tokyo-garden-theater", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・東京ガーデンシアター", "ko": "고토구·도쿄 가든 시어터", "en": "Koto · Tokyo Garden Theater" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-garden-theater-2026-11-15",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-11-15", "endsOn": null, "startsAt": "2026-11-15T17:30:00+09:00", "opensAt": "2026-11-15T16:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": "tokyo-garden-theater", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・東京ガーデンシアター", "ko": "고토구·도쿄 가든 시어터", "en": "Koto · Tokyo Garden Theater" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-gift-sgc-hall-2026-11-27",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "GIFT〜Girls Idol Festival Tokyo〜", "ko": "GIFT〜Girls Idol Festival Tokyo〜", "en": "GIFT — Girls Idol Festival Tokyo" },
+      "startsOn": "2026-11-27", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "sgc-hall-ariake", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・SGC HALL ARIAKE", "ko": "고토구·SGC HALL ARIAKE", "en": "Koto · SGC HALL ARIAKE" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-gift-toyota-arena-2026-11-29",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "GIFT〜Girls Idol Festival Tokyo〜", "ko": "GIFT〜Girls Idol Festival Tokyo〜", "en": "GIFT — Girls Idol Festival Tokyo" },
+      "startsOn": "2026-11-29", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "toyota-arena-tokyo", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・TOYOTA ARENA TOKYO", "ko": "고토구·TOYOTA ARENA TOKYO", "en": "Koto · TOYOTA ARENA TOKYO" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-christmas-ariake-arena-2026-12-12",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "KAWAII LAB. Christmas SESSION 2026", "ko": "KAWAII LAB. Christmas SESSION 2026", "en": "KAWAII LAB. Christmas SESSION 2026" },
+      "startsOn": "2026-12-12", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "ariake-arena", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・有明アリーナ", "ko": "고토구·아리아케 아레나", "en": "Koto · Ariake Arena" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-christmas-ariake-arena-2026-12-13",
+      "groupIds": ["fruits-zipper"],
+      "title": { "ja": "KAWAII LAB. Christmas SESSION 2026", "ko": "KAWAII LAB. Christmas SESSION 2026", "en": "KAWAII LAB. Christmas SESSION 2026" },
+      "startsOn": "2026-12-13", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "ariake-arena", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・有明アリーナ", "ko": "고토구·아리아케 아레나", "en": "Koto · Ariake Arena" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-tour-final-zepp-divercity-2026-09-09",
+      "groupIds": ["asis"],
+      "title": { "ja": "AsIs 2nd TOUR 2026 -ただ、きみが好き-〖東京ファイナル公演〗", "ko": "AsIs 2nd TOUR 2026 -그저, 네가 좋아- 도쿄 파이널 공연", "en": "AsIs 2nd TOUR 2026 — Tokyo Final" },
+      "startsOn": "2026-09-09", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "zepp-divercity-tokyo", "region": "tokyo",
+      "areaLabel": { "ja": "江東区・Zepp DiverCity(TOKYO)", "ko": "고토구·Zepp DiverCity(TOKYO)", "en": "Koto · Zepp DiverCity (Tokyo)" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://asis-official.com/schedule/asis-2nd-tour-2026-%E3%81%9F%E3%81%A0%E3%81%8D%E3%81%BF%E3%81%8C%E5%A5%BD%E3%81%8D%E6%9D%B1%E4%BA%AC-final/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/asis-2nd-tour-2026-%E3%81%9F%E3%81%A0%E3%81%8D%E3%81%BF%E3%81%8C%E5%A5%BD%E3%81%8D%E6%9D%B1%E4%BA%AC-final/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-fifth-anniversary-line-cube-2026-09-08",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "Palette Parade 5周年ライブ", "ko": "Palette Parade 5주년 라이브", "en": "Palette Parade 5th Anniversary Live" },
+      "startsOn": "2026-09-08", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "line-cube-shibuya", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・LINE CUBE SHIBUYA", "ko": "시부야구·LINE CUBE SHIBUYA", "en": "Shibuya · LINE CUBE SHIBUYA" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/103842/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/103842/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "idol-koushien-kanda-square-2026-09-13",
+      "groupIds": ["utage", "selfish", "devil-anthem", "palette-parade"],
+      "title": { "ja": "「アイドル甲子園 in KANDA SQUARE HALL」supported by My-th", "ko": "‘아이돌 고시엔 in KANDA SQUARE HALL’ supported by My-th", "en": "Idol Koushien in KANDA SQUARE HALL supported by My-th" },
+      "startsOn": "2026-09-13", "endsOn": null,
+      "startsAt": "2026-09-13T09:30:00+09:00", "opensAt": "2026-09-13T09:15:00+09:00", "timeStatus": "confirmed",
+      "venueId": "kanda-square-hall", "region": "tokyo",
+      "areaLabel": { "ja": "千代田区・KANDA SQUARE HALL", "ko": "지요다구·KANDA SQUARE HALL", "en": "Chiyoda · KANDA SQUARE HALL" },
+      "posterUrl": null, "price": null,
+      "ticketUrl": "https://user.my-th.jp/tickets/event/aikou_0913",
+      "officialUrl": "https://kamaitaci.jp/event/detail.php?eid=5459", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://kamaitaci.jp/event/detail.php?eid=5459", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "idolead-selene-b2-2026-09-05",
+      "groupIds": ["selfish"],
+      "title": { "ja": "IDOLEAD", "ko": "IDOLEAD", "en": "IDOLEAD" },
+      "startsOn": "2026-09-05", "endsOn": null,
+      "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "selene-b2", "region": "tokyo",
+      "areaLabel": { "ja": "港区・白金高輪SELENE b2", "ko": "미나토구·시로카네타카나와 SELENE b2", "en": "Minato · Shirokane-Takanawa SELENE b2" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://www.selene.studio/hall/schedule/events/index.html?r=20735", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://www.selene.studio/hall/index.html", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "yosugala-tour-spotify-o-east-2026-09-20",
+      "groupIds": ["yosugala"],
+      "title": { "ja": "yosugala tour 2026 東京公演", "ko": "yosugala tour 2026 도쿄 공연", "en": "yosugala tour 2026 — Tokyo" },
+      "startsOn": "2026-09-20", "endsOn": null,
+      "startsAt": "2026-09-20T18:00:00+09:00", "opensAt": "2026-09-20T17:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": "spotify-o-east", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・Spotify O-EAST", "ko": "시부야구·Spotify O-EAST", "en": "Shibuya · Spotify O-EAST" },
+      "posterUrl": null, "price": null, "ticketUrl": "https://eplus.jp/yosugala/",
+      "officialUrl": "https://yosugala.fanpla.jp/news/detail/82525", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://yosugala.fanpla.jp/news/detail/82525", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-higa-birthday-2026-09-26",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "比嘉ゆめの生誕祭", "ko": "히가 유메노 생탄제", "en": "Yumeno Higa Birthday Festival" },
+      "startsOn": "2026-09-26", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "spotify-o-west", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・Spotify O-WEST", "ko": "시부야구·Spotify O-WEST", "en": "Shibuya · Spotify O-WEST" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/109373/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/109373/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-aoi-birthday-2026-11-08",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "葵うた生誕祭", "ko": "아오이 우타 생탄제", "en": "Uta Aoi Birthday Festival" },
+      "startsOn": "2026-11-08", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "spotify-o-west", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・Spotify O-WEST", "ko": "시부야구·Spotify O-WEST", "en": "Shibuya · Spotify O-WEST" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/109373/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/109373/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-takahashi-birthday-2026-11-15",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "髙橋來都葉生誕祭", "ko": "타카하시 코토하 생탄제", "en": "Kotoha Takahashi Birthday Festival" },
+      "startsOn": "2026-11-15", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "veats-shibuya", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・Veats Shibuya", "ko": "시부야구·Veats Shibuya", "en": "Shibuya · Veats Shibuya" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/109373/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/109373/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-nakano-birthday-2027-01-11",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "中野小陽生誕祭", "ko": "나카노 코하루 생탄제", "en": "Koharu Nakano Birthday Festival" },
+      "startsOn": "2027-01-11", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "veats-shibuya", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・Veats Shibuya", "ko": "시부야구·Veats Shibuya", "en": "Shibuya · Veats Shibuya" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/109373/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/109373/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-natsume-birthday-2027-01-16",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "夏目志穂生誕祭", "ko": "나쓰메 시호 생탄제", "en": "Shiho Natsume Birthday Festival" },
+      "startsOn": "2027-01-16", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "shibuya-www", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・渋谷WWW", "ko": "시부야구·시부야 WWW", "en": "Shibuya · Shibuya WWW" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/109373/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/109373/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-shirakawa-birthday-2027-04-03",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "白川千尋生誕祭", "ko": "시라카와 치히로 생탄제", "en": "Chihiro Shirakawa Birthday Festival" },
+      "startsOn": "2027-04-03", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "spotify-o-west", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・Spotify O-WEST", "ko": "시부야구·Spotify O-WEST", "en": "Shibuya · Spotify O-WEST" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/109373/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/109373/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "palette-parade-yamazaki-birthday-2027-05-01",
+      "groupIds": ["palette-parade"],
+      "title": { "ja": "山﨑悠楓生誕祭", "ko": "야마사키 유카 생탄제", "en": "Yuka Yamasaki Birthday Festival" },
+      "startsOn": "2027-05-01", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "shibuya-www", "region": "tokyo",
+      "areaLabel": { "ja": "渋谷区・渋谷WWW", "ko": "시부야구·시부야 WWW", "en": "Shibuya · Shibuya WWW" },
+      "posterUrl": null, "price": null, "ticketUrl": null,
+      "officialUrl": "https://paletteparade-idol.com/news/109373/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://paletteparade-idol.com/news/109373/", "checkedAt": "2026-08-28", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-tour-rally-spotify-o-crest-2026-09-06", "groupIds": ["asis"],
+      "title": { "ja": "9.9 TOUR FINAL 決起集会", "ko": "9.9 TOUR FINAL 결기 집회", "en": "9.9 Tour Final Rally" },
+      "startsOn": "2026-09-06", "endsOn": null, "startsAt": "2026-09-06T20:00:00+09:00", "opensAt": "2026-09-06T19:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": "spotify-o-crest", "region": "tokyo", "areaLabel": { "ja": "渋谷区・Spotify O-Crest", "ko": "시부야구·Spotify O-Crest", "en": "Shibuya · Spotify O-Crest" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/live-20260906/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/live-20260906/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-marquee-fes-spotify-o-east-2026-09-15", "groupIds": ["asis"],
+      "title": { "ja": "MARQUEE Fes.", "ko": "MARQUEE Fes.", "en": "MARQUEE Fes." },
+      "startsOn": "2026-09-15", "endsOn": null, "startsAt": "2026-09-15T14:30:00+09:00", "opensAt": "2026-09-15T14:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": "spotify-o-east", "region": "tokyo", "areaLabel": { "ja": "渋谷区・Spotify O-EAST", "ko": "시부야구·Spotify O-EAST", "en": "Shibuya · Spotify O-EAST" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/marqueefes-0915/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/marqueefes-0915/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-regular-vol5-pleasure-2026-09-17", "groupIds": ["asis"],
+      "title": { "ja": "AsIs 定期公演2026 -Vol.5-", "ko": "AsIs 정기공연 2026 -Vol.5-", "en": "AsIs Regular Performance 2026 Vol. 5" },
+      "startsOn": "2026-09-17", "endsOn": null, "startsAt": "2026-09-17T19:00:00+09:00", "opensAt": "2026-09-17T18:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": "shibuya-pleasure-pleasure", "region": "tokyo", "areaLabel": { "ja": "渋谷区・SHIBUYA PLEASURE PLEASURE", "ko": "시부야구·SHIBUYA PLEASURE PLEASURE", "en": "Shibuya · SHIBUYA PLEASURE PLEASURE" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-5/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-5/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-onephony-stellar-ball-2026-09-19", "groupIds": ["asis"],
+      "title": { "ja": "Onephony主催♡ふぉにコレ!Vol.5", "ko": "Onephony 주최 ♡ 포니코레! Vol.5", "en": "Onephony Presents Phonicolle Vol. 5" },
+      "startsOn": "2026-09-19", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "shinagawa-stellar-ball", "region": "tokyo", "areaLabel": { "ja": "港区・ステラボール", "ko": "미나토구·스텔라볼", "en": "Minato · Stellar Ball" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/live-20260819/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/live-20260819/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-evolution-pop-o-west-2026-09-21", "groupIds": ["asis"],
+      "title": { "ja": "EVOLUTION POP！EXTRA", "ko": "EVOLUTION POP! EXTRA", "en": "EVOLUTION POP! EXTRA" },
+      "startsOn": "2026-09-21", "endsOn": null, "startsAt": "2026-09-21T13:30:00+09:00", "opensAt": "2026-09-21T13:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": "spotify-o-west", "region": "tokyo", "areaLabel": { "ja": "渋谷区・Spotify O-WEST", "ko": "시부야구·Spotify O-WEST", "en": "Shibuya · Spotify O-WEST" },
+      "posterUrl": null, "price": null, "ticketUrl": "https://ticketvillage.jp/events/13868", "officialUrl": "https://asis-official.com/schedule/evolutionpop-extra/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/evolutionpop-extra/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-minami-sena-birthday-selene-2026-10-24", "groupIds": ["asis"],
+      "title": { "ja": "南世菜 BIRTHDAY LIVE 2026", "ko": "미나미 세나 BIRTHDAY LIVE 2026", "en": "Sena Minami Birthday Live 2026" },
+      "startsOn": "2026-10-24", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "selene-b2", "region": "tokyo", "areaLabel": { "ja": "港区・白金高輪SELENE b2", "ko": "미나토구·시로카네타카나와 SELENE b2", "en": "Minato · Shirokane-Takanawa SELENE b2" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/minamisena-1026/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/minamisena-1026/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-regular-vol6-pleasure-2026-10-13", "groupIds": ["asis"],
+      "title": { "ja": "AsIs 定期公演2026 -Vol.6-", "ko": "AsIs 정기공연 2026 -Vol.6-", "en": "AsIs Regular Performance 2026 Vol. 6" },
+      "startsOn": "2026-10-13", "endsOn": null, "startsAt": "2026-10-13T19:00:00+09:00", "opensAt": "2026-10-13T18:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": "shibuya-pleasure-pleasure", "region": "tokyo", "areaLabel": { "ja": "渋谷区・SHIBUYA PLEASURE PLEASURE", "ko": "시부야구·SHIBUYA PLEASURE PLEASURE", "en": "Shibuya · SHIBUYA PLEASURE PLEASURE" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-6/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-6/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-ameno-sei-birthday-selene-2026-11-07", "groupIds": ["asis"],
+      "title": { "ja": "雨野せい BIRTHDAY LIVE 2026", "ko": "아메노 세이 BIRTHDAY LIVE 2026", "en": "Sei Ameno Birthday Live 2026" },
+      "startsOn": "2026-11-07", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "selene-b2", "region": "tokyo", "areaLabel": { "ja": "港区・白金高輪SELENE b2", "ko": "미나토구·시로카네타카나와 SELENE b2", "en": "Minato · Shirokane-Takanawa SELENE b2" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/amenosei-1107/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/amenosei-1107/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-regular-vol7-pleasure-2026-11-10", "groupIds": ["asis"],
+      "title": { "ja": "AsIs 定期公演2026 -Vol.7-", "ko": "AsIs 정기공연 2026 -Vol.7-", "en": "AsIs Regular Performance 2026 Vol. 7" },
+      "startsOn": "2026-11-10", "endsOn": null, "startsAt": "2026-11-10T19:00:00+09:00", "opensAt": "2026-11-10T18:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": "shibuya-pleasure-pleasure", "region": "tokyo", "areaLabel": { "ja": "渋谷区・SHIBUYA PLEASURE PLEASURE", "ko": "시부야구·SHIBUYA PLEASURE PLEASURE", "en": "Shibuya · SHIBUYA PLEASURE PLEASURE" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-7/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-7/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-regular-vol8-pleasure-2026-12-09", "groupIds": ["asis"],
+      "title": { "ja": "AsIs 定期公演2026 -Vol.8-", "ko": "AsIs 정기공연 2026 -Vol.8-", "en": "AsIs Regular Performance 2026 Vol. 8" },
+      "startsOn": "2026-12-09", "endsOn": null, "startsAt": "2026-12-09T19:00:00+09:00", "opensAt": "2026-12-09T18:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": "shibuya-pleasure-pleasure", "region": "tokyo", "areaLabel": { "ja": "渋谷区・SHIBUYA PLEASURE PLEASURE", "ko": "시부야구·SHIBUYA PLEASURE PLEASURE", "en": "Shibuya · SHIBUYA PLEASURE PLEASURE" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-8/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/asis-%E5%AE%9A%E6%9C%9F%E5%85%AC%E6%BC%942026-vol-8/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-momoi-mitsuki-birthday-selene-2026-12-13", "groupIds": ["asis"],
+      "title": { "ja": "桃井美月 BIRTHDAY LIVE 2026", "ko": "모모이 미츠키 BIRTHDAY LIVE 2026", "en": "Mitsuki Momoi Birthday Live 2026" },
+      "startsOn": "2026-12-13", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "selene-b2", "region": "tokyo", "areaLabel": { "ja": "港区・白金高輪SELENE b2", "ko": "미나토구·시로카네타카나와 SELENE b2", "en": "Minato · Shirokane-Takanawa SELENE b2" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/momoimitsuki-1213/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/momoimitsuki-1213/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-kitagawa-himeko-birthday-selene-2026-12-23", "groupIds": ["asis"],
+      "title": { "ja": "北川姫子 BIRTHDAY LIVE 2026", "ko": "기타가와 히메코 BIRTHDAY LIVE 2026", "en": "Himeko Kitagawa Birthday Live 2026" },
+      "startsOn": "2026-12-23", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "selene-b2", "region": "tokyo", "areaLabel": { "ja": "港区・白金高輪SELENE b2", "ko": "미나토구·시로카네타카나와 SELENE b2", "en": "Minato · Shirokane-Takanawa SELENE b2" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/kitagawahimeko-1223/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/kitagawahimeko-1223/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "asis-seno-hiyori-birthday-selene-2026-12-24", "groupIds": ["asis"],
+      "title": { "ja": "瀬乃ひより BIRTHDAY LIVE 2026", "ko": "세노 히요리 BIRTHDAY LIVE 2026", "en": "Hiyori Seno Birthday Live 2026" },
+      "startsOn": "2026-12-24", "endsOn": null, "startsAt": null, "opensAt": null, "timeStatus": "tba",
+      "venueId": "selene-b2", "region": "tokyo", "areaLabel": { "ja": "港区・白金高輪SELENE b2", "ko": "미나토구·시로카네타카나와 SELENE b2", "en": "Minato · Shirokane-Takanawa SELENE b2" },
+      "posterUrl": null, "price": null, "ticketUrl": null, "officialUrl": "https://asis-official.com/schedule/senohiyori-1224/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://asis-official.com/schedule/senohiyori-1224/", "checkedAt": "2026-08-29", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-yokosuka-2026-09-03", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-09-03", "endsOn": null, "startsAt": "2026-09-03T18:30:00+09:00", "opensAt": "2026-09-03T17:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "神奈川県・よこすか芸術劇場（大劇場）", "ko": "가나가와현·요코스카 예술극장(대극장)", "en": "Kanagawa · Yokosuka Arts Theatre (Main Theatre)" },
+      "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40026", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40026", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-manafy-land-2026-09-04", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "夏遊スペシャルイベント「KAWAII MANAFY LAND」（真中）", "ko": "여름 놀이 스페셜 이벤트 KAWAII MANAFY LAND (마나카)", "en": "KAWAII MANAFY LAND Summer Special Event (Manaka)" },
+      "startsOn": "2026-09-04", "endsOn": null, "startsAt": "2026-09-04T13:00:00+09:00", "opensAt": "2026-09-04T12:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "tokyo", "areaLabel": { "ja": "渋谷区・KAWAII MONSTER LAND -HARAJUKU-", "ko": "시부야구·KAWAII MONSTER LAND -HARAJUKU-", "en": "Shibuya · KAWAII MONSTER LAND -HARAJUKU-" },
+      "posterUrl": null, "price": { "ja": "各部 ¥8,000（税込）", "ko": "각 부 ¥8,000(세금 포함)", "en": "¥8,000 per session (tax included)" }, "ticketUrl": "https://sukisuki-shop.com/goods/6500000004024", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44246", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44246", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tomakomai-mirai-fest-2026-09-12", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "TOMAKOMAI MIRAI FEST 2026", "ko": "TOMAKOMAI MIRAI FEST 2026", "en": "TOMAKOMAI MIRAI FEST 2026" },
+      "startsOn": "2026-09-12", "endsOn": null, "startsAt": "2026-09-12T11:00:00+09:00", "opensAt": "2026-09-12T09:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "sapporo", "areaLabel": { "ja": "北海道苫小牧市・キラキラ公園", "ko": "홋카이도 도마코마이시·기라기라 공원", "en": "Tomakomai, Hokkaido · Kirakira Park" },
+      "posterUrl": null, "price": { "ja": "9/12 一般1日券 ¥10,900（税込）", "ko": "9/12 일반 1일권 ¥10,900(세금 포함)", "en": "Sep 12 general one-day ticket ¥10,900 (tax included)" }, "ticketUrl": "https://www.mountalive.com/schedule/more.php?no=4089", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40606", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://www.mountalive.com/schedule/more.php?no=4089", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-rock-in-japan-2026-09-13", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "ROCK IN JAPAN FESTIVAL 2026", "ko": "ROCK IN JAPAN FESTIVAL 2026", "en": "ROCK IN JAPAN FESTIVAL 2026" },
+      "startsOn": "2026-09-13", "endsOn": null, "startsAt": "2026-09-13T11:45:00+09:00", "opensAt": "2026-09-13T08:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "千葉市・千葉市蘇我スポーツ公園", "ko": "지바시·지바시 소가 스포츠공원", "en": "Chiba · Chiba City Soga Sports Park" },
+      "posterUrl": null, "price": { "ja": "9/13 1日券 ¥16,000（税込）", "ko": "9/13 1일권 ¥16,000(세금 포함)", "en": "Sep 13 one-day ticket ¥16,000 (tax included)" }, "ticketUrl": "https://rijfes.jp/2026/ticket/", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/41145", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://rijfes.jp/2026/ticket/", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-omiya-2026-09-16", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-09-16", "endsOn": null, "startsAt": "2026-09-16T18:30:00+09:00", "opensAt": "2026-09-16T17:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "埼玉県・大宮ソニックシティ 大ホール", "ko": "사이타마현·오미야 소닉시티 대홀", "en": "Saitama · Omiya Sonic City Main Hall" },
+      "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40027", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40027", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-matsudo-2026-09-18", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-09-18", "endsOn": null, "startsAt": "2026-09-18T18:30:00+09:00", "opensAt": "2026-09-18T17:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "千葉県・松戸 森のホール21 大ホール", "ko": "지바현·마쓰도 모리노홀21 대홀", "en": "Chiba · Matsudo Mori no Hall 21 Main Hall" },
+      "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40028", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40028", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-mie-2026-09-21", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-09-21", "endsOn": null, "startsAt": "2026-09-21T17:30:00+09:00", "opensAt": "2026-09-21T16:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "三重県・三重県文化会館 大ホール", "ko": "미에현·미에현 문화회관 대홀", "en": "Mie · Mie Center for the Arts Main Hall" },
+      "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40029", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-gifu-2026-09-23", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-09-23", "endsOn": null, "startsAt": "2026-09-23T17:30:00+09:00", "opensAt": "2026-09-23T16:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "岐阜県・長良川国際会議場 メインホール", "ko": "기후현·나가라가와 국제회의장 메인홀", "en": "Gifu · Nagaragawa Convention Center Main Hall" },
+      "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40030", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40030", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-nagoya-2026-09-25", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-09-25", "endsOn": null, "startsAt": "2026-09-25T18:30:00+09:00", "opensAt": "2026-09-25T17:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "nagoya", "areaLabel": { "ja": "名古屋市・Niterra日本特殊陶業市民会館フォレストホール", "ko": "나고야시·Niterra 일본특수도업 시민회관 포레스트홀", "en": "Nagoya · Niterra Civic Hall Forest Hall" },
+      "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40032", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40032", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-osaka-2026-09-30", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-09-30", "endsOn": null, "startsAt": "2026-09-30T18:30:00+09:00", "opensAt": "2026-09-30T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "osaka", "areaLabel": { "ja": "大阪市・グランキューブ大阪 メインホール", "ko": "오사카시·그란큐브 오사카 메인홀", "en": "Osaka · Grand Cube Osaka Main Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40033", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40033", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-osaka-2026-10-01", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-10-01", "endsOn": null, "startsAt": "2026-10-01T18:30:00+09:00", "opensAt": "2026-10-01T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "osaka", "areaLabel": { "ja": "大阪市・グランキューブ大阪 メインホール", "ko": "오사카시·그란큐브 오사카 메인홀", "en": "Osaka · Grand Cube Osaka Main Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40034", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40034", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-utsunomiya-2026-10-04", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-10-04", "endsOn": null, "startsAt": "2026-10-04T17:30:00+09:00", "opensAt": "2026-10-04T16:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "栃木県・宇都宮市文化会館 大ホール", "ko": "도치기현·우쓰노미야시 문화회관 대홀", "en": "Tochigi · Utsunomiya City Cultural Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40035", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40035", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-sendai-2026-10-06", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-10-06", "endsOn": null, "startsAt": "2026-10-06T18:30:00+09:00", "opensAt": "2026-10-06T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "宮城県・仙台サンプラザホール", "ko": "미야기현·센다이 선플라자 홀", "en": "Miyagi · Sendai Sunplaza Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40036", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40036", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-sendai-2026-10-07", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-10-07", "endsOn": null, "startsAt": "2026-10-07T18:30:00+09:00", "opensAt": "2026-10-07T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "宮城県・仙台サンプラザホール", "ko": "미야기현·센다이 선플라자 홀", "en": "Miyagi · Sendai Sunplaza Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40037", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40037", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-kanazawa-2026-10-11", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" },
+      "startsOn": "2026-10-11", "endsOn": null, "startsAt": "2026-10-11T18:00:00+09:00", "opensAt": "2026-10-11T17:00:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "石川県・本多の森北電ホール", "ko": "이시카와현·혼다노모리 호쿠덴홀", "en": "Ishikawa · Hondenomori Hokuden Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40038", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40038", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-takamatsu-2026-10-13", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-10-13", "endsOn": null, "startsAt": "2026-10-13T18:30:00+09:00", "opensAt": "2026-10-13T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "香川県・レクザムホール 大ホール", "ko": "가가와현·렉잠홀 대홀", "en": "Kagawa · Rexxam Hall Main Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40039", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40039", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-matsuyama-2026-10-15", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-10-15", "endsOn": null, "startsAt": "2026-10-15T18:30:00+09:00", "opensAt": "2026-10-15T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "愛媛県・松山市民会館 大ホール", "ko": "에히메현·마쓰야마 시민회관 대홀", "en": "Ehime · Matsuyama Civic Hall Main Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40040", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40040", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-fukuoka-2026-10-26", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-10-26", "endsOn": null, "startsAt": "2026-10-26T18:30:00+09:00", "opensAt": "2026-10-26T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "fukuoka", "areaLabel": { "ja": "福岡市・福岡サンパレス", "ko": "후쿠오카시·후쿠오카 선팰리스", "en": "Fukuoka · Fukuoka Sunpalace" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40041", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40041", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-kumamoto-2026-10-27", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-10-27", "endsOn": null, "startsAt": "2026-10-27T18:30:00+09:00", "opensAt": "2026-10-27T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "熊本県・熊本城ホール メインホール", "ko": "구마모토현·구마모토성 홀 메인홀", "en": "Kumamoto · Kumamoto-jo Hall Main Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40042", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40042", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-hiroshima-2026-11-05", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-11-05", "endsOn": null, "startsAt": "2026-11-05T18:30:00+09:00", "opensAt": "2026-11-05T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "広島県・広島文化学園HBGホール", "ko": "히로시마현·히로시마 문화학원 HBG홀", "en": "Hiroshima · Hiroshima Bunka Gakuen HBG Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40043", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40043", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-hiroshima-2026-11-06", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-11-06", "endsOn": null, "startsAt": "2026-11-06T18:30:00+09:00", "opensAt": "2026-11-06T17:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "広島県・広島文化学園HBGホール", "ko": "히로시마현·히로시마 문화학원 HBG홀", "en": "Hiroshima · Hiroshima Bunka Gakuen HBG Hall" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40044", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40044", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-sapporo-2026-11-12", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-11-12", "endsOn": null, "startsAt": "2026-11-12T18:00:00+09:00", "opensAt": "2026-11-12T17:00:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "sapporo", "areaLabel": { "ja": "札幌市・札幌市民芸術劇場hitaru", "ko": "삿포로시·삿포로 시민예술극장 hitaru", "en": "Sapporo · Sapporo Cultural Arts Theater hitaru" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40045", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40045", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-okinawa-2026-11-21", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-11-21", "endsOn": null, "startsAt": "2026-11-21T17:30:00+09:00", "opensAt": "2026-11-21T16:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "沖縄県・沖縄コンベンションセンター 劇場棟", "ko": "오키나와현·오키나와 컨벤션센터 극장동", "en": "Okinawa · Okinawa Convention Center Theater" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40048", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40048", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tour-okinawa-2026-11-22", "groupIds": ["fruits-zipper"], "title": { "ja": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "ko": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -", "en": "FRUITS ZIPPER JAPAN TOUR 2026 - AUTUMN -" }, "startsOn": "2026-11-22", "endsOn": null, "startsAt": "2026-11-22T15:30:00+09:00", "opensAt": "2026-11-22T14:30:00+09:00", "timeStatus": "confirmed", "venueId": null, "region": "other", "areaLabel": { "ja": "沖縄県・沖縄コンベンションセンター 劇場棟", "ko": "오키나와현·오키나와 컨벤션센터 극장동", "en": "Okinawa · Okinawa Convention Center Theater" }, "posterUrl": null, "price": { "ja": "指定席 ¥8,000（税込）", "ko": "지정석 ¥8,000(세금 포함)", "en": "Reserved seat ¥8,000 (tax included)" }, "ticketUrl": "https://fruitszipper.asobisystem.com/feature/2026tour_autumn", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40049", "status": "scheduled", "provenance": { "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40049", "checkedAt": "2026-08-30", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-kawaii-lab-collection-kitakyushu-2026-10-12", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "KAWAII LAB. COLLECTION produced by TGC ~KAWAIIっちゃ in KITAKYUSHU~", "ko": "KAWAII LAB. COLLECTION produced by TGC ~KAWAII in KITAKYUSHU~", "en": "KAWAII LAB. COLLECTION produced by TGC ~KAWAII in KITAKYUSHU~" },
+      "startsOn": "2026-10-12", "endsOn": null, "startsAt": "2026-10-12T16:00:00+09:00", "opensAt": "2026-10-12T14:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "fukuoka", "areaLabel": { "ja": "北九州市・北九州メッセ", "ko": "기타큐슈시·기타큐슈 메세", "en": "Kitakyushu · Kitakyushu Messe" },
+      "posterUrl": null, "price": { "ja": "指定席 ¥11,000（税込）", "ko": "지정석 ¥11,000(세금 포함)", "en": "Reserved seat ¥11,000 (tax included)" }, "ticketUrl": "https://kawaiilab.asobisystem.com/news/detail/87217", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44011", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://kawaiilab.asobisystem.com/news/detail/87217", "checkedAt": "2026-08-31", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-tgc-yokohama-2026-09-19", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "第43回 マイナビ 東京ガールズコレクション 2026 AUTUMN/WINTER", "ko": "제43회 마이나비 도쿄 걸즈 컬렉션 2026 AUTUMN/WINTER", "en": "43rd Mynavi Tokyo Girls Collection 2026 AUTUMN/WINTER" },
+      "startsOn": "2026-09-19", "endsOn": null, "startsAt": "2026-09-19T14:00:00+09:00", "opensAt": "2026-09-19T12:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "横浜市・横浜アリーナ", "ko": "요코하마시·요코하마 아레나", "en": "Yokohama · Yokohama Arena" },
+      "posterUrl": null, "price": { "ja": "一般指定席 ¥12,500（税込）", "ko": "일반 지정석 ¥12,500(세금 포함)", "en": "General reserved seat ¥12,500 (tax included)" }, "ticketUrl": "https://tgc.girlswalker.com/26aw/ticket/", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40145", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://tgc.girlswalker.com/26aw/ticket/", "checkedAt": "2026-08-31", "sourceKind": "official_site" }
+    },
+    {
+      "id": "fruits-zipper-irc-yokohama-2026-09-20", "groupIds": ["fruits-zipper"],
+      "title": { "ja": "IDOL RUNWAY COLLECTION 2026 AUTUMN/WINTER Supported by TGC", "ko": "IDOL RUNWAY COLLECTION 2026 AUTUMN/WINTER Supported by TGC", "en": "IDOL RUNWAY COLLECTION 2026 AUTUMN/WINTER Supported by TGC" },
+      "startsOn": "2026-09-20", "endsOn": null, "startsAt": "2026-09-20T12:00:00+09:00", "opensAt": "2026-09-20T11:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "横浜市・横浜アリーナ", "ko": "요코하마시·요코하마 아레나", "en": "Yokohama · Yokohama Arena" },
+      "posterUrl": null, "price": { "ja": "一般指定席 ¥8,500（税込）", "ko": "일반 지정석 ¥8,500(세금 포함)", "en": "General reserved seat ¥8,500 (tax included)" }, "ticketUrl": "https://idolrunwaycollection.jp/", "officialUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44151", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://idolrunwaycollection.jp/", "checkedAt": "2026-08-31", "sourceKind": "official_site" }
+    },
+    {
+      "id": "miteititle-kusanone-idol-festival-2026", "groupIds": ["title-mitei"],
+      "title": { "ja": "くさのねアイドルフェスティバル2026", "ko": "쿠사노네 아이돌 페스티벌 2026", "en": "Kusanone Idol Festival 2026" },
+      "startsOn": "2026-09-06", "endsOn": null, "startsAt": "2026-09-06T10:30:00+09:00", "opensAt": "2026-09-06T10:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "千葉県佐倉市・佐倉草ぶえの丘 第二キャンプ場", "ko": "지바현 사쿠라시·사쿠라 구사부에노오카 제2캠프장", "en": "Sakura, Chiba · Sakura Kusabue-no-Oka Second Campground" },
+      "posterUrl": null, "price": { "ja": "一般チケット ¥7,000（税込・別途1ドリンク）", "ko": "일반 티켓 ¥7,000(세금 포함·1드링크 별도)", "en": "General ticket ¥7,000 (tax included; drink charge separate)" }, "ticketUrl": "https://ticketdive.com/event/kif2026", "officialUrl": "https://kusanoneidolfes.com/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://kusanoneidolfes.com/", "checkedAt": "2026-08-31", "sourceKind": "official_site" }
+    },
+    {
+      "id": "miteititle-ladysteady-o-east-2026-09-07", "groupIds": ["title-mitei"],
+      "title": { "ja": "LadySteady supported by BUZZチケ", "ko": "LadySteady supported by BUZZ티켓", "en": "LadySteady supported by BUZZ Ticket" },
+      "startsOn": "2026-09-07", "endsOn": null, "startsAt": "2026-09-07T15:00:00+09:00", "opensAt": "2026-09-07T14:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": "spotify-o-east", "region": "tokyo", "areaLabel": { "ja": "渋谷区・Spotify O-EAST", "ko": "시부야구·Spotify O-EAST", "en": "Shibuya · Spotify O-EAST" },
+      "posterUrl": null, "price": { "ja": "一般チケット ¥3,500（税込・別途1ドリンク）", "ko": "일반 티켓 ¥3,500(세금 포함·1드링크 별도)", "en": "General ticket ¥3,500 (tax included; drink charge separate)" }, "ticketUrl": "https://buzz-ticket.com/e/ladysteady_0907", "officialUrl": "https://shibuya-o.com/east/schedule/ladysteady-supported-by-buzz%E3%83%81%E3%82%B1/", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://shibuya-o.com/east/schedule/ladysteady-supported-by-buzz%E3%83%81%E3%82%B1/", "checkedAt": "2026-08-31", "sourceKind": "venue_official" }
+    },
+    {
+      "id": "miteititle-shibuya-luisant-56-2026", "groupIds": ["title-mitei"],
+      "title": { "ja": "shibuya luisant Vol.56", "ko": "shibuya luisant Vol.56", "en": "shibuya luisant Vol.56" },
+      "startsOn": "2026-09-11", "endsOn": null, "startsAt": "2026-09-11T19:00:00+09:00", "opensAt": "2026-09-11T18:15:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "tokyo", "areaLabel": { "ja": "渋谷区・duo MUSIC EXCHANGE", "ko": "시부야구·duo MUSIC EXCHANGE", "en": "Shibuya · duo MUSIC EXCHANGE" },
+      "posterUrl": null, "price": { "ja": "一般 ¥2,000（税込・別途ドリンク）", "ko": "일반 ¥2,000(세금 포함·드링크 별도)", "en": "General ¥2,000 (tax included; drink charge separate)" }, "ticketUrl": "https://ticketdive.com/event/yume_challe", "officialUrl": "https://www.duomusicexchange.com/schedule/2026/index_2026-09.html", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://www.duomusicexchange.com/schedule/2026/index_2026-09.html", "checkedAt": "2026-08-31", "sourceKind": "venue_official" }
+    },
+    {
+      "id": "miteititle-fukufes-vol6-2026", "groupIds": ["title-mitei"],
+      "title": { "ja": "フクフェス vol.6 STU48 福田朱里主催フェス", "ko": "후쿠페스 vol.6 STU48 후쿠다 아카리 주최 페스", "en": "Fuku Fes vol.6 hosted by STU48 Akari Fukuda" },
+      "startsOn": "2026-09-20", "endsOn": "2026-09-21", "startsAt": "2026-09-20T18:00:00+09:00", "opensAt": "2026-09-20T17:30:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "香川県・高松festhalle", "ko": "가가와현·다카마쓰 festhalle", "en": "Kagawa · Takamatsu festhalle" },
+      "posterUrl": null, "price": { "ja": "9/20 スタンディング ¥4,800 / 9/21 ¥5,500（税込・別途ドリンク）", "ko": "9/20 스탠딩 ¥4,800 / 9/21 ¥5,500(세금 포함·드링크 별도)", "en": "Sep 20 standing ¥4,800 / Sep 21 ¥5,500 (tax included; drink charge separate)" }, "ticketUrl": "https://eplus.jp/fukufes/", "officialUrl": "https://sp.stu48.com/news/detail/23084", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://sp.stu48.com/news/detail/23084", "checkedAt": "2026-08-31", "sourceKind": "official_site" }
+    },
+    {
+      "id": "miteititle-gunmachan-idol-festival-2026", "groupIds": ["title-mitei"],
+      "title": { "ja": "ぐんまちゃんアイドルフェスティバル", "ko": "군마짱 아이돌 페스티벌", "en": "Gunmachan Idol Festival" },
+      "startsOn": "2026-10-12", "endsOn": null, "startsAt": "2026-10-12T11:00:00+09:00", "opensAt": "2026-10-12T10:00:00+09:00", "timeStatus": "confirmed",
+      "venueId": null, "region": "other", "areaLabel": { "ja": "群馬県前橋市・群馬県庁県民広場及び群馬会館ほか", "ko": "군마현 마에바시시·군마현청 현민광장 및 군마회관 외", "en": "Maebashi, Gunma · Gunma Prefectural Plaza, Gunma Hall and nearby venues" },
+      "posterUrl": null, "price": { "ja": "一般来場無料 / 優先エリア ¥5,000（税込）", "ko": "일반 입장 무료 / 우선 구역 ¥5,000(세금 포함)", "en": "General admission free / priority area ¥5,000 (tax included)" }, "ticketUrl": "https://ticketvillage.jp/events/13806", "officialUrl": "https://gunmachan-idolfes.com/news", "status": "scheduled",
+      "provenance": { "sourceUrl": "https://gunmachan-idolfes.com/news", "checkedAt": "2026-08-31", "sourceKind": "official_site" }
+    }
+  ]
 }

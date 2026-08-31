@@ -1,16 +1,19 @@
-import { ChikaDataset, ChikaLiveDataset, ChikaNotice as ChikaNoticeSchema, GravureFeature as GravureFeatureSchema, MetricDataset } from './schema';
-import type { ChikaGroup, ChikaMember, ChikaNotice, GravureFeature, RegionId, DistrictId } from './schema';
+import { ChikaDataset, ChikaLiveDataset, ChikaNotice as ChikaNoticeSchema, GeoAreaDataset, GravureFeature as GravureFeatureSchema, MetricDataset } from './schema';
+import type { ChikaGroup, ChikaLiveEvent, ChikaMember, ChikaNotice, ChikaVenue, GeoArea, GravureFeature, RegionId, DistrictId } from './schema';
 import { z } from 'zod';
 import groupsData from '../../data/chika-groups.json';
 import noticesData from '../../data/chika-notices.json';
 import gravureData from '../../data/chika-gravure.json';
 import liveData from '../../data/chika-live.json';
+import geoAreaData from '../../data/chika-geo-areas.json';
 import metricsData from '../../data/chika-metrics.json';
+import { getJapanCalendarDate } from './japan-date';
 
 const groups: ChikaGroup[] = ChikaDataset.parse(groupsData);
 const notices: ChikaNotice[] = z.array(ChikaNoticeSchema).parse(noticesData);
 const gravures: GravureFeature[] = z.array(GravureFeatureSchema).parse(gravureData);
 const live = ChikaLiveDataset.parse(liveData);
+const geoAreas = GeoAreaDataset.parse(geoAreaData).areas;
 const metrics = MetricDataset.parse(metricsData);
 const activeGroups = groups
   .filter((group) => (group.activityStatus ?? 'active') === 'active')
@@ -61,6 +64,39 @@ export function getLiveData() {
   return live;
 }
 
+export function getGeoAreas(): GeoArea[] {
+  return [...geoAreas];
+}
+
+export interface LiveEventView {
+  event: ChikaLiveEvent;
+  groups: ChikaGroup[];
+  venue: ChikaVenue | null;
+}
+
+function toLiveEventView(event: ChikaLiveEvent): LiveEventView {
+  return {
+    event,
+    groups: event.groupIds.map((groupId) => activeGroups.find((group) => group.id === groupId)).filter((group): group is ChikaGroup => Boolean(group)),
+    venue: event.venueId ? live.venues.find((venue) => venue.id === event.venueId) ?? null : null,
+  };
+}
+
+export function getLiveEvents(): LiveEventView[] {
+  return [...live.events]
+    .sort((a, b) => a.startsOn.localeCompare(b.startsOn))
+    .map(toLiveEventView);
+}
+
+export function getLiveEvent(id: string): LiveEventView | undefined {
+  const event = live.events.find((item) => item.id === id);
+  return event ? toLiveEventView(event) : undefined;
+}
+
+export function getUpcomingLiveEventsForGroup(groupId: string, today = getJapanCalendarDate()): LiveEventView[] {
+  return getLiveEvents().filter(({ event }) => event.groupIds.includes(groupId) && (event.endsOn ?? event.startsOn) >= today && event.status === 'scheduled');
+}
+
 export function getMetricSnapshots() {
   return [...metrics.snapshots];
 }
@@ -71,16 +107,19 @@ export function getUpcomingBirthdays(): Array<{ member: ChikaMember; group: Chik
 
   for (const group of activeGroups) {
     for (const member of group.members) {
-      if (member.birthDate) {
-        const parts = member.birthDate.split('-');
-        if (parts.length === 3 && parts[1] && parts[2]) {
-          const month = parseInt(parts[1], 10);
-          const day = parseInt(parts[2], 10);
+      const knownBirthday = member.birthDate ?? member.birthMonthDay;
+      if (knownBirthday) {
+        const parts = knownBirthday.split('-');
+        const monthPart = parts.at(-2);
+        const dayPart = parts.at(-1);
+        if (monthPart && dayPart) {
+          const month = parseInt(monthPart, 10);
+          const day = parseInt(dayPart, 10);
           if (!isNaN(month) && !isNaN(day)) {
             membersWithBirthday.push({
               member,
               group,
-              birthDate: member.birthDate,
+              birthDate: knownBirthday,
               month,
               day,
             });
@@ -113,11 +152,13 @@ export function getAllRankedMembers(sortType: RankCategory = 'popularity'): Arra
         formatted = score >= 10000 ? `${(score / 10000).toFixed(1)}만` : score.toLocaleString();
       } else if (sortType === 'search') {
         // 검색량 / 트렌드 지수
-        score = member.searchVolumeScore || 80;
+        if (member.searchVolumeScore === undefined) continue;
+        score = member.searchVolumeScore;
         formatted = `${score}pt`;
       } else {
         // 인기 순위 (종합 인기 지수)
-        score = member.popularityScore || 85;
+        if (member.popularityScore === undefined) continue;
+        score = member.popularityScore;
         formatted = `${score}점`;
       }
 
@@ -138,15 +179,15 @@ export function getGroupRankedMembers(group: ChikaGroup, sortType: RankCategory 
       score = (member.xFollowers || 0) + (member.igFollowers || 0);
       formatted = score >= 10000 ? `${(score / 10000).toFixed(1)}만` : score.toLocaleString();
     } else if (sortType === 'search') {
-      score = member.searchVolumeScore || 80;
+      score = member.searchVolumeScore ?? -1;
       formatted = `${score}pt`;
     } else {
-      score = member.popularityScore || 85;
+      score = member.popularityScore ?? -1;
       formatted = `${score}점`;
     }
 
     return { member, scoreValue: score, formattedScore: formatted };
-  });
+  }).filter((item) => item.scoreValue >= 0);
 
   return list.sort((a, b) => b.scoreValue - a.scoreValue);
 }

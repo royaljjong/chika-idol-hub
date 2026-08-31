@@ -24,9 +24,9 @@ export function IdolLeaderboard({ initialMembers, locale }: IdolLeaderboardProps
       return total >= 10000 ? `${(total / 10000).toFixed(1)}만` : total.toLocaleString();
     }
     if (currentTab === 'search') {
-      return `${member.searchVolumeScore || 80}pt`;
+      return member.searchVolumeScore === undefined ? '-' : `${member.searchVolumeScore}pt`;
     }
-    return `${member.popularityScore || 85}점`;
+    return member.popularityScore === undefined ? '-' : `${member.popularityScore}점`;
   };
 
   const getSubtext = (member: ChikaMember, currentTab: RankTab) => {
@@ -51,9 +51,9 @@ export function IdolLeaderboard({ initialMembers, locale }: IdolLeaderboardProps
       return totalB - totalA;
     }
     if (tab === 'search') {
-      return (b.member.searchVolumeScore || 80) - (a.member.searchVolumeScore || 80);
+      return (b.member.searchVolumeScore ?? -1) - (a.member.searchVolumeScore ?? -1);
     }
-    return (b.member.popularityScore || 85) - (a.member.popularityScore || 85);
+    return (b.member.popularityScore ?? -1) - (a.member.popularityScore ?? -1);
   });
 
   const top8 = sorted.slice(0, 8);

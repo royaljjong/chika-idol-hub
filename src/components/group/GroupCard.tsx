@@ -26,8 +26,8 @@ export function GroupCard({ group, locale }: GroupCardProps) {
       className="group relative flex flex-col justify-between rounded-[28px] bg-space-850/80 hover:bg-space-800/95 border border-white/10 hover:border-pink-500/50 shadow-lg hover:shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 focus-visible:outline-2 overflow-hidden"
     >
       {/* Group Cover Photo / Main Visual Banner */}
-      {group.imageUrl && !imageError && (
-        <div className="relative w-full h-40 overflow-hidden bg-space-900">
+      <div className="relative w-full h-40 overflow-hidden bg-space-900" style={{ background: `linear-gradient(135deg, ${group.color}66, #07111d)` }}>
+        {group.imageUrl && !imageError ? <>
           <Image
             src={group.imageUrl}
             alt={groupName}
@@ -37,8 +37,9 @@ export function GroupCard({ group, locale }: GroupCardProps) {
             unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-space-850 via-space-850/40 to-transparent" />
-        </div>
-      )}
+        </> : <div className="absolute inset-0 grid place-items-center px-8 text-center text-xl font-black text-white/80">{group.shortName[locale as 'ja' | 'ko' | 'en'] || group.name.ja}</div>}
+        {group.imageKind === 'official_photo' || group.imageKind === 'official_logo' ? <span className="absolute left-3 top-3 bg-cyan-950/85 px-2 py-1 text-[9px] font-bold text-cyan-200">{group.imageKind === 'official_logo' ? 'OFFICIAL LOGO' : 'OFFICIAL PHOTO'}</span> : <span className="absolute left-3 top-3 bg-black/70 px-2 py-1 text-[9px] text-star-dim">{group.imageKind === 'text_wordmark' ? 'TEXT WORDMARK' : locale === 'ko' ? '대표 이미지 준비 중' : locale === 'ja' ? '公式画像準備中' : 'Visual placeholder'}</span>}
+      </div>
 
       <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
         <div>

@@ -10,6 +10,7 @@ import { BirthdayTracker } from '@/components/home/BirthdayTracker';
 import { IdolLeaderboard } from '@/components/home/IdolLeaderboard';
 import type { Metadata } from 'next';
 import { Link } from '@/i18n/routing';
+import { getJapanCalendarDate } from '@/lib/japan-date';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -44,6 +45,7 @@ export default async function HomePage({ params }: HomePageProps) {
   const gravures = getGravureFeatures();
   const birthdays = getUpcomingBirthdays();
   const rankedMembers = getAllRankedMembers();
+  const currentJapanMonth = Number(getJapanCalendarDate().slice(5, 7));
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between">
@@ -66,7 +68,7 @@ export default async function HomePage({ params }: HomePageProps) {
 
         {/* 1. Region-first discovery */}
         <div className="mb-14">
-          <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
+          <div className="mb-6 flex flex-col items-start gap-3 border-b border-white/10 pb-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-2.5">
               <span className="text-xl">🗾</span>
               <div>
@@ -75,13 +77,15 @@ export default async function HomePage({ params }: HomePageProps) {
                 </h2>
                 <p className="text-xs text-star-dim mt-0.5">
                   {locale === 'ko'
-                    ? '도시 클릭 ➔ 구역 선택 ➔ 활동 지하아이돌 공식 로고/단체 사진 ➔ 멤버 사진/이름 ➔ 개인 SNS로 연결됩니다'
-                    : '都市クリック ➔ エリア選択 ➔ 地下アイドル写真 ➔ メンバー写真・名前 ➔ 個別SNSへ直結'}
+                    ? '도시 선택 ➔ 검증 그룹·예정 라이브 확인 ➔ 멤버 프로필과 공식 링크로 연결됩니다'
+                    : locale === 'ja'
+                      ? '都市選択 ➔ 検証済みグループ・予定ライブ ➔ メンバーと公式リンクへ進みます'
+                      : 'Choose a city, compare verified groups and upcoming live events, then open official profiles.'}
                 </p>
               </div>
             </div>
             <span className="text-xs text-star-dim font-mono">
-              3-Level Drilldown
+              NATIONAL STATE A
             </span>
           </div>
 
@@ -97,7 +101,7 @@ export default async function HomePage({ params }: HomePageProps) {
         )}
 
         {/* 3. Birthday Calendar Spotlight */}
-        <BirthdayTracker birthdays={birthdays} locale={locale} />
+        <BirthdayTracker birthdays={birthdays} locale={locale} currentMonth={currentJapanMonth} />
 
         {/* 4. Rankings appear only after source verification */}
         <IdolLeaderboard initialMembers={rankedMembers} locale={locale} />

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import { getMember, getGroups, getAllMembers } from '@/lib/data';
+import { getMember, getAllMembers } from '@/lib/data';
 import { routing, Link } from '@/i18n/routing';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
@@ -150,9 +150,11 @@ export default async function MemberPage({ params }: MemberPageProps) {
               {/* Member Meta */}
               <div className="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-1 text-xs text-star-dim">
                 <span>所属: <Link href={`/g/${group.id}`} className="text-pink-300 font-bold hover:underline">{groupName}</Link></span>
-                {member.birthDate && <span>生年月日: <strong className="text-star-white">{member.birthDate}</strong></span>}
+                {member.birthDate && <span>{locale === 'ko' ? '생년월일' : locale === 'en' ? 'Date of birth' : '生年月日'}: <strong className="text-star-white">{member.birthDate}</strong></span>}
+                {!member.birthDate && member.birthMonthDay && <span>{locale === 'ko' ? '생일(월·일)' : locale === 'en' ? 'Birthday (month/day)' : '誕生日（月日）'}: <strong className="text-star-white">{member.birthMonthDay}</strong></span>}
                 {member.birthplace && <span>出身地: <strong className="text-star-white">{member.birthplace[locale as 'ja'|'ko'|'en'] || member.birthplace.ja}</strong></span>}
                 {member.nickname && <span>愛称: <strong className="text-star-white">{member.nickname[locale as 'ja'|'ko'|'en'] || member.nickname.ja}</strong></span>}
+                {member.memberMotif && <span>{locale === 'ko' ? '담당 모티프' : locale === 'en' ? 'Member motif' : '担当モチーフ'}: <strong className="text-star-white">{member.memberMotif[locale as 'ja'|'ko'|'en'] || member.memberMotif.ja}</strong></span>}
               </div>
             </div>
           </div>

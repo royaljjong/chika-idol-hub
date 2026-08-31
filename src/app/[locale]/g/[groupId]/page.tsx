@@ -1,14 +1,15 @@
 'use client';
 
-import React, { useState, use } from 'react';
+import React, { useEffect, useState, use } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getGroup } from '@/lib/data';
+import { getGroup, getUpcomingLiveEventsForGroup } from '@/lib/data';
 import type { ChikaMember } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
 import { MemberCard } from '@/components/member/MemberCard';
+import { GroupLiveMap } from '@/components/map/GroupLiveMap';
 
 interface GroupPageProps {
   params: Promise<{ locale: string; groupId: string }>;
@@ -18,9 +19,31 @@ type MemberSortMode = 'default' | 'popularity' | 'followers' | 'search';
 
 export default function GroupPage({ params }: GroupPageProps) {
   const { locale, groupId } = use(params);
-  const [selectedSubUnit, setSelectedSubUnit] = useState<string>('all');
   const [sortMode, setSortMode] = useState<MemberSortMode>('default');
   const [bannerError, setBannerError] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<'profile' | 'live'>('profile');
+
+  useEffect(() => {
+    const restoreTab = () => {
+      const url = new URL(window.location.href);
+      const rawTab = url.searchParams.get('tab');
+      setActiveTab(rawTab === 'live' ? 'live' : 'profile');
+      if (rawTab && rawTab !== 'live') {
+        url.searchParams.delete('tab');
+        window.history.replaceState(window.history.state, '', url);
+      }
+    };
+    restoreTab();
+    window.addEventListener('popstate', restoreTab);
+    return () => window.removeEventListener('popstate', restoreTab);
+  }, []);
+
+  const chooseTab = (tab: 'profile' | 'live') => {
+    setActiveTab(tab);
+    const url = new URL(window.location.href);
+    if (tab === 'live') url.searchParams.set('tab', 'live'); else url.searchParams.delete('tab');
+    window.history.pushState(window.history.state, '', url);
+  };
 
   const group = getGroup(groupId);
   if (!group) {
@@ -29,13 +52,12 @@ export default function GroupPage({ params }: GroupPageProps) {
 
   const groupName = group.name[locale as 'ja' | 'ko' | 'en'] || group.name.ja;
   const description = group.description[locale as 'ja' | 'ko' | 'en'] || group.description.ja;
-  const hasVerifiedMetrics = group.members.some((member) => member.metricsVerifiedAt && member.metricsSourceUrl);
+  const language = locale === 'ko' || locale === 'en' ? locale : 'ja';
+  const upcomingEvents = getUpcomingLiveEventsForGroup(group.id);
+  const hasVerifiedMetrics = group.members.some((member) => member.metricsVerifiedAt && member.metricsSourceUrl && (member.popularityScore !== undefined || member.searchVolumeScore !== undefined || member.xFollowers !== 0 || member.igFollowers !== 0));
 
   // Filter members by selected subunit
-  const filtered = group.members.filter((m) => {
-    if (selectedSubUnit === 'all') return true;
-    return m.subUnitId === selectedSubUnit;
-  });
+  const filtered = group.members;
 
   // Sort members according to selected mode
   const sortedMembers = [...filtered].sort((a, b) => {
@@ -45,10 +67,10 @@ export default function GroupPage({ params }: GroupPageProps) {
       return totalB - totalA;
     }
     if (sortMode === 'search') {
-      return (b.searchVolumeScore || 80) - (a.searchVolumeScore || 80);
+      return (b.searchVolumeScore ?? -1) - (a.searchVolumeScore ?? -1);
     }
     if (sortMode === 'popularity') {
-      return (b.popularityScore || 85) - (a.popularityScore || 85);
+      return (b.popularityScore ?? -1) - (a.popularityScore ?? -1);
     }
     return 0;
   });
@@ -64,10 +86,10 @@ export default function GroupPage({ params }: GroupPageProps) {
       return total >= 10000 ? `${(total / 10000).toFixed(1)}만` : `${total.toLocaleString()}명`;
     }
     if (sortMode === 'search') {
-      return `${member.searchVolumeScore || 80}pt`;
+      return member.searchVolumeScore === undefined ? '' : `${member.searchVolumeScore}pt`;
     }
     if (sortMode === 'popularity') {
-      return `${member.popularityScore || 85}점`;
+      return member.popularityScore === undefined ? '' : `${member.popularityScore}점`;
     }
     return '';
   };
@@ -83,7 +105,7 @@ export default function GroupPage({ params }: GroupPageProps) {
             Home
           </Link>
           <span>/</span>
-          <span>{group.region.toUpperCase()} ({group.district.toUpperCase()})</span>
+          <Link href={`/?mapRegion=${encodeURIComponent(group.region)}&mapDistrict=${encodeURIComponent(group.district)}`} className="hover:text-cyan-200 transition">{group.region.toUpperCase()} ({group.district.toUpperCase()})</Link>
           <span>/</span>
           <span className="text-star-white font-semibold">{groupName}</span>
         </div>
@@ -233,8 +255,22 @@ export default function GroupPage({ params }: GroupPageProps) {
           </div>
         </section>
 
+        <div className="group-detail-tabs" role="tablist" aria-label={language === 'ko' ? '그룹 상세 보기' : language === 'en' ? 'Group details' : 'グループ詳細'}>
+          <button type="button" role="tab" id="group-profile-tab" aria-controls="group-profile-panel" aria-selected={activeTab === 'profile'} className={activeTab === 'profile' ? 'group-detail-tab-active' : ''} onClick={() => chooseTab('profile')}>{language === 'ko' ? '프로필 · 멤버' : language === 'en' ? 'Profile & members' : 'プロフィール・メンバー'}</button>
+          <button type="button" role="tab" id="group-live-tab" aria-controls="group-live-panel" aria-selected={activeTab === 'live'} className={activeTab === 'live' ? 'group-detail-tab-active' : ''} onClick={() => chooseTab('live')}>{language === 'ko' ? '라이브 · 공연장 지도' : language === 'en' ? 'Live & venue map' : 'ライブ・会場マップ'}<span>{upcomingEvents.length}</span></button>
+        </div>
+
+        {activeTab === 'live' ? <section id="group-live-panel" aria-labelledby="group-live-tab" className="mb-12" role="tabpanel">
+          <div className="mb-5 flex items-end justify-between border-b border-white/10 pb-3">
+            <div><p className="text-[10px] font-bold tracking-[.16em] text-pink-400">VERIFIED LIVE</p><h2 className="mt-1 text-xl font-bold text-white">{language === 'ko' ? '예정 공연' : language === 'en' ? 'Upcoming events' : '今後のライブ'}</h2></div>
+            <Link href={`/live?group=${group.id}`} className="text-xs font-bold text-pink-300 hover:text-pink-200">{language === 'ko' ? '전체 일정' : language === 'en' ? 'All events' : '一覧'} →</Link>
+          </div>
+          <GroupLiveMap events={upcomingEvents} locale={language} />
+          {upcomingEvents.length ? <div className="grid gap-3">{upcomingEvents.slice(0, 3).map(({ event }) => <Link key={event.id} href={`/live/${event.id}`} className="glass-panel flex flex-col justify-between gap-3 p-5 transition hover:border-white/25 sm:flex-row sm:items-center"><div><p className="font-mono text-xs text-pink-300">{event.startsOn}{event.endsOn ? ` – ${event.endsOn}` : ''}</p><h3 className="mt-2 font-bold text-white">{event.title[language]}</h3><p className="mt-1 text-xs text-star-dim">{event.areaLabel[language]} · {event.startsAt ? event.startsAt.slice(11, 16) : (language === 'ko' ? '시간 미정' : language === 'en' ? 'Time TBA' : '時間未定')}</p></div><span className="text-xs font-bold text-star-dim">{language === 'ko' ? '상세' : language === 'en' ? 'Details' : '詳細'} →</span></Link>)}</div> : <div className="border border-dashed border-white/15 px-5 py-8 text-sm text-star-dim">{language === 'ko' ? '현재 공개 가능한 검증 공연을 수집 중입니다. 공식 일정에서 최신 정보를 확인하세요.' : language === 'en' ? 'Verified events are being collected. Check the official schedule for the latest information.' : '公開可能な検証済み公演を収集中です。最新情報は公式スケジュールでご確認ください。'}</div>}
+        </section> : null}
+
         {/* Member Section Header & Sorting Rank Tabs */}
-        <section className="mb-14">
+        {activeTab === 'profile' ? <section id="group-profile-panel" aria-labelledby="group-profile-tab" className="mb-14" role="tabpanel">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-6 border-b border-white/10 gap-4">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-star-white font-[family-name:var(--font-klee-one)]">
@@ -314,7 +350,7 @@ export default function GroupPage({ params }: GroupPageProps) {
             })}
           </div>
           {sortedMembers.length === 0 ? <div className="border border-dashed border-amber-300/25 bg-amber-300/[.03] px-5 py-10 text-center text-sm text-star-dim">{locale === 'ko' ? '현재 공식 멤버 명단을 검증하고 있습니다. 확인되지 않은 과거 멤버는 표시하지 않습니다.' : locale === 'ja' ? '現役公式メンバーを検証中です。未確認の旧メンバーは表示しません。' : 'The current official roster is being verified. Unconfirmed former members are hidden.'}</div> : null}
-        </section>
+        </section> : null}
       </main>
 
       <Footer />

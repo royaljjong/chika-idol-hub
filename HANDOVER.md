@@ -1,7 +1,11 @@
-# 🗾 日本全国 地下アイドル 허브 (Chika Idol Hub) 인수인계 및 프로젝트 기술 명세서
+# 폐기된 초기 인수인계 — 역사 자료
+
+> 이 문서는 2026-08-16 초기 프로토타입의 기록이며 현행 작업 지침이 아니다. 그룹 수, 데이터 시드, 랭킹, 이미지, 경로, 실행·배포 절차가 현재 구현 및 출처 정책과 다르다. 현재 기준은 루트 `AGENTS.md` → `AUDIT_AND_REBUILD_PLAN.md` → `WORK_ORDER.md` → `CODEX_HANDOVER.md` 순서로 확인한다. 아래 명령은 재실행하지 않는다.
+
+# 🗾 日本全国 地下アイドル 허브 (Chika Idol Hub) 초기 프로젝트 기술 명세서
 
 > **최종 수정일:** 2026-08-16  
-> **프로젝트 위치:** `C:\Users\royal\Desktop\programming\window\Chika Idol Box`  
+> **당시 프로젝트 위치:** 폐기됨 — 현재 위치는 `D:\drive\programming\window\Chika Idol Box`
 > **GitHub 저장소:** [https://github.com/royaljjong/chika-idol-hub](https://github.com/royaljjong/chika-idol-hub)  
 > **Vercel 프로덕션 배포 URL:** [https://chika-idol-hub.vercel.app](https://chika-idol-hub.vercel.app)  
 
@@ -135,7 +139,7 @@ Chika Idol Box/
 ### 1) 프로젝트 의존성 설치
 ```powershell
 # 프로젝트 루트 폴더에서 실행
-cd "C:\Users\royal\Desktop\programming\window\Chika Idol Box"
+cd "D:\drive\programming\window\Chika Idol Box"
 pnpm install
 # 또는
 npm install

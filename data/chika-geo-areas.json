@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-27",
+  "areas": [
+    {
+      "id": "jp",
+      "parentId": null,
+      "level": "country",
+      "name": { "ja": "日本", "ko": "일본", "en": "Japan" },
+      "center": null,
+      "boundingBox": null,
+      "boundaryUrl": null,
+      "verificationStatus": "identity_verified",
+      "provenance": { "sourceUrl": "https://www.stat.go.jp/data/chiri/map/", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    {
+      "id": "tokyo-to",
+      "parentId": "jp",
+      "level": "prefecture",
+      "name": { "ja": "東京都", "ko": "도쿄도", "en": "Tokyo Metropolis" },
+      "center": null,
+      "boundingBox": null,
+      "boundaryUrl": null,
+      "verificationStatus": "identity_verified",
+      "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" }
+    },
+    { "id": "tokyo-chiyoda-ku", "parentId": "tokyo-to", "level": "ward", "name": { "ja": "千代田区", "ko": "지요다구", "en": "Chiyoda City" }, "center": null, "boundingBox": null, "boundaryUrl": null, "verificationStatus": "identity_verified", "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" } },
+    { "id": "tokyo-minato-ku", "parentId": "tokyo-to", "level": "ward", "name": { "ja": "港区", "ko": "미나토구", "en": "Minato City" }, "center": null, "boundingBox": null, "boundaryUrl": null, "verificationStatus": "identity_verified", "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" } },
+    { "id": "tokyo-shinjuku-ku", "parentId": "tokyo-to", "level": "ward", "name": { "ja": "新宿区", "ko": "신주쿠구", "en": "Shinjuku City" }, "center": null, "boundingBox": null, "boundaryUrl": null, "verificationStatus": "identity_verified", "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" } },
+    { "id": "tokyo-shibuya-ku", "parentId": "tokyo-to", "level": "ward", "name": { "ja": "渋谷区", "ko": "시부야구", "en": "Shibuya City" }, "center": null, "boundingBox": null, "boundaryUrl": null, "verificationStatus": "identity_verified", "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" } },
+    { "id": "tokyo-toshima-ku", "parentId": "tokyo-to", "level": "ward", "name": { "ja": "豊島区", "ko": "도시마구", "en": "Toshima City" }, "center": null, "boundingBox": null, "boundaryUrl": null, "verificationStatus": "identity_verified", "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" } },
+    { "id": "tokyo-chuo-ku", "parentId": "tokyo-to", "level": "ward", "name": { "ja": "中央区", "ko": "주오구", "en": "Chuo City" }, "center": null, "boundingBox": null, "boundaryUrl": null, "verificationStatus": "identity_verified", "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" } },
+    { "id": "tokyo-koto-ku", "parentId": "tokyo-to", "level": "ward", "name": { "ja": "江東区", "ko": "고토구", "en": "Koto City" }, "center": null, "boundingBox": null, "boundaryUrl": null, "verificationStatus": "identity_verified", "provenance": { "sourceUrl": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/kushichoson", "checkedAt": "2026-08-27", "sourceKind": "official_site" } }
+  ]
+}

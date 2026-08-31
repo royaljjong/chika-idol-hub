@@ -6,7 +6,6 @@ import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
 import { ChikaGroupCard } from '@/components/group/ChikaGroupCard';
 import { getGroups } from '@/lib/data';
-import type { ChikaGroup } from '@/lib/schema';
 
 export default function SearchPage() {
   const locale = useLocale();

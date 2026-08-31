@@ -8,12 +8,13 @@ import { Link } from '@/i18n/routing';
 interface GravureSectionProps {
   gravures: GravureFeature[];
   locale: string;
+  showHeader?: boolean;
 }
 
-export function GravureSection({ gravures, locale }: GravureSectionProps) {
+export function GravureSection({ gravures, locale, showHeader = true }: GravureSectionProps) {
   return (
     <section className="mb-14">
-      <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
+      {showHeader && <div className="flex items-center justify-between pb-3 mb-6 border-b border-white/10">
         <div className="flex items-center gap-2.5">
           <span className="text-xl">📸</span>
           <div>
@@ -28,7 +29,7 @@ export function GravureSection({ gravures, locale }: GravureSectionProps) {
         <span className="text-xs text-star-dim font-mono">
           {gravures.length} Features
         </span>
-      </div>
+      </div>}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {gravures.map((item) => {
@@ -45,7 +46,7 @@ export function GravureSection({ gravures, locale }: GravureSectionProps) {
               <div className="flex items-start gap-4">
                 {/* Visual Avatar / Cover */}
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden bg-space-900 border-2 border-purple-500/30 shrink-0 shadow-lg group-hover:scale-105 transition-transform">
-                  {item.imageUrl ? (
+                  {item.imageUrl && item.rightsStatus !== 'link_only' ? (
                     <Image
                       src={item.imageUrl}
                       alt={memberName}

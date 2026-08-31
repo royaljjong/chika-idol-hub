@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import type { ChikaGroup } from '@/lib/schema';
 import { Link } from '@/i18n/routing';
 
@@ -10,6 +11,7 @@ interface ChikaGroupCardProps {
 }
 
 export function ChikaGroupCard({ group, locale }: ChikaGroupCardProps) {
+  const [imageError, setImageError] = useState(false);
   const groupName = group.name[locale as 'ja' | 'ko' | 'en'] || group.name.ja;
   const description = group.description[locale as 'ja' | 'ko' | 'en'] || group.description.ja;
 
@@ -25,6 +27,11 @@ export function ChikaGroupCard({ group, locale }: ChikaGroupCardProps) {
         className="absolute -right-16 -top-16 w-36 h-36 rounded-full blur-3xl opacity-20 pointer-events-none transition-opacity group-hover:opacity-40"
         style={{ backgroundColor: group.color }}
       />
+
+      <Link href={`/g/${group.id}`} className="relative -mx-6 -mt-6 mb-5 block h-36 overflow-hidden" style={{ background: `linear-gradient(135deg, ${group.color}66, #07111d)` }}>
+        {group.imageUrl && !imageError ? <Image src={group.imageUrl} alt="" fill className="object-cover" sizes="(max-width: 640px) 100vw, 420px" unoptimized onError={() => setImageError(true)} /> : <span className="absolute inset-0 grid place-items-center px-8 text-center text-xl font-black text-white/80">{group.shortName[locale as 'ja' | 'ko' | 'en'] || group.name.ja}</span>}
+        <span className="absolute left-3 top-3 bg-black/75 px-2 py-1 text-[9px] text-star-dim">{group.imageKind === 'official_photo' ? 'OFFICIAL PHOTO' : group.imageKind === 'official_logo' ? 'OFFICIAL LOGO' : group.imageKind === 'text_wordmark' ? 'TEXT WORDMARK' : locale === 'ko' ? '대표 이미지 준비 중' : locale === 'ja' ? '公式画像準備中' : 'Visual placeholder'}</span>
+      </Link>
 
       <div>
         {/* Badges: Agency & District */}
