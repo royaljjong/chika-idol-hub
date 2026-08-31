@@ -10,6 +10,7 @@
 - 회귀 위험: `.tmp` 로그·보고서나 자격정보가 커밋되는 문제, 큰 누적 변경에서 신규 파일 누락, Git 푸시와 Vercel 직접 배포가 다른 커밋을 가리키는 문제, 배포 성공을 실제 공개 동작 성공으로 오인하는 문제가 있다.
 - 완료 조건·검증: 커밋 대상 목록과 비밀 패턴을 확인하고 lint·typecheck·데이터·날짜·파라미터·build·diff 검사를 통과한다. 커밋·푸시 후 동일 SHA 기반 production 배포가 READY이며 핵심 공개 URL을 검증하고 결과를 이 항목과 `CODEX_HANDOVER.md`에 기록한다.
 - 구현·검증 결과: 릴리스 전 검사 완료. `.tmp`·`.next`·`.vercel`·환경 파일은 제외됐고 신규 파일·10MB 초과 자산·대표 비밀 패턴 검사에 이상이 없다. ESLint 0경고, TypeScript, 데이터 계약(37그룹·188명·70공연·55후보·경고 24), 일본 날짜, 파라미터 계약, 774/774 프로덕션 빌드와 `git diff --check`가 통과했다. 커밋·푸시·배포 식별자와 공개 HTTP 결과는 실행 후 이 항목과 현행 인수인계에 추가한다.
+- 배포 중 설계 변경: 커밋 `3bd93ea` 푸시 후 첫 production deploy `dpl_6fV9NMeYDR6njWQhBK694hYQqekq`는 READY·production alias 연결에 성공했지만 Vercel CLI가 391.5MB·2175파일을 업로드했다. Git의 `.tmp` 제외만으로 배포 입력 제외가 보장되지 않으므로 `.vercelignore`를 추가하고, 최종 인수인계 커밋을 푸시한 다음 더 작은 입력으로 production을 재배포·검증한다.
 
 ## 2026-08-31 MVP H-5 — 전체 기능·파라미터 정합성 수정·보완
 
