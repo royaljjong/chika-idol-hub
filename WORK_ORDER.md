@@ -11,6 +11,7 @@
 - 완료 조건·검증: 커밋 대상 목록과 비밀 패턴을 확인하고 lint·typecheck·데이터·날짜·파라미터·build·diff 검사를 통과한다. 커밋·푸시 후 동일 SHA 기반 production 배포가 READY이며 핵심 공개 URL을 검증하고 결과를 이 항목과 `CODEX_HANDOVER.md`에 기록한다.
 - 구현·검증 결과: 릴리스 전 검사 완료. `.tmp`·`.next`·`.vercel`·환경 파일은 제외됐고 신규 파일·10MB 초과 자산·대표 비밀 패턴 검사에 이상이 없다. ESLint 0경고, TypeScript, 데이터 계약(37그룹·188명·70공연·55후보·경고 24), 일본 날짜, 파라미터 계약, 774/774 프로덕션 빌드와 `git diff --check`가 통과했다. 커밋·푸시·배포 식별자와 공개 HTTP 결과는 실행 후 이 항목과 현행 인수인계에 추가한다.
 - 배포 중 설계 변경: 커밋 `3bd93ea` 푸시 후 첫 production deploy `dpl_6fV9NMeYDR6njWQhBK694hYQqekq`는 READY·production alias 연결에 성공했지만 Vercel CLI가 391.5MB·2175파일을 업로드했다. Git의 `.tmp` 제외만으로 배포 입력 제외가 보장되지 않으므로 `.vercelignore`를 추가하고, 최종 인수인계 커밋을 푸시한 다음 더 작은 입력으로 production을 재배포·검증한다.
+- 최종 구현·배포 결과: 전체 구현 커밋 `3bd93ea`와 Vercel 입력 최소화 커밋 `3cb2234`를 `origin/codex/trust-data-phase2`에 푸시했다. `3cb2234` 기준 최종 production deploy `dpl_6gGN5AxRSeiY6d1QjGvc51EnsGsH`는 READY이며 `https://chika-idol-hub.vercel.app`에 alias됐다. `.vercelignore` 적용 후 입력은 391.5MB·2175파일에서 362.3KB·148파일로 감소했고 원격 빌드도 774/774를 통과했다. 공개 스모크는 한국어 홈·일본어 라이브·영어 그룹 live 탭·한국어 멤버 4경로 HTTP 200, 의도된 미존재 공연 404로 5/5 PASS다. 최근 1시간 error 로그 조회는 0건이었다. pnpm이 `esbuild`·`sharp`·`unrs-resolver` 설치 스크립트를 무시했다는 경고는 있었으나 로컬·Vercel 빌드와 배포 산출물 생성은 모두 성공했다.
 
 ## 2026-08-31 MVP H-5 — 전체 기능·파라미터 정합성 수정·보완
 

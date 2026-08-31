@@ -2,9 +2,9 @@
 
 기준일: 2026-09-01
 저장소: `D:\drive\programming\window\Chika Idol Box`
-브랜치/HEAD: `codex/trust-data-phase2` / `94ff544`
+브랜치/배포 SHA: `codex/trust-data-phase2` / `3cb2234`
 프로덕션: https://chika-idol-hub.vercel.app
-현행 상태: 최신 구현은 미커밋 로컬 작업 트리에 있으며 프로덕션과 동일하다고 단정하지 않는다.
+현행 상태: 제품 런타임은 커밋 `3cb2234`, Vercel 배포 `dpl_6gGN5AxRSeiY6d1QjGvc51EnsGsH`로 production READY다. 배포 메타데이터를 기록한 후속 문서 커밋은 런타임 변경이 아니다.
 
 이 문서가 유일한 현행 인수인계다. `HANDOVER.md`는 2026-08-16 초기 프로토타입의 폐기된 역사 자료다. 의사결정 이력은 `AUDIT_AND_REBUILD_PLAN.md`, 실행 이력은 `WORK_ORDER.md`를 본다.
 
@@ -147,6 +147,9 @@ node node_modules\tsx\dist\cli.mjs scripts\daily-update.ts --write
 - 로컬 프로덕션 HTTP 스모크: 3개 언어 홈·라이브·대표 그룹·멤버·C/E-13 공연 5건 상세와 의도된 404를 포함해 28/28 PASS.
 - 지도 핵심 흐름과 그룹 라이브 지도: 사용자 실화면 승인 완료.
 - 2026-09-01 수동 갱신기 재검증: PowerShell 5.1 오프라인 진입점과 실제 바탕화면 CMD write가 종료 코드 0, 최신 보고서 `success=true`; 후보 55건·향후 생일 19명·미확인 생일 28명.
+- 2026-09-01 Release R-1: `3bd93ea` 전체 구현과 `3cb2234` 배포 입력 정리를 원격 브랜치에 푸시했다. 최종 Vercel production `dpl_6gGN5AxRSeiY6d1QjGvc51EnsGsH`는 READY·기본 alias 연결 완료다.
+- `.vercelignore` 적용으로 CLI 업로드가 391.5MB·2175파일에서 362.3KB·148파일로 감소했다.
+- 프로덕션 스모크 5/5: `/ko`, `/ja/live`, `/en/g/fruits-zipper?tab=live`, `/ko/m/fz-matsumoto-karen`는 200, `/ko/live/does-not-exist`는 404. 최근 1시간 Vercel error 로그 0건.
 
 ```powershell
 node node_modules\tsx\dist\cli.mjs scripts\daily-update.ts --skip-network
@@ -177,9 +180,9 @@ Windows 오류 1920이 나면 3001 포트의 기존 Next 프로세스를 확인�
 
 ## 10. Git·배포 경계
 
-- HEAD는 `94ff544`지만 현재 구현은 미커밋 작업 트리에 있다. `git status --short`로 사용자 변경을 확인·보존한다.
-- 로컬 결과가 프로덕션에 배포됐다고 가정하지 않는다. 말하려면 별도 실제 배포와 HTTP 검증이 필요하다.
-- 요청 전 `git add`, 커밋, 푸시, Vercel 배포를 하지 않는다.
+- 제품 배포 기준 SHA는 `3cb2234`다. 후속 인수인계 문서 커밋은 런타임 변경 없이 배포 사실만 기록한다.
+- 이후 변경은 다시 로컬 검증·커밋·푸시·Vercel READY·공개 HTTP 검증을 모두 거쳐야 프로덕션 반영으로 기록한다.
+- 사용자의 명시적 요청 없이 추가 커밋·푸시·Vercel 배포를 수행하지 않는다.
 - `.env`, 자격 증명, 개인 데이터는 문서나 외부 모델 입력에 포함하지 않는다.
 
 ## 11. 핵심 문서·파일
