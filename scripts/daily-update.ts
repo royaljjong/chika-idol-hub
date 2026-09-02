@@ -2,7 +2,7 @@ import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ChikaDataset, ImageCandidateDataset, LiveEventCandidateDataset } from '../src/lib/schema';
+import { ChikaDataset, GravureCandidateDataset, ImageCandidateDataset, LiveEventCandidateDataset } from '../src/lib/schema';
 import { getJapanCalendarDate } from '../src/lib/japan-date';
 
 type StepResult = {
@@ -22,6 +22,7 @@ const tsxCli = path.join(root, 'node_modules', 'tsx', 'dist', 'cli.mjs');
 const groupsPath = path.join(root, 'data', 'chika-groups.json');
 const candidatesPath = path.join(root, 'data', 'chika-live-candidates.json');
 const imageCandidatesPath = path.join(root, 'data', 'chika-image-candidates.json');
+const gravureCandidatesPath = path.join(root, 'data', 'chika-gravure-candidates.json');
 
 function compactOutput(value: string) {
   return value.replace(/\r/g, '').trim().split('\n').filter(Boolean).slice(-8).join('\n');
@@ -84,11 +85,13 @@ if (skipNetwork) {
   steps.push(runStep('fruits-zipper-detail', 'FRUITS ZIPPER 후보 상세 보강', 'scripts/enrich-fruits-zipper-candidates.ts', writeArg));
 }
 
+steps.push(runStep('gravure-candidates', '그라비아 후보 검토 보고', 'scripts/report-gravure-candidates.ts'));
 steps.push(runStep('validate', '전체 데이터 계약 검사', 'scripts/validate.ts'));
 
 const groups = ChikaDataset.parse(JSON.parse(fs.readFileSync(groupsPath, 'utf8')));
 const candidates = LiveEventCandidateDataset.parse(JSON.parse(fs.readFileSync(candidatesPath, 'utf8')));
 const imageCandidates = ImageCandidateDataset.parse(JSON.parse(fs.readFileSync(imageCandidatesPath, 'utf8')));
+const gravureCandidates = GravureCandidateDataset.parse(JSON.parse(fs.readFileSync(gravureCandidatesPath, 'utf8')));
 const currentDate = utcDate(today);
 const activeMembers = groups
   .filter((group) => (group.activityStatus ?? 'active') === 'active')
@@ -156,6 +159,13 @@ const report = {
       blocker: item.blocker,
     })),
   },
+  gravureCandidates: {
+    total: gravureCandidates.candidates.length,
+    reviewPending: gravureCandidates.candidates.filter((item) => item.reviewStatus === 'review_pending').length,
+    readyForPublish: gravureCandidates.candidates.filter((item) => item.reviewStatus === 'ready_for_publish').length,
+    published: gravureCandidates.candidates.filter((item) => item.reviewStatus === 'published').length,
+    safetyPending: gravureCandidates.candidates.filter((item) => item.safetyReviewStatus === 'pending').length,
+  },
   birthdaysNext30Days: birthdays,
   missingBirthDates,
 };
@@ -170,6 +180,7 @@ const markdown = [
   `- 전체 판정: ${report.success ? 'PASS' : 'PARTIAL/FAIL'}`,
   `- 후보: 전체 ${report.candidates.total}, 검토 대기 ${report.candidates.reviewPending}, 생일 후보 ${report.candidates.birthday}, 공개 연결 ${report.candidates.published}`,
   `- 이미지 후보: 전체 ${report.imageCandidates.total}, 권리 검토 ${report.imageCandidates.rightsReview}, 승인 ${report.imageCandidates.approved}, 거절 ${report.imageCandidates.rejected}`,
+  `- 그라비아 후보: 전체 ${report.gravureCandidates.total}, 검토 대기 ${report.gravureCandidates.reviewPending}, 공개 준비 ${report.gravureCandidates.readyForPublish}, 공개 연결 ${report.gravureCandidates.published}, 안전 검토 대기 ${report.gravureCandidates.safetyPending}`,
   '',
   '## 실행 단계',
   '',
@@ -209,5 +220,6 @@ fs.writeFileSync(datedReportPath, markdown, 'utf8');
 console.log(`\nDaily report: ${path.relative(root, datedReportPath)}`);
 console.log(`Upcoming birthdays: ${birthdays.length}; missing birth dates: ${missingBirthDates.length}`);
 console.log(`Image candidates: ${imageCandidates.candidates.length}; rights review: ${imageRightsReview.length}`);
+console.log(`Gravure candidates: ${gravureCandidates.candidates.length}; safety pending: ${report.gravureCandidates.safetyPending}`);
 console.log(`Result: ${report.success ? 'PASS' : 'PARTIAL/FAIL'}`);
 process.exitCode = report.success ? 0 : 1;

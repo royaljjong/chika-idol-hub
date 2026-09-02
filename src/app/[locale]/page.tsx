@@ -19,15 +19,15 @@ interface HomePageProps {
 export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
 
-  let title = '日本全国 地下アイドル | 公式リンク＆拠点マップ・グラビア・生誕・お知らせ';
-  let description = '東京(渋谷・原宿・秋葉原・新宿)、大阪、札幌、名古屋、福岡の地下アイドル公式リンク、チケット(TIGET/TicketDive/LivePocket)、グラビア特集、誕生日カレンダー、SNSフォロワーランキング。';
+  let title = '日本全国 地下アイドル | 公式リンク・地域・ライブ情報';
+  let description = '公式出典を確認した日本のライブアイドルを地域・グループ・メンバー・ライブから探し、公式サイト・チケット・会場へ移動できる多言語ディレクトリ。';
 
   if (locale === 'ko') {
-    title = '일본 전국 지하아이돌 | 공식 링크 & 거점 맵・그라비아・생일・오시라세 허브';
-    description = '도쿄(시부야·하라주쿠·아키하바라·신주쿠), 오사카, 삿포로, 나고야, 후쿠오카 지하아이돌 전국 거점 맵, 그라비아 화보, 생일 캘린더, SNS 팔로워 랭킹, 공식 티켓팅 링크 허브.';
+    title = '일본 전국 지하아이돌 | 공식 링크·지역·라이브 정보';
+    description = '공식 출처가 확인된 일본 라이브아이돌을 지역·그룹·멤버·공연으로 탐색하고 공식 사이트·티켓·공연장으로 이동하는 다국어 디렉터리입니다.';
   } else if (locale === 'en') {
-    title = 'Japan Underground Idols | Map, Gravure, Birthdays & Official Links';
-    description = 'Explore Japan\'s live idol scenes across Tokyo, Osaka, Sapporo, Nagoya, Fukuoka with official links, tickets, gravure photobooks, and birthday calendar.';
+    title = 'Japan Underground Idols | Verified Groups, Lives & Official Links';
+    description = 'Explore verified Japanese live-idol groups, members and events by region, then continue to official sites, tickets and venues.';
   }
 
   return {
@@ -59,10 +59,10 @@ export default async function HomePage({ params }: HomePageProps) {
           </h1>
           <p className="text-xs sm:text-sm text-star-dim mt-3">
             {locale === 'ko'
-              ? '전국 거점 맵・공식 티켓팅・체키 스토어・그라비아 화보・생일 캘린더・종합 랭킹'
+              ? '공식 출처 기반 지역 탐색・그룹・멤버・라이브・생일 정보'
               : locale === 'ja'
-              ? '全国拠点マップ・公式チケット・通販チェキ・グラビア写真集・誕生日・総合ランキング'
-              : 'Interactive Map, Live Tickets, Official Links, Gravure & Comprehensive Rankings'}
+              ? '公式出典に基づく地域・グループ・メンバー・ライブ・誕生日情報'
+              : 'Verified regional discovery, groups, members, live events and birthdays'}
           </p>
         </div>
 
@@ -135,8 +135,8 @@ export default async function HomePage({ params }: HomePageProps) {
 
         {/* 6. Separate lower gravure directory */}
         <section className="mt-20 border-t border-white/15 pt-10">
-          <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-[10px] font-bold tracking-[.18em] text-purple-300">GRAVURE DIRECTORY</p><h2 className="mt-2 text-2xl font-bold text-white">{locale === 'ko' ? '그라비아 아이돌·사진집' : locale === 'ja' ? 'グラビアアイドル・写真集' : 'Gravure idols & photobooks'}</h2><p className="mt-2 max-w-2xl text-xs leading-6 text-star-dim">{locale === 'ko' ? '지하아이돌 지도와 분리하여 소속사·레이블 단위로 정리합니다.' : locale === 'ja' ? 'ライブアイドル地図とは分け、所属事務所・レーベル単位で整理します。' : 'Organized separately from the live-idol map by agency and label.'}</p></div><Link href="/gravure" className="text-xs font-bold text-purple-300">{locale === 'ko' ? '전체 보기' : locale === 'ja' ? '一覧を見る' : 'Open directory'} →</Link></div>
-          {gravures.length > 0 ? <GravureSection gravures={gravures} locale={locale} /> : <div className="border-y border-white/10 py-9 text-sm text-star-dim">{locale === 'ko' ? '공식 출처와 이미지 권리를 확인한 항목을 수집 중입니다.' : locale === 'ja' ? '公式出典と画像権利を確認できた項目を収集中です。' : 'Collecting entries with verified official sources and image rights.'}</div>}
+          <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-[10px] font-bold tracking-[.18em] text-purple-300">GRAVURE DIRECTORY · PREPARING</p><h2 className="mt-2 text-2xl font-bold text-white">{locale === 'ko' ? '그라비아·사진집 공식 원문' : locale === 'ja' ? 'グラビア・写真集の公式原文' : 'Official gravure & photobook sources'}</h2><p className="mt-2 max-w-2xl text-xs leading-6 text-star-dim">{locale === 'ko' ? '공식 개별 기사·발매일·인물 연결을 확인한 링크 중심 항목을 준비 중입니다.' : locale === 'ja' ? '公式の個別記事・発売日・人物の一致を確認したリンク中心の項目を準備中です。' : 'Preparing link-only entries with verified individual sources, release dates and identity matches.'}</p></div><Link href="/gravure" className="text-xs font-bold text-purple-300">{locale === 'ko' ? '준비 상태 보기' : locale === 'ja' ? '準備状況を見る' : 'View preparation status'} →</Link></div>
+          {gravures.length > 0 ? <GravureSection gravures={gravures} locale={locale} /> : <div className="border-y border-white/10 py-9 text-sm text-star-dim">{locale === 'ko' ? '현재 공개 가능한 항목은 0건입니다. 이미지 없이 연결할 수 있는 공식 개별 원문을 검증 중입니다.' : locale === 'ja' ? '現在公開できる項目は0件です。画像を掲載せずに案内できる公式の個別原文を検証中です。' : 'There are currently 0 publishable entries. Individual official sources are being verified for image-free linking.'}</div>}
         </section>
       </main>
 

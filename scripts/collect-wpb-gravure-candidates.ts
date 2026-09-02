@@ -42,6 +42,8 @@ const found = groups.flatMap((group) => group.members.flatMap((member) => {
     rightsStatus: 'link_only' as const,
     reviewStatus: 'review_pending' as const,
     publishedFeatureId: null,
+    safetyReviewStatus: 'pending' as const,
+    safetyReviewedAt: null,
     blocker: minor ? '미성년자 안전 검토와 개별 공식 원문 확인 필요' : '개별 공식 원문·발매일·상품 링크 확인 필요',
   }];
 }));

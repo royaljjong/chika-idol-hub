@@ -113,6 +113,7 @@ export const ChikaMember = z.object({
   searchVolumeScore: z.number().min(0).max(100).optional(),
   metricsVerifiedAt: z.string().nullable().optional(),
   metricsSourceUrl: z.string().url().nullable().optional(),
+  // Legacy discovery hints only; never sufficient for public gravure output.
   isGravureActive: z.boolean().optional().default(false),
   gravureHighlights: z.array(z.string()).optional().default([]),
   links: z.array(IdolLink).default([]),
@@ -228,7 +229,7 @@ export const GravureFeature = z.object({
   groupName: LocalizedText,
   title: LocalizedText,
   magazine: stringOrLocalized,
-  releaseDate: z.string(), // YYYY-MM-DD
+  releaseDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), // verified publication date
   imageUrl: z.string().nullable().default(null),
   url: z.string().url().nullable().default(null),
   checkedAt: z.string(),
@@ -261,7 +262,16 @@ export const GravureCandidate = z.object({
   rightsStatus: z.literal('link_only').default('link_only'),
   reviewStatus: z.enum(['discovered', 'review_pending', 'ready_for_publish', 'published', 'rejected']).default('discovered'),
   publishedFeatureId: z.string().nullable().default(null),
+  safetyReviewStatus: z.enum(['pending', 'approved', 'not_required', 'rejected']),
+  safetyReviewedAt: z.string().nullable().default(null),
   blocker: z.string().nullable().default(null),
+}).superRefine((candidate, context) => {
+  if (candidate.safetyReviewStatus === 'approved' && !candidate.safetyReviewedAt) {
+    context.addIssue({ code: z.ZodIssueCode.custom, path: ['safetyReviewedAt'], message: 'approved safety review requires a review date' });
+  }
+  if (candidate.reviewStatus === 'ready_for_publish' && candidate.safetyReviewStatus === 'pending') {
+    context.addIssue({ code: z.ZodIssueCode.custom, path: ['safetyReviewStatus'], message: 'ready candidate cannot have a pending safety review' });
+  }
 });
 export type GravureCandidate = z.infer<typeof GravureCandidate>;
 

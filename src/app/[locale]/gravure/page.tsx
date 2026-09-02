@@ -23,10 +23,10 @@ export default async function GravurePage({
         : "Gravure & photobooks";
   const note =
     locale === "ko"
-      ? "출판사·소속사·공식 판매처에서 확인된 발매 정보만 제공합니다."
+      ? "공식 개별 원문·발매일·인물 연결을 확인한 항목만 이미지 없이 링크부터 제공합니다."
       : locale === "ja"
-        ? "出版社・所属事務所・公式販売元で確認できた情報のみ掲載します。"
-        : "Only releases verified through publishers, agencies or official stores are listed.";
+        ? "公式の個別原文・発売日・人物の一致を確認した項目を、まず画像なしのリンクで掲載します。"
+        : "Entries require an individual official source, release date and identity match; publication begins with image-free links.";
   return (
     <div className="relative min-h-screen">
       <Navigation />
@@ -70,10 +70,10 @@ export default async function GravurePage({
         ) : (
           <div className="mt-10 border-y border-white/10 py-10 text-sm text-star-dim">
             {locale === "ko"
-              ? "검증된 항목을 수집 중입니다."
+              ? "현재 공개 항목은 0건입니다. 검토 중인 후보는 공개하지 않으며, 공식 개별 원문이 확인된 항목부터 이미지 없이 연결합니다."
               : locale === "ja"
-                ? "検証済み項目を収集中です。"
-                : "Verified entries are being collected."}
+                ? "現在の公開項目は0件です。審査中の候補は公開せず、公式の個別原文を確認できた項目から画像なしで案内します。"
+                : "There are currently 0 public entries. Review candidates remain private until an individual official source is verified for image-free linking."}
           </div>
         )}
       </main>

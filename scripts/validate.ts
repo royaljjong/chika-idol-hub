@@ -124,6 +124,7 @@ for (const candidate of gravureCandidates.candidates) {
   if (candidate.memberId && !memberIds.has(candidate.memberId)) errors.push(`${candidate.id}: unknown gravure candidate member ${candidate.memberId}`);
   if (candidate.reviewStatus === 'published' && !candidate.publishedFeatureId) errors.push(`${candidate.id}: published gravure candidate missing feature id`);
   if (candidate.reviewStatus === 'ready_for_publish' && candidate.blocker) errors.push(`${candidate.id}: ready gravure candidate still has blocker`);
+  if (candidate.safetyReviewStatus === 'pending') warnings.push(`${candidate.id}: gravure safety review pending`);
 }
 
 for (const candidate of sourceCatalog.entityCandidates) {
@@ -207,7 +208,14 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`OK: ${groups.length} groups, ${memberIds.size} members, ${geoAreas.areas.length} geo areas, ${notices.length} notices, ${gravures.length} gravure records, ${gravureCandidates.candidates.length} gravure candidates, ${live.events.length} live events, ${liveCandidates.candidates.length} live candidates, ${sourceCatalog.sources.length} discovery sources, ${sourceCatalog.entityCandidates.length} discovery candidates, ${metrics.snapshots.length} metric snapshots`);
+const publicNotices = notices.filter((notice) => notice.checkedAt && notice.sourceUrl);
+const hiddenNotices = notices.length - publicNotices.length;
+const legacyGravureHints = groups.flatMap((group) => group.members).filter((member) => member.isGravureActive || member.gravureHighlights.length > 0).length;
+
+console.log(`OK: ${groups.length} groups, ${memberIds.size} members, ${geoAreas.areas.length} geo areas, ${live.events.length} live events, ${liveCandidates.candidates.length} live candidates`);
+console.log(`PUBLICATION: notices ${publicNotices.length} public / ${hiddenNotices} hidden / ${notices.length} raw; gravure ${gravures.length} public / ${gravureCandidates.candidates.length} candidates; metrics ${metrics.snapshots.length} verified snapshots`);
+console.log(`LEGACY: ${legacyGravureHints} members have non-public gravure discovery hints`);
 console.log(`IMAGE: groups ${officialGroupImages} official / ${groupTextWordmarks} text wordmark / ${placeholderGroupImages} placeholder; members ${officialMemberImages} official / ${placeholderMemberImages} placeholder`);
 console.log(`IMAGE CANDIDATES: ${imageCandidates.candidates.length} total / ${imageCandidates.candidates.filter((item) => item.reviewStatus === 'rights_review').length} rights review / ${imageCandidates.candidates.filter((item) => item.reviewStatus === 'approved').length} approved`);
 console.warn(`WARN: ${warnings.length} review items`);
+for (const warning of warnings) console.warn(`- ${warning}`);

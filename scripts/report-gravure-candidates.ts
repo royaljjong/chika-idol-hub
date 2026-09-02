@@ -12,6 +12,7 @@ console.table(dataset.candidates.map((candidate) => ({
   type: candidate.contentType,
   date: candidate.releaseDate ?? 'unknown',
   rights: candidate.rightsStatus,
+  safety: candidate.safetyReviewStatus,
   status: candidate.reviewStatus,
   linkedMember: candidate.memberId ?? 'unlinked',
   blocker: candidate.blocker ?? '',
