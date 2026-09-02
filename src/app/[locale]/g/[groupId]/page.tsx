@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, use } from 'react';
+import React, { useEffect, useRef, useState, use } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getGroup, getUpcomingLiveEventsForGroup } from '@/lib/data';
@@ -13,15 +13,20 @@ import { GroupLiveMap } from '@/components/map/GroupLiveMap';
 
 interface GroupPageProps {
   params: Promise<{ locale: string; groupId: string }>;
+  searchParams: Promise<{ tab?: string | string[] }>;
 }
 
 type MemberSortMode = 'default' | 'popularity' | 'followers' | 'search';
 
-export default function GroupPage({ params }: GroupPageProps) {
+export default function GroupPage({ params, searchParams }: GroupPageProps) {
   const { locale, groupId } = use(params);
+  const initialSearchParams = use(searchParams);
+  const initialTab = initialSearchParams.tab === 'live' ? 'live' : 'profile';
   const [sortMode, setSortMode] = useState<MemberSortMode>('default');
   const [bannerError, setBannerError] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<'profile' | 'live'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'live'>(initialTab);
+  const profileTabRef = useRef<HTMLButtonElement>(null);
+  const liveTabRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const restoreTab = () => {
@@ -43,6 +48,16 @@ export default function GroupPage({ params }: GroupPageProps) {
     const url = new URL(window.location.href);
     if (tab === 'live') url.searchParams.set('tab', 'live'); else url.searchParams.delete('tab');
     window.history.pushState(window.history.state, '', url);
+  };
+
+  const handleTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    let nextTab: 'profile' | 'live' | null = null;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp' || event.key === 'Home') nextTab = 'profile';
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key === 'End') nextTab = 'live';
+    if (!nextTab) return;
+    event.preventDefault();
+    chooseTab(nextTab);
+    (nextTab === 'profile' ? profileTabRef : liveTabRef).current?.focus();
   };
 
   const group = getGroup(groupId);
@@ -256,8 +271,8 @@ export default function GroupPage({ params }: GroupPageProps) {
         </section>
 
         <div className="group-detail-tabs" role="tablist" aria-label={language === 'ko' ? '그룹 상세 보기' : language === 'en' ? 'Group details' : 'グループ詳細'}>
-          <button type="button" role="tab" id="group-profile-tab" aria-controls="group-profile-panel" aria-selected={activeTab === 'profile'} className={activeTab === 'profile' ? 'group-detail-tab-active' : ''} onClick={() => chooseTab('profile')}>{language === 'ko' ? '프로필 · 멤버' : language === 'en' ? 'Profile & members' : 'プロフィール・メンバー'}</button>
-          <button type="button" role="tab" id="group-live-tab" aria-controls="group-live-panel" aria-selected={activeTab === 'live'} className={activeTab === 'live' ? 'group-detail-tab-active' : ''} onClick={() => chooseTab('live')}>{language === 'ko' ? '라이브 · 공연장 지도' : language === 'en' ? 'Live & venue map' : 'ライブ・会場マップ'}<span>{upcomingEvents.length}</span></button>
+          <button ref={profileTabRef} type="button" role="tab" id="group-profile-tab" aria-controls="group-profile-panel" aria-selected={activeTab === 'profile'} tabIndex={activeTab === 'profile' ? 0 : -1} className={activeTab === 'profile' ? 'group-detail-tab-active' : ''} onClick={() => chooseTab('profile')} onKeyDown={handleTabKeyDown}>{language === 'ko' ? '프로필 · 멤버' : language === 'en' ? 'Profile & members' : 'プロフィール・メンバー'}</button>
+          <button ref={liveTabRef} type="button" role="tab" id="group-live-tab" aria-controls="group-live-panel" aria-selected={activeTab === 'live'} tabIndex={activeTab === 'live' ? 0 : -1} className={activeTab === 'live' ? 'group-detail-tab-active' : ''} onClick={() => chooseTab('live')} onKeyDown={handleTabKeyDown}>{language === 'ko' ? '라이브 · 공연장 지도' : language === 'en' ? 'Live & venue map' : 'ライブ・会場マップ'}<span>{upcomingEvents.length}</span></button>
         </div>
 
         {activeTab === 'live' ? <section id="group-live-panel" aria-labelledby="group-live-tab" className="mb-12" role="tabpanel">

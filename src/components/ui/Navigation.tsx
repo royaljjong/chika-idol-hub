@@ -39,12 +39,12 @@ export function Navigation({ showBrand = true }: NavigationProps) {
         <div aria-hidden="true" />
       )}
 
-      <div className="order-3 flex w-full items-center gap-1 rounded-xl border border-white/10 bg-white/[.03] p-1 sm:order-none sm:w-auto sm:border-0 sm:bg-transparent sm:p-0" aria-label={locale === 'ko' ? '제품 탐색' : locale === 'ja' ? 'プロダクトナビゲーション' : 'Product navigation'}>
+      <nav className="order-3 flex w-full items-center gap-1 rounded-xl border border-white/10 bg-white/[.03] p-1 sm:order-none sm:w-auto sm:border-0 sm:bg-transparent sm:p-0" aria-label={locale === 'ko' ? '제품 탐색' : locale === 'ja' ? 'プロダクトナビゲーション' : 'Product navigation'}>
         {branches.map((branch) => {
           const active = branch.href === '/' ? pathname === '/' : pathname.startsWith(branch.href);
           return <Link key={branch.href} href={branch.href} aria-current={active ? 'page' : undefined} className={`flex-1 rounded-lg px-3 py-2 text-center text-xs font-bold transition sm:flex-none sm:py-1.5 ${active ? 'bg-white text-space-950 shadow-sm' : 'text-star-dim hover:bg-white/10 hover:text-white'}`}>{branch.label}</Link>;
         })}
-      </div>
+      </nav>
 
       {/* Top-right Actions: Search & Locales strictly aligned to far right */}
       <div className="flex items-center gap-2.5 ml-auto">

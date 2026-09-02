@@ -191,7 +191,7 @@ for (const notice of notices) if (!notice.checkedAt || !notice.sourceUrl) warnin
 for (const feature of gravures) {
   if (!groupIds.has(feature.groupId)) errors.push(`${feature.id}: unknown groupId ${feature.groupId}`);
   if (!memberIds.has(feature.memberId)) warnings.push(`${feature.id}: member not present in partial dataset`);
-  if (!feature.checkedAt || !feature.sourceUrl || !feature.rightsStatus) warnings.push(`${feature.id}: hidden feature (missing source/date/rights)`);
+  if (feature.rightsStatus === 'link_only' && feature.imageUrl) errors.push(`${feature.id}: link-only gravure image must not be embedded`);
 }
 
 for (const snapshot of metrics.snapshots) {

@@ -99,7 +99,7 @@ export function InteractiveJapanMap({ groups, locale }: { groups: ChikaGroup[]; 
 
   return <section className={`discovery-map discovery-stage-${stage}`} aria-label={copy.title[lang]}>
     <header className="discovery-map-header"><div><p>LOCAL IDOL DISCOVERY</p><h3>{stage === 'country' ? copy.title[lang] : districtId ? DISTRICTS[districtId].label[lang] : region?.label[lang]}</h3><span>{stage === 'country' ? copy.countryHint[lang] : stage === 'city' ? copy.cityHint[lang] : copy.groups[lang]}</span></div>
-      <div className="discovery-breadcrumb" aria-label="Breadcrumb">{stage !== 'country' ? <button type="button" onClick={goCountry}>{copy.backCountry[lang]}</button> : null}{stage === 'district' ? <><span>/</span><button type="button" onClick={goCity}>{region?.label[lang]}</button><span>/</span><b>{DISTRICTS[districtId!].label[lang]}</b></> : null}</div>
+      <div className="discovery-breadcrumb" role={stage !== 'country' ? 'navigation' : undefined} aria-label={stage !== 'country' ? 'Breadcrumb' : undefined}>{stage !== 'country' ? <button type="button" onClick={goCountry}>{copy.backCountry[lang]}</button> : null}{stage === 'district' ? <><span>/</span><button type="button" onClick={goCity}>{region?.label[lang]}</button><span>/</span><b>{DISTRICTS[districtId!].label[lang]}</b></> : null}</div>
     </header>
     <div className="discovery-map-viewport"><div className="discovery-map-grid" aria-hidden="true" />
       <div className="discovery-map-art" style={{ '--focus-x': `${region?.x ?? 50}%`, '--focus-y': `${region?.y ?? 50}%` } as CSSProperties}><Image src="/maps/japan-prefectures.svg" alt="" fill priority sizes="(max-width: 800px) 120vw, 900px" className="discovery-japan-vector" /></div>

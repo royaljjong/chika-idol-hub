@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-31T15:04:16.935Z",
+  "generatedAt": "2026-09-02T12:14:00.966Z",
   "sources": [
     {
       "key": "title-mitei-calendar",
       "groupId": "title-mitei",
       "officialPageUrl": "https://miteititle.com/schedule/",
       "feedUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "lastCollectedAt": "2026-08-31T15:04:04.200Z",
+      "lastCollectedAt": "2026-09-02T12:13:46.726Z",
       "contentHash": "bfd0fcb7726eb1ebda4936d02136fcb31e04bacefb2f31a0290881efb6837e3d",
       "candidateCount": 17
     },
@@ -15,9 +15,9 @@
       "groupId": "fruits-zipper",
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "feedUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
-      "lastCollectedAt": "2026-08-31T15:04:05.270Z",
-      "contentHash": "b33df2e44c27b9b8a19aee312411f609c129a77b314f86fd93ae3b35b081544f",
-      "candidateCount": 38
+      "lastCollectedAt": "2026-09-02T12:13:48.085Z",
+      "contentHash": "a20d2f993a09f5cbef9a64591686c3c7e3b07349ea01daae4dfa20e5312c25a4",
+      "candidateCount": 41
     }
   ],
   "candidates": [
@@ -93,7 +93,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-a1312a08c06f2a09",
@@ -111,7 +111,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-a26e1ab74c08fcaf",
@@ -129,7 +129,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-0190f49eecb49736",
@@ -147,7 +147,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-74a7d18cc2451ee6",
@@ -165,7 +165,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-da8b545b7b46554b",
@@ -183,7 +183,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-dc68e7a659a7485d",
@@ -201,7 +201,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-060153f221510548",
@@ -219,7 +219,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-d07ae5a1572d3c2b",
@@ -237,7 +237,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-0fe3745f295549c1",
@@ -255,7 +255,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-ba163c077ea17575",
@@ -273,7 +273,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-0ff7a42d3ce505cb",
@@ -291,7 +291,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-5aea9a73b8a93182",
@@ -309,7 +309,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "title-mitei-ed8a969bd8b79696",
@@ -327,7 +327,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://miteititle.com/schedule/",
       "sourceUrl": "https://calendar.google.com/calendar/ical/titlemitei0516%40gmail.com/public/basic.ics",
-      "collectedAt": "2026-08-31T15:04:04.200Z"
+      "collectedAt": "2026-09-02T12:13:46.726Z"
     },
     {
       "id": "fruits-zipper-957a87a2b608c43b",
@@ -347,7 +347,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40026",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-769e3b2ec19cd4ca",
@@ -367,7 +367,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44246",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-1685bbe1340caf80",
@@ -385,7 +385,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/42630",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-a68ab176efa6749d",
@@ -403,7 +403,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/42048",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-39e61ded59b9529b",
@@ -423,7 +423,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40606",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-a1f6c313259b334c",
@@ -443,7 +443,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/41145",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-175796ce712b739f",
@@ -463,7 +463,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40027",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-14255cd2f71f5ac0",
@@ -483,7 +483,25 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40028",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
+    },
+    {
+      "id": "fruits-zipper-61398fff5a9cd0b8",
+      "sourceKey": "fruits-zipper-official-html",
+      "sourceEventId": "/live_information/detail/44518",
+      "groupId": "fruits-zipper",
+      "reviewStatus": "review_pending",
+      "candidateKind": "live_or_event",
+      "publishedEventId": null,
+      "title": "マイナビ TGC 2026 A/W＠横浜アリーナ",
+      "startsOn": "2026-09-19",
+      "endsOn": null,
+      "timeText": null,
+      "locationText": "神奈川県 横浜アリーナ",
+      "ticketUrls": [],
+      "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
+      "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44518",
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-4044f50e80314991",
@@ -503,7 +521,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40145",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-a08ec28244cc3f3b",
@@ -523,7 +541,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44151",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-3d2d029cab6c7e19",
@@ -543,7 +561,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40029",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-a174c10b792b6717",
@@ -563,7 +581,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40030",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-c1c0a1e784a5d3e3",
@@ -583,7 +601,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40032",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-a3131e5579e58f15",
@@ -603,7 +621,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40033",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-6641a7872f5ed881",
@@ -623,7 +641,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40034",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-9f0eeb45b28259f3",
@@ -643,7 +661,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40035",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-11e207b312116a8c",
@@ -663,7 +681,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40036",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-00c4224cbac2215b",
@@ -683,7 +701,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40037",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-f38006882dad9ce3",
@@ -703,7 +721,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40038",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-8bef148efc9a7bb6",
@@ -723,7 +741,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44011",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-14ad4c293e2b97c3",
@@ -743,7 +761,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40039",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-149875edd2200e72",
@@ -763,7 +781,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40040",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-b2cf67e1d1802399",
@@ -783,7 +801,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40041",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-30e8093e3e69bdf9",
@@ -803,7 +821,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40042",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-f11c6c8d7b0d4091",
@@ -821,7 +839,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44317",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-3228d3ddfb00c4f3",
@@ -839,7 +857,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44318",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-23f1df8d64e40fa7",
@@ -859,7 +877,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40043",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-8b6db53708a50bdc",
@@ -879,7 +897,27 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40044",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
+    },
+    {
+      "id": "fruits-zipper-a83b4c649e0f5342",
+      "sourceKey": "fruits-zipper-official-html",
+      "sourceEventId": "/live_information/detail/44469",
+      "groupId": "fruits-zipper",
+      "reviewStatus": "review_pending",
+      "candidateKind": "live_or_event",
+      "publishedEventId": null,
+      "title": "LARME FES'26@東京ガーデンシアター",
+      "startsOn": "2026-11-07",
+      "endsOn": null,
+      "timeText": "OPEN 14:30 / START 16:00",
+      "locationText": "東京都 東京ガーデンシアター",
+      "ticketUrls": [
+        "https://l-tike.com/event/mevent/?mid=761163"
+      ],
+      "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
+      "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44469",
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-6146603d8ca4f48a",
@@ -899,7 +937,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40045",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-fdf4dc7ebdc1994e",
@@ -917,7 +955,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40046",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-3a863ea74bed1666",
@@ -935,7 +973,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40047",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-785a3281a9693da4",
@@ -955,7 +993,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40048",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-da85baaaf1a12a41",
@@ -975,7 +1013,7 @@
       ],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/40049",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-c7466d1a5c16d347",
@@ -993,7 +1031,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44009",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-035187e2c893a15d",
@@ -1011,7 +1049,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44010",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-8ca4087a96b3eadc",
@@ -1029,7 +1067,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/42961",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-105d630ae0f56f7a",
@@ -1047,7 +1085,25 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/42962",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
+    },
+    {
+      "id": "fruits-zipper-c51958b8acc9bd96",
+      "sourceKey": "fruits-zipper-official-html",
+      "sourceEventId": "/live_information/detail/44470",
+      "groupId": "fruits-zipper",
+      "reviewStatus": "review_pending",
+      "candidateKind": "live_or_event",
+      "publishedEventId": null,
+      "title": "FRUITS ZIPPERのオールナイトニッポンX in 横浜アリーナ",
+      "startsOn": "2027-01-23",
+      "endsOn": null,
+      "timeText": "OPEN 15:00 / START 16:30",
+      "locationText": "神奈川県 横浜アリーナ",
+      "ticketUrls": [],
+      "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
+      "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44470",
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     },
     {
       "id": "fruits-zipper-497005502c1c7ab3",
@@ -1065,7 +1121,7 @@
       "ticketUrls": [],
       "officialPageUrl": "https://fruitszipper.asobisystem.com/live_information/schedule/list",
       "sourceUrl": "https://fruitszipper.asobisystem.com/live_information/detail/44008",
-      "collectedAt": "2026-08-31T15:04:05.270Z"
+      "collectedAt": "2026-09-02T12:13:48.085Z"
     }
   ]
 }

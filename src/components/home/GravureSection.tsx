@@ -98,7 +98,7 @@ export function GravureSection({ gravures, locale, showHeader = true }: GravureS
                   </a>
                 )}
               </div>
-              {(item.gallery?.length ?? 0) > 0 && <div className="mt-4 grid grid-cols-5 gap-1.5 border-t border-white/5 pt-4">{(item.gallery ?? []).filter((photo) => photo.rightsStatus !== 'link_only').slice(0, 10).map((photo, index) => <a key={`${item.id}-${index}`} href={photo.postUrl} target="_blank" rel="noopener noreferrer" className="relative aspect-square overflow-hidden border border-white/10 bg-black/30"><Image src={photo.imageUrl} alt={`${memberName} ${index + 1}`} fill className="object-cover transition duration-300 hover:scale-105" unoptimized /></a>)}</div>}
+              {(item.gallery?.length ?? 0) > 0 && <div className="mt-4 grid grid-cols-5 gap-1.5 border-t border-white/5 pt-4">{(item.gallery ?? []).slice(0, 10).map((photo, index) => <a key={`${item.id}-${index}`} href={photo.postUrl} target="_blank" rel="noopener noreferrer" className="relative aspect-square overflow-hidden border border-white/10 bg-black/30"><Image src={photo.imageUrl} alt={`${memberName} ${index + 1}`} fill className="object-cover transition duration-300 hover:scale-105" unoptimized /></a>)}</div>}
               <Link href={`/m/${item.memberId}`} className="mt-4 block border border-white/10 px-3 py-2 text-center text-xs font-bold text-star-dim transition hover:border-purple-400 hover:text-white">{locale === 'ko' ? '프로필·SNS 카드' : locale === 'ja' ? 'プロフィール・SNS' : 'Profile & social cards'} →</Link>
             </div>
           );

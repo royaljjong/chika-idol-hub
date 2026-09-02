@@ -790,7 +790,7 @@ export const CHIKA_NOTICES_DATA: ChikaNotice[] = [
 ];
 
 // 3. 그라비아 & 비주얼 화보 피처
-export const CHIKA_GRAVURE_DATA: GravureFeature[] = [
+export const LEGACY_UNVERIFIED_GRAVURE_DATA = [
   {
     id: 'g-sakurai-yui-playboy',
     memberId: 'fz-sakurai-yui',
@@ -852,6 +852,9 @@ export const CHIKA_GRAVURE_DATA: GravureFeature[] = [
     url: 'https://www.akitashoten.co.jp/',
   },
 ];
+
+// 공개 계약(출처 URL·확인일·권리 상태)을 충족한 항목만 이 배열에 둔다.
+export const CHIKA_GRAVURE_DATA: GravureFeature[] = [];
 
 function seed() {
   const dataDir = path.join(__dirname, '..', 'data');
