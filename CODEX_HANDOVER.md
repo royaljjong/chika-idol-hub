@@ -2,10 +2,10 @@
 
 기준일: 2026-09-03
 저장소: `D:\drive\programming\window\Chika Idol Box`
-브랜치/Git HEAD: `codex/trust-data-phase2` / `8604a15` (C-1 로컬 변경 전 기준)
-프로덕션 배포 코드 SHA: `fb006b4`
+브랜치/제품 릴리스 커밋: `codex/trust-data-phase2` / `2bcf619`
+프로덕션 배포 코드 SHA: `2bcf619`
 프로덕션: https://chika-idol-hub.vercel.app
-현행 상태: C-1 착수 전 Git HEAD `8604a15`까지 origin과 동기화됐다. 배포 런타임은 코드 커밋 `fb006b4`, Vercel 배포 `dpl_6eePLZH1ktmBehM94iSnfbHUDgfS`로 production READY다. 2026-09-03 C-1 정합성 복구 변경은 아직 로컬이며 커밋·배포되지 않았다.
+현행 상태: C-1 정합성 복구 제품 커밋 `2bcf619`가 origin과 동기화됐고 Vercel 배포 `dpl_FtJCKi4tue2wdJgSrHavF5P7AC9d`로 production READY다. 이 배포 결과를 기록하는 후속 문서 커밋은 런타임 변경이 아니며 제품·배포 기준 SHA는 `2bcf619`로 유지한다.
 
 이 문서가 유일한 현행 인수인계다. `HANDOVER.md`는 2026-08-16 초기 프로토타입의 폐기된 역사 자료다. 의사결정 이력은 `AUDIT_AND_REBUILD_PLAN.md`, 실행 이력은 `WORK_ORDER.md`를 본다.
 
@@ -156,7 +156,7 @@ node node_modules\tsx\dist\cli.mjs scripts\daily-update.ts --write
 - 프로덕션 스모크 5/5: `/ko`, `/ja/live`, `/en/g/fruits-zipper?tab=live`, `/ko/m/fz-matsumoto-karen`는 200, `/ko/live/does-not-exist`는 404. 최근 1시간 Vercel error 로그 0건.
 - 2026-09-02 UX A-1: 공연장 대체 버튼·탭 키보드·초기 live 렌더·제품 탐색 landmark를 보완했다. 데이터·날짜·파라미터·타입·린트·774/774 빌드와 대표 HTTP 200/200/404가 통과했고 axe WCAG 2 A/AA 확정 위반 0건이다. 색 대비 42개는 이미지·그라데이션 때문에 자동 판정 불가로 남아 있다.
 - 2026-09-02 UX A-2: 전체 대표 흐름 axe 감사에서 발견한 홈 breadcrumb ARIA와 지도 출처 저대비를 보완했다. 홈·라이브·그룹·멤버·404 대표 경로의 확정 위반은 0건이다. 이미지·그라데이션 색 대비와 모바일 실화면은 자동 판정 한계로 수동 검토가 남아 있다.
-- 2026-09-03 C-1: 공지 공개 0/숨김 4/원본 4, 그라비아 공개 0/후보 2, 검증 지표 0을 분리하고 경고 21건을 상세 출력하도록 교정했다. 그라비아 후보 안전 상태와 일일 보고를 연결하고 홈 SEO·빈 상태를 실제 공개 밀도에 맞췄다. 데이터·날짜·파라미터·타입·ESLint·774/774 빌드·로컬 다국어 HTTP 6/6이 통과했다. 이 변경은 아직 로컬이며 배포 기준 `fb006b4`에는 포함되지 않는다.
+- 2026-09-03 C-1/C-2: 공지 공개 0/숨김 4/원본 4, 그라비아 공개 0/후보 2, 검증 지표 0을 분리하고 경고 21건을 상세 출력하도록 교정했다. 그라비아 후보 안전 상태와 일일 보고를 연결하고 홈 SEO·빈 상태를 실제 공개 밀도에 맞췄다. 제품 `2bcf619`, production `dpl_FtJCKi4tue2wdJgSrHavF5P7AC9d`가 READY이며 공개 다국어 HTTP와 오류 로그를 확인했다.
 
 ```powershell
 node node_modules\tsx\dist\cli.mjs scripts\daily-update.ts --skip-network
@@ -187,9 +187,8 @@ Windows 오류 1920이 나면 3001 포트의 기존 Next 프로세스를 확인�
 
 ## 10. Git·배포 경계
 
-- 제품 배포 기준 SHA는 `fb006b4`다. UX A-1~A-3의 지도·탭 접근성, 다국어 `html lang`, 그라비아 신뢰 계약과 후보 58건 정합화가 포함돼 `origin/codex/trust-data-phase2`에 푸시됐다.
-- 프로덕션 배포는 `dpl_6eePLZH1ktmBehM94iSnfbHUDgfS`, 배포 URL은 `https://chika-idol-qrud0nfnl-royaljjongs-projects.vercel.app`, production alias는 `https://chika-idol-hub.vercel.app`이다. 2026-09-02 공개 핵심 경로 200·의도된 404·다국어 언어 속성·그라비아 빈 상태/후보 비노출·최근 error 로그 0건을 확인했다.
-- 직접 CLI production 배포는 로컬 인증의 `Not authorized`로 실패했으나 새 배포를 만들지 않았다. Git 연동 Preview `dpl_QEAeR71YhTzbkmG8rzaHeyd3Tmon` READY 후 `vercel promote`로 동일 산출물을 production 배포했다.
+- 제품 배포 기준 SHA는 `2bcf619`다. C-1의 공개 밀도·문서·운영 정합성 복구가 포함돼 `origin/codex/trust-data-phase2`에 비강제 푸시됐다.
+- 프로덕션 배포는 `dpl_FtJCKi4tue2wdJgSrHavF5P7AC9d`, 배포 URL은 `https://chika-idol-k814q0b9w-royaljjongs-projects.vercel.app`, production alias는 `https://chika-idol-hub.vercel.app`이다. 원격 774/774 빌드와 ko/ja/en 홈·그라비아 200, 언어 속성, 영문 0건 빈 상태, 과거 SEO 제거, 의도된 404, 최근 1시간 error 로그 0건을 확인했다.
 - 이후 변경은 다시 로컬 검증·커밋·푸시·Vercel READY·공개 HTTP 검증을 모두 거쳐야 프로덕션 반영으로 기록한다.
 - 사용자의 명시적 요청 없이 추가 커밋·푸시·Vercel 배포를 수행하지 않는다.
 - `.env`, 자격 증명, 개인 데이터는 문서나 외부 모델 입력에 포함하지 않는다.

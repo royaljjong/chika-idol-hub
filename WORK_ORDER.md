@@ -13,7 +13,11 @@
 
 ### 실행 결과
 
-- 실행 후 실제 값만 기록한다.
+- 릴리스 전 데이터·일본 날짜·37그룹 파라미터·TypeScript·ESLint·774/774 빌드·`git diff --check`와 비밀 패턴·커밋 대상 검사를 통과했다.
+- 제품 커밋 `2bcf619`를 `origin/codex/trust-data-phase2`에 비강제 푸시했다.
+- Vercel production `dpl_FtJCKi4tue2wdJgSrHavF5P7AC9d`가 147개 파일·803.9KB 입력으로 원격 774/774 빌드를 통과하고 READY가 됐으며 `https://chika-idol-hub.vercel.app`에 alias됐다.
+- 공개 ko/ja/en 홈·그라비아 6경로는 모두 200이고 각 `html lang`이 일치했다. 영문 홈·그라비아는 공개 0건 상태를 표시하며 과거 `Map, Gravure, Birthdays` SEO 문구를 포함하지 않는다. 의도된 미존재 공연은 404이며 최근 1시간 error 로그는 `No logs found`로 0건이다.
+- 이 배포 식별자를 기록한 계획·작업지시·인수인계 후속 문서 커밋은 제품 런타임을 변경하지 않고 원격에 추가한다.
 
 ## 2026-09-03 C-1 — 공개 밀도·문서·운영 정합성 복구
 
