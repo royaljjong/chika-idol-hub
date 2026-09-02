@@ -184,7 +184,9 @@ Windows 오류 1920이 나면 3001 포트의 기존 Next 프로세스를 확인�
 
 ## 10. Git·배포 경계
 
-- 현재 Git HEAD는 `938c995`, 제품 배포 기준 SHA는 `3cb2234`다. 두 커밋의 차이는 런타임 변경이 없는 계획·작업지시·인수인계 문서 기록뿐이다.
+- 제품 배포 기준 SHA는 `fb006b4`다. UX A-1~A-3의 지도·탭 접근성, 다국어 `html lang`, 그라비아 신뢰 계약과 후보 58건 정합화가 포함돼 `origin/codex/trust-data-phase2`에 푸시됐다.
+- 프로덕션 배포는 `dpl_6eePLZH1ktmBehM94iSnfbHUDgfS`, 배포 URL은 `https://chika-idol-qrud0nfnl-royaljjongs-projects.vercel.app`, production alias는 `https://chika-idol-hub.vercel.app`이다. 2026-09-02 공개 핵심 경로 200·의도된 404·다국어 언어 속성·그라비아 빈 상태/후보 비노출·최근 error 로그 0건을 확인했다.
+- 직접 CLI production 배포는 로컬 인증의 `Not authorized`로 실패했으나 새 배포를 만들지 않았다. Git 연동 Preview `dpl_QEAeR71YhTzbkmG8rzaHeyd3Tmon` READY 후 `vercel promote`로 동일 산출물을 production 배포했다.
 - 이후 변경은 다시 로컬 검증·커밋·푸시·Vercel READY·공개 HTTP 검증을 모두 거쳐야 프로덕션 반영으로 기록한다.
 - 사용자의 명시적 요청 없이 추가 커밋·푸시·Vercel 배포를 수행하지 않는다.
 - `.env`, 자격 증명, 개인 데이터는 문서나 외부 모델 입력에 포함하지 않는다.

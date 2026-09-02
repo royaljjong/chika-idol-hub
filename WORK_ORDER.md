@@ -20,7 +20,9 @@
 ### 실행 결과
 
 - 배포 전 데이터·일본 날짜·37그룹 파라미터·TypeScript·수정 파일 ESLint·774/774 프로덕션 빌드·`git diff --check`를 통과했다. 저장소 전체 `npx eslint .`은 `.next`까지 장시간 순회해 완료 전 중단했으며, 제품 빌드 내장 lint/type 단계와 변경 파일 직접 ESLint 결과를 릴리스 근거로 사용한다.
-- 커밋·푸시·배포 식별자와 공개 HTTP 결과는 실행 후 아래 인수인계와 함께 갱신한다.
+- 제품 커밋 `fb006b4`를 `origin/codex/trust-data-phase2`에 비강제 푸시했다. 직접 `vercel --prod`는 CLI 인증의 `Not authorized`로 배포를 만들지 못했지만, Git 연동 Preview `dpl_QEAeR71YhTzbkmG8rzaHeyd3Tmon`이 READY가 된 뒤 동일 산출물을 `vercel promote`로 승격했다.
+- 프로덕션 배포 `dpl_6eePLZH1ktmBehM94iSnfbHUDgfS`는 READY이며 `https://chika-idol-hub.vercel.app` alias에 연결됐다. ko/ja/en 홈·그라비아, ko 라이브·대표 그룹 live는 200, 의도된 잘못된 경로는 404다. 세 그라비아 페이지는 URL과 `html lang`이 일치하고 현지화 빈 상태를 표시하며 후보 이름을 노출하지 않는다.
+- 배포 후 최근 1시간 error-level 로그 조회는 `No logs found`로 오류 0건이다. 실제 식별자는 인수인계에 반영했으며 이 실행 결과를 후속 문서 커밋으로 푸시한다.
 
 ## 2026-09-02 UX A-3 — 브라우저 상호작용·그라비아 감사
 
